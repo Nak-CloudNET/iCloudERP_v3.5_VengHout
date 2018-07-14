@@ -1,0 +1,39 @@
+Code,Name,Parent Category Code,Image name
+SC-1-001,Barb Wire,C-001,no_image.png
+SC-1-002,Channel C,C-001,no_image.png
+SC-1-003,Channel U,C-001,no_image.png
+SC-1-004,Checker Plate,C-001,no_image.png
+SC-1-005,Deformed Bar,C-001,no_image.png
+SC-1-006,Deformed Bar(VN),C-001,no_image.png
+SC-1-007,Flat Bar,C-001,no_image.png
+SC-1-008,GL.Coil,C-001,no_image.png
+SC-1-009,H-Beam,C-001,no_image.png
+SC-1-010,I-Beam,C-001,no_image.png
+SC-1-011,Kaye,C-001,no_image.png
+SC-1-012,L Hollow,C-001,no_image.png
+SC-1-013,Nail,C-001,no_image.png
+SC-1-014,Net,C-001,no_image.png
+SC-1-015,Paint,C-001,no_image.png
+SC-1-016,PPGL,C-001,no_image.png
+SC-1-017,Retangular-Sqar Pipes,C-001,no_image.png
+SC-1-018,Round Bar,C-001,no_image.png
+SC-1-019,Round Pipe,C-001,no_image.png
+SC-1-020,RW,C-001,no_image.png
+SC-1-021,Steel Plate ,C-001,no_image.png
+SC-1-022,Tied Wire,C-001,no_image.png
+SC-1-023,V-angle,C-001,no_image.png
+SC-1-024,Wired Rod,C-001,no_image.png
+SC-1-025,Zinc,C-001,no_image.png
+SC-2-001,CT120x120,C-002,no_image.png
+SC-2-002,CT160x160,C-002,no_image.png
+SC-2-003,CT160x240,C-002,no_image.png
+SC-2-004,CT60x60,C-002,no_image.png
+SC-2-005,FT15x60,C-002,no_image.png
+SC-2-006,FT30x30,C-002,no_image.png
+SC-2-007,FT40x40,C-002,no_image.png
+SC-2-008,FT60x60,C-002,no_image.png
+SC-2-009,FT80x80,C-002,no_image.png
+SC-2-010,WT25x40,C-002,no_image.png
+SC-2-011,WT30x45,C-002,no_image.png
+SC-2-012,WT30x60,C-002,no_image.png
+SC-2-013,WT60x120,C-002,no_image.png

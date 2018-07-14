@@ -1,0 +1,912 @@
+﻿Code,Name,Name KH,Category Code,Unit ID,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6,Image,Type(standard or service)
+BW0001,Barb Wire- Normal ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-001,,,,,,,,,,,,,no_image.png,standard
+BW0002,Barb Wire- Razor ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-001,,,,,,,,,,,,,no_image.png,standard
+CB0001,C-75 x 40- 1.2mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0002,C-75 x 40- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0003,C-75 x 40- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0004,C-75x40- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0005,C-100 x 50- 1.2mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0006,C-100 x 50- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0007,C-100 x 50- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0008,C-100x50- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0009,C-100x50- 2.3mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0010,C-100x50- 2.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0011,C-125x50- 2.3mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0012,C-150 x 65- 2.0mm-- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0013,C-150x45- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0014,C-150x50- 2.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CB0015,C-200x50- 4mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0001,C-50 x 2.5- 1mm- Wh (3m) ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0002,C-75 x 40- 1.2mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0003,C-75 x 40- 2.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0004,C-75x 40- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0005,C-100 x 50- 1.2mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0006,C-100 x 50- 2.5mm Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0007,C-100x50- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0008,C-100x50- 1.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0009,C-125x45- 2.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0010,C-125x50x 1.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0011,C-150x50x 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0012,C-150x50x 1.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+CW0013,C-200x65- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-002,,,,,,,,,,,,,no_image.png,standard
+DB0001,DB. 10mm China HRB300 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0002,DB. 10mm HP CB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0003,DB. 10mm- AS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0004,DB. 10mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0005,DB. 10mm- Japan-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0006,DB. 10mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0007,DB. 10mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0008,DB. 10mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0009,DB. 10mm- TN-V,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0010,DB. 10mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0011,DB. 10mm- VCS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0012,DB. 10mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0013,DB. 12mm- AS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0014,DB. 12mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0015,DB. 12mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0016,DB. 12mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0017,DB. 12mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0018,DB. 12mm- TN-V,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0019,DB. 12mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0020,DB. 12mm- VCS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0021,DB. 12mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0022,DB. 13mm- China ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0023,DB. 13mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0024,DB. 14mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0025,DB. 14mm- Japan-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0026,DB. 14mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0027,DB. 14mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0028,DB. 14mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0029,DB. 14mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0030,DB. 14mm- VCS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0031,DB. 14mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0032,DB. 16mm VinaSD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0033,DB. 16mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0034,DB. 16mm- Japan-SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0035,DB. 16mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0036,DB. 16mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0037,DB. 16mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0038,DB. 16mm- Thai- SD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0039,DB. 16mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0040,DB. 16mm- VCS,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0041,DB. 16mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0042,DB. 18mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0043,DB. 18mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0044,DB. 18mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0045,DB. 18mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0046,DB. 18mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0047,DB. 18mm- VSD,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0048,DB. 20mm- China ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0049,DB. 20mm- Japan-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0050,DB. 20mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0051,DB. 20mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0052,DB. 20mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0053,DB. 20mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0054,DB. 20mm- VSD ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0055,DB. 22mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0056,DB. 22mm- Japan,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0057,DB. 22mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0058,DB. 22mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0059,DB. 25mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0060,DB. 25mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0061,DB. 25mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0062,DB. 25mm- VSD 390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0063,DB. 28mm- China  HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0064,DB. 28mm- Pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0065,DB. 28mm- Posco-SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0066,DB. 28mm- SG. SD390,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0067,DB. 32mm- China HRB400,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0068,DB. 32mm- pom ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+DB0069,DB. 32mm- SG. SD390 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-005,,,,,,,,,,,,,no_image.png,standard
+FB0001,FB. 16x3 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0002,FB. 20x1.8mm- 2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0003,FB. 20x4 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0004,FB. 20x4- kh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0005,FB. 20x6- VN ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0006,FB. 25x4 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0007,FB. 25x6- cut ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0008,FB. 25x6-khmer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0009,FB. 30x4 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0010,FB. 30x6- cut ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0011,FB. 30x6.Khmer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0012,FB. 35x8- 4.5m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0013,FB. 35x8- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0014,FB. 40x10- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0015,FB. 40x12 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0016,FB. 40x4 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0017,FB. 40x4- full ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0018,FB. 40x6 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0019,FB. 40x6- full ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0020,FB. 40x6-K ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0021,FB. 40x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0022,FB. 50x10- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0023,FB. 50x12 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0024,FB. 50x15 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0025,FB. 50x4 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0026,FB. 50x5 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0027,FB. 50x6 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0028,FB. 50x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0029,FB. 60x10 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0030,FB. 60x12 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0031,FB. 60x15 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0032,FB. 60x5 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0033,FB. 60x6 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0034,FB. 60x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0035,FB. 70x10 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0036,FB. 75x10 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0037,FB. 75X12 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0038,FB. 75x15 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0039,FB. 75x20 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0040,FB. 75x6,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0041,FB. 75x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0042,FB. 80X6 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0043,FB. 80x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0044,FB. 85x10 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0045,FB. 90x4,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0046,FB. 100x10 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0047,FB. 100x12 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0048,FB. 100x6 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0049,FB. 100x8 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0050,FB. 110x5 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+FB0051,FB. 125x10,,C-001,1,1,1,1, No Tax, exclusive,SC-1-007,,,,,,,,,,,,,no_image.png,standard
+GL0001,GL.Coil 0.21mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0002,GL.Coil 0.26mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0003,GL.Coil 0.28mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0004,GL.Coil 0.35mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0005,GL.Coil 0.3mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0006,GL.Coil 0.6mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0007,GL.Coil 0.8mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0008,GL.Coil 1.0mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0009,GL.Coil 1.2mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+GL0010,GL.Coil 1.5mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-008,,,,,,,,,,,,,no_image.png,standard
+H0001,H-100- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0002,H-100- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0003,H-125-12mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0004,H-150- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0005,H-150-12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0006,H-200- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0007,H-200- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0008,H-250- 12mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0009,H-250- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0010,H-300x10x15x12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+H0011,H-350x12x19x12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-009,,,,,,,,,,,,,no_image.png,standard
+I0001,I-100- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0002,I-120- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0003,I-120- 6m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0004,I-150- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0005,I-150- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0006,I-200- 12m-  Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0007,I-200- 12m- thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0008,I-200- 6m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0009,I-200- 6m- thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0010,I-250- 12m- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0011,I-250- 6m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0012,I-250- 6m- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0013,I-250mm- 12m- thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0014,I-300- 12m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0015,I-300- 12m- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0016,I-300- 6m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0017,I-300- 6m- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0018,I-350- 12m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0019,I-350- 12m- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0020,I-350- 6m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0021,I-400- 12m- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0022,I-400- 12mm- Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0023,I-400- 6m- Thick,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0024,I-450- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0025,I-500x12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+I0026,I-600x300x12x20x12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-010,,,,,,,,,,,,,no_image.png,standard
+K0001,Kaya-  12x20 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0002,Kaye 13x13,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0003,Kaye 13x23,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0004,Kaye 30x40,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0005,Kaye- 10x10.China ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0006,Kaye- 12x12-China ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0007,Kaye- 12x15.CN ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0008,Kaye- 15x15.China ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0009,Kaye- 15x20.China ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0010,Kaye- 15x22,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0011,Kaye- 15x25.China ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0012,Kaye- 15x30.china,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0013,Kaye- 15x35.china ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0014,Kaye- 20x20 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0015,Kaye- 20x25,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0016,Kaye- 20x30 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0017,Kaye- 25x25 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0018,Kaye- 25x35 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0019,Kaye- 25x50 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0020,Kaye- 30x30 ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+K0021,Kaye- Order ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-011,,,,,,,,,,,,,no_image.png,standard
+L0001,L Hollow- L- 30x30 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-012,,,,,,,,,,,,,no_image.png,standard
+L0002,L Hollow- L- 40x40 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-012,,,,,,,,,,,,,no_image.png,standard
+L0003,L Hollow- L- 40x60 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-012,,,,,,,,,,,,,no_image.png,standard
+L0004,L Hollow- L.30x50 ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-012,,,,,,,,,,,,,no_image.png,standard
+N0001,Nail- 10H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0002,Nail- 12H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0003,Nail- 3H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0004,Nail- 4H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0005,Nail- 5H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0006,Nail- 6H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0007,Nail- 7H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0008,Nail- 8H ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+N0009,Nail- Hat ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-013,,,,,,,,,,,,,no_image.png,standard
+Net0001,Nets-  Bird ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0002,Nets- 1.0m- 3.0mm- 7H (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0003,Nets- 1.0m- 3.0mm- 7H (m),,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0004,Nets- 1.2m- 3.0mm- 7H  (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0005,Nets- 1.2m- 3.0mm- 7H (m) ,,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0006,Nets- 1.5m- 3.0mm- 7H (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0007,Nets- 1.5m- 3.0mm- 7H (m) ,,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0008,Nets- 1.8m- 3.0mm- 7H (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0009,Nets- 1.8m- 3.0mm- 7H (m) ,,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0010,Nets- 2.0m- 3.0mm- 7H (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0011,Nets- 2.0m- 3.0mm- 7H (m) ,,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0012,Nets- 2.4m- 3.0mm- 7H (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0013,Nets- 2.4m- 3.0mm- 7H (m) ,,C-001,3,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+Net0014,Nets- Net general ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-014,,,,,,,,,,,,,no_image.png,standard
+P0001,Paint big,,C-001,1,1,1,1, No Tax, exclusive,SC-1-015,,,,,,,,,,,,,no_image.png,standard
+PPGL0001,PPGL BBL04 0.27mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+PPGL0002,PPGL BGL02 0.27mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+PPGL0003,PPGL BRL01 0.27mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+PPGL0004,PPGL BYL02 0.27mm,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+PPGL0005,PPGL. 0.27mm- Orange,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+PPGL0006,PPGL. 0.33mm Red,,C-001,2,1,1,1, No Tax, exclusive,SC-1-016,,,,,,,,,,,,,no_image.png,standard
+REB1001,RE. 14x14- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1002,RE. 16x16- 0.7mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1003,RE. 16x16.1.2mm - Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1004,RE. 20x20- 0.6mm Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1005,RE. 20x20- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1006,RE. 20x20- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1007,RE. 20x20- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1008,RE. 20x20- 1.8mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1009,RE. 20x40- 0.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1010,RE. 20x40- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1011,RE. 20x40- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1012,RE. 20x40- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1013,RE. 20x40- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1014,RE. 25x25- 0.6mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1015,RE. 25x25- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1016,RE. 25x25- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1017,RE. 25x25- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1018,RE. 25x50- 0.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1019,RE. 25x50- 0.8mm- Black`,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1020,RE. 25x50- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1021,RE. 25x50- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1022,RE. 25x50- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1023,RE. 30x30- 0.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1024,RE. 30x30- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1025,RE. 30x30- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1026,RE. 30x30- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1027,RE. 30x30- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1028,RE. 30x60- 0.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1029,RE. 30x60- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1030,RE. 30x60- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1031,RE. 30x60- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1032,RE. 30x60- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1033,RE. 30x60- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1034,RE. 40x40- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1035,RE. 40x40- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1036,RE. 40x40- 1.1mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1037,RE. 40x40- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1038,RE. 40x40- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1039,RE. 40x40- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1040,RE. 40x80- 0.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1041,RE. 40x80- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1042,RE. 40x80- 1.1mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1043,RE. 40x80- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1044,RE. 40x80- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1045,RE. 40x80- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1046,RE. 40x80- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1047,RE. 50x100- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1048,RE. 50x100- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1049,RE. 50x100- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1050,RE. 50x100- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1051,RE. 50x100- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1052,RE. 50x150- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1053,RE. 50x150- 2mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1054,RE. 50x150- 3mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1055,RE. 50x50- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1056,RE. 50x50- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1057,RE. 50x50- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1058,RE. 50x50- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1059,RE. 50x50- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1060,RE. 50x50- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1061,RE. 60x60- 1.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1062,RE. 60x60- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1063,RE. 60x60- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1064,RE. 60x60- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1065,RE. 75x75- 1.0mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1066,RE. 75x75- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1067,RE. 75x75- 1.8mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1068,RE. 75x75- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1069,RE. 90x90- 1.2mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1070,RE. 90x90- 1.5mm- Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1071,RE. 90x90- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1072,RE. 90x90- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1073,RE. 100x100- 1.5mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1074,RE. 100x100- 1.8mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1075,RE. 100x100- 2.5mm Black ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1076,RE. 100x100- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1077,RE. 100x100- 3.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1078,RE. 100x200- 3.0mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1079,RE. 100x200- 4.0mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1080,RE. 100x200- 8.0mm Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1081,RE. 120x120- 8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1082,RE. 125x125- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1083,RE. 125x125- 3mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1084,RE. 150x150- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1085,RE. 150X150- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1086,RE. 150x150-4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REB1087,RE. 150x150-4.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1001,RE. 16x16- 0.9mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1002,RE. 20x20- 0.6mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1003,RE. 20x20- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1004,RE. 20x20- 1.0mm White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1005,RE. 20x20- 1.5mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1006,RE. 20x20- 1.8mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1007,RE. 20x40- 0.6mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1008,RE. 20x40- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1009,RE. 20x40- 1.0mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1010,RE. 20x40- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1011,RE. 20x40- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1012,RE. 25x25- 0.6mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1013,RE. 25x25- 0.8mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1014,RE. 25x25- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1015,RE. 25x25- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1016,RE. 25x25- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1017,RE. 25x50- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1018,RE. 25x50- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1019,RE. 25x50- 1.5mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1020,RE. 25x50- 1.8mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1021,RE. 30x30- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1022,RE. 30x30- 1.0mm- Whitte ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1023,RE. 30x30- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1024,RE. 30x30- 2.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1025,RE. 30x60- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1026,RE. 30x60- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1027,RE. 30x60- 1.5mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1028,RE. 30x60- 1.8mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1029,RE. 30x60- 2.5mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1030,RE. 40x40- 0.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1031,RE. 40x40- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1032,RE. 40x40- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1033,RE. 40x40- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1034,RE. 40x40- 2.5mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1035,RE. 40x80- 0.8mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1036,RE. 40x80- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1037,RE. 40x80- 1.5mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1038,RE. 40x80- 2.0mm- 4.6m Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1039,RE. 40x80- 2.0mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1040,RE. 40x80- 2.0mm-1m Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1041,RE. 40x80- 2.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1042,RE. 40x80- 2.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1043,RE. 50x100- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1044,RE. 50x100- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1045,RE. 50x100- 2.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1046,RE. 50x100- 2.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1047,RE. 50x100- 3.1mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1048,RE. 50x150- 3.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1049,RE. 50x30- 2.5mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1050,RE. 50x50- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1051,RE. 50x50- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1052,RE. 50x50- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1053,RE. 50x50- 2.1mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1054,RE. 50x50- 2.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1055,RE. 60x60- 1.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1056,RE. 60x60- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1057,RE. 60x60- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1058,RE. 60x60- 2.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1059,RE. 75x75- 1.0mm-white,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1060,RE. 75x75- 1.5mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1061,RE. 75x75- 1.8mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1062,RE. 75x75- 2.5mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1063,RE. 90x90- 1.5mm- white ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1064,RE. 90x90- 2.0mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1065,RE. 100x100- 1.5mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1066,RE. 100x100- 1.8mm- White ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1067,RE. 100x100- 2.5mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1068,RE. 100x100- 3.0mm- White,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1069,RE. 100x100- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1070,RE. 100x60- 2.0mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1071,RE. 100x60- 2.6mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1072,RE. 120x120- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1073,RE. 120x80- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1074,RE. 140x80- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1075,RE. 150x100- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1076,RE. 150x150- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1077,RE. 200x100- 3.2mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1078,RE. 200x100- 4.0mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1079,RE. 200x150- 4.0mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+REW1080,RE. 200x200- 4mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-017,,,,,,,,,,,,,no_image.png,standard
+RPB1001,RP. 21mm- 2.7mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1002,RP. 27mm- 2.7mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1003,RP. 34.2mm- 3.38mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1004,RP. 34mm- 3.5mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1005,RP. 42mm- 3.6mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1006,RP. 49mm- 3.2mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1007,RP. 49mm- 3.6mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1008,RP. 49mm- 5.0mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1009,RP. 60mm- 3.5mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1010,RP. 60mm- 4mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1011,RP. 60mm- 5.0mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1012,RP. 75mm-  3.5mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1013,RP. 75mm- 4.0mm-- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1014,RP. 75mm- 5.0mm - Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1015,RP. 75mm- 5.2mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1016,RP. 76mm- 4mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1017,RP. 90mm- 4.0mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1018,RP. 90mm- 5.5mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1019,RP. 114.3mm- 4.5mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1020,RP. 114mm- 4.5mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1021,RP. 114mm- 5.5mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1022,RP. 114mm- 6.0mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1023,RP. 140mm- 6.0mm - Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1024,RP. 140mm- 6.5mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1025,RP. 165mm- 7.5mm- Seamless ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1026,RP. 165mm- 7mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB1027,RP. 220mm- 8.0mm- Seamless,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2001,RP. 165mm- 4mm SeAh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2002,RP. 16mm- 0.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2003,RP. 21mm- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2004,RP. 21mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2005,RP. 21mm- 1mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2006,RP. 21mm- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2007,RP. 21mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2008,RP. 220mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2009,RP. 220mm- 5.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2010,RP. 220mm- 6.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2011,RP. 27mm- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2012,RP. 27mm- 1.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2013,RP. 27mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2014,RP. 27mm- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2015,RP. 27mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2016,RP. 27mm- 2.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2017,RP. 34mm- 0.9mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2018,RP. 34mm- 1.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2019,RP. 34mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2020,RP. 34mm- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2021,RP. 34mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2022,RP. 34mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2023,RP. 34mm- 3.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2024,RP. 42mm- 0.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2025,RP. 42mm- 0.9mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2026,RP. 42mm- 1.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2027,RP. 42mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2028,RP. 42mm- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2029,RP. 42mm- 2.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2030,RP. 42mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2031,RP. 49mm- 1.2mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2032,RP. 49mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2033,RP. 49mm- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2034,RP. 49mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2035,RP. 49mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2036,RP. 49mm- 3.2mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2037,RP. 49mm- 3.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2038,RP. 49mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2039,RP. 60mm- 1.2mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2040,RP. 60mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2041,RP. 60mm- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2042,RP. 60mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2043,RP. 60mm- 2.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2044,RP. 60mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2045,RP. 60mm- 3.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2046,RP. 60mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2047,RP. 610mm- 9.27mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2048,RP. 610mm- 9.53mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2049,RP. 75mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2050,RP. 75mm- 1.8mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2051,RP. 75mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2052,RP. 75mm- 3.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2053,RP. 75mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2054,RP. 75mm- 5.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2055,RP. 90mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2056,RP. 90mm- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2057,RP. 90mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2058,RP. 90mm- 3.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2059,RP. 90mm- 3mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2060,RP. 90mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2061,RP. 90mm- 5.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2062,RP. 90mm- 5.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2063,RP.114mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2064,RP. 114mm- 1.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2065,RP. 114mm- 2.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2066,RP. 114mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2067,RP. 114mm- 3.2mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2068,RP. 114mm- 3.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2069,RP. 114mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2070,RP. 140mm- 3.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2071,RP. 140mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2072,RP. 140mm- 7.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2073,RP. 165mm- 2.5mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2074,RP. 165mm- 4.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2075,RP. 165mm- 4.6mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2076,RP. 165mm- 5.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2077,RP. 165mm- 6.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2078,RP. 165mm- 7.0mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2079,RP. 325mm- 6m- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2080,RP. 380mm- 10mm- 12m- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2081,RP. 406mm- 7.92mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPB2082,RP. 406mm- 9.52mm- Black,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1001,RP. 21mm- 2.75mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1002,RP. 27mm- 2.75mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1003,RP. 27mm- 3.2mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1004,RP. 34mm- 2.6mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1005,RP. 34mm- 3.2mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1006,RP. 42mm- 3.25mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1007,RP. 42mm- 3.6mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1008,Rp. 42mm- 4.0mm HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1009,RP. 49mm- 3.25mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1010,RP. 49mm- 3.2mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1011,RP. 49mm- 3.6mm- Hot-Dip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1012,RP. 49mm- 4mm- Hot-Dip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1013,RP. 60mm- 3.6mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1014,RP. 60mm- 3.75mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1015,RP. 60mm- 3mm HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1016,RP. 75mm- 3.6mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1017,RP. 90mm- 3.0mm HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1018,RP. 90mm- 3.6mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1019,RP. 90mm- 4.0mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1020,RP. 90mm- 5mm- Hot-Dip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1021,RP. 114mm- 3.6mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1022,RP. 114mm- 3mm HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1023,RP. 114mm- 4.0mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1024,RP. 114mm- 4.5mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1025,RP. 114mm- 5.4mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1026,RP. 114mm- 6.0mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1027,RP. 140mm- 4mm HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1028,RP. 140mm- 5.56mm- Hot-Dip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1029,RP. 140mm- 5mm HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1030,RP. 165mm- 4.0mm-HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1031,RP. 165mm- 5mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1032,RP. 165mm- 7.1mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1033,RP. 220mm- 4mm HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1034,RP. 220mm- 5.0mm- HotDip ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW1035,RP. 273mm- 6.35mm- HotDip,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2001,RP. 21mm- 0.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2002,RP. 21mm- 1.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2003,RP. 21mm- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2004,RP. 21mm- 2.1mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2005,RP. 21mm- 2.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2006,RP. 27mm- 1.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2007,RP. 27mm- 1.2mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2008,RP. 27mm- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2009,RP. 27mm- 2.1mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2010,RP. 27mm- 2.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2011,RP. 27mm-1.8mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2012,RP. 34mm- 1.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2013,RP. 34mm- 1.2mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2014,RP. 34mm- 1.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2015,RP. 34mm- 1.9mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2016,RP. 34mm- 2.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2017,RP. 34mm- 3.2mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2018,RP. 42mm- 0.9mm- wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2019,RP. 42mm- 1.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2020,RP. 42mm- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2021,RP. 42mm- 2.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2022,RP. 42mm- 2.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2023,RP. 42mm- 2.5mm-4.6m- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2024,RP. 49mm- 1.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2025,RP. 49mm- 1.2mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2026,RP. 49mm- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2027,RP. 49mm- 1.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2028,RP. 49mm- 2.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2029,RP. 49mm- 3.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2030,RP. 60mm- 1.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2031,RP. 60mm- 1.2mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2032,RP. 60mm- 1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2033,RP. 60mm- 2.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2034,RP. 60mm- 2.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2035,RP. 60mm- 3.0mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2036,RP. 60mm- 3.6mm- wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2037,RP. 75mm- 1.5mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2038,RP. 75mm- 2.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2039,RP. 75mm- 2.mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2040,RP. 75mm- 3.6mm- wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2041,RP. 75mm- 3mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2042,RP. 90mm- 1.5mm Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2043,RP. 90mm- 1.8mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2044,RP. 90mm- 2.6mm- Wh,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2045,RP. 90mm- 3.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2046,RP. 90mm- 3.6mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2047,RP. 114mm- 2.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2048,RP. 114mm-1.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2049,RP. 140mm- 3mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2050,RP. 140mm- 5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2051,RP. 165mm- 5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2052,RP. 220mm- 4.5mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RPW2053,RP. 220mm- 5.0mm- Wh ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-019,,,,,,,,,,,,,no_image.png,standard
+RS0001,RS. 10mm- 10m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0002,RS. 12mm- 12m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0003,RS. 12mm- 12m- SD,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0004,RS. 12mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0005,RS. 14mm- 12m  ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0006,RS. 14mm- 6m  ???,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0007,RS. 16mm- 12m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0008,RS. 16mm- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0009,RS. 18mm- 12m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0010,RS. 18mm- 6m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0011,RS. 20mm- 12m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0012,RS. 20mm- 6m ???,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0013,RS. 22mm- 6m ???,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0014,RS. 25mm- 6m ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0015,RS. 28mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0016,RS. 30mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0017,RS. 32mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0018,RS. 35mm- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0019,RS. 40mm- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0020,RS. 45mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0021,RS. 50mm- 6m ???,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0022,RS. 60mm- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0023,RS. 65mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0024,RS. 6mm- 10m- 1.1kg ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0025,RS. 6mm- 10m- 1.9kg ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0026,RS. 70mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0027,RS. 75mm- 6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0028,RS. 80mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0029,RS. 8mm- 10m- 3.4Kg ??? ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0030,RS. 90mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RS0031,RS. 100mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-018,,,,,,,,,,,,,no_image.png,standard
+RW0001,RW. 105x57x8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-020,,,,,,,,,,,,,no_image.png,standard
+RW0002,RW. 107x50-  8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-020,,,,,,,,,,,,,no_image.png,standard
+RW0003,RW. 25x50- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-020,,,,,,,,,,,,,no_image.png,standard
+RW0004,RW. 32x65- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-020,,,,,,,,,,,,,no_image.png,standard
+SS0001,SS. 0.4mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0002,SS. 0.5mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0003,SS. 0.6mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0004,SS. 0.7mm- 1.22x2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0005,SS. 0.7mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0006,SS. 0.8mm- 1.25 x 2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0007,SS. 0.8mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0008,SS. 0.9mm- 1.25 x 2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0009,SS. 0.9mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0010,SS. 1.0mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0011,SS. 1.1mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0012,SS. 1.2mm- 1.25x2.5m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0013,SS. 1.2mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0014,SS. 1.5mm- 1.25 x 2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0015,SS. 1.5mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0016,SS. 1.8 mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0017,SS. 1.8mm- 1.25x2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0018,SS. 1.8mm- 1x3m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0019,SS. 1.8mm- 1x4.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0020,SS. 10mm- 1.50x6.0m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0021,SS. 10mm- 1.5mx2.68m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0022,SS. 10mm- 1.5mx7.1m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0023,SS. 10mm- 1.5mx8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0024,SS. 10mm- 1.5x0.83m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0025,SS. 10mm- 1.5x2.47m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0026,SS. 10mm- 1.5x3.3m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0027,SS. 10mm- 1.5x7.88m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0028,SS. 12mm- 0.28x4.88m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0029,SS. 12mm- 0.28x8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0030,SS. 12mm- 1.22x0.74m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0031,SS. 12mm- 1.22x2.44m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0032,SS. 12mm- 1.5mx0.62m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0033,SS. 12mm- 1.5mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0034,SS. 12mm- 1.5mx8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0035,SS. 12mm- 1.5x1.47m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0036,SS. 12mm- 1.5x2.07m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0037,SS. 12mm- 1.5x4.7m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0038,SS. 12mm- 1.5x5.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0039,SS. 12mm- 1.5x7.1m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0040,SS. 13mm- 1.5x8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0041,SS. 14mm- 1.5mx6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0042,SS. 14mm- 1.5x2.8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0043,SS. 14mm- 1.5x5.86m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0044,SS. 14mm- 1.5x5.8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0045,SS. 14mm- 1.5x8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0046,SS. 14mm- 2mx6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0047,SS. 15mm- 2mX6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0048,SS. 16mm- 1.5mx6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0049,SS. 16mm- 1.5x8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0050,SS. 16mm- 1.8x2.4m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0051,SS. 16mm- 1.8x3.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0052,SS. 16mm- 2mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0053,SS. 16mm- 2x7.2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0054,SS. 17mm- 2mX6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0055,SS. 18mm- 2x6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0056,SS. 18mm- 2x7.2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0057,SS. 19mm- 2mX6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0058,SS. 2.0mm- 1.25X2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0059,SS. 2.0mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0060,SS. 2.3mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0061,SS. 2.5mm- 1.25mx2.5m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0062,SS. 2.5mm- 1mx2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0063,SS. 2.8mm- 1.25mx2.5m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0064,SS. 2.8mm- 1x2m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0065,SS. 20mm- 1.5mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0066,SS. 20mm- 2mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0067,SS. 22mm- 2x6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0068,SS. 25mm- 1.5mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0069,SS. 25mm- 2mx6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0070,SS. 3.0mm- 1.50x6.0m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0071,SS. 30mm- 2mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0072,SS. 4.0mm- 1.50x6.0m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0073,SS. 40mm- 2x6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0074,SS. 4mm- 1.5x3.7m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0075,SS. 5.0mm- 1.50x6.0m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0076,SS. 50mm- 2mx6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0077,SS. 5mm- 1.25x6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0078,SS. 5mm- 1.5x2.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0079,SS. 5mm- 1.5x7m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0080,SS. 5mm- 1x7m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0081,SS. 6.0mm- 1.50x6.0m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0082,SS. 6mm- 0.1x0.1m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0083,SS. 6mm- 1.22x2.44m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0084,SS. 6mm- 1.5x2.4m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0085,SS. 6mm- 1.5x4.5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0086,SS. 6mm- 1.5x4.8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0087,SS. 6mm- 1.5x7m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0088,SS. 6mm- 1x2m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0089,SS. 6mm- 1x6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0090,SS. 8.0mm- 1.50x6.0m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0091,SS. 8mm- 0.6mx5m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0092,SS. 8mm- 1.22x2.44m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0093,SS. 8mm- 1.2x6m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0094,SS. 8mm- 1.5mx12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0095,SS. 8mm- 1.5mx7.9m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0096,SS. 8mm- 1.5x7.88m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0097,SS. 8mm- 1.5x7.8m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0098,SS. 8mm- 1.5x8.06m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-021 ,,,,,,,,,,,,,no_image.png,standard
+SS0099,SS. 2.0mm-1.22x2.44m- Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0100,SS. 2.0mm-1mx2m- Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0101,SS. 2.0mm-1x2.44m- Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0102,SS. 3.0mm (3.1mx1.46m) Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0103,SS. 3.0mm-1.22x2.44m- Chequer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0104,SS. 3mm- 1.25x6m- Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0105,SS. 3mm- 1.5mx6m - Chequer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0106,SS. 4mm- 1.5mx6m- Chequer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0107,SS. 4mm- 1.5x3.6m- Chequer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0108,SS. 5.0mm- 1.5mx6m- Chequer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+SS0109,SS. 6mm- 1.5mx6m- Chequer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-004,,,,,,,,,,,,,no_image.png,standard
+U0001,U. 50mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0002,U. 60mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0003,U. 80mm- China,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0004,U. 80mm- Mid,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0005,U. 80mm- Thin,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0006,U. 100mm- China ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0007,U. 100mm- VN,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0008,U. 120mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0009,U. 120mm- China,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0010,U. 125mm- Thai,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0011,U. 125mm- Thai 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0012,U. 140mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0013,U. 150mm- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0014,U. 150mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0015,U. 160mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0016,U. 180mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0017,U. 200mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0018,U. 200mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0019,U. 200mm- China ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0020,U. 250mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+U0021,U. 250mm- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-003,,,,,,,,,,,,,no_image.png,standard
+V0001,V. 25mm- 2mm Thin,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0002,V. 25mm- 3mm Thick,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0003,V. 30mm- 2mm Thin ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0004,V. 30mm- 3mm Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0005,V. 40mm- 2mm Thin,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0006,V. 40mm- 3mm Mid,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0007,V. 40mm- 3mm Mid (V),,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0008,V. 40mm- 4mm Thick,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0009,V. 40mm- 4mm Thick (v),,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0010,V. 50mm- 23Kg,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0011,V. 50mm- 3mm Thin,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0012,V. 50mm- 4mm Mid ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0013,V. 50mm- 5mm Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0014,V. 60mm- 4mm-V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0015,V. 60mm- 5mm Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0016,V. 60mm- 6mm. VT ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0017,V. 70mm- 5mm- Thick ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0018,V. 70mm- 6mm- V ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0019,V. 75mm- 5mm- 31kg ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0020,V. 75mm- 6mm ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0021,V. 75mm- 6mm- Thick,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0022,V. 75mm- 8mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0023,V. 90mm- 7mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0024,V. 100mm- 10mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0025,V. 100mm- 7mm,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0026,V. 120mm- 10mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0027,V. 125mm- 10mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0028,V. 130mm- 10mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0029,V. 140mm- 10mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0030,V. 150mm- 12mm 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0031,V. 150mm- 15mm- 12m ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0032,V. 150mm- 15mm- 6m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0033,V. 175mm- 15mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+V0034,V. 200mm- 20mm- 12m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-023,,,,,,,,,,,,,no_image.png,standard
+VN0001,VN. 10mm- (3.6 - 4Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0002,VN. 10mm- HVUC,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0003,VN. 10mm- HVUC (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0004,VN. 10mm- IZG ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0005,VN. 10mm- IZG (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0006,VN. 10mm- Small ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0007,VN. 10mm- Small (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0008,VN. 10mm- T. I ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0009,VN. 10mm- T. T ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0010,VN. 10mm- T.O ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0011,VN. 10mm- T.O (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0012,VN. 10mm- TH,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0013,VN. 10mm- TH (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0014,VN. 12mm- HVUC ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0015,VN. 12mm- HVUC (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0016,VN. 12mm- IZG ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0017,VN. 12mm- IZG (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0018,VN. 12mm- T. I ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0019,VN. 12mm- T. T,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0020,VN. 12mm- T.O ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0021,VN. 12mm- T.O (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0022,VN. 12mm- TH,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0023,VN. 12mm- TH (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0024,VN. 14mm- HVUC,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0025,VN. 14mm- HVUC (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0026,VN. 14mm- T. I ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0027,VN. 14mm- T.O,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0028,VN. 14mm- T.O (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0029,VN. 14mm. IZG ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0030,VN. 14mm. IZG (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0031,VN. 14mm. TH ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0032,VN. 14mm. TH (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0033,VN. 16mm- HVUC ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0034,VN. 16mm- HVUC (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0035,VN. 16mm- IZG,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0036,VN. 16mm- IZG (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0037,VN. 16mm- T. I ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0038,VN. 16mm- T.O ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0039,VN. 16mm- T.O (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0040,VN. 16mm- TH,,C-001,1,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+VN0041,VN. 16mm- TH (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-006,,,,,,,,,,,,,no_image.png,standard
+WI0001,Wire-1.2mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0002,Wire-1mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0003,Wire-2.5mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0004,Wire-2mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0005,Wire-3mm- Black,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0006,Wire-3mm- Black- Burned,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0007,Wire-3mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0008,Wire-4mm- Black ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0009,Wire-4mm- Black- Burned ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0010,Wire-4mm- White,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0011,Wire-5mm- Black ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0012,Wire-5mm- Black- Burned ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0013,Wire-5mm- White ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0014,Wire-Tie Wire (Kg) Small,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0015,Wire-Tie Wire 1mm (Pcs) Big ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WI0016,Wire 1.5mm white,,C-001,2,1,1,1, No Tax, exclusive,SC-1-022,,,,,,,,,,,,,no_image.png,standard
+WR0001,WR. 10.7mm- (PC Wire) (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0002,WR. 10mm- China (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0003,WR. 10mm- pom  (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0004,WR. 6.5mm- China (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0005,WR. 6mm- China (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0006,WR. 6mm- Pom (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0007,WR. 7.1mm- (PC Wire) (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0008,WR. 8mm- China (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0009,WR. 8mm- Pom (Kg),,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+WR0010,WR. 9mm- (PC Wire) (Kg) ,,C-001,2,1,1,1, No Tax, exclusive,SC-1-024,,,,,,,,,,,,,no_image.png,standard
+ZN0001,Zinc- 3.5c Prom lat,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0002,Zinc-2.0m- Blue ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0003,Zinc-2.0m- Red ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0004,Zinc-2.0m- White- Big,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0005,Zinc-2.0m- White- Small ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0006,Zinc-2.4m- Blue,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0007,Zinc-2.4m- Chor,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0008,Zinc-2.4m- Red,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0009,Zinc-2.4m- White small-Khmer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0010,Zinc-2.4m- White- Big ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0011,Zinc-2.4m- White- Small,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0012,Zinc-2.4m-White-ple Big (,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0013,Zinc-3.0m- Blue ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0014,Zinc-3.0m- Red,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0015,Zinc-3.0m- White smal- Khmer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0016,Zinc-3.0m- White- Big ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0017,Zinc-3.0m- White- Small ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0018,Zinc-3.0mm- White Big-khmer ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0019,Zinc-3.6m- Blue,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0020,Zinc-3.6m- Red ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0021,Zinc-3.6m- White- Small,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0022,Zinc-3.6m-white small-Khmer,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0023,Zinc -3m yellow (VN),,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0024,Zinc -3m- 3c yellow ,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0025,Zinc. 0.33mm Red (m),,C-001,3,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0026,Zinc. Plastic 2.4m- 6c,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0027,Zinc. Prom 3.5c- 1.35m- Blue,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0028,Zinc. Prom 3.5c- 4.2m- Blue,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard
+ZN0029,Zn. 3.5c Yello korng 2.26m,,C-001,1,1,1,1, No Tax, exclusive,SC-1-025,,,,,,,,,,,,,no_image.png,standard

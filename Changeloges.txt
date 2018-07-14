@@ -1,0 +1,322 @@
+Update RC3.0.2.8 (20th July 2016) By Nak
+
++ Fixed Convert issue
+
+Update RC3.0.2.8 (19th July 2016) By nak
+
++ Change import and export location
+
+Update RC3.0.2.7 (18th July 2016) By Nak
+
++ Add Group Permission
++ Add View kitchen
++ Add View Complete
++ Add View Bill
+
+
+Update RC3.0.2.6 (2nd April 2016)
+
++ Added purchase return
++ Added expense categories
++ Added Authorize.net payment gateway (POS)
++ Added supplier input to quotations
++ Added Arabic language
+* Fixed AVCO wrong calculation
+* Fixed reports for user permissions
+* Improved for formatDecimal function in javascript
++ Added return purchase reference prefix in settings
+* Fixed edit purchase issue
+* Changed returns page to modal
+* Improved view bill screen
++ Added expenses report
++ Added new customization fields for payment report
++ Added print barcode & return purchase to groups permissions
++ Added option to view sales, purchase and payment from reports
+* Updated CI to 3.0.6
+
+Update 3.0.2.5 (22nd February 2016)
+
++ Added option to view customer/supplier details from ordering pages (add sale/quote/pos sales/purchase)
++ Added option to view product details by clicking the products name in order list (add/edit of sales/quotes/purchases/transfer)
+* Fixed quantity sync on edit sale
++ Added deposit note view
++ Added backup database with cron and delete older than 30 days
+* Changed sidebar width (it's 250px fixed width now)
+* Added some missing language lines
+* Improved product expiry alerts
+* Removed 2nd class attribute from some tags
+
+Update 3.0.2.4 (15th February 2016)
+* Update to CI 3.0.4
++ Added option to add deposit (advance payments) for customers
++ Added new deposit payment type
++ Added supplier part number field to products
++ Added promotion feature for products
++ Added new group permission for bulk actions as owners
++ Added purchase term to purchases
++ Added Vietnamese and German languages
+* Improved print barcode/label feature (added new templates and continuous feed change to have width, height and orientation of the labels)
+* Fixed paid by gift card balance issue on pos
+* Fixed quote to purchase issue when the quote has combo item
+* Fixed all known issues and cron job
+
+Update 3.0.2.3 (23th January 2016)
++ Added new item order for POS (Default/Category)
++ Added after sale page to POS  (option to redirect to pos/receipt)
+* Fixed product variants barcode issue (changed default symbology from code39 to code128)
+
+Update 3.0.2.2 (22th January 2016) --
++ Added Thai Language
++ Added option to enable/disable discount feature for users
++ Added option in settings to remove/not remove expired products with cron job
++ Added option to delete the product gallery images 
+* improved partial receiving of purchase order 
+* Fixed missing language lines for email subjects
+* Fixed group permission for sales report
+* Fixed pdf export for other languages
+* Fixed view bill page for POS
+* Added default expiry date for gift cards (2 years)
+* Improved return sale calculations
+
+Update 3.0.2.1 (16th January 2016)
+* Improved the print barcode/label styles
+  + 30 per sheet (2.625" x 1")
+  + 20 per sheet (4" x 1")
+  + 14 per sheet (4" x 1.33")
+  + 10 per sheet (4" x 2")
+  + Continuous feed (1.378" x 0.984")
+* Display VAT No on view files
+
+Update 3.0.2.0 (7th January 2016)
+* Updated CI to 3.0.3
++ Added option to combine sales/quotes/purchases/transfers to single pdf to download
+* Improved barcode/label printing 
++ Added Partial purchase receiving on edit purchase
++ Updated users to have view/edit rights and don't select warehouse and biller to grant access to all
++ Added print buttons to the modal views
++ Added prompt if no payment added upon submitting the sale (POS)
+* Fixed customers, suppliers and staff reports customization issues
++ Added adjustments permission in group permissions
++ Added option to display currency symbol
++ Added option to skip customer/supplier company by - (dash)
+* Fixed all known/reported issues
+
+Update 3.0.1.19 to 3.0.1.21 (16th October 2015)
+* Fixed quick links for users as per permissions
+* Fixed edit sale with combo items issue
++ Allowed users to add sale/purchase even if they don't have permission to see customers/suppliers
+* Fixed today's profit link on pos
+* Fixed sell gift card price issue
+* Fixed product variant on return sale
+* Fixed edit/delete sales issue
+
+Update 3.0.1.18 (7th October 2015)
++ Added option to view and print gift card
++ Added option to display all or only available warehouse products in settings
++ Added option to get the day profit by clicking the date on daily sales report
+* Updated the product variants barcode to fix the space issue in search
+* Fixed order tax calculation issue in pos
+* Fixed grand total calculation issue with default order tax
+* Improved adjust quantity method
+
+Update 3.0.1.17
+* Fixed decimal issue what was caused due to 3.0.1.16
+
+Update 3.0.1.16
+* Added quantity column in product list export
+* Fixed email templates save issue
+* Fixed opened/suspended bills modal pagination issue
+* Fixed return combo product quantity sync issue
+* Fixed sell gift card expiry issue from pos and add sale
+* Fixed admin permission to view reports
++ Added option to change quantity decimals
+* Updated products report
+
+Update 3.0.1.15
+* Fixed permission error of add payment on POS sales for staff
+* Fixed product transfers search issue (view product details page)
+* Fixed combo products quantity sync issue
+* Changed list products page for staff (now ERP will list all products)
+
+Update 3.0.1.14
+* Fixed virtual keyboard issue on edit order item modal for POS
+* Fixed product quantity calculation issue on transfers
++ Product cost will be updated with each add purchase (to purchase item cost)
+* Fixed combo item sale (was showing blank page)
+* Improve print single product barcode/label (0 quantity, system will 1 row)
+* Removed required for reference when adding sales/purchase/transfer by csv
+* Fixed adjust quantity issue
+
+Update 3.0.1.13 (4th September 2015)
+* Major Change: Modified the quantity synchronization method
+* Fixed edit quote biller issue
++ Added Today's Profit
+* Fixed customer selection issue on pos settings page
+* Fixed supplier selection issue on edit product page
+* Fixed purchase status issue (ordered was undefined)
++ Added links on model views (sales, purchases, quotes & transfers)
+* Fixed list POS sales search issue
+* Changed default sorting for quantity adjustments from product name asc to date desc
+* Fixed links for calendars on staff report
+* Updated the sale and quote detail views (discount column will only be visible if discount is applied to any product)
+* Correct the spelling for cron (please update your cron job url)
+* Fixed multiple transfers delete issue
+* Fixed tax calculation issue on add product
+* Updated the edit product page
++ Added sync quantity on list products page menu (to sync the quantity of selected products)
+* Updated top bar alert menu to drop down with quantity alerts and expiry alerts
++ Updated cron job to remove the stock for expired products
+* Updated customers report page (added quotes and return sales tabs)
+* Update single product barcode and label (desktop printing) pages
++ Add attach document option for sale, purchase, quote and transfer.
+
+Update 3.0.1.12 (11th August 2015)
+* Fixed 404 issue for customer and supplier reports on submitting the form
+* Improved the product based discount calculation
+
+Update 3.0.1.10 (9th August 2015)
+* Fixed expenses page issue
+* Fixed product name issue for printing with java applet. 
+* Fixed add transfer issue (the quantity was wrong due to no variant)
+* Fixed adjust quantity listing
++ Added option to format number for South Asian Countries (India, Pakistan etc)
++ Added new modal view for products, sales, quotes and purchases (you can click row to open modal view and actions menu view on separate page)
+* Improved payment amount issue for return sales (for . thousand separator)
+* Improved discount and tax calculation for sales, quotes, purchases and transfers
+* Displayed all warehouse products (service products was not displaying before)
+* Updated the View Bill page for POS modules
+* Increased the product name character limit on POS
+* Add few missing language lines
+* Fixed transfer created by name on view (it was showing user id)
+* Fixed paid amount on add sale (for . thousand separator)
+* Fixed POS setting default customer selection issue
+* Fixed single and multiple deliveries delete issue
++ Added permission check on the dashboard latest five 
+* Improved print style for transfer detail modal
+* Changed POS order item button to span to fix the width issue
+* Fixed transfer quantity issue
+* Improved change (balance) calculation (POS Module)
+* Fixed the status language issue
+* Fixed edit sale quantity issue
++ Added award points input to modify the award points (edit user/customer)
+
+Update 3.0.1.4 (10th July 2015)
+* Fixed search issues on list purchases, list quotations, list users, product expiry alerts, categories report and staff report
+* Fixed access denied issue for return sale (user groups with return sale permissions was getting access denied message)
+* Fixed close register issue
+* Fixed edit sale issue (we are sorry! if you have edited the sales, your stock will be wrong)
+* Change damage quantity to quantity adjustments (Now you can add/subtract the product quantity)
++ Improved register report
+
+Update 3.0.1.3
++ Add option to Add Sale by CSV 
++ Added option to change product tax rate (on add and edit sale, purchase, quotation and pos)
++ Added more rounding option on pos (now you can round to nearest 0.05, 0.50, integer and to next integer)
++ Added variants menu under settings to add frequently used variants for easy selection on add/edit product
++ Added categories report (will work same as products report but for all products grouped by category)
++ Updated the close register to save the expected (calculated by system) and submitted values by user (it was saving the submitted values only)
+* Fixed transfers listing issues for staff (system was listing all the transfers, now staff will see the transfer created by them)
+* Fixed add manual item issue on pos
+* Fixed product quantity issue on edit (formatting number for input value was causing the issue, it is plain now)
+* Fixed out of stock issue on sale for standard products with no variants
+* Fixed alert messages (Looks like you have forgot to define the html5_data attribute for the x column)
+
+Update 3.0.1.2
+* Fixed wrong tax and discount calculation after submitting the form (sales/purchases/pos/quotes/transfers).
+* Fixed product variant auto selection issue.
+* Fixed item discount issues in purchase.
+
+Update 3.0.1.1
++ Added expenses to Today's & Register sales
++ Add expense prefix and auto reference no
+* Fixed list products table issue
+* Fixed login captcha issue
+* Fixed Sync error after update from v2.3
++ Added serial number input for sales report
+* Fixed smtp email issue
++ Added custom fileds in product import by csv
+* Fixed error on damage product list
+
+Update 3.0.1
+* Added Award Point
+* Added Simple Expenses Module
+* Add Inventory Accounting (FIFO/LIFO/AVCO)
+* You can add your own themes or different view files
+* New user interface design to ease many tasks with RTL languages support.
+* Ability to add new user groups
+* Ability to add new customer groups
+* Custom module permissions for user groups
+* Added gift card features
+* Multiple delete option for inventories, products, quotations, sales and transfers.
+* Notifications Module
+* Email protocol options (mail, sendmail and smtp)
+* Multiple currencies (for front-end that will be added after this release)
+* Products Module
+  + Improved barcode feature and attached barcode symbology to product
+  + Improved barcode/label printing feature
+  + Duplicate product option
+  + Product racks/locations
+  + Product Image Gallery
+  + Ability to set the images/thumbnails size
+  + Ability to add watermark to product images
+  + Attach tax rate with product
+  + Tax method to add tax inclusive/exclusive to the price and cost
+  + Attach multiple supplier to product
+  + Option for product expiry date while purchasing the stock
+  + Option to add/edit product quantity on add/edit product page
+  + Product variants with quantity tacking
+* Users Module
+  + Assign users a warehouse and biller
+  + Own sales/quotations/purchases/transfers restrictions for users
+* Customers Module
+  + Option to select customer group (to manage different selling rates)
+  + Re-structured the module to add users to customer company (front-end that will be added after this release)
+  + You can add customer group in settings to assign different product price to customer.
+* Suppliers Module
+  + Re-structured the module to add users to supplier company (front-end that will be added after this release)
+* Sales Module
+  + New add/edit page design
+  + Ability to add manual product to order list
+  + Ability to sell gift cards
+  + Ability to get paid by gift cards
+  + Ability to edit the product price on sale page
+  + Instant discount (add percentage or fixed discount to order and/or any product)
+  + Warehouse code/name/address on invoice
+  + Return sales and issue refunds
+  + Record payments to sale (full/partial with any no of payments)
+  + Add payment terms (No of pending payment days before the sale marked as due)
+  + Sale status (pending/completed)
+  + Payment status (pending/due/partially paid/fully paid))
+  + Email invoices with payment buttons (Paypal and Skrill)
+* Reports Module
+  + Improved old reports
+  + Added product expiry alerts
+  + Added payments report
+  + Added profit and loss report
+  + Added customer report
+  + Added supplier report
+  + Added staff report
+  + Add register report
+* Settings Module
+  + Manage user groups and permissions
+  + Manage customer groups
+  + Manage currencies
+  + Added option to upload map for warehouses
+  + Added option to upload images for categories and sub categories
+  + Added email templates (set email message in WYSIWYG editor)
+  + Added option to add tax code
+* POS Module
+  + Add Item by Barcode scanner and code/name suggestion
+  + Ability to add manual product to order list
+  + Ability to sell gift cards
+  + Ability to edit the product price on sale page
+  + Instant discount (add percentage or fixed discount to order and/or any product)
+  + Rounding to nearest 0.05
+  + Option to add comment
+  + Record multiple payments to sale
+  + Payment Gateways (Paypal Pro and Stripe) for Credit Card Payment Processing
+  + Added Qz Printing Plug-in (Java Applet) to print and open cash drawer
+  + Added swipe credit card input
+  + Sell gift cards
+  + Pay by gift card
+  + Delete item restriction for staff

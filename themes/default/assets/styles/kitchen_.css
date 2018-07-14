@@ -1,0 +1,144 @@
+@import "helpers/font-awesome.min.css";
+@import "helpers/jquery-ui.css";
+
+.wrapper{
+    width: 100%;
+}
+.box{
+	box-shadow:0 1px 1px rgba(0, 0, 0, 0.05);
+	border:2px solid #ddd;
+	padding:5px;
+}
+.containers{
+    width:100%;
+    overflow-x:scroll;
+    white-space:nowrap;
+}
+.tables{
+	border:1px solid #eee;
+	text-align:center;
+	display:inline-block;
+	font-size:13px;
+	height:115px;
+	min-width:100px;
+	overflow:hidden;
+	padding:2px;
+	width:110px;
+	background:#C0C0C0;
+	white-space:normal;
+}
+.food{
+	background:#F0F0F0;
+    margin-left: 5px;
+	cursor:pointer;
+	text-align:center;
+	display:inline-block;
+	font-size:13px;
+	height:115px;
+	min-width:100px;
+	overflow:hidden;
+	padding:2px;
+	width:110px;
+	white-space:normal;
+}
+.food:hover{
+	background:#a6acaf;
+}
+.foods{
+	background:#5bc0de;
+	cursor:pointer;
+    margin-left: 5px;
+	text-align:center;
+	display:inline-block;
+	font-size:13px;
+	height:115px;
+	min-width:100px;
+	overflow:hidden;
+	padding:2px;
+	width:110px;
+	white-space:normal;
+}
+.foods:hover{
+	background:#31B0D5;
+}
+.img-thumbnail{
+	width:90%;
+	height:100px !important;
+    margin-top: 6px !important;
+	border-radius:15px;
+	padding:5px;
+}
+.clear{
+	color:#fff;
+	background:#d9534f;
+	padding:2px;
+	position:relative;
+	float:right;
+	margin-bottom:-24px;
+}
+.clear:hover{
+	background:#C9302C;
+}
+.qty{
+	position:relative;
+	float:left;
+	margin-top:-14px;
+	width:100%;
+}
+.add{
+    cursor: pointer;
+    color: #428bca;
+    font-size: 30px;
+	margin-left:10px;
+}
+.add:hover{
+    color:#2A6496;
+}
+.icon{
+	font-size:17px;
+}
+.colors th{
+	background-color:#428bca;
+	border-top:1px solid #357ebd;
+	color:#FFF;
+	text-align:center;
+	vertical-align: middle !important;
+}
+#addSearch, .modal-content, #add_item, .input-group-addon, .well-sm{
+	border-radius:0 !important;
+}
+#bootbox-modal{
+	margin-top:31px;
+}
+.modal-body{
+	background:#fff;
+	border-top:1px solid #eee;
+	border-left:1px solid #eee;
+	border-right:1px solid #eee;
+}
+.modal-footer{
+	background:#fff !important;
+	border-bottom:1px solid #eee !important;
+	border-left:1px solid #eee !important;
+	border-right:1px solid #eee !important;
+}
+.action{
+	margin-top:16%;
+}
+.dollor{
+	cursor:pointer;
+	background:#d9534f;
+	color:#fff;
+}
+.dollor:hover{
+	background:#C9302C;
+}
+.addplus{
+	cursor:pointer;
+	background:#428bca;
+	color:#fff;
+}
+.addplus:hover{
+	border-color:#269abc;
+	background:#3071A9;
+}

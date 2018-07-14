@@ -1,0 +1,2 @@
+Code,Name,Category Code,Unit,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6
+PR-00001,Test Import Product 00001,C4,Each,10,15,10, No Tax, exclusive, SC1,Red|Blue|Black|White,402,413,401,6,420,CF1,CF2,CF3,CF4,CF5,CF6

@@ -1,0 +1,4 @@
+tran_type,tran_no,tran_date,account_code,narrative,amount,reference_no,description,biller_id,created_by
+PURCHASES,0,3/16/2016,5430,Food & Drink,831936,J407,NA,0,
+SALES,0,3/16/2016,5430,Food & Drink,831936,J407,NA,0,
+SALES,0,3/16/2016,5430,Food & Drink,831936,J407,NA,0,

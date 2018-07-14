@@ -1,0 +1,187 @@
+@media print {
+    html, body, .container, #content,
+    .box-content, .col-lg-12, .table-responsive,
+    .table-responsive .table, .dataTable, .box, .row  { 
+	width: 100% !important; height: auto !important;  padding: 0 !important; margin: 0 !important; 
+	}
+	
+    body:before, body:after, .no-print,
+    #header, #sidebar-left, .sidebar-nav, .main-menu,
+    footer, .breadcrumb, .box-header, .box-header .fa, .box-icon, .alert, .introtext,
+    .table-responsive .row, .table-responsive .table th:first-child,
+    .table-responsive .table td:first-child, .table-responsive .table tfoot,
+    .buttons, .modal-open #content, .modal-body .close, .pagination, .close, .staff_note {
+        display: none;
+    }
+	
+	.barcode { width:100%; height:100%;}
+	.barcode3 { width:100%; height:100%;}
+	
+	
+}
+
+/*Please modify the styles below for barcode/label printing */
+.barcode { width: 100%; height: 100%; }
+.barcode_3 { width: 100%; height: 100%; }
+.barcode .item { display: block; overflow: hidden; text-align: center; border: 1px dotted #CCC; font-size: 12px; line-height: 14px; text-transform: uppercase; float: left; }
+.style50 { font-size: 10px; line-height: 12px; margin: 0 auto; display: block; text-align: center; border: 1px dotted #CCC; font-size: 12px; line-height: 14px; text-transform: uppercase; page-break-after:always; }
+.barcode .style30 { width: 2.625in; height: 1in; margin: 0 0.07in; padding-top: 0.05in; }
+.barcode .style30:nth-child(3n+1) {  margin-left: 0.1in; }
+.barcode .style20 { width: 4in; height: 1in; margin: 0 0.1in; padding-top: 0.05in; }
+.barcode .style14 { width: 4in; height: 1.33in; margin: 0 0.1in; padding-top: 0.1in; }
+.barcode .style10 { width: 178px; height: auto; font-size: 14px; }
+.barcode .style11 { width: 139px !important; height: auto; font-size: 14px; }
+
+.barcode .style90 { width: 143px !important; height: auto; font-size: 14px; }
+.barcode .style95 { width: 178px !important; height: auto; font-size: 14px; }
+
+.barcode .barcode_site, .barcode .barcode_name, .barcode .barcode_image, .barcode .variants { display: block; }
+.barcode .barcode_price, .barcode .barcode_unit, .barcode .barcode_category { display: inline-block; }
+.barcode .product_image { width: 0.8in; margin: 5px; }
+.barcode .style10 .product_image { width: 1in; }
+.barcode .style11 .product_image { width: 1in; }
+
+.barcode .style30 .product_image { width: 0.5in; float: left; margin: 5px; }
+.barcode .product_image img { max-width: 100%; }
+.style50 .product_image, .style40 .product_image { display: none; }
+.style50 .barcode_site, .style50 .barcode_name, .style50 .barcode_image, .style50 .barcode_price { display: block; }
+.barcode .barcode_image img, .style50 .barcode_image img { max-width: 100%; }
+.barcode .barcode_site { font-weight: bold; }
+.barcode .barcode_site, .barcode .barcode_name { font-size: 14px; }
+.barcode .style10 .barcode_site, .barcode .style10 .barcode_name { font-size: 10px; }
+.barcode .style11 .barcode_site, .barcode .style11 .barcode_name { font-size: 10px; }
+
+.my_barcodea { width: 8.25in; height: 11.6in; display: block; border: 1px solid #CCC; margin: 10px auto; padding: 0.1in 0 0 
+0.1in; page-break-after:always; }
+
+.barcodea4 { width: 8.25in; height: 11.6in; display: block; border: 1px solid #CCC; margin: 10px auto; padding: 0.1in 0 0 
+0.1in; page-break-after:always; }
+.barcodea4 .item { display: block; overflow: hidden; text-align: center; border: 1px dotted #CCC; font-size: 12px; line-height: 14px; text-transform: uppercase; float: left; }
+.barcodea4 .style40 { width: 1.799in; height: 1.003in; margin: 0 0.07in; padding-top: 0.05in; }
+.barcodea4 .style24 { width: 2.48in; height: 1.335in; margin-left: 0.079in; padding-top: 0.05in; }
+.barcodea4 .style18 { width: 2.5in; height: 1.835in; margin-left: 0.079in; padding-top: 0.05in; font-size: 13px; line-height: 20px; }
+.barcodea4 .style12 { width: 2.5in; height: 2.834in; margin-left: 0.079in; padding-top: 0.05in; font-size: 14px; line-height: 20px; }
+.barcodea4 .style8 { width: 35mm; height: 23mm; margin-left: 0.060in; padding-top: 0.05in; font-size: 14px; line-height: 20px; }
+.barcodea4 .barcode_site, .barcodea4 .barcode_name, .barcodea4 .barcode_image, .barcodea4 .variants { display: block; }
+.barcodea4 .barcode_price, .barcodea4 .barcode_unit, .barcodea4 .barcode_category { display: inline-block; }
+.barcodea4 .product_image { width: 0.8in; float: left; margin: 5px; }
+.barcodea4 .style12 .product_image { width: 100%; height:auto; max-height: 1.5in; display: block; }
+.barcodea4 .style12 .product_image img { max-width: 100%; max-height: 100%; }
+.barcodea4 .style8 .barcode_image img { max-width: 100%; max-height: 100%;margin-top:5px !important; }
+.barcodea4 .style8 .barcode_site{font-size:11px !important;line-height:12px; }
+.barcodea4 .style24 .barcode_site, .barcodea4 .style24 .barcode_name { font-size: 14px; }
+.barcodea4 .style18 .barcode_site, .barcodea4 .style18 .barcode_name { font-size: 14px; font-weight: bold; }
+.barcodea4 .style12 .barcode_site, .barcodea4 .style12 .barcode_name { font-size: 15px; font-weight: bold; }
+
+/* 65 per sheet a4 Barcode Styles */
+.barcode65 { width: 21.2cm; height: 29.7cm; display: block; border: 1px solid #CCC; margin: 0 auto; padding: 1cm; page-break-after:always; }
+.barcode65 .item { display: block; overflow: hidden; text-align: center; border: 1px dotted #CCC; font-size: 12px; line-height: 14px; text-transform: uppercase; float: left; }
+.barcode65 .style65 { width: 38.1mm; height: 21.2mm; padding-top: 0.02in}
+.barcode65 .item img { margin-top: 0 !important; width: 100%; height: 30px}
+
+/* End 65 per sheet a4 Barcode Styles */
+
+/* MAMAN Barcode Styles */
+.barcode111 {
+	width: 5.5cm;
+	height: 10cm;
+	display: block;
+	border: 1px solid #CCC;
+	margin: 0 auto;
+	page-break-after: always;
+}
+
+.barcode111 .item {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	border: 1px dotted #CCC;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+	float: left;
+}
+
+.barcode111 .style111 {
+	width: 5.5cm;
+	height: 10cm;
+	padding-top: 0.8cm;
+}
+
+.barcode111 .barcode_site, .barcode_biller {
+	font-size: 35px;
+}
+
+.barcode111 .barcode_site, .barcode_name, .barcode_price, .barcode_biller, .product_code {
+	font-weight: bold;
+	font-family: Times New Roman;
+}
+
+.barcode111 .item img {
+	margin-top: 0;
+	width: 279px;
+	height: 90px;
+}
+
+.barcode111 .col-sm-6, .barcode111 .col-xs-6, .barcode111 .col-sm-3, .barcode111 col-xs-3 {
+	height: 280px;
+}
+
+.barcode111 .barcode_name, .barcode_img, .product_code {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	font-size: 18px;
+}
+
+.barcode111 .barcode_img {
+	padding-top: 30px !important;
+}
+
+.barcode111 .rotate {
+	-moz-transform: translateX(-48%) translateY(-50%) rotate(90deg);
+	-webkit-transform: translateX(-48%) translateY(-50%) rotate(90deg);
+	transform: translateX(-48%) translateY(-50%) rotate(90deg);
+}
+
+/* End MAMAN Barcode Styles */
+
+.item img {
+	margin-top: 20px
+}
+.style16 {margin-top:0px}
+.barcode .style16 {width:50%; min-height:0px}
+.barcode .style6 {width:50% !important; min-height:0px}
+
+@media print {
+    .barcode111, .barcode111 .item {
+        border: none !important;
+    }
+	.barcode65 .item {border:none !important}
+
+	.barcode .item {
+		border: 1px dotted #CCC !important;
+	}
+    .barcodea4 { margin: 0; }
+    .barcode, .barcodea4, .barcodea4 .item, .style50, .div50 { border: none !important; }
+    .div50 { page-break-after:always; }
+	.barcodea4 .style8{
+		margin-bottom:5px !important; 
+	}
+	.print_cust{
+		padding-left:1% !important;
+		padding-right:1% !important;
+		margin-left:-2% !important;
+		
+	}
+	.print_cust_sub{
+		padding-left:1% !important;
+		padding-right:1% !important;
+		margin-left:-2% !important;
+	}
+
+	.barcode .style16{
+		width:50% !important;
+	}
+}
