@@ -2275,7 +2275,9 @@ class Accounts_model extends CI_Model
     public function getOldBalanceByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
         $this->db->select("sum(erp_sales.grand_total) as grand_total,
             (select sum(erp_payments.amount) from erp_payments where erp_payments.sale_id= erp_sales.id) as paid,
-            (select sum(erp_return_sales.grand_total) from erp_return_sales where erp_return_sales.sale_id= erp_sales.id) as return_sale")
+            (select sum(erp_payments.discount) from erp_payments where erp_payments.sale_id= erp_sales.id) as discount,
+            (select sum(erp_return_sales.grand_total) from erp_return_sales where erp_return_sales.sale_id= erp_sales.id) as return_sale,
+            ")
             ->from("sales")
             ->join("users","users.id=sales.saleman_by","LEFT");
 
