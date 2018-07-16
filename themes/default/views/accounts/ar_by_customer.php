@@ -196,15 +196,18 @@
 								$total_am2 = 0;
 								$total_pay_amoun2 = 0;
 								$total_return_amoun2 = 0;
+								$total_old_balance =0;
                             foreach($customers as $cus){ 
 								$items          = $this->accounts_model->getSaleByCustomerV2($cus->customer_id,$start_date2,$end_date2);
                                 $old_balance    = $this->accounts_model->getOldBalanceByCustomer($cus->customer_id,$start_date2,$end_date2);
 								if(is_array($items)){
 									$am = 0;
+									$old_balance=$old_balance[0]->grand_total -$old_balance[0]->paid-($old_balance[0]->return_sale+$old_balance[0]->discount);
+									$total_old_balance+=$old_balance;
 							?>
                             <tr class="success">
                                 <th class="th_parent" colspan="10"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
-                                <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance[0]->grand_total -$old_balance[0]->paid-($old_balance[0]->return_sale+$old_balance[0]->discount))):'';?></th>
+                                <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance)):'';?></th>
                             </tr>
 							
 							<?php
@@ -265,7 +268,7 @@
 									<td></td>
 									<td class="text-right"><?= $payy?></td>
 									<td  class="text-right"><?= $deposit?></td>
-									<td  class="text-right"><?=$pay->discount?></td>
+									<td  class="text-right"><?=$this->erp->formatMoney($pay->discount)?></td>
 									<td  class="text-right"><?php if($am<0){?>(<?=$this->erp->formatMoney(abs($am))?>) <?php }else{ echo $this->erp->formatMoney($am);}?></td>
 								</tr>
 								
@@ -328,7 +331,13 @@
 								}
 							}
 							?>
-							
+                            <?php if($start_date2){?>
+                            <tr class="foot">
+                                <td class="text-right" colspan="9"></td>
+                                <td class="text-right"></td>
+                                <td class="text-right"><b><?= $start_date2?$this->erp->formatMoney($total_old_balance):''?></b></td>
+                            </tr>
+                            <?php }?>
 							<tr class="foot">
 								<td class="text-right" colspan="5"><b>Grand Total</b></td>
 								<td class="text-right"><b><?=$this->erp->formatMoney($total_sale2)?></b></td>
