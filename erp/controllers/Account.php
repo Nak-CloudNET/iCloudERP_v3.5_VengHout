@@ -4990,7 +4990,6 @@ class Account extends MY_Controller
 		foreach($suppliers as $sup){
 			$supplierDatas = $this->accounts_model->ap_by_supplier($sup->start_date, $sup->end_date, $sup->supplier_id, $sup->balance, 'detail');
 			foreach($supplierDatas as $suppData){
-
 				$k = 0;
 				foreach($supplierDatas as $sppD) {
 					$supplierDatas[$k]->payments = $this->accounts_model->ap_by_supplier($sup->start_date, $sup->end_date, $sup->supplier_id, $sup->balance, 'payment', $sppD->id);;
