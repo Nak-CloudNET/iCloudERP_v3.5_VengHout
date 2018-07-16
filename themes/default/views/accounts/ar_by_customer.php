@@ -197,12 +197,14 @@
 								$total_pay_amoun2 = 0;
 								$total_return_amoun2 = 0;
                             foreach($customers as $cus){ 
-								$items = $this->accounts_model->getSaleByCustomerV2($cus->customer_id);
+								$items          = $this->accounts_model->getSaleByCustomerV2($cus->customer_id,$start_date2,$end_date2);
+                                $old_balance    = $this->accounts_model->getOldBalanceByCustomer($cus->customer_id,$start_date2,$end_date2);
 								if(is_array($items)){
 									$am = 0;
 							?>
                             <tr class="success">
-                                <th class="th_parent" colspan="11"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
+                                <th class="th_parent" colspan="10"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
+                                <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance[0]->grand_total -$old_balance[0]->paid-$old_balance[0]->return_sale)):'';?></th>
                             </tr>
 							
 							<?php
