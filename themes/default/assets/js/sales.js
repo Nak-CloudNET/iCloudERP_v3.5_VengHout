@@ -2309,14 +2309,19 @@ function loadItems() {
 				}
 			}
 			if (item_promotion == 1 && (current_date >= start_date && current_date <= end_date)){
-				tr_html += '<td class="text-right"><input class="form-control input-sm text-right rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatDecimal(real_unit_price) + '</span></td>';
+				tr_html += '<td class="text-right"><input class="form-control input-sm text-right rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + formatDecimal(item.row.cost) + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatDecimal(real_unit_price) + '</span></td>';
 			}else{
 				if (owner || admin || sale_price) {
-					tr_html += '<td class="text-right"><input class="form-control text-right rprice_t" name="net_price[]" type="text" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"> </td>';
+					tr_html += '<td class="text-right"><input class="form-control text-right rprice_t" name="net_price[]" type="text" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + formatDecimal(item.row.cost) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '"> </td>';
 				} else {
-					tr_html += '<input class="form-control text-right rprice_t" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '">';
+					tr_html += '<input class="form-control text-right rprice_t" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + formatDecimal(real_unit_price) + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + formatDecimal(item.row.cost) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + formatDecimal(real_unit_price) + '">';
 				}
 			}
+
+			$.each(item.users_admin, function () {
+				var pwd = this.password;
+				tr_html += '<input class="admins" name="admins[]" type="hidden" value="' + pwd + '">';
+			});
 
 			tr_html += '<input class="default_price" name="default_price[]" type="hidden" value="' + default_price + '">';
 
