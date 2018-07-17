@@ -181,7 +181,8 @@
                                 <th class="sorting" style="width:140px;"><?php echo $this->lang->line("balance"); ?></th>
                             </tr>
                         </thead>
-                        <?php 
+                        <?php
+
                             foreach($my_data as $sup){
                                 $gbalance=0;
                         ?>
@@ -192,9 +193,11 @@
                         <?php 
                             $subTotal = $subReturn = $subDeposit = $subPaid = $subDiscount = 0;
                                 foreach($sup['supplierDatas']['suppPO'] as $suppData){
+
                                     $subTotal += $suppData->grand_total;
                                     $subReturn += $suppData->amount_return;
                                     $subDeposit += $suppData->amount_deposit;
+                                    $payment_discount=0;
                                     $subDiscount += $suppData->order_discount;
                                     $sub_balance = ($suppData->grand_total - $suppData->amount_return - $suppData->amount_deposit - $suppData->order_discount);
                                     $gbalance += $sub_balance;
@@ -213,8 +216,10 @@
                                     </tr>
                             <?php   
                                 if(is_array($suppData->payments)){
+
                                     foreach($suppData->payments as $supPmt){
                                         $subPaid += abs($supPmt->amount);
+                                        $payment_discount+=$supPmt->discount;
                                         $typePV = (explode('/', $supPmt->reference_no)[0]=='PO'?"Purchase":(explode('/', $supPmt->reference_no)[0]=='PV'?"Payment":"Not Assigned"));
                                 
                             ?>
@@ -226,12 +231,12 @@
                                             <td class="numeric"></td>
                                             <td class="numeric"><?= $this->erp->formatMoney(abs($supPmt->amount)) ?></td>
                                             <td class="numeric"></td>
-                                            <td class="numeric"></td>
-                                            <td class="numeric"><?= $this->erp->formatMoney($sub_balance - abs($supPmt->amount)) ?></td>
+                                            <td class="numeric"><?= $this->erp->formatMoney($supPmt->discount) ?></td>
+                                            <td class="numeric"><?= $this->erp->formatMoney($sub_balance - abs($supPmt->amount)-$supPmt->discount) ?></td>
                                         </tr>
                             <?php
-                                        $gbalance -= abs($supPmt->amount);
-                                        $sub_balance -= abs($supPmt->amount);
+                                        $gbalance -= abs($supPmt->amount)+$supPmt->discount;
+                                        $sub_balance -= abs($supPmt->amount)+$supPmt->discount;
                                     }
                                 }
                                 }                               
@@ -242,8 +247,8 @@
                                         <td class="numeric"><?= $this->erp->formatMoney($subReturn) ?></td>
                                         <td class="numeric"><?= $this->erp->formatMoney($subPaid) ?></td>
                                         <td class="numeric"><?= $this->erp->formatMoney($subDeposit) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($subDiscount) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($gbalance) ?></td> 
+                                        <td class="numeric"><?= $this->erp->formatMoney($payment_discount) ?></td>
+                                        <td class="numeric"><?= $this->erp->formatMoney($gbalance) ?></td>
                                     </tr>
                         <?php
                             }

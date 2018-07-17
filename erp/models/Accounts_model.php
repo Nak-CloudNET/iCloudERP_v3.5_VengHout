@@ -2171,7 +2171,7 @@ class Accounts_model extends CI_Model
             
         }elseif($condition=='payment'){
             
-            $q = $this->db->select("payments.amount,
+            $q = $this->db->select("payments.amount,payments.discount,
                       payments.reference_no,
                       payments.date
                     ", false)
@@ -2257,11 +2257,14 @@ class Accounts_model extends CI_Model
             return false;
 	}
     
-	public function getSaleByCustomerV2($cus_id){
+	public function getSaleByCustomerV2($cus_id,$start_date=NULL,$end_date=NULL){
 		$this->db->select("sales.id,CONCAT(erp_users.first_name,' ',erp_users.last_name) as fullname", false)
             ->from("sales")->join("users","users.id=sales.saleman_by","LEFT");
-			
-			 $this->db->where('customer_id',$cus_id);
+
+		    $this->db->where('customer_id',$cus_id);
+            if($start_date && $end_date){
+                $this->db->where('date_format(erp_sales.date,"%Y-%m-%d") BETWEEN "' . $start_date . '" and "' . $end_date . '"');
+            }
             $this->db->order_by("date", "asc");
             $q = $this->db->get();
             if($q->num_rows() > 0){
@@ -2269,6 +2272,25 @@ class Accounts_model extends CI_Model
             }
             return false;
 	}
+    public function getOldBalanceByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
+        $this->db->select("sum(erp_sales.grand_total) as grand_total,
+            (select sum(erp_payments.amount) from erp_payments where erp_payments.sale_id= erp_sales.id) as paid,
+            (select sum(erp_payments.discount) from erp_payments where erp_payments.sale_id= erp_sales.id) as discount,
+            (select sum(erp_return_sales.grand_total) from erp_return_sales where erp_return_sales.sale_id= erp_sales.id) as return_sale,
+            ")
+            ->from("sales")
+            ->join("users","users.id=sales.saleman_by","LEFT");
+
+        $this->db->where('customer_id',$cus_id,false);
+        if($start_date && $end_date){
+            $this->db->where('date_format(erp_sales.date,"%Y-%m-%d") < "' . $start_date .'"');
+        }
+        $q = $this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
 	public function getSaleBySID($id){
             $q = $this->db->get_where("sales",array('id'=>$id),1);
             if($q->num_rows() > 0){

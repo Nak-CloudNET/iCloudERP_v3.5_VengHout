@@ -196,19 +196,25 @@
 								$total_am2 = 0;
 								$total_pay_amoun2 = 0;
 								$total_return_amoun2 = 0;
+								$total_old_balance =0;
                             foreach($customers as $cus){ 
-								$items = $this->accounts_model->getSaleByCustomerV2($cus->customer_id);
+								$items          = $this->accounts_model->getSaleByCustomerV2($cus->customer_id,$start_date2,$end_date2);
+                                $old_balance    = $this->accounts_model->getOldBalanceByCustomer($cus->customer_id,$start_date2,$end_date2);
 								if(is_array($items)){
 									$am = 0;
+									$old_balance=$old_balance[0]->grand_total -$old_balance[0]->paid-($old_balance[0]->return_sale+$old_balance[0]->discount);
+									$total_old_balance+=$old_balance;
 							?>
                             <tr class="success">
-                                <th class="th_parent" colspan="11"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
+                                <th class="th_parent" colspan="10"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
+                                <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance)):'';?></th>
                             </tr>
 							
 							<?php
 								$total_sale = 0;
 								$total_pay_amoun = 0;
 								$total_return_amoun = 0;
+								$total_discount2=0;
 								$total_am = 0;
 									foreach($items as $row){
 										$sale = $this->accounts_model->getSaleBySID($row->id);
@@ -230,7 +236,7 @@
 								
 								<?php
 									$total_pay = 0;
-									
+									$total_discount=0;
 									$payment = $this->accounts_model->getPaymentBySID($row->id);
 									foreach($payment  as $pay){
 										
@@ -249,6 +255,7 @@
 											$deposit = '';
 											
 										}
+                                        $total_discount+=$pay->discount;
 										$am = $am - ($pay_return+$pay->discount);
 								?>
 								<tr>
@@ -261,7 +268,7 @@
 									<td></td>
 									<td class="text-right"><?= $payy?></td>
 									<td  class="text-right"><?= $deposit?></td>
-									<td  class="text-right"><?=$pay->discount?></td>
+									<td  class="text-right"><?=$this->erp->formatMoney($pay->discount)?></td>
 									<td  class="text-right"><?php if($am<0){?>(<?=$this->erp->formatMoney(abs($am))?>) <?php }else{ echo $this->erp->formatMoney($am);}?></td>
 								</tr>
 								
@@ -312,7 +319,7 @@
 									<td class="text-right"><b><?=$this->erp->formatMoney($total_return_amoun)?></b></td>
 									<td class="text-right"><b><?=$this->erp->formatMoney($total_pay_amoun)?></b></td>
 									<td class="text-right"><b></b></td>
-									<td class="text-right"><b></b></td>
+									<td class="text-right"><b></b><?=$this->erp->formatMoney($total_discount)?></td>
 									<td class="text-right"><b><?php if($total_am<0){?>(<?=$this->erp->formatMoney(abs($total_am))?>) <?php }else{ echo $this->erp->formatMoney($total_am);}?></b></td>
 								</tr>
 							<?php
@@ -320,17 +327,24 @@
 							$total_pay_amoun2 +=$total_pay_amoun;
 							$total_return_amoun2 +=$total_return_amoun;
 							$total_am2 += $total_am;
+							$total_discount2+=$total_discount;
 								}
 							}
 							?>
-							
+                            <?php if($start_date2){?>
+                            <tr class="foot">
+                                <td class="text-right" colspan="9"></td>
+                                <td class="text-right"></td>
+                                <td class="text-right"><b><?= $start_date2?$this->erp->formatMoney($total_old_balance):''?></b></td>
+                            </tr>
+                            <?php }?>
 							<tr class="foot">
 								<td class="text-right" colspan="5"><b>Grand Total</b></td>
 								<td class="text-right"><b><?=$this->erp->formatMoney($total_sale2)?></b></td>
 								<td class="text-right"><b><?=$this->erp->formatMoney($total_return_amoun2)?></b></td>
 								<td class="text-right"><b><?=$this->erp->formatMoney($total_pay_amoun2)?></b></td>
 								<td class="text-right"><b></b></td>
-								<td class="text-right"><b></b></td>
+								<td class="text-right"><b><?=$this->erp->formatMoney($total_discount2)?></b></td>
 								<td class="text-right"><b><?php if($total_am2<0){?>(<?=$this->erp->formatMoney(abs($total_am2))?>) <?php }else{ echo $this->erp->formatMoney($total_am2);}?></b></td>
 							</tr>
                     </table>
