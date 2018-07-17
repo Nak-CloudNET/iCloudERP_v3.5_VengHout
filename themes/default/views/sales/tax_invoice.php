@@ -175,17 +175,19 @@
 							</div>
 							<div class="col-sm-6 col-xs-6 text-left" style="height: 41px; padding-top: 12px">
 								<?php
-									$date = str_replace('/', '', $this->erp->hrsd($inv->date));
+									$date = $this->erp->hrsd($inv->date);
+                                    echo $date;
 								?>
-								<?php for($i=strlen($date);$i>=1 ; $i--) { ?>
+
+								<!--<?php for($i=strlen($date);$i>=1 ; $i--) { ?>
 									<?php
 										$signd ="";
 										if ($i == 7 || $i == 5) {
 											$signd = "&nbsp;&nbsp;";
 										}
 									?>
-								    <button type="button" class="btn"><?= $date[strlen($date)-$i]?></button><?= $signd ?>
-								<?php } ?>
+								    <?= $date[strlen($date)-$i]; ?><?= $signd ?>
+								<?php } ?>-->
 							</div>
 						</div>
 					</div>
