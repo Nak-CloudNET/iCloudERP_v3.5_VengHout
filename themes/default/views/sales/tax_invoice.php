@@ -152,6 +152,13 @@
 								<?= $customer->phone; ?>
 							</div>
 						</div>
+                        <div class="row">
+                            <br>
+                            <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('អាសយដ្ឋាន');?></div>
+                            <div class="col-sm-5 col-xs-5 text-left" >
+                                <?= $customer->address; ?>
+                            </div>
+                        </div>
 					</div>
 					<div class="col-sm-6 col-xs-6">
 						<div class="row">
