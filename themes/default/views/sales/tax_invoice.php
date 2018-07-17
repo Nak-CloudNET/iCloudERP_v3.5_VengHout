@@ -135,9 +135,9 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន ឬ អតិថិជន <br/> Company name / Customer');?></div>
+							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន​ <br/> Company name');?></div>
 							<div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
-								<?= $customer->company ? $customer->company : $customer->name; ?>
+								<?= $customer->company ? $customer->company : $customer->name; echo '<br>'.$customer->name_kh; ?>
 							</div>
 						</div>
 						<div class="row">
