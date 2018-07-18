@@ -165,66 +165,57 @@
                         </div>
                     </div>
                     <div class="row" style="text-align: left; ">
-                        <div class="col-sm-7 col-xs-7" style="border: 1px solid black;border-radius: 5px !important; margin-left: 5px; width: 400px">
+                        <div class="col-sm-7 col-xs-7" style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; margin-left: 5px; width: 400px">
                                 <table >
-                                <?php
 
-                                //$this->erp->print_arrays($invs);
-                                if(!empty( $customer->name)) { ?>
                                     <tr>
                                         <td style="width: 15%;"><?= lang('ប្រគល់ជូន / Deliver to') ?></td>
                                         <td style="width: 2%;">:</td>
-                                        <td style="width: 25%;"><?=  $customer->name ?></td>
+                                        <td style="width: 25%;"><?=  $customer->company ?></td>
                                     </tr>
-                                <?php } ?>
-                                <?php if(!empty($customer->address)) { ?>
+
                                     <tr>
                                         <td><?= lang('តំណាង​/ Rep') ?> </td>
                                         <td>:</td>
-                                        <td><?= $customer->address ?></td>
+                                        <td><?= $customer->name ?></td>
                                     </tr>
-                                <?php } ?>
-                                    <?php if(!empty($customer->address)) { ?>
+
                                         <tr>
                                             <td><?= lang('ទូរស័ព្ទ/ Phone') ?> </td>
                                             <td>:</td>
                                             <td><?= $customer->phone ?></td>
                                         </tr>
-                                <?php } ?>
-                                <?php if(!empty($inv->saleman )) { ?>
-                                    <tr>
-                                        <td><?= lang('attn') ?> </td>
-                                        <td>:</td>
-                                        <td><?= $inv->saleman ;?></td>
-                                    </tr>
-                                <?php } ?>
-                                <?php if(!empty($customer->phone)) { ?>
+
+
+
                                     <tr>
                                         <td><?= lang('បញ្ជូនទៅ / Ship To') ?></td>
                                         <td>:</td>
-                                        <td><!--<?= $customer->phone ?>--></td>
+                                        <td><?= $customer->address ?></td>
                                     </tr>
-                                <?php } ?>
+
                             </table>
                         </div>
+<div class="col-sm-1">
 
+</div>
 
-                        <div class="col-sm-3 col-xs-3" style="border: 1px solid black;border-radius: 5px !important; width: 370px">
+                        <div class="col-sm-3 col-xs-3" style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; width: 300px">
                             <table>
                                 <tr>
                                     <td style="width: 45%;"><?= lang('កាលបរិឆ្ឆេទ​/Date') ?></td>
                                     <td style="width: 10%;">:</td>
-                                    <td style="width: 20%;"><?= $this->erp->hrsd($inv->date) ?></td>
+                                    <td style="width: 20%;"><?= $this->erp->hrsd($invs->date) ?></td>
                                 </tr>
                                 <tr>
                                     <td><?= lang('ល.រ​វិក័យប័ត្រ / Inv No') ?></td>
                                     <td>:</td>
-                                    <td><?= $inv->sale_reference_no ?></td>
+                                    <td><?= $invs->reference_no ?></td>
                                 </tr>
                                 <tr>
                                     <td><?= lang('លេខប័ណ្ណប្រគល់ទំនិញ​ / DN No') ?> </td>
                                     <td>:</td>
-                                    <td><?= $this->erp->hrsd($inv->date) ?></td>
+                                    <td><?= $invs->note ?></td>
                                 </tr>
 
                             </table>
@@ -232,15 +223,15 @@
                     </div>
                 </th>
             </tr>
-            <tr class="border thead print" style="background-color: #444 !important; color: #FFF !important;">
-                <th>ល.រ<br /><?= strtoupper(lang('no')) ?></th>
-                <th>បរិយាយមុខទំនិញ<br /><?= strtoupper(lang('description')) ?></th>
-                <th>បរិមាណបញ្ជាទិញ<br /><?= strtoupper(lang('qty ordered')) ?></th>
+            <tr class="border thead print" style=" font-size: 12px;  background-color: #444 !important; color: #FFF !important;">
+                <th>ល.រ<br/><?= strtoupper(lang('no')) ?></th>
+                <th>បរិយាយមុខទំនិញ<br/><?= strtoupper(lang('description')) ?></th>
+                <th>បរិមាណបញ្ជាទិញ<br/><?= strtoupper(lang('qty ordered')) ?></th>
                 <th>​ឯកតា<br /><?= strtoupper(lang('unit')) ?></th>
-                <th>បរិមាណបានបញ្ជូន<br /><?= strtoupper(lang('qty delivered')) ?></th>
+                <th>បរិមាណបានបញ្ជូន<br/><?= strtoupper(lang('qty delivered')) ?></th>
                 <th>ឃ្លាំង<br /><?= strtoupper(lang('site')) ?></th>
-                <th>បរិមាណនៅសល់<br /><?= strtoupper(lang('qty remain')) ?></th>
-                <th> នាយឃ្លាំង<br /><?= strtoupper(lang('wh counter')) ?></th>
+                <th>បរិមាណនៅសល់<br/><?= strtoupper(lang('qty remain')) ?></th>
+                <th> នាយឃ្លាំង<br/><?= strtoupper(lang('wh counter')) ?></th>
             </thead>
             <tbody>
             <?php

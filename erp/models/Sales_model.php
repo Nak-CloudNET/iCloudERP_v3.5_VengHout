@@ -754,13 +754,15 @@ class Sales_model extends CI_Model
         					products.start_date,
         					products.end_date,
 							sale_items.product_noted, products.name_kh,
-							products.currentcy_code
+							products.currentcy_code,
+							erp_warehouses.`code`
         				")
             ->join('products', 'products.id=sale_items.product_id', 'left')
             ->join('product_variants', 'product_variants.id=sale_items.option_id', 'left')
             ->join('tax_rates', 'tax_rates.id=sale_items.tax_rate_id', 'left')
 			->join('categories', 'categories.id = products.category_id', 'left')
             ->join('units', 'units.id = products.unit', 'left')
+            ->join('erp_warehouses', 'erp_warehouses.id = erp_sale_items.warehouse_id', 'left')
             ->group_by('sale_items.id');
         $q = $this->db->get_where('sale_items', array('sale_id' => $sale_id));
         if ($q->num_rows() > 0) {

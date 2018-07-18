@@ -372,6 +372,7 @@ class Sale_order_model extends CI_Model
 	
     public function getAllDeliveryInvoiceItems($delivery_id)
     {
+
         $this->db->select('erp_products.code, erp_categories.categories_note_id, erp_deliveries.*, erp_products.name as description, delivery_items.quantity_received as qty, erp_companies.name, erp_units.name as unit, delivery_items.category_name as brand, delivery_items.option_id, product_variants.name as variant,product_variants.qty_unit, (erp_delivery_items.quantity_received * erp_product_variants.qty_unit) as variant_qty,sale_order_items.piece,sale_order_items.wpiece,sale_order_items.expiry,sale_items.expiry as sale_expiry');
 		$this->db->from('deliveries');
 		$this->db->join('erp_companies','deliveries.delivery_by = erp_companies.id','left');
