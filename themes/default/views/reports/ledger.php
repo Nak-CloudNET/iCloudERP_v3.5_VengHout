@@ -257,14 +257,22 @@
                                 </tr>
                                 <?php
 								$endAmount = $startAmount->startAmount;
-								$endDebitAmount = 0;
-								$endCreditAmount = 0;
+                                if($endAmount>0){
+                                    $endDebitAmount = $endAmount;
+                                    $endCreditAmount = 0;
+                                }else{
+                                    $endDebitAmount = 0;
+                                    $endCreditAmount = $endAmount;
+                                }
+								
                                 $endAccountBalance= $startAmount->startAmount;
                                 foreach($glTranLists as $gltran)
                                 {
 									$endAccountBalance += $gltran->amount;
                                     $endAccountBalanceMinus = explode('-', $this->erp->formatMoney($endAccountBalance));
                                     $endAmount += $gltran->amount;
+                                    $endDebitAmount+=$gltran->am1;
+                                    $endCreditAmount+=$gltran->am2;
                                     ?>
 									<tr>
 										<td><?= $gltran->tran_no ?></td>
@@ -276,7 +284,7 @@
 										<td><?= $gltran->description ?></td>
 										<td><?= $gltran->username ?></td>
 										<td class="right"><?= ($gltran->am1 > 0 ? $this->erp->formatMoney($gltran->am1) : '0.00'); ?></td>
-										<td class="right"><?= ($gltran->am2 < 1 ? $this->erp->formatMoney(abs($gltran->am2)) : '0.00')?></td>
+										<td class="right"><?= '('.($gltran->am2 < 1 ? $this->erp->formatMoney(abs($gltran->am2)) : '0.00').')'?></td>
                                         <td class="right"><?= $endAccountBalance < 0 ? '$ (' . $endAccountBalanceMinus[1] . ')' : $this->erp->formatMoney($endAccountBalance); ?></td>
 
                                     </tr>
@@ -284,7 +292,7 @@
 									<tr>
 										<td colspan="5"></td>
 										<td colspan="3" style="font-weight: bold;">Ending Account Balance <i class="fa fa-caret-right" aria-hidden="true"></i></td>
-										<?php if($endAmount > 0) { ?>
+										<!-- <?php if($endAmount > 0) { ?>
 											<td class="right"><?= $this->erp->formatMoney(abs($endAmount)); ?></td>
 											<td class="right"></td>
 											<td class="right"></td>
@@ -292,7 +300,14 @@
 											<td class="right"></td>
 											<td class="right"><?= $this->erp->formatMoney(abs($endAmount)); ?></td>
 											<td class="right"></td>
-										<?php } ?>
+										<?php } ?> -->
+                                        <td class="right"><?= $this->erp->formatMoney(abs($endDebitAmount)); ?></td>
+                                        <td class="right"><?='('.$this->erp->formatMoney(abs($endCreditAmount)).')'; ?></td>
+                                        <?php if($endAmount > 0) { ?>
+                                            <td class="right"><?= $this->erp->formatMoney(abs($endAmount)); ?></td>
+                                        <?php } else { ?>
+                                            <td class="right"><?='('. $this->erp->formatMoney(abs($endAmount)).')'; ?></td>
+                                        <?php } ?>
 									</tr>
                                 <?php
 								}
