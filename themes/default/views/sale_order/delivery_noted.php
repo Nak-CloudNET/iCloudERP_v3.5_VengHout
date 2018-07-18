@@ -258,13 +258,13 @@
                         <td style="border-top:none !important;border-bottom:none !important; text-align: center;"><?= $row->unit ?></td>
                     <?php } ?>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$row->quantity_received?>
+                        <?=$row->quantity?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
                         <?=$row->code?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=($row->quantity)-($row->quantity_received)?>
+                        <?=($row->quantity)-($row->quantity)?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
                         <?=$this->erp->formatQuantity($row->qty)?>
@@ -346,7 +346,7 @@
         <br>
     </div>
     <div style="width: 821px;margin: 20px">
-        <a class="btn btn-warning no-print" href="<?= site_url('sales/deliveries'); ?>" style="border-radius: 0">
+        <a class="btn btn-warning no-print" href="<?= site_url('sales'); ?>" style="border-radius: 0">
             <i class="fa fa-hand-o-left" aria-hidden="true"></i>&nbsp;<?= lang("back"); ?>
         </a>
     </div>
