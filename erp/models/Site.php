@@ -999,6 +999,19 @@ class Site extends CI_Model
         }
         return FALSE;
     }
+
+    public function getUsersAdmin() 
+	{
+		$this->db
+			->select("password")
+            ->from("users")
+            ->where('id', 2);
+        $q = $this->db->get();
+        if ($q->num_rows() > 0) {
+            return $q->result();
+        }
+        return FALSE;
+    }
 	
 	public function getUsers($id)
 	{

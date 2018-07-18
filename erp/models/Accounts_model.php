@@ -2171,7 +2171,7 @@ class Accounts_model extends CI_Model
             
         }elseif($condition=='payment'){
             
-            $q = $this->db->select("payments.amount,
+            $q = $this->db->select("payments.amount,payments.discount,
                       payments.reference_no,
                       payments.date
                     ", false)

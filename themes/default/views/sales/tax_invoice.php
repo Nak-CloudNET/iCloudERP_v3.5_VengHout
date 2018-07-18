@@ -135,17 +135,30 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន ឬ អតិថិជន <br/> Company name / Customer');?></div>
-							<div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
-								<?= $customer->company ? $customer->company : $customer->name; ?>
+							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន​');?></div>
+							<div class="col-sm-5 col-xs-5 text-left">
+								<?= $customer->name_kh; ?>
 							</div>
 						</div>
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('Company name');?></div>
+                            <div class="col-sm-5 col-xs-5 text-left" >
+                                <?= $customer->company ? $customer->company : $customer->name; ?>
+                            </div>
+                        </div>
 						<div class="row">
 							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ទូរស័ព្ទ​លេខ <br> Telephone No');?></div>
 							<div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
 								<?= $customer->phone; ?>
 							</div>
 						</div>
+                        <div class="row">
+                            <br>
+                            <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('អាសយដ្ឋាន');?></div>
+                            <div class="col-sm-5 col-xs-5 text-left" >
+                                <?= $customer->address; ?>
+                            </div>
+                        </div>
 					</div>
 					<div class="col-sm-6 col-xs-6">
 						<div class="row">
@@ -162,17 +175,19 @@
 							</div>
 							<div class="col-sm-6 col-xs-6 text-left" style="height: 41px; padding-top: 12px">
 								<?php
-									$date = str_replace('/', '', $this->erp->hrsd($inv->date));
+									$date = $this->erp->hrsd($inv->date);
+                                    echo $date;
 								?>
-								<?php for($i=strlen($date);$i>=1 ; $i--) { ?>
+
+								<!--<?php for($i=strlen($date);$i>=1 ; $i--) { ?>
 									<?php
 										$signd ="";
 										if ($i == 7 || $i == 5) {
 											$signd = "&nbsp;&nbsp;";
 										}
 									?>
-								    <button type="button" class="btn"><?= $date[strlen($date)-$i]?></button><?= $signd ?>
-								<?php } ?>
+								    <?= $date[strlen($date)-$i]; ?><?= $signd ?>
+								<?php } ?>-->
 							</div>
 						</div>
 					</div>
