@@ -250,7 +250,7 @@
                         <?=$row->product_name;?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$row->quantity;?>
+                        <?=$this->erp->formatQuantity($row->quantity);?>
                     </td>
                     <?php if ($row->option_id >= 1) { ?>
                         <td style="border-top:none !important;border-bottom:none !important; text-align: center;"><?= $row->variant ?></td>
@@ -258,7 +258,7 @@
                         <td style="border-top:none !important;border-bottom:none !important; text-align: center;"><?= $row->unit ?></td>
                     <?php } ?>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$row->quantity?>
+                        <?=$this->erp->formatQuantity($row->quantity)?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
                         <?=$row->code?>
