@@ -264,7 +264,7 @@
                         <?=$row->code?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$this->erp->formatQuantity($row->qty)?>
+                        <?=($row->quantity)-($row->quantity_received)?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
                         <?=$this->erp->formatQuantity($row->qty)?>
