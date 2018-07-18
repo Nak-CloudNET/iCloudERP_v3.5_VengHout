@@ -486,14 +486,14 @@
                 }elseif ($invs->paid == 0 && $invs->deposit != 0) {
                     $row += 2;
                 }
-                if($dis==0){
-                    $col-=1;
-                }
-                if($taxx==0){
-                    $col-=1;
-                }
-                ?>
-                
+                    if($dis==0){
+                        $col-=1;
+                    }
+                    if($taxx==0){
+                        $col-=1;
+                    }
+                    ?>
+
                 <?php
                 if ($invs->grand_total != $invs->total) { ?>
                     <tr class="border-foot">
