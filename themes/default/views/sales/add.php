@@ -1,5 +1,8 @@
 <script src="<?= $assets ?>js/jquery.validate.min.js"></script>
 <style>
+    .pwd {
+        width: 500px !important;
+    }
 	.form-group .select2-container {
 	  position: relative;
 	  z-index: 2;
@@ -1516,7 +1519,7 @@
                 if(price < cost) {
                     var product_name = $(this).parent().parent().closest('tr').find('.rname').val();
 
-                    message += 'This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! \n';
+                    message += '<ul><li>This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! </li></ul>';
                     help = true;
                 }
             });
@@ -1525,22 +1528,27 @@
                 $('#add_sale').trigger('click');
             }else{
 
-                bootbox.prompt(message +"\n Please insert password", function(result){
-                    $.ajax({
-                        type: 'get',
-                        url: '<?= site_url('auth/checkPassDiscount'); ?>',
-                        dataType: "json",
-                        data: {
-                            password: result
-                        },
-                        success: function (data) {
-                            if(data == 1){
-                                $('#add_sale').trigger('click');
-                            }else{
-                                alert('Incorrect passord');
+                bootbox.prompt({
+                    title: message + "Please enter password",
+                    inputType: 'password',
+                    className: "medium",
+                    callback: function (result) {
+                        $.ajax({
+                            type: 'get',
+                            url: '<?= site_url('auth/checkPassDiscount'); ?>',
+                            dataType: "json",
+                            data: {
+                                password: result
+                            },
+                            success: function (data) {
+                                if(data == 1){
+                                    $('#add_sale').trigger('click');
+                                }else{
+                                    alert('Incorrect passord');
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 });
                 return false;
             }
