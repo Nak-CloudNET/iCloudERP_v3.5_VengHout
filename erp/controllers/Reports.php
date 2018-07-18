@@ -16733,7 +16733,6 @@ class Reports extends MY_Controller
 					$gl_tranStart->where('erp_gl_trans.tran_date <', $this->erp->fld($start_date).'00:00:00');
                 //}
 				$startAmount = $gl_tranStart->get()->row();
-				
                 $endAccountBalance = 0;
                 $endAccountBalanceMinus = 0;
                 $endAccountCreditBalance = 0;
@@ -16782,6 +16781,8 @@ class Reports extends MY_Controller
 					$this->excel->getActiveSheet()->getStyle('H'.$row.':I'.$row)->applyFromArray($styleArray10);
 					$this->excel->getActiveSheet()->getStyle('F'.$row.':G'.$row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
 					$endAmount = $startAmount->startAmount;
+                    $endAccountBalance=$endAmount;
+
 					foreach($gltran_list as $rw)
 					{
 						$this->excel->getActiveSheet()->getStyle('E'.$rows.':G'.$rows)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);		
@@ -17005,6 +17006,7 @@ class Reports extends MY_Controller
 					$this->excel->getActiveSheet()->getStyle('H'.$row.':I'.$row)->applyFromArray($styleArray10);
 					$this->excel->getActiveSheet()->getStyle('F'.$row.':G'.$row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
 					$endAmount = $startAmount->startAmount;
+                    $endAccountBalance=$endAmount;
 					foreach($gltran_list as $rw)
 					{
 						$this->excel->getActiveSheet()->getStyle('E'.$rows.':G'.$rows)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);		

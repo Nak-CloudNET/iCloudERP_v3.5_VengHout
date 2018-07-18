@@ -259,6 +259,7 @@
 								$endAmount = $startAmount->startAmount;
 								$endDebitAmount = 0;
 								$endCreditAmount = 0;
+                                $endAccountBalance= $startAmount->startAmount;
                                 foreach($glTranLists as $gltran)
                                 {
 									$endAccountBalance += $gltran->amount;
