@@ -16733,7 +16733,6 @@ class Reports extends MY_Controller
 					$gl_tranStart->where('erp_gl_trans.tran_date <', $this->erp->fld($start_date).'00:00:00');
                 //}
 				$startAmount = $gl_tranStart->get()->row();
-				
                 $endAccountBalance = 0;
                 $endAccountBalanceMinus = 0;
                 $endAccountCreditBalance = 0;
@@ -16782,8 +16781,18 @@ class Reports extends MY_Controller
 					$this->excel->getActiveSheet()->getStyle('H'.$row.':I'.$row)->applyFromArray($styleArray10);
 					$this->excel->getActiveSheet()->getStyle('F'.$row.':G'.$row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
 					$endAmount = $startAmount->startAmount;
+                    $endAccountBalance=$endAmount;
+                     if($endAmount>0){
+                        $endDebitAmount = $endAmount;
+                        $endCreditAmount = 0;
+                    }else{
+                        $endDebitAmount = 0;
+                        $endCreditAmount = $endAmount;
+                    }
 					foreach($gltran_list as $rw)
 					{
+                        $endDebitAmount+=$rw->am1;
+                        $endCreditAmount+=$rw->am2;
 						$this->excel->getActiveSheet()->getStyle('E'.$rows.':G'.$rows)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);		
                         $endAccountBalance += $rw->amount;
                         $endAccountBalanceMinus = explode('-', $this->erp->formatMoney($endAccountBalance));
@@ -16811,15 +16820,13 @@ class Reports extends MY_Controller
 					$test = $rows;
 					$this->excel->getActiveSheet()->mergeCells('A'.$test.':C'.$test);
 					$this->excel->getActiveSheet()->mergeCells('D'.$test.':G'.$test)->setCellValue('D'. $test , 'Ending Account Balance: ');
-					if($endAmount > 0) {
-						$this->excel->getActiveSheet()->setCellValue('H'. $test , $this->erp->formatMoney($endAmount));
-						$this->excel->getActiveSheet()->setCellValue('I'. $test , '');
-						$this->excel->getActiveSheet()->setCellValue('J'. $test , '');
-					}else {
-						$this->excel->getActiveSheet()->setCellValue('H'. $test , '');
-						$this->excel->getActiveSheet()->setCellValue('I'. $test , $this->erp->formatMoney(abs($endAmount)));
-						$this->excel->getActiveSheet()->setCellValue('J'. $test , '');
-					}
+					$this->excel->getActiveSheet()->setCellValue('H'. $test , $this->erp->formatMoney(abs($endDebitAmount)));
+                    $this->excel->getActiveSheet()->setCellValue('I'. $test , '('.$this->erp->formatMoney(abs($endCreditAmount)).')');
+                    if($endAmount > 0) {
+                        $this->excel->getActiveSheet()->setCellValue('J'. $test , $this->erp->formatMoney(abs($endAmount)));
+                    } else {
+                        $this->excel->getActiveSheet()->setCellValue('J'. $test , '('.$this->erp->formatMoney(abs($endAmount)).')');
+                    }
 					$this->excel->getActiveSheet()->getStyle('H'.$test.':J'.$test)->applyFromArray($styleArray10);
 
 					$this->excel->getActiveSheet()->getStyle('D'.$test.':E'.$test)->applyFromArray($styleArray10);
@@ -17005,8 +17012,18 @@ class Reports extends MY_Controller
 					$this->excel->getActiveSheet()->getStyle('H'.$row.':I'.$row)->applyFromArray($styleArray10);
 					$this->excel->getActiveSheet()->getStyle('F'.$row.':G'.$row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
 					$endAmount = $startAmount->startAmount;
+                    $endAccountBalance=$endAmount;
+                    if($endAmount>0){
+                        $endDebitAmount = $endAmount;
+                        $endCreditAmount = 0;
+                    }else{
+                        $endDebitAmount = 0;
+                        $endCreditAmount = $endAmount;
+                    }
 					foreach($gltran_list as $rw)
 					{
+                        $endDebitAmount+=$rw->am1;
+                        $endCreditAmount+=$rw->am2;
 						$this->excel->getActiveSheet()->getStyle('E'.$rows.':G'.$rows)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);		
                         $endAccountBalance += $rw->amount;
                         $endAccountBalanceMinus = explode('-', $this->erp->formatMoney($endAccountBalance));
@@ -17019,7 +17036,7 @@ class Reports extends MY_Controller
 						$this->excel->getActiveSheet()->SetCellValue('C' . $rows, date("d-m-Y", strtotime($rw->tran_date)));
 						$this->excel->getActiveSheet()->SetCellValue('B' . $rows, $rw->tran_type);
 						$this->excel->getActiveSheet()->SetCellValue('H' . $rows, ($rw->am1 > 0 ? $this->erp->formatMoney($rw->am1) : '0.00'));
-						$this->excel->getActiveSheet()->SetCellValue('I' . $rows, ($rw->am2 < 1 ? $this->erp->formatMoney(abs($rw->am2)) : '0.00'));
+						$this->excel->getActiveSheet()->SetCellValue('I' . $rows, ($rw->am2 < 1 ?'('.$this->erp->formatMoney(abs($rw->am2)).')' : '0.00'));
                         $this->excel->getActiveSheet()->SetCellValue('J' . $rows, $endAccountBalance < 0 ? '$ (' . $endAccountBalanceMinus[1] . ')' : $this->erp->formatMoney($endAccountBalance));
 						$this->excel->getActiveSheet()->getStyle('A'.$rows.':J'.$rows)->applyFromArray($BoStyle); 
 						if($row>70){
@@ -17032,14 +17049,12 @@ class Reports extends MY_Controller
 					$test = $rows;
 					$this->excel->getActiveSheet()->mergeCells('A'.$test.':C'.$test);
 					$this->excel->getActiveSheet()->mergeCells('D'.$test.':G'.$test)->setCellValue('D'. $test , 'Ending Account Balance: ');
+                    $this->excel->getActiveSheet()->setCellValue('H'. $test , $this->erp->formatMoney(abs($endDebitAmount)));
+                    $this->excel->getActiveSheet()->setCellValue('I'. $test , '('.$this->erp->formatMoney(abs($endCreditAmount)).')');
 					if($endAmount > 0) {
-						$this->excel->getActiveSheet()->setCellValue('H'. $test , $this->erp->formatMoney(abs($endAmount)));
-						$this->excel->getActiveSheet()->setCellValue('I'. $test , '');
-						$this->excel->getActiveSheet()->setCellValue('J'. $test , '');
+						$this->excel->getActiveSheet()->setCellValue('J'. $test , $this->erp->formatMoney(abs($endAmount)));
 					} else {
-						$this->excel->getActiveSheet()->setCellValue('H'. $test , '');
-						$this->excel->getActiveSheet()->setCellValue('I'. $test , $this->erp->formatMoney(abs($endAmount)));
-						$this->excel->getActiveSheet()->setCellValue('J'. $test , '');
+						$this->excel->getActiveSheet()->setCellValue('J'. $test , '('.$this->erp->formatMoney(abs($endAmount)).')');
 					}
 					$this->excel->getActiveSheet()->getStyle('H'.$test.':J'.$test)->applyFromArray($styleArray10);
 
