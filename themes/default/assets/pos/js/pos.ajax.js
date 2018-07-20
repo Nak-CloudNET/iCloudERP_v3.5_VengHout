@@ -1225,7 +1225,6 @@ function loadItems() {
 			
 			$("#order_span").empty(); $("#order_span_drink").empty(); $("#bill_span").empty();
 
-			//var pos_head1 = '<span style="text-align:center;"><h3>'+site.settings.site_name+'</h3><h4>'
             var pos_head2 	= '';
             var table 		="";
             if($("#suspend_name").val()!=0){table='Room | Table: <span>'+ $("#suspend_name").val()+'</span><br/>';}
@@ -1273,7 +1272,6 @@ function loadItems() {
 			real_unit_cost		= item.row.cost,
 			item_qty 			= item.row.qty,
 			item_aqty 			= item.row.qoh - 0,
-			//item_aqty 		= item.row.qoh-item.row.quantity,
 			item_tax_method 	= item.row.tax_method,
 			item_ds 			= item.row.discount,
 			item_discount 		= 0,

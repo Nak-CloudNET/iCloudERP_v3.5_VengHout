@@ -3271,7 +3271,6 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 
                     if(price < cost) {
                         var product_name = $(this).parent().parent().closest('tr').find('.rname').val();
-
                         message += '<ul><li>This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! </li></ul>';
                         help = true;
                     }
