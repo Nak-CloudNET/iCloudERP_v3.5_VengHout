@@ -43,12 +43,10 @@
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-striped" style="font-size:15px;">
-
                     <h3><?php echo $this->lang->line("items"); ?></h3>
                     <thead>
 						<tr>
 							<th style="text-align:center; vertical-align:middle;"><?php echo $this->lang->line("no"); ?></th>
-							
 							<?php if($setting->show_code == 0){ ?>
 								<th style="vertical-align:middle;"><?php echo $this->lang->line("product_name"); ?></th>
 							<?php }else if($setting->separate_code == 0){ ?>
@@ -57,15 +55,11 @@
 								<th style="vertical-align:middle;"><?php echo $this->lang->line("product_name"); ?></th>
 								<th style="vertical-align:middle;"><?php echo $this->lang->line("product_code"); ?></th>
 							<?php } ?>
-							
                             <th style="text-align:center; vertical-align:middle;"><?php echo $this->lang->line("quantity"); ?></th>
 							<th style="text-align:center; vertical-align:middle;"><?php echo $this->lang->line("unit"); ?></th>
 						</tr>
-
                     </thead>
-
                     <tbody>
-
                     <?php $r = 1;
                     foreach ($rows as $row): ?>
                         <tr>
@@ -92,7 +86,6 @@
                     </tbody>
                 </table>
             </div>
-
             <div class="row">
                 <div class="col-xs-4">
                     <p style="height:80px;font-weight:bold;"><?= lang("prepared_by"); ?> </p>
@@ -111,7 +104,6 @@
                     <p style="font-weight:bold;"><?= lang("stamp_sign"); ?></p>
                 </div>
             </div>
-
             <!-- Footer buttons -->
             <div class="btn-group btn-group-justified" id="noprint">
                 <!-- <div class="btn-group">
@@ -129,12 +121,18 @@
                 </div>
                -->
 
-				<div class="btn-group">
+				<!--<div class="btn-group">
                     <a href="<?= site_url('sale_order/standard_delivery_invoice/' . $delivery->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_delivery') ?>">
                         <i class="fa fa-print"></i>
                         <span class="hidden-sm hidden-xs"><?= lang('invoice_delivery') ?></span>
                     </a>
-                </div>
+                </div>-->
+                <!--<div class="btn-group">
+                    <a href="<?= site_url('sale_order/delivery_noted/'. $delivery->id ) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('delivery_note') ?>">
+                        <i class="fa fa-print"></i>
+                        <span class="hidden-sm hidden-xs"><?= lang('delivery_note') ?></span>
+                    </a>
+                </div>-->
                 <div class="btn-group">
                     <a href="<?= site_url('sale_order/delivery_invoice_a5/' . $delivery->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_a5') ?>">
                         <i class="fa fa-print"></i>

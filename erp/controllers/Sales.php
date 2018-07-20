@@ -8765,6 +8765,7 @@ class Sales extends MY_Controller
         $this->data['page_title'] = lang("delivery_order");
         $this->load->view($this->theme . 'sales/view_delivery', $this->data);
     }
+
 	function view_so_delivery($id = NULL)
     {
         $this->erp->checkPermissions('deliveries');
