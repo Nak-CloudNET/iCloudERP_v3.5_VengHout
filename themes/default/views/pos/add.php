@@ -3055,8 +3055,11 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
                     dataType: "json",
                     success: function (data) {
                         var order_discount = data[0].order_discount == false ? 0 : data[0].order_discount;
-                        $('#order_discount').val(order_discount + '%');
-                        //$('#order_discount').val(data[0].order_discount == null ? 0 : data[0].order_discount + '%');
+                        if (order_discount == null) {
+                            $('#order_discount').val(0 + '%');
+                        } else {
+                            $('#order_discount').val(order_discount + '%');
+                        }
                         if (order_discount > 0) {
                             $('#order_discount_input').attr('readonly', 'true');
                         }

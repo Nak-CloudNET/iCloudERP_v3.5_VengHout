@@ -117,7 +117,10 @@ $(document).ready(function () {
 	 * ---------------------- */
     $("#ppdiscount").click(function (e) {
         e.preventDefault();
-        var disc = $('#order_discount').val() ? $('#order_discount').val() : '0';
+        var disc = 0;
+        if ($('#order_discount').val() == 'null%' || !$('#order_discount').val()) {
+        	disc = 0;
+		}
         //var dval = $('#posdiscount').val() ? $('#posdiscount').val() : '0';
         $('#order_discount_input').val(disc);
         $('#dsModal').modal();
