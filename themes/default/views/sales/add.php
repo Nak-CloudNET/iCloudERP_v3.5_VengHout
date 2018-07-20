@@ -1544,7 +1544,10 @@
                                 if(data == 1){
                                     $('#add_sale').trigger('click');
                                 }else{
-                                    alert('Incorrect passord');
+                                    bootbox.alert({
+                                        message: "Incorrect password!",
+                                        size: 'small'
+                                    });
                                 }
                             }
                         });
