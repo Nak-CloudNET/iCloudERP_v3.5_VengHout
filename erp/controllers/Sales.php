@@ -11639,8 +11639,6 @@ class Sales extends MY_Controller
 				$group_prices = $this->sales_model->getProductPriceGroupId($row->id, $customer->price_group_id);
 				$all_group_prices = $this->sales_model->getProductPriceGroup($row->id);
                 $pending_so_qty = $this->sales_model->getPendingSOQTYByProductID($row->id);
-				$admins = $this->site->getUsersAdmin();
-                $users_admin = $this->auth_model->hash_password_db('2', '8f77f9361367ed1ebd2b0ba15b36e630ded0ec84');
 
 				if($expiry_status == 1) {
 					$expdates = $this->sales_model->getProductExpireDate($row->id, $warehouse_id);
@@ -11801,10 +11799,10 @@ class Sales extends MY_Controller
 						$combo_items = $this->sales_model->getProductComboItems($row->id, $warehouse_id);
 					}
 
-                    $pr[] = array('id' => str_replace(".", "", microtime(true)), 'item_id' => $row->id, 'label' => $row->name . " (" . $row->code . ")", 'row' => $row, 'combo_items' => $combo_items, 'tax_rate' => $tax_rate, 'options' => $options, 'expdates' => $expdates, 'group_prices' => $group_prices, 'all_group_prices' => $all_group_prices, 'makeup_cost' => $customer_group->makeup_cost, 'customer_percent' => $customer_percent, 'makeup_cost_percent' => $percent->percent, 'users_admin' => $users_admin);
+                    $pr[] = array('id' => str_replace(".", "", microtime(true)), 'item_id' => $row->id, 'label' => $row->name . " (" . $row->code . ")", 'row' => $row, 'combo_items' => $combo_items, 'tax_rate' => $tax_rate, 'options' => $options, 'expdates' => $expdates, 'group_prices' => $group_prices, 'all_group_prices' => $all_group_prices, 'makeup_cost' => $customer_group->makeup_cost, 'customer_percent' => $customer_percent, 'makeup_cost_percent' => $percent->percent);
 
 				} else {
-					$pr[] = array('id' => str_replace(".", "", microtime(true)), 'item_id' => $row->id, 'label' => $row->name . " (" . $row->code . ")", 'row' => $row, 'combo_items' => $combo_items, 'tax_rate' => false, 'options' => $options,$options,'expdates'=>$expdates,'group_prices'=>$group_prices, 'all_group_prices' => $all_group_prices, 'makeup_cost'=>$customer_group->makeup_cost, 'customer_percent' => $customer_percent, 'makeup_cost_percent'=>$percent->percent, 'users_admin' => $users_admin);
+					$pr[] = array('id' => str_replace(".", "", microtime(true)), 'item_id' => $row->id, 'label' => $row->name . " (" . $row->code . ")", 'row' => $row, 'combo_items' => $combo_items, 'tax_rate' => false, 'options' => $options,$options,'expdates'=>$expdates,'group_prices'=>$group_prices, 'all_group_prices' => $all_group_prices, 'makeup_cost'=>$customer_group->makeup_cost, 'customer_percent' => $customer_percent, 'makeup_cost_percent'=>$percent->percent);
 				}
 				
 			}

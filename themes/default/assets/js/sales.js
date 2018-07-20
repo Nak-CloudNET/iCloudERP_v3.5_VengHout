@@ -2318,11 +2318,6 @@ function loadItems() {
 				}
 			}
 
-			$.each(item.users_admin, function () {
-				var pwd = this.password;
-				tr_html += '<input class="admins" name="admins[]" type="hidden" value="' + pwd + '">';
-			});
-
 			tr_html += '<input class="default_price" name="default_price[]" type="hidden" value="' + default_price + '">';
 
             tr_html += '<td><input class="form-control text-center rquantity" ' + (delivery_id ? 'readonly' : "") + ' name="quantity[]" type="text" value="' + formatDecimal(item_qty) + '" data-id="' + row_no + '" data-item="' + item_id + '" id="quantity_' + row_no + '" onClick="this.select();"></td>';
