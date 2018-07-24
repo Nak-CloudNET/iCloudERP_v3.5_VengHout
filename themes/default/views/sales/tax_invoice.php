@@ -39,8 +39,8 @@
     <table width="100%">
         <tr>
             <td>
-                <h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
                 <h2 style="font-family: Khmer OS Muol Light; text-align: center;"><?= $biller->company_kh ?></h2>
+                <h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
             </td>
         </tr>
     </table>
