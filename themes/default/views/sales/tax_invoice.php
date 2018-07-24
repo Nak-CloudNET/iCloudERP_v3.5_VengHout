@@ -38,31 +38,19 @@
 <br>
 	<table class="table-responsive" width="1024px" border="0" cellspacing="0" style="margin:auto;">
 		<tr>
-			<td rowspan="6" style="vertical-align: top">
-				<?php
-                if ($Settings->system_management == 'project') { ?>
-                    <div class="text-center" style="margin-bottom:20px;">
-                        <img src="<?= base_url() . 'assets/uploads/logos/' . $Settings->logo2; ?>"
-                             alt="<?= $Settings->site_name; ?>">
-                    </div>
-            <?php } else { ?>
-                    <?php if ($logo) { ?>
-                        <div class="text-center" style="margin-bottom:20px;">
-                            <img src="<?= base_url() . 'assets/uploads/logos/' . $biller->logo; ?>"
-                                 alt="<?= $biller->company != '-' ? $biller->company : $biller->name; ?>">
-                        </div>
-                    <?php } ?>
-            <?php } ?>
-			</td>
+
 			<td style="width: 50px !important"></td>
 			<td>
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <h2 style="font-family: Khmer OS Muol Light; text-align: center;"><?= $biller->company_kh ?></h2>
+                            <h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
+                        </td>
+                    </tr>
+                </table>
 				<table>
-					<tr>
-						<td colspan="2">
-							<h2 style="font-family: Khmer OS Muol Light; text-align: center;"><?= $biller->company_kh ?></h2>
-							<h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
-						</td>
-					</tr>
+
 					<tr>
 						<td width="30%">
 							<div style="font-family:'Khmer OS'; font-size:12px;"><?= $this->lang->line("លេខអត្តសញ្ញាណកម្ម អតប​ (VATTIN)"); ?></div>
