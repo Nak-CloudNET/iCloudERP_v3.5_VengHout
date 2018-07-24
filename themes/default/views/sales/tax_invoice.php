@@ -36,72 +36,73 @@
 <div class="container">
 <center>
 <br>
+    <table width="100%">
+        <tr>
+            <td>
+                <h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
+                <h2 style="font-family: Khmer OS Muol Light; text-align: center;"><?= $biller->company_kh ?></h2>
+            </td>
+        </tr>
+    </table>
 	<table class="table-responsive" width="1024px" border="0" cellspacing="0" style="margin:auto;">
 		<tr>
 
 			<td style="width: 50px !important"></td>
 			<td>
-                <table width="100%">
-                    <tr>
-                        <td>
-                            <h2 style="font-family: Khmer OS Muol Light; text-align: center;"><?= $biller->company_kh ?></h2>
-                            <h4 style="text-align: center; font-weight: bold"><?= $biller->company ?></h4>
-                        </td>
-                    </tr>
-                </table>
-				<table>
 
-					<tr>
-						<td width="30%">
-							<div style="font-family:'Khmer OS'; font-size:12px;"><?= $this->lang->line("លេខអត្តសញ្ញាណកម្ម អតប​ (VATTIN)"); ?></div>
-						</td>
-						<td>
-							<div style="font-family:'Arial'; font-size:12px;">
-								<?php for($i=strlen($biller->vat_no);$i>=1 ; $i--) { ?>
-									<?php 
-										$sign ="";
-										if ($i == 10) {
-													$sign = "-";
-										}
-									?>
-								    	<button type="button" class="btn"><?= $biller->vat_no[strlen($biller->vat_no)-$i]?></button> <?= $sign ?>
-								<?php } ?>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div style="font-family:'Khmer OS'; font-size:12px;"><?= $this->lang->line("អាស័យដ្ឋាន"); ?></div>
-						</td>
-						<td>
-							<div style="font-family:'Khmer OS'; font-size:12px;">: <?= $biller->cf4; ?></div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div style="font-family:'Arial'; font-size:12px;"><?= $this->lang->line("Address"); ?></div>
-						</td>
-						<td>
-							<div style="font-family:'Arial'; font-size:12px;">: <?= $address; ?></div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div style="font-family:'Arial'; font-size:12px;"><?= lang("tel"); ?></div>
-						</td>
-						<td style="font-family:'Arial'; font-size:12px;">: <?= $biller->phone;?></td>
-					</tr>
-					<tr>
-						<td >
-							<div style="font-family:'Arial'; font-size:12px;"><?= lang("email"); ?></div>
-						</td>
-						<td style="font-family:'Arial'; font-size:12px;">: <?= $customer->email; ?></td>
-					</tr>
-				</table>
+
 			</td>
 		</tr>
 	</table>
+    <table >
 
+        <tr>
+            <td>
+                <div style="font-family:'Khmer OS'; font-size:12px;"><?= $this->lang->line("លេខអត្តសញ្ញាណកម្ម អតប​ (VATTIN)"); ?></div>
+            </td>
+            <td>
+                <div style="font-family:'Arial'; font-size:12px;">
+                    <?php for($i=strlen($biller->vat_no);$i>=1 ; $i--) { ?>
+                        <?php
+                        $sign ="";
+                        if ($i == 10) {
+                            $sign = "-";
+                        }
+                        ?>
+                        <button type="button" class="btn"><?= $biller->vat_no[strlen($biller->vat_no)-$i]?></button> <?= $sign ?>
+                    <?php } ?>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-family:'Khmer OS'; font-size:12px;"><?= $this->lang->line("អាស័យដ្ឋាន"); ?></div>
+            </td>
+            <td>
+                <div style="font-family:'Khmer OS'; font-size:12px;">: <?= $biller->cf4; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-family:'Arial'; font-size:12px;"><?= $this->lang->line("Address"); ?></div>
+            </td>
+            <td>
+                <div style="font-family:'Arial'; font-size:12px;">: <?= $biller->address; ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-family:'Arial'; font-size:12px;"><?= lang("tel"); ?></div>
+            </td>
+            <td style="font-family:'Arial'; font-size:12px;">: <?= $biller->phone;?></td>
+        </tr>
+        <tr>
+            <td >
+                <div style="font-family:'Arial'; font-size:12px;"><?= lang("email"); ?></div>
+            </td>
+            <td style="font-family:'Arial'; font-size:12px;">: <?= $biller->email; ?></td>
+        </tr>
+    </table>
 	<table class="table-responsive" width="1024px" border="0" cellspacing="0" style="margin:auto;">
 		<tr>
 			<td style="height:5px;" colspan="5"> <hr width="100%" size="2px" /> </td>
