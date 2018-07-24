@@ -117,7 +117,10 @@ $(document).ready(function () {
 	 * ---------------------- */
     $("#ppdiscount").click(function (e) {
         e.preventDefault();
-        var disc = $('#order_discount').val() ? $('#order_discount').val() : '0';
+        var disc = 0;
+        if ($('#order_discount').val() == 'null%' || !$('#order_discount').val()) {
+        	disc = 0;
+		}
         //var dval = $('#posdiscount').val() ? $('#posdiscount').val() : '0';
         $('#order_discount_input').val(disc);
         $('#dsModal').modal();
@@ -1225,7 +1228,6 @@ function loadItems() {
 			
 			$("#order_span").empty(); $("#order_span_drink").empty(); $("#bill_span").empty();
 
-			//var pos_head1 = '<span style="text-align:center;"><h3>'+site.settings.site_name+'</h3><h4>'
             var pos_head2 	= '';
             var table 		="";
             if($("#suspend_name").val()!=0){table='Room | Table: <span>'+ $("#suspend_name").val()+'</span><br/>';}
@@ -1270,9 +1272,9 @@ function loadItems() {
 			item_pro_price 		= item.row.promo_price,
 			combo_items 		= item.combo_items,
 			item_price 			= item.row.price,
+			real_unit_cost		= item.row.cost,
 			item_qty 			= item.row.qty,
 			item_aqty 			= item.row.qoh - 0,
-			//item_aqty 		= item.row.qoh-item.row.quantity,
 			item_tax_method 	= item.row.tax_method,
 			item_ds 			= item.row.discount,
 			item_discount 		= 0,
@@ -1541,9 +1543,9 @@ function loadItems() {
 				tr_html += '<input class="form-control input-sm text-right rproduct_tax" name="product_tax[]" type="hidden" id="product_tax_' + row_no + '" value="' + pr_tax.id + '"><input type="hidden" class="sproduct_tax" id="sproduct_tax_' + row_no + '" value="' + formatMoney(pr_tax_val * item_qty) + '">';
 			}
 			if (item_promotion == 1){
-				tr_html += '<input class="rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + real_unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatMoney(parseFloat(real_unit_price)) + '</span></td>';
+				tr_html += '<input class="rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + real_unit_price + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + formatMoney(parseFloat(real_unit_cost)) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatMoney(parseFloat(real_unit_price)) + '</span></td>';
 			}else{
-				tr_html += '<input class="rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + real_unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatMoney(parseFloat(real_unit_price)) + '</span></td>';
+				tr_html += '<input class="rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + real_unit_price + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + formatMoney(parseFloat(real_unit_cost)) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + formatMoney(parseFloat(real_unit_price)) + '</span></td>';
 			}
 
 			tr_html += '<input class="default_price" name="default_price[]" type="hidden" value="' + default_price + '">';
