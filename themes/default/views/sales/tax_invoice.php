@@ -254,8 +254,8 @@
 						foreach ($rows as $row):
 						$free = lang('free');
 						$product_unit = '';
-						$dis=0;
-						$dis+=$row->item_discount;
+						$total+=$row->subtotal;
+
 						if($row->variant){
 							$product_unit = $row->variant;
 						}else{
@@ -285,7 +285,7 @@
 									echo '<td style="width: 100px; text-align:right; vertical-align:middle;">' . ($row->item_tax != 0 && $row->tax_code ? '<small>('.$row->tax_code.')</small>' : '') . ' ' . $this->erp->formatMoney($row->item_tax) . '</td>';
 								}
 								if ($dis>0) {
-									echo '<td style="width: 100px; text-align:right; vertical-align:middle;">'.($row->discount != 0 ? '<small>(' . $row->discount . ')</small> ' : '') . $this->erp->formatMoney($row->item_discount).'</td>';
+									echo '<td style="width: 100px; text-align:right; vertical-align:middle;">'. $this->erp->formatMoney($row->item_discount).'</td>';
 								}
 								?>
 								<td style="text-align:right; vertical-align:middle; width:120px;" colspan="<?=($isTax && $isDiscount)? 2:1 ?>"><?= $row->subtotal!=0?$this->erp->formatMoney($row->subtotal):$free; ?></td>
@@ -395,6 +395,7 @@
 						}
 						$rol++;
 						$tcol++;
+//						 echo '<h1>'.$col.'_'.$tcol.'</h1>';
 						if($dis>0){
 						    $col+=1;
 						    $tcol-=1;
@@ -403,11 +404,14 @@
                             $col+=1;
                             $tcol-=1;
                         }
+                        if($tax>0&& $dis>0){
+                            $col+=1;
+                        }
                         if($dis<=0&&$tax<=0){
                             $tcol-=1;
                         }
 						?>
-<!--                        <h1>--><?//= $col.'_'.$tcol; ?><!--</h1>-->
+<!--                        <h1>--><?//= $col.'_----'.$tcol; ?><!--</h1>-->
 						<tr>
 							<td rowspan="<?= $rol; ?>" colspan="<?= $col; ?>"></td>
 							<td style="text-align:right; padding-right:10px;" colspan="<?= $tcol; ?>"><?= lang("សរុប <br/> Total"); ?></td>
@@ -419,7 +423,7 @@
 								echo '<td style="text-align:right; vertical-align:middle;">' . $this->erp->formatMoney($inv->product_discount) . '</td>';
 							}
 							?>
-							<td style="text-align:right; padding-right:10px; vertical-align:middle;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax); ?></td>
+							<td style="text-align:right; padding-right:10px; vertical-align:middle;"><?= $this->erp->formatMoney($total); ?></td>
 						</tr>
 						<?php if ($inv->order_discount != 0) {
 							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
@@ -443,7 +447,7 @@
 							<td colspan="<?= $tcol ?>"
 								style="text-align:right; font-weight:bold;"><?= lang("សរុប <br/> Grand_Total"); ?>
 							</td>
-							<td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax + $inv->order_tax);?></td>
+							<td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($total +  $inv->order_tax);?></td>
 						</tr>
 						<?php } ?>
 						<?php if($inv->paid != 0 || $inv->deposit != 0) {?>
@@ -455,22 +459,8 @@
 							<td style="text-align:right; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($inv->deposit); ?></td>
 						</tr>
 						<?php } ?>
-						<?php if($inv->paid != 0) {?>
-						<tr>
-							<td colspan="<?= $tcol; ?>"
-								style="text-align:right; font-weight:bold;" ><?= lang("បានបង់​ <br/> Paid"); ?>
-							</td>
-							<td style="text-align:right; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($inv->paid-$inv->deposit); ?></td>
-						</tr>
-						<?php } ?>
-						<tr>
-							<td colspan="<?= $tcol; ?>"
-								style="text-align:right; font-weight:bold;"><?= lang("សមតុល្យ​ទឹកប្រាក់ <br/> Balance"); ?>
-							</td>
-							<td style="text-align:right; font-weight:bold; padding-top:20px;">
-								<?= $this->erp->formatMoney($inv->grand_total - (($inv->paid - $inv->deposit) + $inv->deposit)); ?>
-							</td>
-						</tr>
+
+
 						<?php }?>
 						</tfoot>
 					</table>
