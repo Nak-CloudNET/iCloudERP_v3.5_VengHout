@@ -139,12 +139,12 @@
 
 						<div class="row">
 							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ទូរស័ព្ទ​លេខ <br> Telephone No');?></div>
-							<div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
-								<?= $customer->phone; ?>
-							</div>
+                                <div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
+                                    <?= $customer->phone; ?>
+                                </div>
 						</div>
                         <div class="row">
-                            <br>
+
                             <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('អាសយដ្ឋាន');?></div>
                             <div class="col-sm-5 col-xs-5 text-left" >
                                 <?= $customer->address; ?>
@@ -414,23 +414,23 @@
 <!--                        <h1>--><?//= $col.'_----'.$tcol; ?><!--</h1>-->
 						<tr>
 							<td rowspan="<?= $rol; ?>" colspan="<?= $col; ?>"></td>
-							<td style="text-align:right; padding-right:10px;" colspan="<?= $tcol; ?>"><?= lang("សរុប <br/> Total"); ?></td>
+							<td style="text-align:right; padding-right:10px;font-weight:bold;" colspan="<?= $tcol; ?>"><?= lang("សរុប <br/> Total"); ?></td>
 							<?php
 							if ($Settings->tax1 && $rows['item_tax'] != 0 && $rows['tax_code']) {
-								echo '<td style="text-align:right; padding-top:20px;">' . $this->erp->formatMoney($inv->product_tax) . '</td>';
+								echo '<td style="text-align:right; padding-top:20px; font-weight:bold;">' . $this->erp->formatMoney($inv->product_tax) . '</td>';
 							}
 							if ($Settings->product_discount && $rows['discount'] != 0) {
-								echo '<td style="text-align:right; vertical-align:middle;">' . $this->erp->formatMoney($inv->product_discount) . '</td>';
+								echo '<td style="text-align:right; vertical-align:middle; font-weight:bold;">' . $this->erp->formatMoney($inv->product_discount) . '</td>';
 							}
 							?>
-							<td style="text-align:right; padding-right:10px; vertical-align:middle;"><?= $this->erp->formatMoney($total); ?></td>
+							<td style="text-align:right; padding-right:10px; vertical-align:middle; font-weight:bold;"><?= $this->erp->formatMoney($total); ?></td>
 						</tr>
 						<?php if ($inv->order_discount != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
+							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px; font-weight:bold;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
 						}
 						?>
 						<?php if ($inv->shipping != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px;">' . lang("​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' </td><td style="text-align:right; vertical-align:middle; padding-right:10px;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
+							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight:bold;" >' . lang("​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' </td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
 						}
 
 						?>
@@ -439,29 +439,24 @@
 							if ($vat == '10%') {
 								$vat_kh = '១០%';
 							}
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight: bold;">' . lang("អាករលើតម្លែបន្ថែម <span>". $vat_kh ."</span><br/><span style='font-size:12px'> VAT (". $vat .")</span>") . '</td><td style="text-align:right; vertical-align:middle; padding-right:10px;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
+							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight: bold;">' . lang("អាករលើតម្លែបន្ថែម <span>". $vat_kh ."</span><br/><span style='font-size:12px'> VAT (". $vat .")</span>") . '</td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
 						}
 						?>
-						<?php if ($inv->order_discount != 0 || $inv->shipping != 0 || ($Settings->tax2 && $inv->order_tax != 0)) { ?>
-						<tr>
-							<td colspan="<?= $tcol ?>"
-								style="text-align:right; font-weight:bold;"><?= lang("សរុប <br/> Grand_Total"); ?>
-							</td>
-							<td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($total +  $inv->order_tax);?></td>
-						</tr>
-						<?php } ?>
-						<?php if($inv->paid != 0 || $inv->deposit != 0) {?>
-						<?php if($inv->deposit != 0) {?>
-						<tr>
-							<td colspan="<?= $tcol ?>"
-								style="text-align:right; font-weight:bold;"><?= lang("បានកក់ <br/> Deposit"); ?>
-							</td>
-							<td style="text-align:right; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($inv->deposit); ?></td>
-						</tr>
-						<?php } ?>
+                        <?php
+                            if($inv->order_tax>0&&$inv->shipping>0&&$inv->order_discount>0){
+                        ?>
+                                <tr>
+                                    <td colspan="<?= $tcol ?>"
+                                        style="text-align:right; font-weight:bold;"><?= lang("សរុប <br/> Grand_Total"); ?>
+                                    </td>
+                                    <td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney(($total +  $inv->order_tax+$inv->shipping)-$inv->order_discount);?></td>
+                                </tr>
+                        <?php
+                        }
+                        ?>
 
 
-						<?php }?>
+
 						</tfoot>
 					</table>
 				</div>
