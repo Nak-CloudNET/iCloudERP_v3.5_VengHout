@@ -9,9 +9,12 @@
 	<link href="<?php echo $assets ?>styles/custome.css" rel="stylesheet">
 </head>
 <style>
-	body {
-		font-size: 12px !important;
-	}
+
+    body{
+        font-size: 12px !important;
+        font-family: "Khmer OS System";
+        -moz-font-family: "Khmer OS System";
+    }
 		
 	.container {
 		width: 19.3cm;
@@ -46,14 +49,17 @@
 		.invoice_label {
 			padding-left: 0 !important;
 		}
+        .thead>th{
+            color: black!important;
+        }
 
 		.row table tr td {
 			font-size: 12px !important;
 		}
 
 		.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th {
-			background-color: #444 !important;
-			color: #FFF !important;
+			background-color: #444 ;
+			color: #FFF ;
 		}
 		
 		.row .col-xs-7 table tr td, .col-sm-5 table tr td{
@@ -115,6 +121,12 @@
         font-family:"Khmer OS Muol Light";
         -moz-font-family: "Khmer OS System";
         font-size: 18px;
+    }
+    .title{
+        font-family:"Khmer OS Muol Light";
+        -mox-font-family:"Khmer OS Muol Light";
+        font-size: 16px!important;
+
     }
 	
 </style>
@@ -182,9 +194,9 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-12 col-xs-12 inv" style="margin-top: -10px !important">
+				<div class="col-sm-12 col-xs-12 " style="margin-top: -10px !important">
 					<center>
-						<h4>វិក្កយបត្រ</h4>
+						<h4 class="title" >វិក្កយបត្រ</h4>
 						<h4 style="margin-top:-10px !important;">INVOICE</h4>
 					</center>
 				</div>
@@ -203,8 +215,8 @@
                             <tr>
                                 <td>អតិថិជន </td>
                                 <td>:</td>
-                                <?php if(!empty($customer->name_kh)) { ?>
-                                    <td><?= $customer->name_kh ?></td>
+                                <?php if(($customer->name)) { ?>
+                                    <td><?= $customer->name ?></td>
                                 <?php }else { ?>
                                     <td><?= $customer->name ?></td>
                                 <?php } ?>
@@ -228,13 +240,7 @@
                                 <td><?= $customer->phone ?></td>
                             </tr>
                         <?php } ?>
-                        <?php if(!empty($customer->vat_no)) { ?>
-                            <tr>
-                                <td style="width: 20% !important">លេខអត្តសញ្ញាណកម្ម អតប </td>
-                                <td>:</td>
-                                <td><?= $customer->vat_no ?></td>
-                            </tr>
-                        <?php } ?>
+
                     </table>
                 </div>
                 <div class="col-sm-5 col-xs-5">
@@ -247,7 +253,7 @@
                         <tr>
                             <td>កាលបរិច្ឆេទ </td>
                             <td>:</td>
-                            <td><?= $this->erp->hrld($invs->date); ?></td>
+                            <td><?= date("d-m-Y", strtotime($invs->date)); ?></td>
                         </tr>
                         <tr>
                             <td>អ្នកលក់ </td>
@@ -278,250 +284,328 @@
 			?>
 			<div class="row">
 				<div class="col-sm-12 col-xs-12">
-					<table class="table table-bordered" style="width: 100%; margin-top: 10px;">
-						<tbody style="font-size: 12px;">
-							<tr class="thead" style="background-color: #444 !important; color: #FFF !important;">
+					<table class=" table " style="width: 100%; margin-top: 10px;">
+						<thead style="font-size: 12px;">
+							<tr class="thead" style="background-color: #444 ; color: #FFF ; ">
 								<th>ល.រ<br /><?= strtoupper(lang('no')) ?></th>
 								<th>បរិយាយមុខទំនិញ<br /><?= strtoupper(lang('description')) ?></th>
 								<th>ខ្នាត<br /><?= strtoupper(lang('unit')) ?></th>
 								<th>ចំនួន<br /><?= strtoupper(lang('qty')) ?></th>
 								<th>តម្លៃ<br /><?= strtoupper(lang('unit_price')) ?></th>
-								
-								<?php if ($Settings->product_discount) { ?>
-									<th>បញ្ចុះតម្លៃ<br /><?= strtoupper(lang('discount')) ?></th>
-								<?php } ?>
-                                <?php if ($Settings->tax1) { ?>
-                                    <th>ពន្ធទំនិញ<br /><?= strtoupper(lang('tax')) ?></th>
+                                <?php
+                                $dis=0;
+                                $taxx=0;
+                                foreach ($rows as $row2) {
+                                    $dis+=$row2->item_discount;
+                                    $taxx+=$row2->item_tax;
+                                }
+
+                                if ($dis>0) { ?>
+                                    <th>បញ្ចុះតម្លៃ<br /><?= strtoupper(lang('discount')) ?></th>
+                                <?php  } ?>
+                                <?php if($taxx>0){ if ($Settings->tax1) { ?>
+                                    <th style="width: 10%">ពន្ធទំនិញ<br /><?= strtoupper(lang('tax')) ?></th>
+                                <?php } }?>
+                                <th>តម្លៃសរុប<br /><?= strtoupper(lang('subtotal')) ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+
+                        $no = 1;
+                        $erow = 1;
+                        $totalRow = 0;
+                        foreach ($rows as $row) {
+                            $free = lang('free');
+                            $product_unit = '';
+                            $total = 0;
+
+                            if($row->variant){
+                                $product_unit = $row->variant;
+                            }else{
+                                $product_unit = $row->uname;
+                            }
+                            $product_name_setting;
+                            if($setting->show_code == 0) {
+                                $product_name_setting = $row->product_name . ($row->variant ? ' (' . $row->variant . ')' : '');
+                            }else {
+                                if($setting->separate_code == 0) {
+                                    $product_name_setting = $row->product_name . " (" . $row->product_code . ")" . ($row->variant ? ' (' . $row->variant . ')' : '');
+                                }else {
+                                    $product_name_setting = $row->product_name . ($row->variant ? ' (' . $row->variant . ')' : '');
+                                }
+                            }
+                            ?>
+                            <tr class="border">
+                                <td style="vertical-align: middle; text-align: center"><?php echo $no ?></td>
+                                <td style="vertical-align: middle;">
+                                    <?=$row->product_name;?>
+                                </td>
+
+                                <td style="vertical-align: middle; text-align: center">
+                                    <?= $product_unit ?>
+                                </td>
+                                <td style="vertical-align: middle; text-align: center">
+                                    <?=$this->erp->formatQuantity($row->quantity);?>
+                                </td>
+                                <td style="vertical-align: middle; text-align: right">
+                                    <?php
+                                    if($row->real_unit_price==0){echo "Free";}
+                                    else{
+                                        echo $this->erp->formatMoney($row->real_unit_price);
+                                    }
+                                    ?>
+                                </td>
+                                <?php if ($dis>0) {?>
+                                    <td style="vertical-align: middle; text-align: center">
+                                        <?php
+                                        if(strpos($row->discount,"%")){
+                                            echo "<small style='font-size:10px;'>(".$row->discount.")</small>" ;
+
+                                        }
+                                        echo $this->erp->formatMoney($row->item_discount);
+
+
+                                        ?>
+                                    </td>
                                 <?php } ?>
-								<th>តម្លៃសរុប<br /><?= strtoupper(lang('subtotal')) ?></th>
-							</tr>
-							<?php 
-							
-								$no = 1;
-								$erow = 1;
-								$totalRow = 0;
-								foreach ($rows as $row) {
-									$free = lang('free');
-									$product_unit = '';
-									$total = 0;
-									
-									if($row->variant){
-										$product_unit = $row->variant;
-									}else{
-										$product_unit = $row->uname;
-									}
-									$product_name_setting;
-									if($setting->show_code == 0) {
-										$product_name_setting = $row->product_name . ($row->variant ? ' (' . $row->variant . ')' : '');
-									}else {
-										if($setting->separate_code == 0) {
-											$product_name_setting = $row->product_name . " (" . $row->product_code . ")" . ($row->variant ? ' (' . $row->variant . ')' : '');
-										}else {
-											$product_name_setting = $row->product_name . ($row->variant ? ' (' . $row->variant . ')' : '');
-										}
-									}
-							?>
-								<tr>
-									<td style="vertical-align: middle; text-align: center"><?php echo $no ?></td>
-									<td style="vertical-align: middle;">
-										<?=$row->product_name;?>
-									</td>
-									<td style="vertical-align: middle; text-align: center">
-										<?= $product_unit ?>
-									</td>
-									<td style="vertical-align: middle; text-align: center">
-										<?= $this->erp->formatQuantity($row->quantity);?>
-									</td>
-									<td style="vertical-align: middle; text-align: right">
-										$<?= $this->erp->formatMoney($row->real_unit_price); ?>
-									</td>
-									<?php if ($row->item_discount) {?>
-										<td style="vertical-align: middle; text-align: center">
-										$<?=$this->erp->formatMoney($row->item_discount);?></td>
-									<?php } ?>
-                                    <?php if ($row->item_tax) {?>
-                                        <td style="vertical-align: middle; text-align: center">
-                                            <?=$this->erp->formatMoney($row->item_tax);?></td>
+                                <?php if ($taxx>0) {?>
+                                    <td style="vertical-align: middle; text-align: center">
+                                        <?=$this->erp->formatMoney($row->item_tax);?></td>
+                                <?php } ?>
+                                <td style="vertical-align: middle; text-align: right">
+                                    <?php
+                                    if($row->subtotal==0){echo "Free";}
+                                    else{
+                                        echo $this->erp->formatMoney($row->subtotal);
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+
+                            <?php
+                            $no++;
+                            $erow++;
+                            $totalRow++;
+//                    if ($totalRow % 25 == 0) {
+//                        echo '<tr class="pageBreak"></tr>';
+//                    }
+
+                        }
+                        ?>
+                        <?php
+                        if($erow<16){
+                            $k=16 - $erow;
+                            for($j=1;$j<=$k;$j++) {
+                                if($dis>0) {
+                                    if($taxx>0){
+                                        echo  '<tr class="border">
+                                    <td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
+                                    
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    
+                                </tr>';
+                                    }else{
+                                        echo  '<tr class="border">
+                                    <td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
+                                    
+                                   
+                                    
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>';
+                                    }
+
+
+                                }else {
+                                    if($taxx>0){
+                                        echo  '<tr class="border">
+                                    <td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
+                                    <!--<td></td>-->
+                                    
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>';
+                                    }else{
+                                        echo  '<tr class="border">
+                                    <td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
+                                    
+                                    
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>';
+                                    }
+
+                                }
+                                $no++;
+                            }
+                        }
+                        ?>
+                        <?php
+                        $row = 1;
+                        $col =4;
+                        if ($discount != 0) {
+                            $col = 3;
+                        }
+                        if ($invs->grand_total != $invs->total) {
+                            $row++;
+                        }
+                        if ($invs->order_discount != 0) {
+                            $row++;
+                            $col =4;
+                        }
+                        if ($invs->shipping != 0) {
+                            $row++;
+                            $col =4;
+                        }
+
+
+
+
+                        if($invs->paid != 0 && $invs->deposit != 0) {
+                            $row += 3;
+                        }elseif ($invs->paid != 0 && $invs->deposit == 0) {
+                            $row += 2;
+                        }elseif ($invs->paid == 0 && $invs->deposit != 0) {
+                            $row += 2;
+                        }
+                        if($dis==0){
+                            $col-=1;
+                        }
+                        if($taxx==0){
+                            $col-=1;
+                        }
+                        ?>
+
+                        <?php
+                        if ($invs->grand_total != $invs->total) { ?>
+                            <tr class="border-foot">
+                                <td rowspan = "<?= ($row+1); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
+                                    <?php if (!empty($invs->invoice_footer)) { ?>
+                                        <p ><strong><u>Note:</u></strong></p>
+
                                     <?php } ?>
-									<td style="vertical-align: middle; text-align: right">$<?= $this->erp->formatMoney($row->subtotal);?>
-									</td>
-								</tr>
+                                </td>
+                                <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុប​ / <?= strtoupper(lang('total')) ?>
 
-							<?php
-							$no++;
-							$erow++;
-							$totalRow++;
-								if ($totalRow % 25 == 0) {
-									echo '<tr class="pageBreak"></tr>';
-								}
+                                </td>
+                                <td align="right"><?=$this->erp->formatMoney($invs->total); ?></td>
+                            </tr>
+                        <?php } ?>
 
-							}
-							?>
-							<?php
-								if($erow<11){
-									$k=11 - $erow;
-									for($j=1;$j<=$k;$j++) {
-										if($discount != 0) {
-											echo  '<tr>
-													<td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-												</tr>';
-										}else {
-											echo  '<tr>
-													<td height="34px" style="text-align: center; vertical-align: middle">'.$no.'</td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-												</tr>';
-										}
-										$no++;
-									}
-								}
-							?>
-							<?php
-								$row = 3;
-								$col =4;
-								if ($discount != 0) {
-									$col =3;
-								}
-								if ($invs->grand_total != $invs->total) {
-									$row++;
-								}
-								if ($invs->order_discount != 0) {
-									$row++;
-									$col =4;
-								}
-								if ($invs->shipping != 0) {
-									$row++;
-									$col =4;
-								}
-								if ($invs->order_tax != 0) {
-									$row++;
-									$col =4;
-								}
-								if($invs->paid != 0 && $invs->deposit != 0) {
-									$row += 3;
-								}elseif ($invs->paid != 0 && $invs->deposit == 0) {
-									$row += 2;
-								}elseif ($invs->paid == 0 && $invs->deposit != 0) {
-								}
-							?>
-										
-							<?php if ($invs->grand_total != $invs->total) { ?>
-							<tr>
-								<td rowspan = "<?= $row; ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-									<?php if (!empty($invs->invoice_footer)) { ?>
-										<p style="font-size:14px !important;"><strong><u>Note:</u></strong></p>
-										<p style="margin-top:-5px !important; line-height: 2"><?= $invs->invoice_footer ?></p>
-									<?php } ?>
-								</td>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុប​ / <?= strtoupper(lang('total')) ?>
-									(<?= $default_currency->code; ?>)
-								</td>
-								<td align="right">$<?=$this->erp->formatMoney($invs->total); ?></td>
-							</tr>
-							<?php } ?>
-										
-							<?php if ($invs->order_discount != 0) : ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បញ្ចុះតម្លៃលើការបញ្ជាទិញ / <?= strtoupper(lang('order_discount')) ?></td>
-								<td align="right">$<?php echo $this->erp->formatQuantity($invs->order_discount).' $'; ?></td>
-							</tr>
-							<?php endif; ?>
-							
-							<?php if ($invs->shipping != 0) : ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">ដឹកជញ្ជូន / <?= strtoupper(lang('shipping')) ?></td>
-								<td align="right">$<?php echo $this->erp->formatQuantity($invs->shipping); ?></td>
-							</tr>
-							<?php endif; ?>
-							
-							<?php if ($invs->order_tax != 0) : ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">ពន្ធអាករ / <?= strtoupper(lang('order_tax')) ?></td>
-								<td align="right">$<?= $this->erp->formatQuantity($invs->order_tax); ?></td>
-							</tr>
-							<?php endif; ?>
-							
-							<tr>
-								<?php if ($invs->grand_total == $invs->total) { ?>
-								<td rowspan="<?= $row; ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-									<?php if (!empty($invs->invoice_footer)) { ?>
-										<p><strong><u>Note:</u></strong></p>
-										<p><?= $invs->invoice_footer ?></p>
-									<?php } ?>
-								</td>
-								<?php } ?>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុបរួម / <?= strtoupper(lang('total_amount')) ?>
-									(<?= $default_currency->code; ?>)
-								</td>
-								<td align="right">$<?= $this->erp->formatMoney($invs->grand_total); ?></td>
-							</tr>
-							<?php if($invs->paid != 0 || $invs->deposit != 0){ ?>
-							<?php if($invs->deposit != 0) { ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បានកក់ / <?= strtoupper(lang('deposit')) ?>
-									(<?= $default_currency->code; ?>)
-								</td>
-								<td align="right">$<?php echo $this->erp->formatMoney($invs->deposit); ?></td>
-							</tr>
-							<?php } ?>
-							<?php if($invs->paid != 0) { ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បានបង់ / <?= strtoupper(lang('paid')) ?>
-									(<?= $default_currency->code; ?>)
-								</td>
-								<td align="right">$<?php echo $this->erp->formatMoney($invs->paid-$invs->deposit); ?></td>
-							</tr>
-							<?php } ?>
-							<tr>
-								<td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">នៅខ្វះ / <?= strtoupper(lang('balance')) ?>
-									(<?= $default_currency->code; ?>)
-								</td>
-								<td align="right">$<?= $this->erp->formatMoney($invs->grand_total - (($invs->paid-$invs->deposit) + $invs->deposit)); ?></td>
-							</tr>
-						<?php } ?>
-							
+                        <?php if ($invs->order_discount != 0) : ?>
+                            <tr class="border-foot">
+                                <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បញ្ចុះតម្លៃ / <?= strtoupper(lang('order_discount')) ?></td>
+                                <td align="right"><small style='font-size:10px;'>(<?php echo $invs->order_discount_id; ?>%)</small>&nbsp;<?php echo $this->erp->formatMoney($invs->order_discount); ?></td>
+                            </tr>
+                        <?php endif; ?>
+
+                        <?php if ($invs->shipping != 0) : ?>
+                            <tr class="border-foot">
+                                <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">ដឹកជញ្ជូន / <?= strtoupper(lang('shipping')) ?></td>
+                                <td align="right"><?php echo $this->erp->formatMoney($invs->shipping); ?></td>
+                            </tr>
+                        <?php endif; ?>
+
+                        <?php if ($invs->order_tax != 0) : ?>
+                            <tr class="border-foot">
+                                <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">ពន្ធអាករ / <?= strtoupper(lang('order_tax')) ?></td>
+                                <td align="right"><?= $this->erp->formatMoney($invs->order_tax); ?></td>
+                            </tr>
+                        <?php endif; ?>
+
+                        <tr class="border-foot">
+                            <?php if ($invs->grand_total == $invs->total) { ?>
+                                <td rowspan="<?= ($row); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
+                                    <?php if (!empty($invs->invoice_footer)) { ?>
+                                        <p><strong><u>Note:</u></strong></p>
+                                        <!-- <p><?= $invs->invoice_footer ?></p>-->
+                                    <?php } ?>
+                                </td>
+                            <?php } ?>
+
+                            <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុប / <?= strtoupper(lang('total_amount')) ?>
+
+                            </td>
+                            <td align="right">
+                                <?php
+                                if($invs->grand_total==0){echo "Free";}
+                                else{
+                                    echo $this->erp->formatMoney($invs->grand_total);
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php if($invs->paid != 0 || $invs->deposit != 0){ ?>
+                            <?php if($invs->deposit != 0) { ?>
+                                <tr class="border-foot">
+                                    <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បានកក់ / <?= strtoupper(lang('deposit')) ?>
+
+                                    </td>
+                                    <td align="right"><?php echo $this->erp->formatMoney($invs->deposit); ?></td>
+                                </tr>
+                            <?php } ?>
+                            <?php if($invs->paid != 0) { ?>
+                                <tr class="border-foot">
+                                    <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">បានបង់ / <?= strtoupper(lang('paid')) ?>
+
+                                    </td>
+                                    <td align="right"><?php echo $this->erp->formatMoney($invs->paid-$invs->deposit); ?></td>
+                                </tr>
+                            <?php } ?>
+                            <tr class="border-foot">
+                                <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">នៅខ្វះ / <?= strtoupper(lang('balance')) ?>
+
+                                </td>
+                                <td align="right"><?= $this->erp->formatMoney($invs->grand_total - (($invs->paid-$invs->deposit) + $invs->deposit)); ?></td>
+                            </tr>
+                        <?php } ?>
+
 						</tbody>
 						
 					</table>
 				</div>
 			</div>
+
 			<?php if($invs->note){ ?>
 			<div style="border-radius: 5px 5px 5px 5px;border:1px solid black;font-size: 10px !important;margin-top: 10px;height: auto;" id="note" class="col-md-12 col-xs-12">
 				<p style="margin-left: 10px;margin-top:10px;"><?php echo strip_tags($invs->note); ?></p>
+
 			</div>
 			<?php } ?>
 		 </div>	<!--div col sm 6 -->
 
 		<div id="footer" class="row">
-			<div class="col-sm-4 col-xs-4">
+
+			<div class="col-sm-6 col-xs-6">
 				<center>
-					<hr style="margin:0; border:1px solid #000; width: 80%">
-					<p style="font-size: 12px; margin-top: 4px !important">ហត្ថលេខា និងឈ្មោះអ្នករៀបចំ</p>
-					<p style="margin-top:-10px; font-size: 12px">Prepared's Signature & Name</p>
-				</center>
-			</div>
-			<div class="col-sm-4 col-xs-4">
-				<center>
+                    <br><br> <br>
 					<hr style="margin:0; border:1px solid #000; width: 80%">
 					<p style="font-size: 12px; margin-top: 4px !important">ហត្ថលេខា និងឈ្មោះអ្នកលក់</p>
 					<p style="margin-top:-10px; font-size: 12px">Seller's Signature & Name</p>
 				</center>
 			</div>
-			<div class="col-sm-4 col-xs-4">
+			<div class="col-sm-6 col-xs-6">
 				<center>
+                    <br><br> <br>
 					<hr style="margin:0; border:1px solid #000; width: 80%">
 					<p style="font-size: 12px; margin-top: 4px !important">ហត្ថលេខា និងឈ្មោះអ្នកទិញ</p>
 					<p style="margin-top:-10px; font-size: 12px">Customer's Signature & Name</p>

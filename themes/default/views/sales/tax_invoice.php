@@ -117,24 +117,26 @@
 			<td colspan="5" width="65%" align="center" style="padding-top:5px;">
 				<div class="row">
 					<div class="col-sm-6 col-xs-6">
-						<div class="row">
-							<div class="col-sm-7 col-xs-7" style="font-family:'Khmer OS Muol Light'; font-size:14px; text-align: left"><?= lang('អតិថិជន / Customer');?></div>
-							<div class="col-sm-5 col-xs-5 text-left">
-								<?= $customer->name ? $customer->name : $customer->company; ?>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន​');?></div>
-							<div class="col-sm-5 col-xs-5 text-left">
-								<?= $customer->name_kh; ?>
-							</div>
-						</div>
+                        <div class="row">
+                            <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ឈ្មោះ​ក្រុមហ៊ុន​');?></div>
+                            <div class="col-sm-5 col-xs-5 text-left">
+                                <?= $customer->name_kh; ?>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('Company name');?></div>
                             <div class="col-sm-5 col-xs-5 text-left" >
                                 <?= $customer->company ? $customer->company : $customer->name; ?>
                             </div>
                         </div>
+						<div class="row">
+							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('អតិថិជន / Customer');?></div>
+							<div class="col-sm-5 col-xs-5 text-left">
+								<?= $customer->name ? $customer->name : $customer->company; ?>
+							</div>
+						</div>
+
+
 						<div class="row">
 							<div class="col-sm-7 col-xs-7" style="font-size:14px; text-align: left"><?= lang('ទូរស័ព្ទ​លេខ <br> Telephone No');?></div>
 							<div class="col-sm-5 col-xs-5 text-left" style="height: 41px; padding-top: 12px">
@@ -218,17 +220,25 @@
 								if ($Settings->product_discount && $rows['discount'] != 0) {
 									$isDiscount = true;
 								}
+                            foreach ($rows as $row1):
+                            $free = lang('free');
+                            $product_unit = '';
+                            $dis=0;
+                            $tax=0;
+                            $tax+=$row1->item_tax;
+                            $dis+=$row1->item_discount;
+                            endforeach;
 							?>
-							<th style="text-align:center;" colspan="<?=($isTax && $isDiscount)? 1:4 ?>" ><?= lang("បរិយាយមុខទំនិញ <br/> Description"); ?></th>
+							<th style="text-align:center;" ><?= lang("បរិយាយមុខទំនិញ <br/> Description"); ?></th>
 							<th style="text-align:center;"><?= lang("ខ្នាត <br/> Unit"); ?></th>
 							<th style="text-align:center;"><?= lang("បរិមាណ <br/> Quantity"); ?></th>
 							<th style="text-align:center;"><?= lang("ថ្លៃ​ឯកតា <br/> Unit_Price"); ?></th>
 							<?php
-							if ($isTax) {
+							if ($tax>0) {
 								echo '<th style="text-align:center;">' . lang("អាករឯកតា <br/> Tax") . '</th>';
 								
 							}
-							 if ($isDiscount) {
+							 if ($dis>0) {
 								echo '<th style="text-align:center;">'.lang("បញ្ចុះតម្លៃឯកតា​ <br/> Discount").'</th>';
 							 }
 							?>
@@ -244,12 +254,14 @@
 						foreach ($rows as $row):
 						$free = lang('free');
 						$product_unit = '';
+						$dis=0;
+						$dis+=$row->item_discount;
 						if($row->variant){
 							$product_unit = $row->variant;
 						}else{
 							$product_unit = $row->unit;
 						}
-						
+
 						$product_name_setting;
 						if($pos->show_product_code == 0) {
 							$product_name_setting = $row->product_name;
@@ -259,7 +271,7 @@
 						?>
 							<tr>
 								<td style="text-align:center; width:40px; vertical-align:middle;"><?= $r; ?></td>
-								<td style="vertical-align:middle;" colspan="<?=($isTax && $isDiscount)? 1:4 ?>">
+								<td style="vertical-align:middle;">
 									<?= $product_name_setting ?>
 									<?= $row->details ? '<br>' . $row->details : ''; ?>
 									<?= $row->serial_no ? '<br>' . $row->serial_no : ''; ?>
@@ -269,10 +281,10 @@
 								<!-- <td style="text-align:right; width:100px;"><?= $this->erp->formatMoney($row->net_unit_price); ?></td> -->
 								<td style="text-align:right; vertical-align:middle; width:100px;"><?= $row->subtotal!=0?$this->erp->formatMoney($row->unit_price):$free; ?></td>
 								<?php
-								if ($Settings->tax1 && $rows['item_tax'] != 0 && $rows['tax_code']) {
+								if ($tax>0) {
 									echo '<td style="width: 100px; text-align:right; vertical-align:middle;">' . ($row->item_tax != 0 && $row->tax_code ? '<small>('.$row->tax_code.')</small>' : '') . ' ' . $this->erp->formatMoney($row->item_tax) . '</td>';
 								}
-								if ($Settings->product_discount && $rows['discount'] != 0) {
+								if ($dis>0) {
 									echo '<td style="width: 100px; text-align:right; vertical-align:middle;">'.($row->discount != 0 ? '<small>(' . $row->discount . ')</small> ' : '') . $this->erp->formatMoney($row->item_discount).'</td>';
 								}
 								?>
@@ -286,42 +298,74 @@
 							if($r<11){
 								$k=11 - $r;
 								for($j=1;$j<=$k;$j++){
-									if( $isTax && $isDiscount ){
-										echo  '<tr>
+									if( $dis >0){
+									    if($tax>0){
+                                            echo  '<tr>
 											<td height="34px" class="text-center">'.$r.'</td>
-											<td style="width:34px;"></td>
+											<td ></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
-											<td colspan="2"></td>
-											
+											<td></td>
+											<td ></td>
+
 										</tr>';
-										
+                                        }else{
+                                            echo  '<tr>
+											<td height="34px" class="text-center">'.$r.'</td>
+											<td ></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td ></td>
+
+										</tr>';
+                                        }
+
+
 								    }else{
+                                        if($tax>0){
+                                            echo  '<tr>
+											<td height="34px" class="text-center">'.$r.'</td>
+											<td ></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td ></td>
+
+										</tr>';
+
+                                        }
+									    else{
 										echo  '<tr>
 											<td height="34px" class="text-center">'.$r.'</td>
-											<td style="width:34px;" colspan="4"></td>
+											<td ></td>
 											<td></td>
 											<td></td>
 											<td></td>
 											<td></td>
-											
+
 										</tr>';
 									}
+								}
 									$r++;
 								}
 							}
 						?>
-						
+						<?php
+//                            echo $dis.'__Tax = '.$tax;
+                            ?>
 						
 						</tbody>
 						<tfoot>
 						<?php
-						$col = 3;
+						$col = 1;
 						$rol = 0;
 						$tcol = 0;
-						
+
 						if ($Settings->product_discount) {
 							$col++;
 							$tcol++;
@@ -351,7 +395,19 @@
 						}
 						$rol++;
 						$tcol++;
+						if($dis>0){
+						    $col+=1;
+						    $tcol-=1;
+                        }
+                        if($tax>0){
+                            $col+=1;
+                            $tcol-=1;
+                        }
+                        if($dis<=0&&$tax<=0){
+                            $tcol-=1;
+                        }
 						?>
+<!--                        <h1>--><?//= $col.'_'.$tcol; ?><!--</h1>-->
 						<tr>
 							<td rowspan="<?= $rol; ?>" colspan="<?= $col; ?>"></td>
 							<td style="text-align:right; padding-right:10px;" colspan="<?= $tcol; ?>"><?= lang("សរុប <br/> Total"); ?></td>
@@ -366,11 +422,11 @@
 							<td style="text-align:right; padding-right:10px; vertical-align:middle;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax); ?></td>
 						</tr>
 						<?php if ($inv->order_discount != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​រួម  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
+							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
 						}
 						?>
 						<?php if ($inv->shipping != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px;;">' . lang("ការ​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' (' . $default_currency->code . ')</td><td style="text-align:right; vertical-align:middle; padding-right:10px;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
+							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px;">' . lang("​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' </td><td style="text-align:right; vertical-align:middle; padding-right:10px;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
 						}
 
 						?>
@@ -385,7 +441,7 @@
 						<?php if ($inv->order_discount != 0 || $inv->shipping != 0 || ($Settings->tax2 && $inv->order_tax != 0)) { ?>
 						<tr>
 							<td colspan="<?= $tcol ?>"
-								style="text-align:right; font-weight:bold;"><?= lang("សរុបរួម <br/> Grand_Total"); ?>
+								style="text-align:right; font-weight:bold;"><?= lang("សរុប <br/> Grand_Total"); ?>
 							</td>
 							<td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax + $inv->order_tax);?></td>
 						</tr>
