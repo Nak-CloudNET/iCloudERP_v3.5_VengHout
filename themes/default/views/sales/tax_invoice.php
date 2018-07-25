@@ -443,7 +443,7 @@
 						}
 						?>
                         <?php
-                            if($inv->order_tax>0&&$inv->shipping>0&&$inv->order_discount>0){
+                            if($inv->order_tax>0||$inv->shipping>0||$inv->order_discount>0){
                         ?>
                                 <tr>
                                     <td colspan="<?= $tcol ?>"
