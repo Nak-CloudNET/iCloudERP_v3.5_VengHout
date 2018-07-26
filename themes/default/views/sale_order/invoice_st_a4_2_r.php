@@ -39,7 +39,7 @@
 		}
 		.container {
 			height: 20.5cm !important;
-            margin-left: -11px !important;
+            /*margin-left: -11px !important;*/
 
 		}
 		.customer_label {
@@ -499,9 +499,9 @@
                         if ($invs->grand_total != $invs->total) { ?>
                             <tr class="border-foot">
                                 <td rowspan = "<?= ($row+1); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-                                    <?php if (!empty($invs->invoice_footer)) { ?>
+                                    <?php if (!empty($biller->invoice_footer)) { ?>
                                         <p ><strong><u>Note:</u></strong></p>
-
+                                        <p style="margin-top:-5px !important; line-height: 2"><?= $biller->invoice_footer ?></p>
                                     <?php } ?>
                                 </td>
                                 <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុប​ / <?= strtoupper(lang('total')) ?>

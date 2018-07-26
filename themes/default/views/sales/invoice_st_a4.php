@@ -129,7 +129,7 @@
 </script>
 <body>
 <div class="container" style="width: 821px;margin: 0 auto;">
-    <div class="col-xs-12"
+    <div class="col-xs-12">
         <?php
         $cols = 6;
         if ($discount != 0) {
@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="invoice" style="margin-top:20px;">
                                             <center>
-                                                <h4 class="title">វិក្កយបត្រ</h4>
+                                                <h4 class="title">វិក្កយប័ត្រ</h4>
                                                 <h4 class="title" style="margin-top: 3px;">Invoice</h4>
                                             </center>
 
@@ -488,8 +488,9 @@
                 if ($invs->grand_total != $invs->total) { ?>
                     <tr class="border-foot">
                         <td rowspan = "<?= ($row+1); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-                            <?php if (!empty($invs->invoice_footer)) { ?>
+                            <?php if (!empty($biller->invoice_footer)) { ?>
                                 <p ><strong><u>Note:</u></strong></p>
+                                <p style="margin-top:-5px !important; line-height: 2"><?= $biller->invoice_footer ?></p>
 
                             <?php } ?>
                         </td>

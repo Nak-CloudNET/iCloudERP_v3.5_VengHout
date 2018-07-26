@@ -39,7 +39,7 @@
 		}
 		.container {
 			height: 20.5cm !important;
-            margin-left: -11px !important;
+            /*margin-left: -11px !important;*/
 
 		}
 		.customer_label {
@@ -141,7 +141,8 @@
 </script>
 
 <body>
-	<div class="container" style="margin: 0 auto;">
+
+	<div class="container" style="margin: 5px auto;border: 1px solid black;">
 		<div class="col-xs-12" style="padding: 0">
 			<div class="row" style="margin-top: 20px !important;">
                 <div class="col-sm-3 col-xs-3 " style="margin-top: 0px !important;">
@@ -276,12 +277,7 @@
                 </div>
             </div>
 			
-			<?php
-				$cols = 6;
-				if ($discount != 0) {
-					$cols = 7;
-				}
-			?>
+
 			<div class="row">
 				<div class="col-sm-12 col-xs-12">
 					<table class=" table " style="width: 100%; margin-top: 10px;">
