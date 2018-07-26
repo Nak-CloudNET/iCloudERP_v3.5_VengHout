@@ -228,16 +228,20 @@
                                                 <?php } ?>
                                             </tr>
                                         <?php } ?>
-                                        <?php if(!empty($customer->address_kh || $customer->address)) { ?>
+                                        <?php
+                                        $this->erp->print_arrays($invs);
+                                        if(!empty($customer->address_kh || $customer->address)) { ?>
                                             <tr>
                                                 <td>ទូរស័ព្ទលេខ (Tel)</td>
                                                 <td>:</td>
                                                 <td><?= $customer->phone ?></td>
                                             </tr>
+
                                         <?php } ?>
 
                                     </table>
                                 </div>
+
                                 <div class="col-sm-5 col-xs-5">
                                     <table class="noPadding" border="none">
                                         <tr>
@@ -301,7 +305,7 @@
                 <tbody>
 
                 <?php
-
+//                $this->erp->print_arrays($rows);
                 $no = 1;
                 $erow = 1;
                 $totalRow = 0;
@@ -616,7 +620,7 @@
 
 
         <div style="width: 821px;margin: 20px">
-            <a class="btn btn-warning no-print" href="<?= site_url('sales'); ?>" style="border-radius: 0">
+            <a class="btn btn-warning no-print" href="<?= site_url('sale_order/list_sale_order'); ?>" style="border-radius: 0">
                 <i class="fa fa-hand-o-left" aria-hidden="true"></i>&nbsp;<?= lang("back"); ?>
             </a>
         </div>

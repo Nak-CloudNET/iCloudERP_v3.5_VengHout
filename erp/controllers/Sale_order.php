@@ -473,9 +473,11 @@ class Sale_order extends MY_Controller
 			$amount_paid = floatval(preg_replace("/[^0-9\.]/i", "", $amout_paid));
 			
 			$sale_order_id = $this->sale_order_model->addSaleOrder($data, $products);
-			
+
+            $s = $this->db->get_where('erp_sale_order', array('created_by' => $this->session->userdata('user_id')), 1);
+
 			$this->session->set_userdata('remove_so2', '1');
-			redirect("sale_order/list_sale_order");
+			redirect("sale_order/invoice_st_a4_r/".$sale_order_id);
 		
 			
         } else {
