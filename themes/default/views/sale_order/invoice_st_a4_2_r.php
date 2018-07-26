@@ -395,8 +395,8 @@
                         }
                         ?>
                         <?php
-                        if($erow<16){
-                            $k=16 - $erow;
+                        if($erow<11){
+                            $k=11 - $erow;
                             for($j=1;$j<=$k;$j++) {
                                 if($dis>0) {
                                     if($taxx>0){
