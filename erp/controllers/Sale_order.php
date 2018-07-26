@@ -4045,7 +4045,81 @@ class Sale_order extends MY_Controller
         $this->data['sid'] = $id;
         $this->load->view($this->theme.'sale_order/deliverys_nano_tech',$this->data);
     }
-	
-	
+
+    function invoice_st_a4_r($id = NULL)
+    {
+        if ($this->input->get('id')) {
+            $id = $this->input->get('id');
+        }
+
+        $this->load->model('pos_model');
+        $this->data['pos'] = $this->pos_model->getSetting();
+        $this->data['setting'] = $this->site->get_setting();
+        $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
+        $inv = $this->sales_model->getSaleOrder($id);
+        $this->data['deposit'] = $this->sales_model->getDepositByID($id);
+        $this->data['customer'] = $this->site->getCompanyByID($inv->customer_id);
+        $this->data['biller'] = $this->site->getCompanyByID($inv->biller_id);
+        $this->data['created_by'] = $this->site->getUser($inv->created_by);
+        $this->data['updated_by'] = $inv->updated_by ? $this->site->getUser($inv->updated_by) : NULL;
+        $this->data['warehouse'] = $this->site->getWarehouseByID($inv->warehouse_id);
+        $this->data['invs'] = $inv;
+        $return = $this->sales_model->getReturnBySID($id);
+        $this->data['return_sale'] = $return;
+        $this->data['rows'] = $this->sale_order_model->getAllInvoiceItemsById($id);
+        $this->data['logo'] = true;
+        $this->load->view($this->theme . 'sale_order/invoice_st_a4_r', $this->data);
+    }
+    function invoice_st_a4_2_r($id = NULL)
+    {
+        if ($this->input->get('id')) {
+            $id = $this->input->get('id');
+        }
+
+        $this->load->model('pos_model');
+        $this->data['pos'] = $this->pos_model->getSetting();
+        $this->data['setting'] = $this->site->get_setting();
+        $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
+        $inv = $this->sales_model->getSaleOrder($id);
+        $this->data['deposit'] = $this->sales_model->getDepositByID($id);
+        $this->data['customer'] = $this->site->getCompanyByID($inv->customer_id);
+        $this->data['biller'] = $this->site->getCompanyByID($inv->biller_id);
+        $this->data['created_by'] = $this->site->getUser($inv->created_by);
+        $this->data['updated_by'] = $inv->updated_by ? $this->site->getUser($inv->updated_by) : NULL;
+        $this->data['warehouse'] = $this->site->getWarehouseByID($inv->warehouse_id);
+        $this->data['invs'] = $inv;
+        $return = $this->sales_model->getReturnBySID($id);
+        $this->data['return_sale'] = $return;
+        $this->data['rows'] = $this->sale_order_model->getAllInvoiceItemsById($id);
+        $this->data['logo'] = true;
+        $this->load->view($this->theme . 'sale_order/invoice_st_a4_2_r', $this->data);
+    }
+    function tax_invoice_r($id = NULL)
+    {
+        if ($this->input->get('id')) {
+            $id = $this->input->get('id');
+        }
+
+        $this->load->model('pos_model');
+        $this->data['pos'] = $this->pos_model->getSetting();
+        $this->data['setting'] = $this->site->get_setting();
+        $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
+        $inv = $this->sales_model->getSaleOrder($id);
+        $this->data['deposit'] = $this->sales_model->getDepositByID($id);
+        $this->data['customer'] = $this->site->getCompanyByID($inv->customer_id);
+        $this->data['biller'] = $this->site->getCompanyByID($inv->biller_id);
+        $this->data['created_by'] = $this->site->getUser($inv->created_by);
+        $this->data['updated_by'] = $inv->updated_by ? $this->site->getUser($inv->updated_by) : NULL;
+        $this->data['warehouse'] = $this->site->getWarehouseByID($inv->warehouse_id);
+        $this->data['invs'] = $inv;
+        $return = $this->sales_model->getReturnBySID($id);
+        $this->data['return_sale'] = $return;
+        $this->data['rows'] = $this->sale_order_model->getAllInvoiceItemsById($id);
+        $this->data['logo'] = true;
+        $this->load->view($this->theme . 'sale_order/tax_invoice_r', $this->data);
+    }
+
+
+
 }
 
