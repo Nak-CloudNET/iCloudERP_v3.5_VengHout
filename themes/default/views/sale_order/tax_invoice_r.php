@@ -425,31 +425,32 @@
 							?>
 							<td style="text-align:right; padding-right:10px; vertical-align:middle; font-weight:bold;"><?= $this->erp->formatMoney($total); ?></td>
 						</tr>
-						<?php if ($inv->order_discount != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px; font-weight:bold;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
+						<?php if ($invs->order_discount != 0) {
+							echo '<tr><td rowspan="<?= $rol; ?>" colspan="'.$col.'"></td><td colspan="' . $tcol . '" style="text-align:right; padding-right:10px; font-weight:bold;">' . lang("បញ្ចុះតម្លៃ​  <br/> Order_Discount") . '</td><td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px; font-weight:bold;">' . $this->erp->formatMoney($invs->order_discount) . '</td></tr>';
 						}
 						?>
-						<?php if ($inv->shipping != 0) {
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight:bold;" >' . lang("​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' </td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
+						<?php if ($invs->shipping > 0) {
+							echo '<tr><td rowspan="<?= $rol; ?>" colspan="'.$col.'"></td><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight:bold;" >' . lang("​ដឹក​ជញ្ជូន​ <br/> Shipping") . ' </td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($invs->shipping) . '</td></tr>';
 						}
 
 						?>
-						<?php if ($Settings->tax2 && $inv->order_tax != 0) {
-							$vat = str_replace('@', '', (strstr($inv->vat, '@', false)));
+						<?php if ($invs->order_tax != 0) {
+							$vat = str_replace('@', '', (strstr($invs->vat, '@', false)));
 							if ($vat == '10%') {
 								$vat_kh = '១០%';
 							}
-							echo '<tr><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight: bold;">' . lang("អាករលើតម្លែបន្ថែម <span>". $vat_kh ."</span><br/><span style='font-size:12px'> VAT (". $vat .")</span>") . '</td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
+							echo '<tr><td rowspan="<?= $rol; ?>" colspan="'.$col.'"></td><td colspan="' . $tcol . '" style="text-align:right; vertical-align:middle !important; padding-right:10px; font-weight: bold;">' . lang("អាករលើតម្លែបន្ថែម <span>". $vat_kh ."</span><br/><span style='font-size:12px'> VAT (". $vat .")</span>") . '</td><td style="text-align:right; vertical-align:middle; padding-right:10px;font-weight:bold;">' . $this->erp->formatMoney($invs->order_tax) . '</td></tr>';
 						}
 						?>
                         <?php
-                            if($inv->order_tax>0||$inv->shipping>0||$inv->order_discount>0){
+                            if($invs->order_tax>0||$invs->shipping>0||$invs->order_discount>0){
                         ?>
                                 <tr>
+                                    <td rowspan="<?= $rol; ?>" colspan="<?= $col; ?>"></td>
                                     <td colspan="<?= $tcol ?>"
                                         style="text-align:right; font-weight:bold;"><?= lang("សរុប <br/> Grand_Total"); ?>
                                     </td>
-                                    <td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney(($total +  $inv->order_tax+$inv->shipping)-$inv->order_discount);?></td>
+                                    <td style="text-align:right; padding-right:10px; font-weight:bold; padding-top:20px;"><?= $this->erp->formatMoney(($total +  $invs->order_tax+$invs->shipping)-$invs->order_discount);?></td>
                                 </tr>
                         <?php
                         }

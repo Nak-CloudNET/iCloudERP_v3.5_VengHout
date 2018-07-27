@@ -830,6 +830,7 @@ if ($q->num_rows() > 0) {
 
                     					<?php } ?>
                                         <div class="btn-group">
+                                            <?php echo form_submit('add_payment', lang("submit"), 'id="add_payment" class="btn btn-primary" style="padding: 6px 15px; margin:15px 0; display:none;"'); ?>
                                             <button type="button" title="Payment - <?= $pos_settings->finalize_sale ?>" style="<?php echo ($layout == 6?'height:85px':'height:68px') ?>" class="btn btn-success <?php echo ($layout == 6?'font6':'') ?>" id="payment">
                                                 <i class="fa fa-money"></i> <?= lang('payment'); ?>
                                             </button>
@@ -3054,8 +3055,11 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
                     dataType: "json",
                     success: function (data) {
                         var order_discount = data[0].order_discount == false ? 0 : data[0].order_discount;
-                        $('#order_discount').val(order_discount + '%');
-                        //$('#order_discount').val(data[0].order_discount == null ? 0 : data[0].order_discount + '%');
+                        if (order_discount == null) {
+                            $('#order_discount').val(0 + '%');
+                        } else {
+                            $('#order_discount').val(order_discount + '%');
+                        }
                         if (order_discount > 0) {
                             $('#order_discount_input').attr('readonly', 'true');
                         }
@@ -3258,6 +3262,54 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 			}
 
 			if(Owner || Admin || (GP == 1)){
+
+                // Throw message to user if item price is less than its cost by require admin password
+                var message = '';
+                var help = false;
+
+                $('.ruprice').each(function() {
+                    var tr = $(this).closest('tr');
+                    var price = $(this).val() - 0;
+                    var cost = tr.find('.rucost').val() - 0;
+
+                    if(price < cost) {
+                        var product_name = $(this).parent().parent().closest('tr').find('.rname').val();
+                        message += '<ul><li>This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! </li></ul>';
+                        help = true;
+                    }
+                });
+
+                if(help == false){
+                    $('#add_payment').trigger('click');
+                }else{
+                    bootbox.prompt({
+                        title: message + "Please enter password",
+                        inputType: 'password',
+                        className: "medium",
+                        callback: function (result) {
+                            $.ajax({
+                                type: 'get',
+                                url: '<?= site_url('auth/checkPassDiscount'); ?>',
+                                dataType: "json",
+                                data: {
+                                    password: result
+                                },
+                                success: function (data) {
+                                    if(data == 1){
+                                        $('#paymentModal').appendTo("body").modal('show');
+                                    }else{
+                                        bootbox.alert({
+                                            message: "Incorrect password!",
+                                            size: 'small'
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    });
+                    return false;
+                }
+
 				<?php if ($sid) { ?>
 				suspend = $('<span></span>');
 				suspend.html('<input type="hidden" name="delete_id" value="<?php echo $sid; ?>" />');
@@ -3301,9 +3353,8 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 				$("#date").trigger('change');
 				$("#saleman").trigger('change');
 				$("#delivery_by").trigger('change');
-
-
 				autoCalcurrencies(gtotal);
+
 			}else{
 				var val = '';
 				$('.sdiscount').each(function(){
@@ -3412,6 +3463,7 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 						});
 					});
 				}
+
 			}
 			$('#pos_note').val(__getItem('address'));
 			//$('#sale_note').text(__getItem('address'));
@@ -6722,6 +6774,7 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 				$(this).text('<?=lang('loading');?>').attr('disabled', true);
 				$('#pos-sale-form').submit();
 			}
+
         });
 
 		$('.sus_sale').on('click', function (e) {

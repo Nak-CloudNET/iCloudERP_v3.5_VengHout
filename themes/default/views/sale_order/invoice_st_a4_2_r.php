@@ -141,8 +141,7 @@
 </script>
 
 <body>
-
-	<div class="container" style="margin: 5px auto;border: 1px solid black;">
+	<div class="container" style="margin: 0 auto;">
 		<div class="col-xs-12" style="padding: 0">
 			<div class="row" style="margin-top: 20px !important;">
                 <div class="col-sm-3 col-xs-3 " style="margin-top: 0px !important;">
@@ -277,7 +276,12 @@
                 </div>
             </div>
 			
-
+			<?php
+				$cols = 6;
+				if ($discount != 0) {
+					$cols = 7;
+				}
+			?>
 			<div class="row">
 				<div class="col-sm-12 col-xs-12">
 					<table class=" table " style="width: 100%; margin-top: 10px;">
@@ -495,9 +499,9 @@
                         if ($invs->grand_total != $invs->total) { ?>
                             <tr class="border-foot">
                                 <td rowspan = "<?= ($row+1); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-                                    <?php if (!empty($invs->invoice_footer)) { ?>
+                                    <?php if (!empty($biller->invoice_footer)) { ?>
                                         <p ><strong><u>Note:</u></strong></p>
-
+                                        <p style="margin-top:-5px !important; line-height: 2"><?= $biller->invoice_footer ?></p>
                                     <?php } ?>
                                 </td>
                                 <td colspan="<?= $col; ?>" style="text-align: right; font-weight: bold;">សរុប​ / <?= strtoupper(lang('total')) ?>
@@ -581,9 +585,9 @@
 				</div>
 			</div>
 
-			<?php if($invs->note){ ?>
+			<?php if($this->erp->decode_html($invs->note)){ ?>
 			<div style="border-radius: 5px 5px 5px 5px;border:1px solid black;font-size: 10px !important;margin-top: 10px;height: auto;" id="note" class="col-md-12 col-xs-12">
-				<p style="margin-left: 10px;margin-top:10px;"><?php echo strip_tags($invs->note); ?></p>
+				<p style="margin-left: 10px;margin-top:10px;"><?= $this->erp->decode_html($invs->note); ?></p>
 
 			</div>
 			<?php } ?>
