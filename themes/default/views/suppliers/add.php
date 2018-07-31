@@ -45,11 +45,11 @@
                 </div>-->
                     <div class="form-group">
                         <?= lang("email_address", "email_address"); ?>
-                        <input type="email" name="email" class="form-control" required="required" id="email_address"/>
+                        <input type="email" name="email" class="form-control" id="email_address"/>
                     </div>
                     <div class="form-group">
                         <?= lang("phone", "phone"); ?>
-                        <input type="tel" name="phone" required="required" class="form-control" id="phone"/>
+                        <input type="tel" name="phone" class="form-control" id="phone"/>
                     </div>
                     <div class="form-group">
                         <?= lang("address", "address"); ?>
