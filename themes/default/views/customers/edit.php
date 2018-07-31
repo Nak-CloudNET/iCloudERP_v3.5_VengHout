@@ -161,7 +161,7 @@
                     </div> -->
                     <div class="form-group">
                         <?= lang("ក្រុមហ៊ុន", "cf3"); ?>
-                        <?php echo form_input('cf3', $customer->cf1, 'class="form-control" id="cf3"'); ?>
+                        <?php echo form_input('cf3', $customer->cf3, 'class="form-control" id="cf3"'); ?>
                     </div>
                     <div class="form-group">
                         <?= lang("ឈ្មោះ", "cf2"); ?>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="form-group">
                         <?= lang("អាស័យដ្ឋាន", "cf6"); ?>
-                        <?php echo form_input('cf6', $customer->cf4, 'class="form-control" id="cf6"'); ?>
+                        <?php echo form_input('cf6', $customer->cf3, 'class="form-control" id="cf6"'); ?>
                     </div>					
 					<div class="form-group">
                         <?= lang("Marital Status", "status"); ?>
