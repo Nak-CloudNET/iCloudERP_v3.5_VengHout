@@ -22,6 +22,10 @@
                         <?php echo form_input('code', $supplier->code, 'class="form-control tip" id="code"'); ?>
                     </div>
 					<?php } ?>
+                    <div class="form-group company">
+                        <?= lang("company", "company"); ?>
+                        <?php echo form_input('company', $supplier->company, 'class="form-control tip" id="company"'); ?>
+                    </div>
                     <div class="form-group person">
                         <?= lang("name", "name"); ?>
                         <?php echo form_input('name', $supplier->name, 'class="form-control tip" id="name" required="required"'); ?>
@@ -62,9 +66,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group company">
-                        <?= lang("company", "company"); ?>
-                        <?php echo form_input('company', $supplier->company, 'class="form-control tip" id="company"'); ?>
+
+                    <div class="form-group">
+                        <?= lang("ក្រុមហ៊ុន", "company_kh"); ?>
+                        <?php echo form_input('company_kh', $supplier->company_kh, 'class="form-control" id="company_kh"'); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= lang("ឈ្មោះ", "name_kh"); ?>
+                        <?php echo form_input('name_kh', $supplier->name_kh, 'class="form-control" id="name_kh"'); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= lang("អាស័យដ្ឋាន", "address_kh"); ?>
+                        <?php echo form_input('address_kh', $supplier->address_kh, 'class="form-control" id="address_kh"'); ?>
                     </div>
                     <div class="form-group">
                         <?= lang("scf1", "cf1"); ?>

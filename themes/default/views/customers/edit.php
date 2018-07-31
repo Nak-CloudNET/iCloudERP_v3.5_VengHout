@@ -160,16 +160,16 @@
                         <?php echo form_input('postal_code', $customer->postal_code, 'class="form-control" id="postal_code"'); ?>
                     </div> -->
                     <div class="form-group">
-                        <?= lang("ក្រុមហ៊ុន", "cf3"); ?>
-                        <?php echo form_input('cf3', $customer->cf3, 'class="form-control" id="cf3"'); ?>
+                        <?= lang("ក្រុមហ៊ុន", "company_kh"); ?>
+                        <?php echo form_input('company_kh', $customer->company_kh, 'class="form-control" id="company_kh"'); ?>
                     </div>
                     <div class="form-group">
-                        <?= lang("ឈ្មោះ", "cf2"); ?>
-                        <?php echo form_input('cf2', $customer->cf2, 'class="form-control" id="cf2"'); ?>
+                        <?= lang("ឈ្មោះ", "name_kh"); ?>
+                        <?php echo form_input('name_kh', $customer->name_kh, 'class="form-control" id="name_kh"'); ?>
                     </div>
                     <div class="form-group">
-                        <?= lang("អាស័យដ្ឋាន", "cf6"); ?>
-                        <?php echo form_input('cf6', $customer->cf6, 'class="form-control" id="cf6"'); ?>
+                        <?= lang("អាស័យដ្ឋាន", "address_kh"); ?>
+                        <?php echo form_input('address_kh', $customer->address_kh, 'class="form-control" id="address_kh"'); ?>
                     </div>					
 					<div class="form-group">
                         <?= lang("Marital Status", "status"); ?>

@@ -178,12 +178,12 @@
                         <?php echo form_input('cf3', '', 'class="form-control" id="cf3"'); ?>
                     </div>
                     <div class="form-group">
-                        <?= lang("&#6024;&#6098;&#6040;&#6084;&#6087;", "cf2"); ?>
-                        <?php echo form_input('cf2', '', 'class="form-control" id="cf2"'); ?>
+                        <?= lang("&#6024;&#6098;&#6040;&#6084;&#6087;", "name_kh"); ?>
+                        <?php echo form_input('name_kh', '', 'class="form-control" id="name_kh"'); ?>
                     </div>
                     <div class="form-group">
-                        <?= lang("&#6050;&#6070;&#6047;&#6096;&#6041;&#6026;&#6098;&#6027;&#6070;&#6035;", "cf6"); ?>
-                        <?php echo form_input('cf6', '', 'class="form-control" id="cf6"'); ?>
+                        <?= lang("&#6050;&#6070;&#6047;&#6096;&#6041;&#6026;&#6098;&#6027;&#6070;&#6035;", "address_kh"); ?>
+                        <?php echo form_input('address_kh', '', 'class="form-control" id="address_kh"'); ?>
                     </div>
                     <div class="form-group">
                         <?= lang("marital_status", "status"); ?>
