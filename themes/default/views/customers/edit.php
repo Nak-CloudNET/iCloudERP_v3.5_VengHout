@@ -169,7 +169,7 @@
                     </div>
                     <div class="form-group">
                         <?= lang("អាស័យដ្ឋាន", "cf6"); ?>
-                        <?php echo form_input('cf6', $customer->cf3, 'class="form-control" id="cf6"'); ?>
+                        <?php echo form_input('cf6', $customer->cf6, 'class="form-control" id="cf6"'); ?>
                     </div>					
 					<div class="form-group">
                         <?= lang("Marital Status", "status"); ?>
