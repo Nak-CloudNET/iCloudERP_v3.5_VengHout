@@ -365,18 +365,39 @@
             <?php if (!$Supplier || !$Customer) { ?>
                 <div class="buttons">
                     <div class="btn-group btn-group-justified">
-						<div class="btn-group">
+                        <div class="btn-group">
                             <a href="<?= site_url('sale_order/tax_invoice1/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('sale order') ?>">
                                 <i class="fa fa-print"></i>
                                 <span class="hidden-sm hidden-xs"><?= lang('print_sale_order') ?></span>
                             </a>
                         </div>
-						<div class="btn-group">
+                        <div class="btn-group">
                             <a href="<?= site_url('sale_order/print_st_invoice_2/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('sale order a5') ?>">
                                 <i class="fa fa-print"></i>
                                 <span class="hidden-sm hidden-xs"><?= lang('print_sale_order_a5') ?></span>
                             </a>
                         </div>
+                        <div class="btn-group">
+                            <a href="<?= site_url('sale_order/invoice_st_a4_r/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('Invoice A4') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('Invoice A4') ?></span>
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="<?= site_url('sale_order/invoice_st_a4_2_r/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('Invoice A5') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('Invoice A5') ?></span>
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="<?= site_url('sale_order/tax_invoice_r/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('Tax Invoice') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('Tax Invoice') ?></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-justified">
+
                         <!--
                         <div class="btn-group">
                             <a href="<?= site_url('sale_order/print_iphoto/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('sale order') ?>">

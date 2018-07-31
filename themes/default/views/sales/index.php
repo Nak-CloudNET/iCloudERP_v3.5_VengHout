@@ -718,10 +718,13 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         <tr>
                             <td colspan="18"
                                 class="dataTables_empty"><?php echo $this->lang->line("loading_data"); ?></td>
                         </tr>
+
+
                         </tbody>
                         <tfoot class="dtFilter">
                         <tr class="active">

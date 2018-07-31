@@ -129,7 +129,7 @@
 </script>
 <body>
 <div class="container" style="width: 821px;margin: 0 auto;">
-    <div class="col-xs-12">
+    <div class="col-xs-12"
         <?php
         $cols = 6;
         if ($discount != 0) {
@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="invoice" style="margin-top:20px;">
                                             <center>
-                                                <h4 class="title">វិក្កយប័ត្រ</h4>
+                                                <h4 class="title">វិក្កយបត្រ</h4>
                                                 <h4 class="title" style="margin-top: 3px;">Invoice</h4>
                                             </center>
 
@@ -228,16 +228,20 @@
                                                 <?php } ?>
                                             </tr>
                                         <?php } ?>
-                                        <?php if(!empty($customer->address_kh || $customer->address)) { ?>
+                                        <?php
+                                        $this->erp->print_arrays($invs);
+                                        if(!empty($customer->address_kh || $customer->address)) { ?>
                                             <tr>
                                                 <td>ទូរស័ព្ទលេខ (Tel)</td>
                                                 <td>:</td>
                                                 <td><?= $customer->phone ?></td>
                                             </tr>
+
                                         <?php } ?>
 
                                     </table>
                                 </div>
+
                                 <div class="col-sm-5 col-xs-5">
                                     <table class="noPadding" border="none">
                                         <tr>
@@ -301,7 +305,7 @@
                 <tbody>
 
                 <?php
-
+//                $this->erp->print_arrays($rows);
                 $no = 1;
                 $erow = 1;
                 $totalRow = 0;
@@ -527,7 +531,7 @@
                         <td rowspan="<?= ($row); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
                             <?php if (!empty($invs->invoice_footer)) { ?>
                                 <p><strong><u>Note:</u></strong></p>
-                               <!-- <p><?= $invs->invoice_footer ?></p>-->
+                               <!-- <p><?= $inv->invoice_footer ?></p>-->
                             <?php } ?>
                         </td>
                     <?php } ?>
@@ -571,13 +575,17 @@
 
                 </tbody>
             </table>
+            <style>
+                .wrap_tb>p{
 
+                }
+            </style>
                 <tfoot class="tfoot">
                     <tr>
                         <th colspan="9">
                             <?php if(trim(htmlspecialchars_decode($invs->note))){ ?>
                                 <div style="border-radius: 5px 5px 5px 5px;border:1px solid black;height: auto;" id="note" class="col-md-12 col-xs-12">
-                                    <div style="margin-left: 10px;margin-top:10px;"><?= $this->erp->decode_html($invs->note); ?></div>
+                                    <div class="col-md-12 col-xs-12" style="overflow: auto; width: 100%; margin-left: 10px;margin-top:10px;"><?= trim(htmlspecialchars_decode($invs->note)); ?> </div>
                                 </div>
 
                             <?php } ?>
@@ -605,14 +613,14 @@
                     </tr>
                 </tfoot>
 
-            </table>
+
         </div>
 
 
 
 
         <div style="width: 821px;margin: 20px">
-            <a class="btn btn-warning no-print" href="<?= site_url('sales'); ?>" style="border-radius: 0">
+            <a class="btn btn-warning no-print" href="<?= site_url('sale_order/list_sale_order'); ?>" style="border-radius: 0">
                 <i class="fa fa-hand-o-left" aria-hidden="true"></i>&nbsp;<?= lang("back"); ?>
             </a>
         </div>

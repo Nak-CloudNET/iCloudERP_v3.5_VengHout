@@ -143,6 +143,7 @@
         $cols = 7;
     }
     ?>
+
     <div class="row">
         <table class="table">
             <thead>
@@ -207,15 +208,20 @@
                                     <td style="width: 10%;">:</td>
                                     <td style="width: 20%;"><?= $this->erp->hrsd($invs->date) ?></td>
                                 </tr>
-                                <tr>
-                                    <td><?= lang('ល.រ​វិក័យប័ត្រ / Inv No') ?></td>
-                                    <td>:</td>
-                                    <td><?= $invs->reference_no ?></td>
-                                </tr>
+                                <?php
+                                    if($invs->so_no){
+                                        echo "<tr>
+                                                        <td><?= lang('ល.រ​វិក័យប័ត្រ / Inv No') ?></td>
+                                                    <td>:</td>
+                                                    <td><?= $invs->so_no; ?></td>
+                                                    </tr>";
+                                    }
+                                ?>
+
                                 <tr>
                                     <td><?= lang('លេខប័ណ្ណប្រគល់ទំនិញ​ / DN No') ?> </td>
                                     <td>:</td>
-                                    <td><?= $invs->note ?></td>
+                                    <td><?= $invs->reference_no ?></td>
                                 </tr>
 
                             </table>
@@ -235,7 +241,7 @@
             </thead>
             <tbody>
             <?php
-
+//            $this->erp->print_arrays($invs);
             $no = 1;
             $erow = 1;
             $totalRow = 0;
@@ -258,16 +264,16 @@
                         <td style="border-top:none !important;border-bottom:none !important; text-align: center;"><?= $row->unit ?></td>
                     <?php } ?>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$this->erp->formatQuantity($row->quantity)?>
+                        <?=$this->erp->formatQuantity($row->quantity_received)?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
                         <?=$row->code?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=($row->quantity)-($row->quantity)?>
+                        <?=($row->quantity)-($row->quantity_received)?>
                     </td>
                     <td style="border-top:none !important;border-bottom:none !important; text-align: center;">
-                        <?=$this->erp->formatQuantity($row->qty)?>
+
                     </td>
 
                 </tr>

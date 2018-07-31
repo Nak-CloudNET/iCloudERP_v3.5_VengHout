@@ -2258,9 +2258,15 @@ class Accounts_model extends CI_Model
 	}
     
 	public function getSaleByCustomerV2($cus_id,$start_date=NULL,$end_date=NULL){
-		$this->db->select("sales.id,CONCAT(erp_users.first_name,' ',erp_users.last_name) as fullname", false)
-            ->from("sales")->join("users","users.id=sales.saleman_by","LEFT");
-
+		$this->db->select("
+                erp_sales.customer_id,
+                erp_sales.biller,
+                'Invoice' as type,
+                erp_sales.date,
+                erp_sales.reference_no,
+                erp_sales.grand_total
+                ", false)
+            ->from("sales");
 		    $this->db->where('customer_id',$cus_id);
             if($start_date && $end_date){
                 $this->db->where('date_format(erp_sales.date,"%Y-%m-%d") BETWEEN "' . $start_date . '" and "' . $end_date . '"');
@@ -2272,6 +2278,43 @@ class Accounts_model extends CI_Model
             }
             return false;
 	}
+    public function getArByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
+        if($cus_id)
+        {
+            $sql="customer={$cus_id}";
+        }else{
+            $sql="";
+        }
+        if($start_date && $end_date){
+            $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";
+        }
+        $q=$this->db->query("select* from(select erp_payments.sale_id as id, concat(erp_users.first_name,'-',erp_users.last_name) as saleman, erp_sales.customer_id as customer,erp_payments.biller_id,(select company from erp_companies where id=erp_payments.biller_id) as biller,'Payments' as type, erp_payments.date, erp_payments.reference_no, 0 as amount, 0 as return_amount, amount as paid, 0 as deposit,discount from erp_payments
+            left join erp_users on erp_payments.created_by=erp_users.id
+            left join erp_sales on erp_sales.id=erp_payments.sale_id
+            union all
+            select erp_sales.id, concat(erp_users.first_name,'-',erp_users.last_name) as saleman, customer_id as customer, erp_sales.biller_id,biller,'Invoice' as type, date, reference_no, grand_total as amount, 0 as return_amount, 0 as paid, 0 as deposit,0 as discount from erp_sales
+            left join erp_users on erp_sales.saleman_by=erp_users.id
+            ) ar where {$sql} order by date asc");
+            if($q->num_rows() > 0){
+                return $q->result();
+            }
+            return false;
+    }
+
+    public function getPaymentByDate($cus_id,$start_date=NULL){
+        $this->db->select("erp_payments.*", false)
+            ->from("payments");
+            $this->db->where('customer_id',$cus_id);
+            if($start_date)
+            {
+                $this->db->where('date_format(erp_payments.date,"%Y-%m-%d")',date_format('.$start_date.',"%Y-%m-%d"));
+            }
+            $q = $this->db->get();
+            if($q->num_rows() > 0){
+                return $q->result();
+            }
+            return false;
+    }
     public function getOldBalanceByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
         $this->db->select("sum(erp_sales.grand_total) as grand_total,
             (select sum(erp_payments.amount) from erp_payments where erp_payments.sale_id= erp_sales.id) as paid,

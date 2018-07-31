@@ -122,6 +122,7 @@ class Sale_order_model extends CI_Model
         $this->db->select("sale_order.id, sale_order.date, sale_order.reference_no, sale_order.biller, companies.name AS customer, users.username AS saleman,delivery.name as delivery_man,grand_total, paid,(grand_total-paid) as balance")
 				->from('sale_order')
 				->join('companies', 'companies.id = sale_order.customer_id', 'left')
+                ->join('sales', 'companies.id = sale_order.customer_id', 'left')
 				->join('users', 'users.id = sale_order.saleman_by', 'left')
 				->join('companies as delivery', 'delivery.id = sale_order.delivery_by', 'left')
 				->join('deliveries', 'deliveries.sale_id = sale_order.id', 'left')		
@@ -239,7 +240,7 @@ class Sale_order_model extends CI_Model
 	
 	public function getInvoiceByID($id)
     {
-		$this->db->select("sale_order.*, companies.name AS customer, users.username AS saleman,delivery.name as delivery_man, sale_order.grand_total, paid,(erp_sale_order.grand_total-paid) as balance, quotes.reference_no AS quotation_no, CASE erp_sale_order.order_status
+		$this->db->select("sale_order.*,sales.reference_no as sale_no, companies.name AS customer, users.username AS saleman,delivery.name as delivery_man, sale_order.grand_total, paid,(erp_sale_order.grand_total-paid) as balance, quotes.reference_no AS quotation_no, CASE erp_sale_order.order_status
 			WHEN 'completed' THEN
 				'Approved'
 			WHEN 'rejected' THEN
@@ -248,6 +249,7 @@ class Sale_order_model extends CI_Model
 				'Order'
 			END AS status,COALESCE (SUM(erp_deposits.amount), 0) AS deposit,
 			erp_sale_order.grand_total - COALESCE (SUM(erp_deposits.amount), 0) AS balance")
+                 ->join('sales', 'sale_order.id = sales.so_id', 'left')
 				 ->join('companies', 'companies.id = sale_order.customer_id', 'left')
 				 ->join('users', 'users.id = sale_order.saleman_by', 'left')
 				 ->join('companies as delivery', 'delivery.id = sale_order.delivery_by', 'left')
