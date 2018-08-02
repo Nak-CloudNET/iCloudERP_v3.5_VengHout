@@ -31,6 +31,10 @@
                             <?php echo form_input('code', $reference ? $reference : "",'class="form-control input-tip" id="code" data-bv-notempty="true"'); ?>
 						</div>
 					<?php } ?>
+                    <div class="form-group company">
+                        <?= lang("company", "company"); ?>
+                        <?php echo form_input('company', '', 'class="form-control tip" id="company"'); ?>
+                    </div>
                     <div class="form-group person">
                         <?= lang("name", "name"); ?>
                         <?php echo form_input('name', '', 'class="form-control tip" id="name" data-bv-notempty="true"'); ?>
@@ -45,11 +49,11 @@
                 </div>-->
                     <div class="form-group">
                         <?= lang("email_address", "email_address"); ?>
-                        <input type="email" name="email" class="form-control" required="required" id="email_address"/>
+                        <input type="email" name="email" class="form-control" id="email_address"/>
                     </div>
                     <div class="form-group">
                         <?= lang("phone", "phone"); ?>
-                        <input type="tel" name="phone" required="required" class="form-control" id="phone"/>
+                        <input type="tel" name="phone" class="form-control" id="phone"/>
                     </div>
                     <div class="form-group">
                         <?= lang("address", "address"); ?>
@@ -69,9 +73,17 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group company">
-                        <?= lang("company", "company"); ?>
-                        <?php echo form_input('company', '', 'class="form-control tip" id="company"'); ?>
+                    <div class="form-group">
+                        <?= lang("&#6016;&#6098;&#6042;&#6075;&#6040;&#6048;&#6090;&#6075;&#6035;", "company_kh"); ?>
+                        <?php echo form_input('company_kh', '', 'class="form-control" id="company_kh"'); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= lang("&#6024;&#6098;&#6040;&#6084;&#6087;", "name_kh"); ?>
+                        <?php echo form_input('name_kh', '', 'class="form-control" id="name_kh"'); ?>
+                    </div>
+                    <div class="form-group">
+                        <?= lang("&#6050;&#6070;&#6047;&#6096;&#6041;&#6026;&#6098;&#6027;&#6070;&#6035;", "address_kh"); ?>
+                        <?php echo form_input('address_kh', '', 'class="form-control" id="address_kh"'); ?>
                     </div>
                     <div class="form-group">
                         <?= lang("scf1", "cf1"); ?>
