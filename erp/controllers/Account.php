@@ -4940,7 +4940,7 @@ class Account extends MY_Controller
 		}
 
 		$cust_data[] = "";
-		$customers = $this->accounts_model->ar_by_customerV2($start_date, $end_date, $customer, $balance);
+		$customers = $this->accounts_model->ar_by_customerV3($start_date, $end_date, $customer, $balance);
 
 
 		$this->data['customers'] = $customers;

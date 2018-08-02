@@ -2256,6 +2256,47 @@ class Accounts_model extends CI_Model
             }
             return false;
 	}
+        public function ar_by_customerV3($start_date=null, $end_date=null, $customer=null, $balance=null){
+           if($customer)
+        {
+            $sql="where customer_id={$customer}";
+        }else{
+            $sql="";
+        }
+        if($start_date && $end_date){
+
+            if(!$customer)
+            {
+                $sql.=" WHERE date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";
+            }else{
+                $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";
+            }
+            
+        }
+        $q=$this->db->query("select* from(
+            select 
+                (select customer_id from erp_sales where id=erp_payments.sale_id) as customer_id,
+                (select customer from erp_sales where id=erp_payments.sale_id) as customer,
+                date
+            from erp_payments
+            union all
+            select 
+            customer_id,
+             customer,date
+            from erp_sales
+            UNION ALL
+            SELECT
+               customer_id,
+               customer,
+               date
+                FROM
+            erp_return_sales
+            ) ar  {$sql} group by customer_id order by customer asc ");
+            if($q->num_rows() > 0){
+                return $q->result();
+            }
+            return false;
+    }
     
 	public function getSaleByCustomerV2($cus_id,$start_date=NULL,$end_date=NULL){
 		$this->db->select("
@@ -2281,20 +2322,77 @@ class Accounts_model extends CI_Model
     public function getArByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
         if($cus_id)
         {
-            $sql="customer={$cus_id}";
+            $sql=" where customer={$cus_id}";
         }else{
             $sql="";
         }
         if($start_date && $end_date){
-            $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";
+            if($cus_id)
+            {
+              $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";  
+          }else{
+            $sql.=" WHERE date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";  
+          }
+            
         }
-        $q=$this->db->query("select* from(select erp_payments.sale_id as id, concat(erp_users.first_name,'-',erp_users.last_name) as saleman, erp_sales.customer_id as customer,erp_payments.biller_id,(select company from erp_companies where id=erp_payments.biller_id) as biller,'Payments' as type, erp_payments.date, erp_payments.reference_no, 0 as amount, 0 as return_amount, amount as paid, 0 as deposit,discount from erp_payments
+        $q=$this->db->query("select* from(
+            select 
+                erp_payments.sale_id as id, 
+                concat(erp_users.first_name,'-',erp_users.last_name) as saleman, 
+                erp_sales.customer_id as customer,erp_payments.biller_id,
+                (select company from erp_companies where id=erp_payments.biller_id) as biller,
+                'Payment' as type, 
+                erp_payments.date, 
+                erp_payments.reference_no, 
+                0 as amount, 
+                0 as return_amount, 
+                amount as paid, 
+                0 as deposit,
+                discount from erp_payments
             left join erp_users on erp_payments.created_by=erp_users.id
             left join erp_sales on erp_sales.id=erp_payments.sale_id
+            WHERE erp_payments.paid_by='cash'
+            union all
+            select 
+                erp_payments.sale_id as id, 
+                concat(erp_users.first_name,'-',erp_users.last_name) as saleman, 
+                erp_sales.customer_id as customer,erp_payments.biller_id,
+                (select company from erp_companies where id=erp_payments.biller_id) as biller,
+                'Deposit' as type, 
+                erp_payments.date, 
+                erp_payments.reference_no, 
+                0 as amount, 
+                0 as return_amount, 
+                0 as paid, 
+                amount as deposit,
+                discount from erp_payments
+            left join erp_users on erp_payments.created_by=erp_users.id
+            left join erp_sales on erp_sales.id=erp_payments.sale_id
+            WHERE erp_payments.paid_by='deposit'
+
             union all
             select erp_sales.id, concat(erp_users.first_name,'-',erp_users.last_name) as saleman, customer_id as customer, erp_sales.biller_id,biller,'Invoice' as type, date, reference_no, grand_total as amount, 0 as return_amount, 0 as paid, 0 as deposit,0 as discount from erp_sales
             left join erp_users on erp_sales.saleman_by=erp_users.id
-            ) ar where {$sql} order by date asc");
+            UNION ALL
+            SELECT
+                erp_return_sales.id,
+                concat( erp_users.first_name, '-', erp_users.last_name ) AS saleman,
+                erp_return_sales.customer_id AS customer,
+                erp_return_sales.biller_id,
+                erp_return_sales.biller,
+                'Return' AS type,
+                erp_return_sales.date,
+                erp_return_sales.reference_no,
+                0 AS amount,
+                erp_return_sales.grand_total AS return_amount,
+                0 AS paid,
+                0 AS deposit,
+                0 AS discount 
+        FROM
+            erp_return_sales
+            LEFT JOIN erp_sales ON erp_sales.id = erp_return_sales.sale_id
+            LEFT JOIN erp_users ON erp_sales.saleman_by = erp_users.id 
+            ) ar {$sql} order by date asc");
             if($q->num_rows() > 0){
                 return $q->result();
             }
@@ -2315,20 +2413,74 @@ class Accounts_model extends CI_Model
             }
             return false;
     }
-    public function getOldBalanceByCustomer($cus_id,$start_date=NULL,$end_date=NULL){
-        $this->db->select("sum(erp_sales.grand_total) as grand_total,
-            (select sum(erp_payments.amount) from erp_payments where erp_payments.sale_id= erp_sales.id) as paid,
-            (select sum(erp_payments.discount) from erp_payments where erp_payments.sale_id= erp_sales.id) as discount,
-            (select sum(erp_return_sales.grand_total) from erp_return_sales where erp_return_sales.sale_id= erp_sales.id) as return_sale,
-            ")
-            ->from("sales")
-            ->join("users","users.id=sales.saleman_by","LEFT");
-
-        $this->db->where('customer_id',$cus_id,false);
-        if($start_date && $end_date){
-            $this->db->where('date_format(erp_sales.date,"%Y-%m-%d") < "' . $start_date .'"');
+    public function getSaleOldBalance($cus_id,$start_date=NULL,$end_date=NULL){
+        $this->db->select('sum(grand_total) as grand_total')
+        ->from('erp_sales');
+        if($cus_id)
+        {
+            $this->db->where('customer_id',$cus_id);
         }
-        $q = $this->db->get();
+        if($start_date && $end_date)
+        {
+            $this->db->where("date < '".$start_date. "'");
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
+      public function getReturnSaleOldBalance($cus_id,$start_date=NULL,$end_date=NULL){
+        $this->db->select('sum(grand_total) as return_grand_total')
+        ->from('erp_return_sales');
+        if($cus_id)
+        {
+            $this->db->where('customer_id',$cus_id);
+        }
+        if($start_date && $end_date)
+        {
+            $this->db->where("date < '".$start_date. "'");
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
+
+    public function getPaymentOldBalance($cus_id,$start_date=NULL,$end_date=NULL){
+        $this->db->select('sum(amount) as paid,sum(discount) as discount')
+        ->from('erp_payments')
+        ->join('erp_sales','erp_sales.id=erp_payments.sale_id','LEF')
+        ->where('paid_by !=','deposit');
+        if($cus_id)
+        {
+            $this->db->where('erp_sales.customer_id',$cus_id);
+        }
+        if($start_date && $end_date)
+        {
+            $this->db->where("erp_payments.date < '".$start_date. "'");
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
+     public function getDepositOldBalance($cus_id,$start_date=NULL,$end_date=NULL){
+        $this->db->select('sum(amount) as deposit')
+        ->from('erp_payments')
+        ->join('erp_sales','erp_sales.id=erp_payments.sale_id','LEF')
+        ->where('paid_by','deposit');
+        if($cus_id)
+        {
+            $this->db->where('erp_sales.customer_id',$cus_id);
+        }
+        if($start_date && $end_date)
+        {
+            $this->db->where("erp_payments.date < '".$start_date. "'");
+        }
+        $q=$this->db->get();
         if($q->num_rows() > 0){
             return $q->result();
         }
