@@ -4911,16 +4911,16 @@ class Account extends MY_Controller
 			$start_date =  $this->erp->fld($this->input->post('start_date'));
 			$this->data['start_date2'] = trim($start_date);
 		}else{
-			$start_date =null;
-			$this->data['start_date2'] = 0;
+			$start_date =date('Y-m-d');;
+			$this->data['start_date2'] = date('Y-m-d');;
 		}
 
 		if($this->input->post('end_date')){
 			$end_date = $this->erp->fld($this->input->post('end_date'));
 			$this->data['end_date2'] = trim($end_date);
 		}else{
-			$end_date = null;
-			$this->data['end_date2'] = 0;
+			$end_date = date('Y/m-d');;
+			$this->data['end_date2'] = date('Y-m-d');;
 		}
 
 		if($this->input->post('customer')){
