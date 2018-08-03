@@ -234,7 +234,7 @@
                                     <td class="numeric"><?= $data->paid!=0?$this->erp->formatMoney($data->paid):'' ?></td>
                                     <td class="numeric"><?= $data->deposit!=0?$this->erp->formatMoney($data->deposit):'' ?></td>
                                     <td class="numeric"><?= $data->discount!=0?$this->erp->formatMoney($data->discount):'' ?></td>
-                                    <td class="numeric"><?= $this->erp->formatMoney($sup_balance) ?></td>
+                                    <td class="numeric"><?= $sup_balance>=0?$this->erp->formatMoney($sup_balance):'('.$this->erp->formatMoney($sup_balance).')' ?></td>
                                 </tr>
                         <?php
 
