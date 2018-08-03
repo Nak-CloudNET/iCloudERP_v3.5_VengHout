@@ -4912,7 +4912,7 @@ class Account extends MY_Controller
 			$this->data['start_date2'] = trim($start_date);
 		}else{
 			$start_date =date('Y-m-d');;
-			$this->data['start_date2'] = date('Y-m-d');;
+			$this->data['start_date2'] = date('Y-m-d');
 		}
 
 		if($this->input->post('end_date')){
@@ -4920,7 +4920,7 @@ class Account extends MY_Controller
 			$this->data['end_date2'] = trim($end_date);
 		}else{
 			$end_date = date('Y/m-d');;
-			$this->data['end_date2'] = date('Y-m-d');;
+			$this->data['end_date2'] = date('Y-m-d');
 		}
 
 		if($this->input->post('customer')){
@@ -4949,7 +4949,7 @@ class Account extends MY_Controller
 		$this->page_construct('accounts/ar_by_customer', $meta, $this->data);
 	}
 
-	function ap_by_supplier()
+	function ap_by_supplier_old()
 	{
 		if($this->input->post('start_date')){
 			$start_date =  $this->erp->fld($this->input->post('start_date'));
@@ -5013,6 +5013,51 @@ class Account extends MY_Controller
 		$meta = array('page_title' => lang('ap_by_supplier'), 'bc' => $bc);
 		$this->page_construct('accounts/ap_by_supplier', $meta, $this->data);
 	}
+
+	function ap_by_supplier()
+	{
+		if($this->input->post('start_date')){
+			$start_date =  $this->erp->fld($this->input->post('start_date'));
+			$this->data['start_date2'] = trim($start_date);
+		}else{
+			$start_date =null;
+			$this->data['start_date2'] = date('Y-m-d');;
+		}
+
+		if($this->input->post('end_date')){
+			$end_date = $this->erp->fld($this->input->post('end_date'));
+			$this->data['end_date2'] = trim($end_date);
+		}else{
+			$end_date = null;
+			$this->data['end_date2'] = date('Y-m-d');;
+		}
+
+		if($this->input->post('supplier')){
+			$supplier = $this->input->post('supplier');
+			$this->data['supplier2'] = $supplier;
+		}else{
+			$supplier = null;
+			$this->data['supplier2'] = 0;
+		}
+
+		if($this->input->post('balance')){
+			$balance = $this->input->post('balance');
+			$this->data['balance2'] = $balance;
+		}else{
+			$balance = 'all';
+			$this->data['balance2'] = 'all';
+		}
+
+		
+		//$suppliers = $this->accounts_model->getApBySupplier('',$start_date, $end_date);
+		$suppliers = $this->companies_model->getAllSupplierCompanies();
+		//$this->erp->print_arrays($suppliers);
+		$this->data['suppliers'] = $suppliers;
+		$bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => '#', 'page' => lang('accounts')));
+		$meta = array('page_title' => lang('ap_by_supplier'), 'bc' => $bc);
+		$this->page_construct('accounts/ap_by_supplier', $meta, $this->data);
+	}
+
 
 	public function checkrefer()
 	{

@@ -128,13 +128,13 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("start_date", "start_date"); ?>
-                                <?php echo form_input('start_date', (isset($_POST['start_date']) ? $_POST['start_date'] : $start_date), 'class="form-control date" id="start_date"'); ?>
+                                <?php echo form_input('start_date', $start_date2?date("d/m/Y", strtotime($start_date2)):'', 'class="form-control date" id="start_date"'); ?>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("end_date", "end_date"); ?>
-                                <?php echo form_input('end_date', (isset($_POST['end_date']) ? $_POST['end_date'] : $end_date), 'class="form-control date" id="end_date"'); ?>
+                                <?php echo form_input('end_date', $end_date2?date("d/m/Y", strtotime($end_date2)):'', 'class="form-control date" id="end_date"'); ?>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -181,78 +181,93 @@
                                 <th class="sorting" style="width:140px;"><?php echo $this->lang->line("balance"); ?></th>
                             </tr>
                         </thead>
-                        <?php
+                        <?php 
+                            $total_amount       = 0;
+                            $total_return       = 0;
+                            $total_paid         = 0;
+                            $total_deposit      = 0;
+                            $total_discount     = 0;
 
-                            foreach($my_data as $sup){
-                                $gbalance=0;
+                            foreach($suppliers as $supplier)
+                            {
+                                $items          = $this->accounts_model->getApBySupplier($supplier->id,$start_date2, $end_date2);
+                                if($start_date2)
+                                {
+                                    $old_amount    = $this->accounts_model->getSuppilerOldAmount($supplier->id,$start_date2, $end_date2);
+                                    $old_payment   = $this->accounts_model->getSuppilerOldPayment($supplier->id,$start_date2, $end_date2);
+                                    $old_balance   = $old_amount[0]->amount-($old_payment[0]->paid+$old_payment[0]->discount); 
+                                }else{
+                                    $old_balance    = 0;
+                                }
+                                
+                                $sup_balance    = $old_balance;
+                                $amount         = $start_date2?$old_balance:0;
+                                $return         = 0;
+                                $paid           = 0;
+                                $deposit        = 0;
+                                $discount       = 0;
+                                $check          = $this->accounts_model->getTotalSupplierBalance($supplier->id);
+                                if($check[0]->amount>0){
                         ?>
                         <tr>
-                            <th class="th_parent" colspan="9"><?= lang("supplier")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $sup['supplierName'] ?></th>
+                            <th class="th_parent" colspan="8"><?= lang("supplier")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $supplier->company ?></th>
+                            <th class="numeric"><?= $this->erp->formatMoney($old_balance) ?></th>
                         </tr>
                         
-                        <?php 
-                            $subTotal = $subReturn = $subDeposit = $subPaid = $subDiscount = 0;
-                                foreach($sup['supplierDatas']['suppPO'] as $suppData){
+                            <?php 
+                               
+                                foreach($items as $data)
+                                {
+                                    $amount      += $data->amount;
+                                    $return      += $data->return_amount;
+                                    $paid        += $data->paid;
+                                    $deposit     += $data->deposit;
+                                    $discount    += $data->discount;
+                                    $sup_balance += $data->amount-($data->return_amount+$data->paid+$data->deposit+$data->discount);
+                            ?>
+                                <tr>
+                                    <td nowrap="nowrap"><?= $data->reference_no ?></td>
+                                    <td><?= $this->erp->hrsd($data->date) ?></td>
+                                    <td><?= $data->type ?></td>
+                                    <td class="numeric"><?= $data->amount!=0?$this->erp->formatMoney($data->amount):'' ?></td>
+                                    <td class="numeric"><?= $data->return_amount!=0?$this->erp->formatMoney($data->return_amount):'' ?></td>
+                                    <td class="numeric"><?= $data->paid!=0?$this->erp->formatMoney($data->paid):'' ?></td>
+                                    <td class="numeric"><?= $data->deposit!=0?$this->erp->formatMoney($data->deposit):'' ?></td>
+                                    <td class="numeric"><?= $data->discount!=0?$this->erp->formatMoney($data->discount):'' ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($sup_balance) ?></td>
+                                </tr>
+                        <?php
 
-                                    $subTotal += $suppData->grand_total;
-                                    $subReturn += $suppData->amount_return;
-                                    $subDeposit += $suppData->amount_deposit;
-                                    $payment_discount=0;
-                                    $subDiscount += $suppData->order_discount;
-                                    $sub_balance = ($suppData->grand_total - $suppData->amount_return - $suppData->amount_deposit - $suppData->order_discount);
-                                    $gbalance += $sub_balance;
-                                    $type = (explode('/', $suppData->reference_no)[0]=='PO'?"Purchase":(explode('/', $suppData->reference_no)[0]=='PV'?"Payment":"Not Assigned"));
+                                }  
                         ?>
-                                    <tr>
-                                        <td nowrap="nowrap"><?= $suppData->reference_no ?></td>
-                                        <td><?= $this->erp->hrsd($suppData->date) ?></td>
-                                        <td><?= $type ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($suppData->grand_total) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($suppData->amount_return) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney(0) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($suppData->amount_deposit) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($suppData->order_discount) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($sub_balance) ?></td>
-                                    </tr>
-                            <?php   
-                                if(is_array($suppData->payments)){
-
-                                    foreach($suppData->payments as $supPmt){
-                                        $subPaid += abs($supPmt->amount);
-                                        $payment_discount+=$supPmt->discount;
-                                        $typePV = (explode('/', $supPmt->reference_no)[0]=='PO'?"Purchase":(explode('/', $supPmt->reference_no)[0]=='PV'?"Payment":"Not Assigned"));
-                                
-                            ?>
-                                        <tr class="success">
-                                            <td nowrap="nowrap" style="text-align:right;"><?= $supPmt->reference_no ?></td>
-                                            <td><?= $this->erp->hrsd($supPmt->date) ?></td>
-                                            <td><?= $typePV ?></td>
-                                            <td class="numeric"></td>
-                                            <td class="numeric"></td>
-                                            <td class="numeric"><?= $this->erp->formatMoney(abs($supPmt->amount)) ?></td>
-                                            <td class="numeric"></td>
-                                            <td class="numeric"><?= $this->erp->formatMoney($supPmt->discount) ?></td>
-                                            <td class="numeric"><?= $this->erp->formatMoney($sub_balance - abs($supPmt->amount)-$supPmt->discount) ?></td>
-                                        </tr>
-                            <?php
-                                        $gbalance -= abs($supPmt->amount)+$supPmt->discount;
-                                        $sub_balance -= abs($supPmt->amount)+$supPmt->discount;
-                                    }
-                                }
-                                }                               
-                            ?>
-                                    <tr style="font-weight:bold;">
-                                        <td colspan="3" align="right" ><?= lang("total")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($subTotal) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($subReturn) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($subPaid) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($subDeposit) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($payment_discount) ?></td>
-                                        <td class="numeric"><?= $this->erp->formatMoney($gbalance) ?></td>
-                                    </tr>
+                                 <tr style="font-weight:bold;" class="success">
+                                    <td colspan="3" align="right" ><?= lang("total")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($amount) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($return) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($paid) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($deposit) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($discount) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($sup_balance) ?></td>
+                                </tr>
                         <?php
                             }
+                            $total_amount   += $amount;
+                            $total_return   += $return;
+                            $total_paid     += $paid;
+                            $total_deposit  += $deposit;
+                            $total_discount += $discount;
+                            $gbalance       = $total_amount-($total_paid+$total_return+$total_deposit+$total_discount);
+                            }                             
                         ?>
+                                <tr style="font-weight:bold;" class="warning">
+                                    <td colspan="3" align="right" ><?= lang("total")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($total_amount) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($total_return) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($total_paid) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($total_deposit) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($total_discount) ?></td>
+                                    <td class="numeric"><?= $this->erp->formatMoney($gbalance) ?></td>
+                                </tr>
                         
                     </table>
                 </div>

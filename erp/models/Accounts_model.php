@@ -2512,4 +2512,107 @@ class Accounts_model extends CI_Model
             }
             return false;
 	}
+
+     public function getApBySupplier($supplier_id=NULL,$start_date=NULL,$end_date=NULL)
+     {
+        if($supplier_id)
+        {
+            $sql=" where supplier_id={$supplier_id}";
+        }else{
+            $sql="";
+        }
+        if($start_date && $end_date){
+            if($supplier_id)
+            {
+              $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";  
+          }else{
+            $sql.=" WHERE date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";  
+          }
+            
+        }
+        $q=$this->db->query("select* from(
+        select
+            erp_purchases.supplier_id,
+            reference_no,
+            date,
+            'Purchase' as type,
+            grand_total as amount,
+            0 as return_amount,
+            0 as paid,
+            0 as deposit,
+            0 as discount
+        from erp_purchases
+        union all
+        select 
+            erp_purchases.supplier_id,
+            erp_payments.reference_no,
+            erp_payments.date, 
+            'Payment' as type, 
+            0 as amount,    
+            0 as return_amount, 
+            amount as paid, 
+            0 as deposit,
+            discount 
+        from erp_payments
+            left join erp_purchases on erp_purchases.id=erp_payments.purchase_id
+        WHERE erp_payments.paid_by='cash'
+            ) ar {$sql} order by date asc");
+            if($q->num_rows() > 0){
+                return $q->result();
+            }
+            return false;
+    }
+
+    public function getSuppilerOldAmount($supplier_id=NULL,$start_date=NULL,$end_date=NULL)
+    {
+        $this->db->select('sum(grand_total) as amount')
+        ->from('erp_purchases');
+        if($supplier_id)
+        {
+            $this->db->where('erp_purchases.supplier_id',$supplier_id);
+        }
+        if($start_date)
+        {
+            $this->db->where('erp_purchases.date <',$start_date);
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
+    public function getSuppilerOldPayment($supplier_id=NULL,$start_date=NULL,$end_date=NULL)
+    {
+        $this->db->select('sum(amount) as paid, sum(discount) as discount')
+        ->from('erp_payments')
+        ->join('erp_purchases','erp_purchases.id=erp_payments.purchase_id','LEFT');
+        if($supplier_id)
+        {
+            $this->db->where('erp_purchases.supplier_id',$supplier_id);
+        }
+        if($start_date)
+        {
+            $this->db->where('erp_payments.date <',$start_date);
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
+
+    public function getTotalSupplierBalance($supplier_id=NULL)
+    {
+          $this->db->select('sum(grand_total) as amount')
+        ->from('erp_purchases');
+        if($supplier_id)
+        {
+            $this->db->where('erp_purchases.supplier_id',$supplier_id);
+        }
+        $q=$this->db->get();
+        if($q->num_rows() > 0){
+            return $q->result();
+        }
+        return false;
+    }
 }
