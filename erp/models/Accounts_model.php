@@ -2263,7 +2263,7 @@ class Accounts_model extends CI_Model
         }else{
             $sql="";
         }
-        if($start_date && $end_date){
+  /*      if($start_date && $end_date){
 
             if(!$customer)
             {
@@ -2272,7 +2272,7 @@ class Accounts_model extends CI_Model
                 $sql.=" AND date_format(date,'%Y-%m-%d') BETWEEN '{$start_date}' AND '{$end_date}'";
             }
             
-        }
+        }*/
         $q=$this->db->query("select* from(
             select 
                 (select customer_id from erp_sales where id=erp_payments.sale_id) as customer_id,

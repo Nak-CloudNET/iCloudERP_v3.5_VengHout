@@ -205,22 +205,26 @@
                                 if($cus->customer){
 
                                 $items          = $this->accounts_model->getArByCustomer($cus->customer_id,$start_date2,$end_date2);
-                                $old_sale    = $this->accounts_model->getSaleOldBalance($cus->customer_id,$start_date2,$end_date2);
-                                $old_return    = $this->accounts_model->getReturnSaleOldBalance($cus->customer_id,$start_date2,$end_date2);
+                                $old_sale       = $this->accounts_model->getSaleOldBalance($cus->customer_id,$start_date2,$end_date2);
+                                $old_return     = $this->accounts_model->getReturnSaleOldBalance($cus->customer_id,$start_date2,$end_date2);
                                 $old_payment    = $this->accounts_model->getPaymentOldBalance($cus->customer_id,$start_date2,$end_date2);
                                 $old_deposit    = $this->accounts_model->getDepositOldBalance($cus->customer_id,$start_date2,$end_date2);
-                               //$this->erp->print_arrays($old_sale,$old_return,$old_payment);
-                                if(is_array($items)){
-                                    
-                                    $total_discount=$start_date2?$old_payment[0]->discount:0;
-                                    $old_balance=$old_sale[0]->grand_total-($old_return[0]->return_grand_total+$old_payment[0]->paid+ $old_payment[0]->discount+ $old_deposit[0]->discount);
-                                    $am = $start_date2?$old_balance:0;
-                                    $total_old_balance+=$old_balance;
-                            ?>
+
+                                $total_discount=$start_date2?$old_payment[0]->discount:0;
+                                $old_balance=$old_sale[0]->grand_total-($old_return[0]->return_grand_total+$old_payment[0]->paid+ $old_payment[0]->discount+ $old_deposit[0]->deposit);
+                                $am = $start_date2?$old_balance:0;
+                                $total_old_balance+=$old_balance;
+                               //$this->erp->print_arrays($old_sale,$old_return,$old_payment, $old_deposit);
+                        ?>
                             <tr class="success">
                                 <th class="th_parent" colspan="10"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
                                 <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance)):'';?></th>
                             </tr>
+                        <?php
+                            if(is_array($items)){
+                                    
+                            ?>
+                           
                             
                             <?php
                                 $total_sale = $start_date2?$old_sale[0]->grand_total:0;
@@ -307,7 +311,7 @@
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_pay_amoun2)?></b></td>
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_deposit2)?></b></td>
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_discount2)?></b></td>
-                                <td class="text-right"><b><?php if($total_am2<0){?>(<?=$this->erp->formatMoney(abs($total_am2))?>) <?php }else{ echo $this->erp->formatMoney($total_am2);}?></b></td>
+                                <td class="text-right"><b><?= $total_am2?(($total_am2+$total_old_balance)<0?$this->erp->formatMoney(abs($total_am2+$total_old_balance)):$this->erp->formatMoney($total_am2+$total_old_balance)):$this->erp->formatMoney($total_old_balance) ?></b></td>
                             </tr>
                     </table>
                 </div>
