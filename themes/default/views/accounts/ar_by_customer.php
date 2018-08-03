@@ -199,7 +199,7 @@
                                 $total_old_balance =0;
                                 $total_discount2=0;
                                 $total_deposit2=0;
-                                $total_return=120;
+                                $total_return=0;
 
                             foreach($customers as $cus){ 
                                 if($cus->customer){
@@ -210,9 +210,9 @@
                                 $old_payment    = $this->accounts_model->getPaymentOldBalance($cus->customer_id,$start_date2,$end_date2);
                                 $old_deposit    = $this->accounts_model->getDepositOldBalance($cus->customer_id,$start_date2,$end_date2);
 
-                                $total_discount=$start_date2?$old_payment[0]->discount:0;
-                                $old_balance=$old_sale[0]->grand_total-($old_return[0]->return_grand_total+$old_payment[0]->paid+ $old_payment[0]->discount+ $old_deposit[0]->deposit);
-                                $am = $start_date2?$old_balance:0;
+                                $total_discount = $start_date2?$old_payment[0]->discount:0;
+                                $old_balance    = $old_sale[0]->grand_total-($old_return[0]->return_grand_total+$old_payment[0]->paid+ $old_payment[0]->discount+ $old_deposit[0]->deposit);
+                                $am             = $start_date2?$old_balance:0;
                                 $total_old_balance+=$old_balance;
                                //$this->erp->print_arrays($old_sale,$old_return,$old_payment, $old_deposit);
                         ?>
@@ -220,24 +220,22 @@
                                 <th class="th_parent" colspan="10"><?= lang("customer")?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?= $cus->customer?></th>
                                 <th style="text-align: right"><?= $start_date2?($this->erp->formatMoney($old_balance)):'';?></th>
                             </tr>
-                        <?php
-                            if(is_array($items)){
+                                
                                     
-                            ?>
-                           
-                            
                             <?php
-                                $total_sale = $start_date2?$old_sale[0]->grand_total:0;
-                                $total_pay_amoun = $start_date2?$old_payment[0]->paid:0;
-                                $total_return_amoun = $start_date2?$old_return[0]->return_grand_total:0;
-                                $total_deposit = $start_date2?$old_deposit[0]->deposit:0;
 
-                                $total_sale_show = 0;
-                                $total_pay_amoun_show = 0;
-                                $total_return_amoun_show = 0;
-                                $total_deposit_show = 0;
-                                $total_discount_show = 0;
-                                $total_am = 0;
+                                if(1){
+                                $total_sale         = $start_date2?$old_sale[0]->grand_total:0;
+                                $total_pay_amoun    = $start_date2?$old_payment[0]->paid:0;
+                                $total_return_amoun = $start_date2?$old_return[0]->return_grand_total:0;
+                                $total_deposit      = $start_date2?$old_deposit[0]->deposit:0;
+
+                                $total_sale_show            = 0;
+                                $total_pay_amoun_show       = 0;
+                                $total_return_amoun_show    = 0;
+                                $total_deposit_show         = 0;
+                                $total_discount_show        = 0;
+                                $total_am                   = 0;
                                  
 
                                     foreach($items as $sale ){
@@ -282,13 +280,12 @@
 
                             <tr>
                                     <td class="text-right" colspan="5"><b>Total</b></td>
-                                    
                                     <td class="text-right"><b><?=$this->erp->formatMoney($total_sale_show)?></b></td>
                                     <td class="text-right"><b><?=$this->erp->formatMoney($total_return_amoun_show)?></b></td>
                                     <td class="text-right"><b><?=$this->erp->formatMoney($total_pay_amoun_show)?></b></td>
                                     <td class="text-right"><b><?=$this->erp->formatMoney($total_deposit_show)?></b></td>
                                     <td class="text-right"><b><?=$this->erp->formatMoney($total_discount_show)?></td>
-                                    <td class="text-right"><b><?php if($total_am<0){?>(<?=$this->erp->formatMoney(abs($total_am))?>) <?php }else{ echo $this->erp->formatMoney($total_am);}?></b></td>
+                                    <td class="text-right"><b><?= $total_am?($total_am>0?$this->erp->formatMoney(abs($total_am)):$this->erp->formatMoney($total_am)):($old_balance>0?$this->erp->formatMoney(abs($old_balance)):$this->erp->formatMoney($old_balance)) ?></b></td>
                                 </tr>
                             <?php
                             $total_sale2 +=$total_sale;
@@ -297,7 +294,7 @@
                             $total_discount2+=$total_discount;
                             $total_deposit2+=$total_deposit;
                            // $total_am2 = $total_sale2-$total_pay_amoun2-$total_return_amoun2-$total_discount2;
-                            $total_am2+=$total_am;
+                            $total_am2+=$total_am?$total_am:$old_balance;
                             //$this->erp->print_arrays($total_sale2,':',$total_pay_amoun2,':',$total_return_amoun2,':',$total_discount2);
                                 }
                             }
@@ -311,7 +308,7 @@
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_pay_amoun2)?></b></td>
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_deposit2)?></b></td>
                                 <td class="text-right"><b><?=$this->erp->formatMoney($total_discount2)?></b></td>
-                                <td class="text-right"><b><?= $total_am2?(($total_am2+$total_old_balance)<0?$this->erp->formatMoney(abs($total_am2+$total_old_balance)):$this->erp->formatMoney($total_am2+$total_old_balance)):$this->erp->formatMoney($total_old_balance) ?></b></td>
+                                <td class="text-right"><b><?= $total_am2?(($total_am2+$total_old_balance)<0?$this->erp->formatMoney(abs($total_am2)):$this->erp->formatMoney($total_am2)):$this->erp->formatMoney($total_old_balance) ?></b></td>
                             </tr>
                     </table>
                 </div>
