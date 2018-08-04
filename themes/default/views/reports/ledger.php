@@ -245,14 +245,14 @@
                                 <tr>
                                     <td colspan="4" style="font-weight: bold;"><?= lang("Account"); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?=$account->accountcode . ' ' .$account->accountname?></td>
 									<td colspan="4" style="font-weight: bold;">Begining Account Balance <i class="fa fa-caret-right" aria-hidden="true"></i></td>
-									<?php if($startAmount->startAmount > 0) { ?>
+									<?php if($startAmount->startAmount >= 0) { ?>
 										<td class="right"><?= $this->erp->formatMoney($startAmount->startAmount)?></td>
 										<td class="right"></td>
-										<td class="right"></td>
+										<td class="right"><?= $startAmount->startAmount!=0?$this->erp->formatMoney($startAmount->startAmount):''?></td>
 									<?php }else { ?>
 										<td class="right"></td>
 										<td class="right"><?= $this->erp->formatMoney(abs($startAmount->startAmount))?></td>
-										<td class="right"></td>
+										<td class="right"><?=$startAmount->startAmount!=0?'('.$this->erp->formatMoney($startAmount->startAmount).')':''?></td>
 									<?php } ?>
                                 </tr>
                                 <?php
@@ -284,7 +284,7 @@
 										<td><?= $gltran->description ?></td>
 										<td><?= $gltran->username ?></td>
 										<td class="right"><?= ($gltran->am1 > 0 ? $this->erp->formatMoney($gltran->am1) : '0.00'); ?></td>
-										<td class="right"><?= '('.($gltran->am2 < 1 ? $this->erp->formatMoney(abs($gltran->am2)) : '0.00').')'?></td>
+										<td class="right"><?= ($gltran->am2 < 1 ? $this->erp->formatMoney(abs($gltran->am2)) : '0.00')?></td>
                                         <td class="right"><?= $endAccountBalance < 0 ? '$ (' . $endAccountBalanceMinus[1] . ')' : $this->erp->formatMoney($endAccountBalance); ?></td>
 
                                     </tr>
@@ -302,7 +302,7 @@
 											<td class="right"></td>
 										<?php } ?> -->
                                         <td class="right"><?= $this->erp->formatMoney(abs($endDebitAmount)); ?></td>
-                                        <td class="right"><?='('.$this->erp->formatMoney(abs($endCreditAmount)).')'; ?></td>
+                                        <td class="right"><?=$this->erp->formatMoney(abs($endCreditAmount)); ?></td>
                                         <?php if($endAmount > 0) { ?>
                                             <td class="right"><?= $this->erp->formatMoney(abs($endAmount)); ?></td>
                                         <?php } else { ?>
