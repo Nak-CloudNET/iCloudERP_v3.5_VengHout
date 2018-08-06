@@ -229,7 +229,6 @@
                                             </tr>
                                         <?php } ?>
                                         <?php
-                                        $this->erp->print_arrays($invs);
                                         if(!empty($customer->address_kh || $customer->address)) { ?>
                                             <tr>
                                                 <td>ទូរស័ព្ទលេខ (Tel)</td>

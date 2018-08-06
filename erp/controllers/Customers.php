@@ -107,7 +107,12 @@ class Customers extends MY_Controller
                 'postal_code' => $this->input->post('postal_code'),
                 'country' => $this->input->post('country'),
                 'phone' => $this->input->post('phone'),
-                'cf1' => $this->input->post('cf1'),
+                'cf3' => $this->input->post('cf3'),
+                'cf2' 				=> $this->input->post('cf2'),
+                'cf6' 				=> $this->input->post('cf6'),
+                'company_kh' => $this->input->post('company_kh'),
+                'name_kh' => $this->input->post('name_kh'),
+                'address_kh' => $this->input->post('address_kh'),
                 'gender' => $this->input->post('gender'),
                 'status' => $this->input->post('status'),
                 'date_of_birth' => $this->erp->fld(trim($this->input->post('date_of_birth'))),
@@ -118,16 +123,14 @@ class Customers extends MY_Controller
                 'award_points' => $this->input->post('award_points'),
                 'price_group_id' => $this->input->post('price_groups'),
                 'payment_term' => $this->input->post('payment_term'),
-                'company_kh' => $this->input->post('company_kh'),
-                'name_kh' => $this->input->post('name_kh'),
-                'address_kh' => $this->input->post('address_kh'),
+                
                 'public_charge_id'=> $this->input->post('public_charge'),
                 'sale_man' => $this->input->post('saleman'),
                 'invoice_footer' => $this->input->post('note'),
                 'identify_date' =>$this->erp->fld(trim($this->input->post('identify_date'))),
                 'public_charge_id' => ''
             );
-            // attachment
+
             if ($_FILES['userfile']['size'][0] != "") {
                 $this->load->library('upload');
                 $config['upload_path'] = 'assets/uploads/';
@@ -156,6 +159,7 @@ class Customers extends MY_Controller
                 $data['attachment'] = json_encode($photo);
 
             }
+            //$this->erp->print_arrays($data);exit;
         } elseif ($this->input->post('add_customer')) {
 
             $this->session->set_flashdata('error', validation_errors());
@@ -321,7 +325,12 @@ class Customers extends MY_Controller
                 'postal_code' => $this->input->post('postal_code'),
                 'country' => $this->input->post('country'),
                 'phone' => $this->input->post('phone'),
-                'cf1' => $this->input->post('cf1'),
+                'cf3' => $this->input->post('cf3'),
+                'cf2' => $this->input->post('cf2'),
+                'cf6' => $this->input->post('cf6'),
+                'company_kh' => $this->input->post('company_kh'),
+                'name_kh' => $this->input->post('name_kh'),
+                'address_kh' => $this->input->post('address_kh'),
                 'gender' => $this->input->post('gender'),
                 'status' => $this->input->post('status'),
                 'date_of_birth' => $this->erp->fld(trim($this->input->post('date_of_birth'))),
@@ -332,9 +341,6 @@ class Customers extends MY_Controller
                 'start_date' => $this->erp->fld(trim($this->input->post('start_date'))),
                 'price_group_id' => $this->input->post('price_groups'),
                 'payment_term' => $this->input->post('payment_term'),
-                'company_kh' => $this->input->post('company_kh'),
-                'name_kh' => $this->input->post('name_kh'),
-                'address_kh' => $this->input->post('address_kh'),
                 'sale_man' => $this->input->post('saleman'),
                 'invoice_footer' => $this->input->post('note'),
                 'identify_date' =>$this->erp->fld(trim($this->input->post('identify_date'))),
