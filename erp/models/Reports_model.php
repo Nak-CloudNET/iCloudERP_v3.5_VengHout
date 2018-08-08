@@ -4883,11 +4883,11 @@ ORDER BY
         $this->db->join('return_sales', 'stock_trans.tran_id = return_sales.id', 'left');
         $this->db->join('deliveries', 'stock_trans.tran_id = deliveries.id', 'left');
 
-		if ($this->Settings->product_expiry == 1) {
+	/*	if ($this->Settings->product_expiry == 1) {
             $this->db->select('SUM(COALESCE(erp_stock_trans.quantity,0)) as quantity');
             $this->db->group_by('stock_trans.expired_date');
             $this->db->group_by('stock_trans.tran_type');
-		}
+		}*/
 
 		if($category_id){
             $this->db->where('products.category_id', $category_id);

@@ -198,35 +198,33 @@ if (!function_exists('optimizePurchases')) {
             foreach ($q_all_purchases->result() as $row_purchase) {
                 $q_purchase_items = $ci->db->query("SELECT * FROM erp_purchase_items
                                     WHERE purchase_id = '{$row_purchase->id}' 
-                                    AND transaction_type = 'PURCHASE'; ");
-
+                                    AND transaction_type = 'PURCHASE'");
 
                 if ($q_purchase_items->num_rows() > 0) {
 
-                    $items = [];
-                    $services = [];
-                    $total_services = ($row_purchase->shipping - 0);
-                    $total_item_cost = 0;
+                    $items              = [];
+                    $services           = [];
+                    $total_services     = ($row_purchase->shipping - 0);
+                    $total_item_cost    = 0;
 
                     foreach ($q_purchase_items->result() as $row_purchase_item) {
-                        $product_id = $row_purchase_item->product_id;
-                        $product_info = getProductInfo($product_id);
+                        $product_id     = $row_purchase_item->product_id;
+                        $product_info   = getProductInfo($product_id);
                         if ($product_info->type == 'service') {
                             if ($product_info->service_type - 0 == 1) {
-                                $services[] = $row_purchase_item;
+                                $services[]     = $row_purchase_item;
                                 $total_services += ($row_purchase_item->subtotal - 0);
                             }
                         } else {
-                            $items[] = $row_purchase_item;
-                            $total_item_cost += ($row_purchase_item->subtotal - 0);
+                            $items[]            = $row_purchase_item;
+                            $total_item_cost    += ($row_purchase_item->subtotal - 0);
                         }
                     }
 
                     $ci->db->query("DELETE FROM erp_stock_trans WHERE tran_type = 'PURCHASE' AND tran_id = '{$row_purchase->id}'");
-
                     foreach ($items as $item) {
-                        $percentage_item = ($item->subtotal / $total_item_cost);
-                        $product_cost_ship = $percentage_item * $total_services;
+                        $percentage_item    = ($item->subtotal / $total_item_cost);
+                        $product_cost_ship  = $percentage_item * $total_services;
 
                         if ($item->quantity_balance - 0 > 0) {
                             $product_unit_cost = ($item->subtotal + $product_cost_ship) / $item->quantity_balance;
@@ -234,8 +232,7 @@ if (!function_exists('optimizePurchases')) {
                             $product_unit_cost = ($item->subtotal + $product_cost_ship);
                         }
 
-                        $ci->db->update('purchase_items',
-                            ['real_unit_cost' => $product_unit_cost], ['id' => $item->id]);
+                        $ci->db->update('purchase_items', ['real_unit_cost' => $product_unit_cost], ['id' => $item->id]);
 
                         $ci->db->insert('stock_trans',
                             [
@@ -251,10 +248,11 @@ if (!function_exists('optimizePurchases')) {
                                 'tran_type'             => 'PURCHASE',
                                 'tran_id'               => $row_purchase->id,
                                 'manufacture_cost'      => $item->net_unit_cost,
-                                'freight_cost'          => $product_cost_ship,
-                                'total_cost'            => $product_unit_cost,
+                                'freight_cost'          => $item->net_shipping,
+                                'total_cost'            => $item->real_unit_cost,
                                 'expired_date'          => $item->expiry,
-                                'serial'                => $item->serial_no
+                                'serial'                => $item->serial_no,
+                                'avg_cost'              => (($item->cb_qty*$item->cb_avg)+($item->net_unit_cost*$item->quantity))/($item->cb_qty+$item->quantity)
                             ]);
 
                         //Will use this function in the future
@@ -264,13 +262,13 @@ if (!function_exists('optimizePurchases')) {
                     }
                 }
             }
-
             //Will use this function in the future
-            getAvgCost($tran_date, $arr_product_id);
+            //getAvgCost($tran_date, $arr_product_id);
 
         }
     }
 }
+
 
 if (!function_exists('optimizeStockAdjustment')) {
     function optimizeStockAdjustment($tran_date)
@@ -316,7 +314,8 @@ if (!function_exists('optimizeStockAdjustment')) {
                                 'freight_cost'          => 0,
                                 'total_cost'            => $row_adj_item->cost,
                                 'expired_date'          => $row_adj_item->expiry,
-                                'serial'                => $row_adj_item->serial_no
+                                'serial'                => $row_adj_item->serial_no,
+
                             ]);
 
                         //Will use this function in the future
