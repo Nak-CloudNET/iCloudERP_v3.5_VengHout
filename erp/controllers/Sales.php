@@ -3902,7 +3902,7 @@ class Sales extends MY_Controller
             $reference 	= $this->input->post('reference_no') ? $this->input->post('reference_no') : $this->site->getReference('so',$biller_id);
 
             if ($this->Owner || $this->Admin || $this->Settings->allow_change_date == 1) {
-                $date = $this->erp->fld(trim($this->input->post('date')));
+                $date = $this->erp->fld(trim($this->input->post('date'))).':'.date('s');
             } else {
                 $date = date('Y-m-d H:i:s');
             }
@@ -4402,7 +4402,7 @@ class Sales extends MY_Controller
 
 			$invoice_view = $this->Settings->invoice_view;
 			if($invoice_view == 0){
-                redirect("sales/print_st_invoice/" . $s->row()->id);
+                redirect("sale_order/delivery_noted/" . $s->row()->id);
 			}
 			else if($invoice_view == 1){
 				redirect("sales/invoice/".$s->row()->id);
@@ -6440,7 +6440,7 @@ class Sales extends MY_Controller
             $reference  = $this->input->post('reference_no') ? $this->input->post('reference_no') : $this->site->getReference('re',$sale->biller_id);
 
             if ($this->Owner || $this->Admin || $this->Settings->allow_change_date == 1) {
-                $date = $this->erp->fld(trim($this->input->post('date')));
+                $date = $this->erp->fld(trim($this->input->post('date'))).':'.date('s');
             } else {
                 $date = date('Y-m-d H:i:s');
             }

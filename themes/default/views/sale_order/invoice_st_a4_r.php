@@ -228,16 +228,19 @@
                                                 <?php } ?>
                                             </tr>
                                         <?php } ?>
-                                        <?php if(!empty($customer->address_kh || $customer->address)) { ?>
+                                        <?php
+                                        if(!empty($customer->address_kh || $customer->address)) { ?>
                                             <tr>
                                                 <td>ទូរស័ព្ទលេខ (Tel)</td>
                                                 <td>:</td>
                                                 <td><?= $customer->phone ?></td>
                                             </tr>
+
                                         <?php } ?>
 
                                     </table>
                                 </div>
+
                                 <div class="col-sm-5 col-xs-5">
                                     <table class="noPadding" border="none">
                                         <tr>
@@ -301,7 +304,7 @@
                 <tbody>
 
                 <?php
-
+//                $this->erp->print_arrays($rows);
                 $no = 1;
                 $erow = 1;
                 $totalRow = 0;
@@ -488,8 +491,9 @@
                 if ($invs->grand_total != $invs->total) { ?>
                     <tr class="border-foot">
                         <td rowspan = "<?= ($row+1); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
-                            <?php if (!empty($invs->invoice_footer)) { ?>
+                            <?php if (!empty($biller->invoice_footer)) { ?>
                                 <p ><strong><u>Note:</u></strong></p>
+                                <p style="margin-top:-5px !important; line-height: 2"><?= $biller->invoice_footer ?></p>
 
                             <?php } ?>
                         </td>
@@ -526,7 +530,7 @@
                         <td rowspan="<?= ($row); ?>" colspan="3" style="border-left: 1px solid #FFF !important; border-bottom: 1px solid #FFF !important;">
                             <?php if (!empty($invs->invoice_footer)) { ?>
                                 <p><strong><u>Note:</u></strong></p>
-                               <!-- <p><?= $invs->invoice_footer ?></p>-->
+                               <!-- <p><?= $inv->invoice_footer ?></p>-->
                             <?php } ?>
                         </td>
                     <?php } ?>
@@ -570,13 +574,17 @@
 
                 </tbody>
             </table>
+            <style>
+                .wrap_tb>p{
 
+                }
+            </style>
                 <tfoot class="tfoot">
                     <tr>
                         <th colspan="9">
                             <?php if(trim(htmlspecialchars_decode($invs->note))){ ?>
                                 <div style="border-radius: 5px 5px 5px 5px;border:1px solid black;height: auto;" id="note" class="col-md-12 col-xs-12">
-                                    <div style="margin-left: 10px;margin-top:10px;"><?= $this->erp->decode_html($invs->note); ?></div>
+                                    <div class="col-md-12 col-xs-12" style="overflow: auto; width: 100%; margin-left: 10px;margin-top:10px;"><?= trim(htmlspecialchars_decode($invs->note)); ?> </div>
                                 </div>
 
                             <?php } ?>
@@ -611,7 +619,7 @@
 
 
         <div style="width: 821px;margin: 20px">
-            <a class="btn btn-warning no-print" href="<?= site_url('sales'); ?>" style="border-radius: 0">
+            <a class="btn btn-warning no-print" href="<?= site_url('sale_order/list_sale_order'); ?>" style="border-radius: 0">
                 <i class="fa fa-hand-o-left" aria-hidden="true"></i>&nbsp;<?= lang("back"); ?>
             </a>
         </div>

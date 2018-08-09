@@ -364,7 +364,9 @@
             </div>
             <?php if (!$Supplier || !$Customer) { ?>
                 <div class="buttons">
+
                     <div class="btn-group btn-group-justified">
+
                         <div class="btn-group">
                             <a href="<?= site_url('sale_order/tax_invoice1/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('sale order') ?>">
                                 <i class="fa fa-print"></i>
@@ -397,7 +399,12 @@
                         </div>
                     </div>
                     <div class="btn-group btn-group-justified">
-
+                        <div class="btn-group">
+                            <a href="<?= site_url('sale_order/invoice_sale_order/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_sale order') ?>">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('invoice_sale_order') ?></span>
+                            </a>
+                        </div>
                         <!--
                         <div class="btn-group">
                             <a href="<?= site_url('sale_order/print_iphoto/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('sale order') ?>">

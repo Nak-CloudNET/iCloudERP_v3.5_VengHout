@@ -198,16 +198,16 @@
 
                                     <?php
 							}
-							$qty_on_hand = 0;
+							//$qty_on_hand = 0;
 							$total_on_hand = 0;
 							$total_asset_val = 0;
 							$unit_name = "";
 							$prDetails = $this->reports_model->getProductsInventoryValuationByProduct($warehouse->warehouse_id,($cate_id1?$cate_id1:$category->category_id),($product_id1?$product_id1:$product->product_id),$stockType1,$from_date1,$to_date1,$reference1,$biller1);
+                            $asset_value=0;
 							foreach($prDetails as $pr)
 							{
 								$p_cost = 0;
 								$p_qty = 0;
-
                                 if ($pr->type == 'PURCHASE'
                                     || $pr->type == 'SALE RETURN'
                                     || $pr->type == 'OPENING QUANTITY')
@@ -239,13 +239,16 @@
                                     $p_qty = $pr->quantity_balance_unit;
 								}
 								$unit_name = $this->erp->convert_unit_2_string($pr->product_id,$p_qty);
-								$qty_on_hand += $p_qty ;
+                                $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
+								$qty_on_hand = $cur_qoh[0]->qoh ;
 
-                                $p_cost = $this->erp->formatDecimal($pr->total_cost);
+                                $p_cost = $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->manufacture_cost):$this->erp->formatDecimal($pr->total_cost);
 								$avg_cost = $pr->avg_cost;
+                                $avg_cost=(($asset_value+($p_qty*$p_cost))/$qty_on_hand);
+
 								$this->db->select("cost")->where("erp_products.id",$pr->product_id);
 								$cost = $this->erp->formatDecimal($this->db->get_where("erp_products", array("id"=>$product->product_id),1)->row()->cost, 4);
-								$asset_value = $cost * $qty_on_hand;
+								$asset_value =$pr->tran_type=='PURCHASE'?$pr->avg_cost*$qty_on_hand:$pr->total_cost*$qty_on_hand;
 							?>
 							<tr>
                                 <td style="text-align:center !important;">
@@ -270,9 +273,9 @@
 								<td><?= $pr->reference_no ?></td>
                                 <td><?= $pr->biller_company ? $pr->biller_company : $pr->biller_name ?></td>
 								<td class="text-right"><?= $this->erp->formatQuantity($p_qty) ?> <br><?php  echo $unit_name;?></td>
-								<td class="text-right"><?= $p_cost ?></td>
+								<td class="text-right"><?= $pr->tran_type!='PURCHASE'?'':$p_cost ?></td>
 								<td class="text-right"><?= $this->erp->formatQuantity($qty_on_hand) ?></td>
-								<td class="text-right"><?= $cost ?></td>
+								<td class="text-right"><?= $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->avg_cost):$this->erp->formatDecimal($pr->total_cost) ?></td>
 								<td class="text-right"><?= $this->erp->formatMoney($asset_value) ?></td>
 							</tr>
                                 <?php
@@ -286,11 +289,11 @@
 								</td>
                                 <td class="text-right"><b><?= $this->erp->formatQuantity($total_on_hand); ?></b></td>
 								<td></td>
-								<td class="text-right"><b><?= $this->erp->formatMoney($total_asset_val); ?></b></td>
+								<td class="text-right"><b><?= $this->erp->formatMoney($asset_value); ?></b></td>
 							</tr>
                                     <?php
 								$total_qoh_per_warehouse += $total_on_hand;
-								$total_assetVal_per_warehouse += $total_asset_val;
+								$total_assetVal_per_warehouse += $asset_value;
                                 }
                                 ?>
 							<tr>
@@ -317,12 +320,12 @@
                                 <td class="text-right">
                                     <b><?= $this->erp->formatQuantity($total_qoh_per_warehouse_cat); ?></b></td>
 								<td></td>
-								<td class="text-right"><b><?= $this->erp->formatMoney($total_assetVal_per_warehouse_cat); ?></b></td>
+								<td class="text-right"><b><?= $this->erp->formatMoney($asset_value); ?></b></td>
 							</tr>
 
                                    <?php
 							$gtt +=$total_qoh_per_warehouse_cat;
-							$gqty +=$total_assetVal_per_warehouse_cat;
+							$gqty +=$asset_value;
 							}
 							}
 							?>
