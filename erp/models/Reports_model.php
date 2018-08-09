@@ -4912,6 +4912,7 @@ ORDER BY
 		if($from_date && $to_date){
             $this->db->where('date_format(erp_stock_trans.tran_date,"%Y-%m-%d") >="' . $from_date . '" AND date_format(erp_stock_trans.tran_date,"%Y-%m-%d") <="' . $to_date . '"');
         }
+        $this->db->order_by('stock_trans.tran_date','ASC');
         $q = $this->db->get('stock_trans');
 		if($q->num_rows() > 0 ) {
 			foreach($q->result() as $row){

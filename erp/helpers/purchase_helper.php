@@ -198,7 +198,7 @@ if (!function_exists('optimizePurchases')) {
             foreach ($q_all_purchases->result() as $row_purchase) {
                 $q_purchase_items = $ci->db->query("SELECT * FROM erp_purchase_items
                                     WHERE purchase_id = '{$row_purchase->id}' 
-                                    AND transaction_type = 'PURCHASE'");
+                                    AND transaction_type = 'PURCHASE' ORDER BY id ASC");
 
                 if ($q_purchase_items->num_rows() > 0) {
 
