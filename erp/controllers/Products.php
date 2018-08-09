@@ -2444,7 +2444,7 @@ class Products extends MY_Controller
         if ($this->form_validation->run() == true)
         {
             if ($this->Owner || $this->Admin || $this->Settings->allow_change_date == 1) {
-                $date = $this->erp->fld($this->input->post('date'));
+                $date = $this->erp->fld($this->input->post('date')).':'.date('s');
             } else {
                 $date = date('Y-m-d H:s:i');
             }
