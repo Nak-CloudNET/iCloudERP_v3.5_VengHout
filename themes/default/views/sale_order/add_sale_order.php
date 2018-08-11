@@ -813,65 +813,28 @@
 									?>
 								</div>
 							</div>
-							<!--
-							<div class="col-sm-4">
-									<div class="form-group">
-										<?= lang("tax_type", "tax_type"); ?>
-										<?php
-										$taxtype["3"] = lang('larg_taxpayers');
-										$taxtype["2"] = lang('medium_taxpayers');
-										$taxtype["1"] = lang('small_taxpayers');
+    					<div class="col-sm-4">
+                            <div class="form-group">
+                                <?= lang("payment_term", "slpayment_term"); ?>
+              	                  <?php
+                                    $ptr[""] = "";
+                                    foreach ($payment_term as $term) {
+                                        $ptr[$term->id] = $term->description;
+                                    }
+                              		echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"'); ?>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <?= lang("document", "document") ?>
+                                <input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
+                            </div>
+                        </div>
 
-										echo form_dropdown('tax_type',$taxtype,'', 'id="tax_type" data-placeholder="' . lang("select") . ' ' . lang("tax_type") . '" class="form-control input-tip select" style="width:100%;"');
-										?>
-									</div>
-							</div>
+    					</div>
+    					<div class="col-sm-12">
 
-							<div class="col-sm-4">
-									<div class="form-group">
-										<?= lang("sale_type", "sale_type"); ?>
-										<?php
-										$ptype["2"] = lang('non_taxable_sales');
-										$ptype["1"] = lang('taxable_sales');
-										$ptype["3"] = lang('export');
-										echo form_dropdown('purchase_type', $ptype, '', 'id="sale_type" data-placeholder="' . lang("select") . ' ' . lang("sale_type") . '" class="form-control input-tip select" style="width:100%;"');
-										?>
-									</div>
-							</div>
-							-->
-
-						<div class="col-sm-4">
-                <div class="form-group">
-                    <?= lang("payment_term", "slpayment_term"); ?>
-  	                  <?php
-                        $ptr[""] = "";
-                        foreach ($payment_term as $term) {
-                            $ptr[$term->id] = $term->description;
-                        }
-                  		echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"');
-                  		//echo form_input('payment_term',$ptr,'11', 'class="form-control tip" data-trigger="focus" data-placement="top" title="' . lang('payment_term_tip') . '" id="slpayment_term"'); ?>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <?= lang("document", "document") ?>
-                    <input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
-                </div>
-            </div>
-            <!--
-						<div class="col-sm-4">
-                <div class="form-group">
-                    <?= lang("payment_status", "slpayment_status"); ?>
-                    <?php $pst = array('due' => lang('due'), 'partial' => lang('partial'), 'paid' => lang('paid'));
-                    echo form_dropdown('payment_status', $pst, $pst['due'], 'class="form-control input-tip" required="required" id="slpayment_status"'); ?>
-
-                </div>
-            </div>
-						-->
-					</div>
-					<div class="col-sm-12">
-
-					</div>
+    					</div>
                         <div class="clearfix"></div>
 						<!--
                         <div id="payments" style="display: none;">

@@ -1322,7 +1322,7 @@ class Sales_model extends CI_Model
 			   FROM erp_payments WHERE erp_payments.sale_id = erp_sales.id)) as real_paid, 
 			   sale_order.reference_no as so_no, erp_companies.address, erp_sales.sale_status, 
 			   companies.invoice_footer as invoice_footer, group_areas.areas_group, 
-			   tax_rates.name as vat, payment_term.description as payment_term, sales.due_date")
+			   tax_rates.name as vat, payment_term.description as payment_term_text, sales.due_date")
 			 ->join('companies', 'sales.biller_id = companies.id', 'left')
 			 ->join('quotes', 'sales.quote_id = quotes.id', 'left')
 			 ->join('payments', 'payments.sale_id = sales.id', 'left')
