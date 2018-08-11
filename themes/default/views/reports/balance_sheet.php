@@ -1,6 +1,20 @@
 <script>$(document).ready(function () {
         CURI = '<?= site_url('reports/balance_sheet'); ?>';
-	});</script>
+	});
+    $(document).ready(function(){
+        $('#form').hide();
+        $('.toggle_down').click(function () {
+            $("#form").slideDown();
+            return false;
+        });
+        $('.toggle_up').click(function () {
+            $("#form").slideUp();
+            return false;
+        });
+
+    });
+
+</script>
 <style>@media print {
         .fa {
             color: #EEE;
@@ -12,6 +26,7 @@
         }
     }
 </style>
+
 <?php
 	$start_date=date('Y-m-d',strtotime($start));
 	$rep_space_end=str_replace(' ','_',$end);
@@ -19,26 +34,32 @@
 ?>
 <div class="box">
     <div class="box-header">
-        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('balance_sheet'); ?> >> <?= (isset($start)?$start:""); ?> >> <?= (isset($end)?$end:""); ?></h2>
-        <div class="box-icon">
+        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('balance_sheet'); ?> </h2>
+
+        <!--<div class="box-icon">
             <div class="form-group choose-date hidden-xs">
                 <div class="controls">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         <input type="text"
-                               value="<?= ($start ? $this->erp->hrld($start) : '') . ' - ' . ($end ? $this->erp->hrld($end) : ''); ?>"
+                               value="<?= ($start ? $this->erp->hrld($start) : '') ; ?>"
                                id="daterange" class="form-control">
                         <span class="input-group-addon"><i class="fa fa-chevron-down"></i></span>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div class="box-icon">
             <ul class="btn-tasks">
+                <li class="dropdown"><a href="#" class="toggle_up tip" title="<?= lang('hide_form') ?>"><i
+                                class="icon fa fa-toggle-up"></i></a></li>
+                <li class="dropdown"><a href="#" class="toggle_down tip" title="<?= lang('show_form') ?>"><i
+                                class="icon fa fa-toggle-down"></i></a></li>
                 <li class="dropdown"><a href="#" id="pdf" class="tip" title="<?= lang('download_pdf') ?>"><i class="icon fa fa-file-pdf-o"></i></a></li>
 				<li class="dropdown"><a href="#" id="xls" class="tip" title="<?= lang('download_xls') ?>"><i class="icon fa fa-file-excel-o"></i></a></li>
                 <li class="dropdown"><a href="#" id="image" class="tip" title="<?= lang('save_image') ?>"><i class="icon fa fa-file-picture-o"></i></a></li>
 				<li class="dropdown">
+
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 						<i class="icon fa fa-building-o tip" data-placement="left" title="<?= lang("projects") ?>"></i>
 					</a>
@@ -64,6 +85,7 @@
 						<li class="text-center"><a href="#" id="biller-filter" class="btn btn-primary"><?=lang('submit')?></a></li>
 					</ul>
 				</li>
+
             </ul>
         </div>
     </div>
@@ -71,7 +93,25 @@
         <div class="row">
             <div class="col-lg-12">
 				<p class="introtext"><?= lang('list_results'); ?></p>
-				<?php $num_col=2; ?>
+                <div id="form">
+
+                    <?php echo form_open("reports/balance_sheet/"); ?>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <?= lang("As of Date", "start_date"); ?>
+                            <?php echo form_input('start_date', (isset($_POST['start_date']) ? $_POST['start_date'] : ''), 'class="form-control datetime" id="start_date"'); ?>
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <div
+                                class="controls"> <?php echo form_submit('submit_sale_report', $this->lang->line("submit"), 'class="btn btn-primary"'); ?> </div>
+                    </div>
+                    <?php echo form_close(); ?>
+
+                </div>
+                <?php $num_col=2; ?>
                 <div class="table-scroll">
                     <table  cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped table-condensed">
 						<thead>
@@ -125,6 +165,7 @@
 							$sum_asset_arr = array();
 							$sum_lib_arr = array();
 							$sum_eq_arr = array();
+                        //echo $start;exit;
 							foreach($dataAsset->result() as $row){
 								$index = 0;
 								$total_per_asset = 0;
@@ -136,7 +177,7 @@
 									}else{
 										$bill_id = $new_billers[$index]->id;
 									}
-									
+
 									$query = $this->db->query("SELECT
 									SUM(CASE WHEN erp_gl_trans.amount < 0 THEN erp_gl_trans.amount ELSE 0 END) as NegativeTotal,
 									SUM(CASE WHEN erp_gl_trans.amount >= 0 THEN erp_gl_trans.amount ELSE 0 END) as PostiveTotal,
@@ -147,7 +188,7 @@
 										erp_gl_trans
 									WHERE
 										biller_id = '$bill_id' AND account_code = '" . $row->account_code . "'
-										AND date(erp_gl_trans.tran_date) >= '$from_date' AND date(erp_gl_trans.tran_date) <= '$to_date' ;");
+										AND date(erp_gl_trans.tran_date) <= '$from_date';");
 										
 									$totalBeforeAyearRows = $query->row();
 									$totalBeforeAyear_asset += ($totalBeforeAyearRows->NegativeTotal + $totalBeforeAyearRows->PostiveTotal);
@@ -274,7 +315,7 @@
 										erp_gl_trans
 									WHERE
 										biller_id = '$bill_id' AND account_code = '" . $rowlia->account_code . "'
-										AND date(erp_gl_trans.tran_date) BETWEEN '$from_date' AND '$to_date' ;");
+										AND date(erp_gl_trans.tran_date) <= '$from_date';");
 									$totalBeforeAyearRows = $query->row();
 									$totalBeforeAyear_liability += ($totalBeforeAyearRows->NegativeTotal + $totalBeforeAyearRows->PostiveTotal);
 									$amount_lib = '';
@@ -391,7 +432,7 @@
 														erp_gl_trans
 													INNER JOIN erp_gl_charts ON erp_gl_charts.accountcode = erp_gl_trans.account_code
 													WHERE DATE(tran_date) = '$totalBeforeAyear' AND	erp_gl_trans.sectionid IN ('40,70') 
-								AND date(erp_gl_trans.tran_date) BETWEEN '$from_date' AND '$to_date' GROUP BY erp_gl_trans.account_code;");
+								AND date(erp_gl_trans.tran_date) <= '$from_date'  GROUP BY erp_gl_trans.account_code;");
 							$total_income_beforeAyear = $queryIncom->amount;
 							$queryExpense = $this->db->query("SELECT sum(erp_gl_trans.amount) AS amount FROM
 														erp_gl_trans
@@ -687,8 +728,8 @@
 			var billers = removeSymbolLastString(biller_ids, '-');
 			if(hasCheck == true){
 				var encodedName = encodeURIComponent(billers);
-				var url = "<?php echo site_url('reports/balance_sheet/'.$start.'/'.$end.'/0/0') ?>" + '/' + encodeURIComponent(billers);
-				window.location.href = "<?=site_url('reports/balance_sheet/'. $start .'/'.$end.'/0/0/')?>" + '/' + encodedName;
+				var url = "<?php echo site_url('reports/balance_sheet/'.$start.'/0/0') ?>" + '/' + encodeURIComponent(billers);
+				window.location.href = "<?=site_url('reports/balance_sheet/'. $start.'/0/0/')?>" + '/' + encodedName;
 			}
 			
 			if(hasCheck == false){

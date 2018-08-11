@@ -1514,6 +1514,37 @@ class Accounts_model extends CI_Model
 
 		return $query;
 	}
+
+    public function getStatementByBalaneSheetDates($section = NULL, $from_date = NULL,  $biller_id = NULL)
+    {
+        $where_biller = '';
+        if($biller_id != NULL){
+            $where_biller = " AND erp_gl_trans.biller_id IN($biller_id) ";
+        }
+        $where_date = '';
+        if($from_date){
+            $where_date = " AND date(erp_gl_trans.tran_date) <= '$from_date 00:00:00' ";
+        }
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        $query = $this->db->query("SELECT
+			erp_gl_trans.account_code,
+			erp_gl_trans.sectionid,
+			erp_gl_charts.accountname,
+			erp_gl_charts.parent_acc,
+			sum(erp_gl_trans.amount) AS amount,
+			erp_gl_trans.biller_id
+		FROM
+			erp_gl_trans
+		INNER JOIN erp_gl_charts ON erp_gl_charts.accountcode = erp_gl_trans.account_code
+		WHERE 
+			erp_gl_trans.sectionid IN ($section)
+			$where_date
+		GROUP BY
+			erp_gl_trans.account_code
+		");
+
+        return $query;
+    }
 	public function getStatementByBalaneSheetDateByCustomer($section = NULL,$from_date= NULL,$to_date = NULL,$customer_id = NULL){
 		$where_customer = '';
 		if($customer_id != NULL){
