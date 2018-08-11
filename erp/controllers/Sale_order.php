@@ -2289,10 +2289,14 @@ class Sale_order extends MY_Controller
 			$saleman_by = $this->input->post('saleman');
             $total_items = $this->input->post('total_items');
 			$payment_status = 'due';
-            $payment_term = $this->input->post('payment_term');
-			$delivery_by = $this->input->post('delivery_by');
-			$delivery_id = $this->input->post('delivery_id');
-            $due_date = $payment_term ? date('Y-m-d', strtotime('+' . $payment_term . ' days')) : NULL;
+
+            $payment_term           = $this->input->post('payment_term');
+            $payment_term_details   = $this->site->getAllPaymentTermByID($payment_term);
+            $due_date               = (isset($payment_term_details[0]->id) ? date('Y-m-d', strtotime($date . '+' . $payment_term_details[0]->due_day . ' days')) : NULL);
+            
+            $delivery_by = $this->input->post('delivery_by');
+            $delivery_id = $this->input->post('delivery_id');
+
             $shipping = $this->input->post('shipping') ? $this->input->post('shipping') : 0;
             $customer_details = $this->site->getCompanyByID($customer_id);
             $customer = $customer_details->company ? $customer_details->company : $customer_details->name;

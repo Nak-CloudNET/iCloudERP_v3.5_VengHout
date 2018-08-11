@@ -1225,6 +1225,11 @@ class Quotes extends MY_Controller
             } else {
                 $date = date('Y-m-d H:i:s');
             }
+
+            $payment_term           = $this->input->post('payment_term');
+            $payment_term_details   = $this->site->getAllPaymentTermByID($payment_term);
+            $due_date               = (isset($payment_term_details[0]->id) ? date('Y-m-d', strtotime($date . '+' . $payment_term_details[0]->due_day . ' days')) : NULL);
+
             $warehouse_id = $this->input->post('warehouse');
             $customer_id = $this->input->post('customer');
             $biller_id = $this->input->post('biller');
@@ -1416,6 +1421,8 @@ class Quotes extends MY_Controller
                 'status' => 'pending',
                 'updated_by' => $this->session->userdata('user_id'),
                 'updated_at' => date('Y-m-d H:i:s'),
+                'payment_term' => $payment_term,
+                'due_date' => $due_date
             );
 
             if ($_FILES['document']['size'] > 0) {
@@ -1567,7 +1574,7 @@ class Quotes extends MY_Controller
             $this->data['inv_items'] 		= json_encode($pr);
             $this->data['id'] 				= $id;
 			$this->data['categories'] = $this->site->getAllCategories();
-
+            $this->data['payment_term']     = $this->site->getAllPaymentTerm();
 			$this->data['unit'] = $this->purchases_model->getUnits();
 			$this->data['payment_deposit'] 	= $this->quotes_model->getPaymentByQuoteID($id);
             $this->data['billers'] 			= ($this->Owner || $this->Admin || !$this->session->userdata('biller_id')) ? $this->site->getAllCompanies('biller') : null;
