@@ -123,7 +123,7 @@ class Customers extends MY_Controller
                 'award_points' => $this->input->post('award_points'),
                 'price_group_id' => $this->input->post('price_groups'),
                 'payment_term' => $this->input->post('payment_term'),
-                
+
                 'public_charge_id'=> $this->input->post('public_charge'),
                 'sale_man' => $this->input->post('saleman'),
                 'invoice_footer' => $this->input->post('note'),

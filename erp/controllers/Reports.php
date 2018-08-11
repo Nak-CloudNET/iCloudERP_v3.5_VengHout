@@ -15029,12 +15029,22 @@ class Reports extends MY_Controller
     {
 		$this->erp->checkPermissions('balance_sheet',NULL,'account_report');
 		$user = $this->site->getUser();
-		if (!$start_date) {
+        if ($this->input->post('start_date')) {
+            $start_date = $this->input->post('start_date');
+            $start=explode('/',$start_date);
+            $start['0']; $start['1']; $start['2'];
+            $st=$start['2']."-".$start['1']."-".$start['0'];
+
+        } else {
+            $start_date = NULL;
+        }
+
+		/*if (!$start_date) {
             $start = $this->db->escape(date('Y-m') . '-1');
 			$start_date = date('Y-m') . '-1';
         } else {
             $start = $this->db->escape(urldecode($start_date));
-        }
+        }*/
         if (!$end_date) {
             $end = $this->db->escape(date('Y-m-t 23:59'));
             $end_date = date('Y-m-t 23:59');
@@ -15081,13 +15091,13 @@ class Reports extends MY_Controller
         $this->data['end'] = urldecode($end_date);
 		
         $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
-        
+
         $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => '#', 'page' => lang('reports/balance_sheet')));
         $meta = array('page_title' => lang('balance_sheet'), 'bc' => $bc);
-		$from_date = date('Y-m-d',strtotime(urldecode($start_date)));//'2014-08-01';
+		$from_date = $st;//'2014-08-01';
 		$to_date = date('Y-m-d',strtotime(urldecode($end_date)));//'2015-09-01'; before, it use in select query.
-		
-		$this->data['from_date'] = $from_date;
+
+		$this->data['from_date'] = $st;
 		$this->data['to_date'] = $to_date;
 		
 		$rep_space_end=str_replace(' ','_',urldecode($end_date));
@@ -15097,16 +15107,16 @@ class Reports extends MY_Controller
 
         $this->data['totalBeforeAyear'] = $totalBeforeAyear;
 		
-		$dataAsset = $this->accounts_model->getStatementByBalaneSheetDate('10,11',$from_date,$to_date,json_decode($biller_id));
+		$dataAsset = $this->accounts_model->getStatementByBalaneSheetDates('10,11',$from_date,json_decode($biller_id));
 		$this->data['dataAsset'] = $dataAsset;
 		
-		$dataLiability = $this->accounts_model->getStatementByBalaneSheetDate('20,21',$from_date,$to_date,json_decode($biller_id));
+		$dataLiability = $this->accounts_model->getStatementByBalaneSheetDates('20,21',$from_date,json_decode($biller_id));
 		$this->data['dataLiability'] = $dataLiability;
 		
-		$dataEquity = $this->accounts_model->getStatementByBalaneSheetDate('30',$from_date,$to_date,json_decode($biller_id));
+		$dataEquity = $this->accounts_model->getStatementByBalaneSheetDates('30',$from_date,json_decode($biller_id));
 		$this->data['dataEquity'] = $dataEquity;
 		
-		$dataIncome = $this->accounts_model->getStatementByBalaneSheetDate('40,70',$from_date,$to_date,json_decode($biller_id));
+		$dataIncome = $this->accounts_model->getStatementByBalaneSheetDates('40,70',$from_date,json_decode($biller_id));
 		$this->data['dataIncome'] = $dataIncome;
 		
 		$dataAllIncome = $this->accounts_model->getStatementBalaneSheetByDateBill('40,70',$from_date,$to_date,json_decode($biller_id));

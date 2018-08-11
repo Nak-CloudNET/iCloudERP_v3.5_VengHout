@@ -118,16 +118,16 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <?= lang("from_date", "from_date"); ?>
+                                <?= lang("As of Date", "from_date"); ?>
                                 <?php echo form_input('from_date', (isset($_POST['from_date']) ? $_POST['from_date'] : $this->erp->hrsd($from_date1)), 'class="form-control date" id="from_date"'); ?>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <!--<div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("to_date", "to_date"); ?>
                                 <?php echo form_input('to_date', (isset($_POST['to_date']) ? $_POST['to_date'] : $this->erp->hrsd($to_date1)), 'class="form-control date" id="to_date"'); ?>
                             </div>
-                        </div>
+                        </div>-->
 					</div>
 					<div class="form-group">
                         <div
