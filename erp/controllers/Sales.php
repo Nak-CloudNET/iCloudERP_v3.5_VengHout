@@ -4673,7 +4673,9 @@ class Sales extends MY_Controller
 			if($quote_ID){
 				
                 $quote = $this->sales_model->getQuoteByID($quote_ID);
+                $this->data['sale_orders'] = $quote;
 				$this->data['quotes'] = $quote;
+
 				$items = $this->sales_model->getAllQuoteItems($quote_ID);
 				$this->data['quote_ID'] = $quote_ID;
 				$this->data['type'] = "quote";
