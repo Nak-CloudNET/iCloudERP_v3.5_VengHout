@@ -821,7 +821,7 @@
                                     foreach ($payment_term as $term) {
                                         $ptr[$term->id] = $term->description;
                                     }
-                              		echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"'); ?>
+                              		echo form_dropdown('payment_term', $ptr,$quotes->payment_term?$quotes->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"'); ?>
                             </div>
                         </div>
                         <div class="col-sm-4">
