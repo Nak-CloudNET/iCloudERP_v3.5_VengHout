@@ -1298,6 +1298,130 @@ class Accounts_model extends CI_Model
 		");
 		return $query;
 	}
+
+    function getBalanceSheetDetailByAccCodess($code = NULL, $section = NULL,$from_date= NULL,$biller_id = NULL) {
+        $where_biller = '';
+        if($biller_id != NULL){
+            $where_biller = " AND erp_gl_trans.biller_id IN ($biller_id) ";
+        }
+        $where_date = '';
+        if($from_date){
+            $where_date = " AND date(erp_gl_trans.tran_date) <= '$from_date'
+			 ";
+        }
+        $query = $this->db->query("SELECT
+			erp_gl_trans.tran_type,
+			erp_gl_trans.tran_date,
+			erp_gl_trans.reference_no,
+			(
+				CASE
+				WHEN erp_gl_trans.tran_type = 'SALES' THEN
+					IF(erp_gl_trans.bank = '1', (
+						SELECT
+							erp_companies.company
+						FROM
+							erp_payments
+						INNER JOIN erp_sales ON erp_sales.id = erp_payments.sale_id
+						INNER JOIN erp_companies ON erp_companies.id = erp_sales.customer_id
+						WHERE
+							erp_payments.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					), (
+						SELECT
+							erp_companies.company
+						FROM
+							erp_sales
+						INNER JOIN erp_companies ON erp_companies.id = erp_sales.customer_id
+						WHERE
+							erp_sales.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					))
+				WHEN erp_gl_trans.tran_type = 'PURCHASES' OR erp_gl_trans.tran_type = 'PURCHASE EXPENSE' THEN
+					IF(erp_gl_trans.bank = 1, (
+						SELECT
+							erp_companies.company
+						FROM
+							erp_payments
+						INNER JOIN erp_purchases ON erp_purchases.id = erp_payments.purchase_id
+						INNER JOIN erp_companies ON erp_companies.id = erp_purchases.supplier_id
+						WHERE
+							erp_payments.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					), (
+						SELECT
+							erp_companies.company
+						FROM
+							erp_purchases
+						INNER JOIN erp_companies ON erp_companies.id = erp_purchases.supplier_id
+						WHERE
+							erp_purchases.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					))
+				WHEN erp_gl_trans.tran_type = 'SALES-RETURN' THEN
+					(
+						SELECT
+							erp_return_sales.customer
+						FROM
+							erp_return_sales
+						WHERE
+							erp_return_sales.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					)
+				WHEN erp_gl_trans.tran_type = 'PURCHASES-RETURN' THEN
+					(
+						SELECT
+							erp_return_purchases.supplier
+						FROM
+							erp_return_purchases
+						WHERE
+							erp_return_purchases.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					)
+				WHEN erp_gl_trans.tran_type = 'DELIVERY' THEN
+					(
+						SELECT
+							erp_companies.company as customer
+						FROM
+							erp_deliveries
+						INNER JOIN erp_companies ON erp_companies.id = erp_deliveries.customer_id
+						WHERE
+							erp_deliveries.do_reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					)
+				WHEN erp_gl_trans.tran_type = 'PRINCIPLE' THEN
+					(
+						SELECT
+							erp_companies.company
+						FROM
+							erp_payments
+						LEFT JOIN erp_loans ON erp_loans.id = erp_payments.loan_id
+						INNER JOIN erp_sales ON erp_loans.sale_id = erp_sales.id
+						INNER JOIN erp_companies ON erp_companies.id = erp_sales.customer_id
+						WHERE
+							erp_payments.reference_no = erp_gl_trans.reference_no
+						LIMIT 0,1
+					)
+				ELSE
+					created_name
+				END
+			) AS customer,
+			erp_gl_trans.description AS note,
+			erp_gl_trans.account_code,
+			erp_gl_charts.accountname,
+			erp_gl_trans.amount,
+			erp_gl_trans.biller_id
+		FROM
+			erp_gl_trans
+		INNER JOIN erp_gl_charts ON erp_gl_charts.accountcode = erp_gl_trans.account_code
+		WHERE
+			erp_gl_trans.account_code = '$code'
+			AND	erp_gl_trans.sectionid IN ($section)
+			$where_biller 
+			$where_date
+		HAVING amount <> 0
+		");
+        return $query;
+    }
 	
 	function getBalanceSheetDetailPurByAccCode($code = NULL, $section = NULL,$from_date= NULL,$to_date = NULL,$biller_id = NULL) {
         $where_biller = '';
@@ -1607,6 +1731,36 @@ class Accounts_model extends CI_Model
 
 		return $query;
 	}
+    public function getStatementByDatess($section = NULL,$from_date= NULL,$biller_id = NULL){
+        $where_biller = '';
+        if($biller_id != NULL){
+            $where_biller = " AND erp_gl_trans.biller_id IN($biller_id) ";
+        }
+        $where_date = '';
+        if($from_date){
+            $where_date = " AND date(erp_gl_trans.tran_date) <= '$from_date'";
+        }
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        $query = $this->db->query("SELECT
+			erp_gl_trans.account_code,
+			erp_gl_trans.sectionid,
+			erp_gl_charts.accountname,
+			erp_gl_charts.parent_acc,
+			sum(erp_gl_trans.amount) AS amount,
+			erp_gl_trans.biller_id
+		FROM
+			erp_gl_trans
+		INNER JOIN erp_gl_charts ON erp_gl_charts.accountcode = erp_gl_trans.account_code
+		WHERE
+			erp_gl_trans.sectionid IN ($section)
+			$where_biller
+			$where_date
+		GROUP BY
+			erp_gl_trans.account_code
+		");
+
+        return $query;
+    }
 	
 	public function getStatementBalaneSheetByDateBill($section = NULL,$from_date= NULL,$to_date = NULL,$biller_id = NULL){
 		$where_biller = '';

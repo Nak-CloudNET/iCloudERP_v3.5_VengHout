@@ -1,6 +1,19 @@
 <script>$(document).ready(function () {
         CURI = '<?= site_url('reports/balance_sheet_details'); ?>';	
 	});
+
+    $(document).ready(function(){
+        $('#form').hide();
+        $('.toggle_down').click(function () {
+            $("#form").slideDown();
+            return false;
+        });
+        $('.toggle_up').click(function () {
+            $("#form").slideUp();
+            return false;
+        });
+
+    });
 	</script>
 <style>
 @media print {
@@ -20,8 +33,8 @@
 ?>
 <div class="box">
     <div class="box-header">
-        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('balance_sheet_details'); ?> >> <?= (isset($start)?$start:""); ?> >> <?= (isset($end)?$end:""); ?></h2>
-        <div class="box-icon">
+        <h2 class="blue"><i class="fa-fw fa fa-bars"></i><?= lang('balance_sheet_details'); ?> </h2>
+        <!--<div class="box-icon">
             <div class="form-group choose-date hidden-xs">
                 <div class="controls">
                     <div class="input-group">
@@ -33,9 +46,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div class="box-icon">
             <ul class="btn-tasks">
+                <li class="dropdown"><a href="#" class="toggle_up tip" title="<?= lang('hide_form') ?>"><i
+                                class="icon fa fa-toggle-up"></i></a></li>
+                <li class="dropdown"><a href="#" class="toggle_down tip" title="<?= lang('show_form') ?>"><i
+                                class="icon fa fa-toggle-down"></i></a></li>
                 <li class="dropdown"><a href="#" id="pdf" class="tip" title="<?= lang('download_pdf') ?>"><i class="icon fa fa-file-pdf-o"></i></a></li>
 				<li class="dropdown"><a href="#" id="xls" class="tip" title="<?= lang('download_xls') ?>"><i class="icon fa fa-file-excel-o"></i></a></li>
                 <li class="dropdown"><a href="#" id="image" class="tip" title="<?= lang('save_image') ?>"><i
@@ -75,6 +92,24 @@
         <div class="row">
             <div class="col-lg-12">
                 <p class="introtext"><?= lang('list_results'); ?></p>
+                <div id="form">
+
+                    <?php echo form_open("reports/balance_sheet_details/"); ?>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <?= lang("As of Date", "start_date"); ?>
+                                <?php echo form_input('start_date', (isset($_POST['start_date']) ? $_POST['start_date'] : ''), 'class="form-control datetime" id="start_date"'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div
+                                class="controls"> <?php echo form_submit('submit_sale_report', $this->lang->line("submit"), 'class="btn btn-primary"'); ?> </div>
+                    </div>
+                    <?php echo form_close(); ?>
+
+                </div>
 				<?php $num_col=6; ?>
                 <div class="table-scroll">
                     <table id="SupData" cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped table-condensed">
@@ -144,7 +179,7 @@
 							foreach($dataAsset->result() as $row){
 								//$total_asset += $row->amount;
 								
-								$assetDetails = $this->accounts_model->getBalanceSheetDetailByAccCode($row->account_code, '10,11',$from_date,$end_dates,json_decode($biller_id));
+								$assetDetails = $this->accounts_model->getBalanceSheetDetailByAccCodess($row->account_code, '10,11',$from_date,json_decode($biller_id));
 						
 								$index = 0;
 								$total_per_asset = 0;
