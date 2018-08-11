@@ -8,7 +8,7 @@
     $(document).ready(function () {
 		var test2 = '<?=$this->session->userdata('remove_so2');?>';
 		if( test2 == '1'){
-			
+
 			 if (__getItem('sloitems')) {
                 __removeItem('sloitems');
 
@@ -40,7 +40,7 @@
 			if (__getItem('slarea')) {
                 __removeItem('slarea');
             }
-			
+
             if (__getItem('slbiller')) {
                 __removeItem('slbiller');
             }
@@ -96,7 +96,7 @@
             if (__getItem('sloitems')) {
                 __removeItem('sloitems');
             }
-			
+
             if (__getItem('sldiscount')) {
                 __removeItem('sldiscount');
             }
@@ -124,7 +124,7 @@
 			if (__getItem('slarea')) {
                 __removeItem('slarea');
             }
-			
+
             if (__getItem('slbiller')) {
                 __removeItem('slbiller');
             }
@@ -175,9 +175,9 @@
             }
             __removeItem('remove_slls');
         }
-	
+
         <?php if(isset($quote_id)) { ?>
-			
+
 			__setItem('quote_ID', '<?= $quote_id ?>');
 			__setItem('sldate', '<?= $this->erp->hrld($quotes->date) ?>');
 			__setItem('slshipping', '<?= $quotes->shipping ?>');
@@ -193,7 +193,7 @@
 			__setItem('sloitems', JSON.stringify(<?= $sale_order_items; ?>));
 
         <?php } ?>
-		
+
         <?php if($this->input->get('customer')) { ?>
         if (!__getItem('sloitems')) {
             __setItem('slcustomer', <?=$this->input->get('customer');?>);
@@ -219,8 +219,8 @@
 		$('#slsaleman').on('change', function (e) {
 			__setItem('saleman', $(this).val());
         });
-		
-		
+
+
         if (sldate = __getItem('sldate')) {
             $('#sldate').val(sldate);
         }
@@ -230,7 +230,7 @@
 		//if (tax_type = __getItem('tax_type')) {
             //$('#tax_type').val(tax_type);
         //}
-		
+
 		if (sale_type = __getItem('sale_type')) {
             $('#sale_type').val(sale_type);
         }
@@ -241,14 +241,14 @@
         if (slbiller = __getItem('slbiller')) {
             $('#slbiller').val(slbiller);
         }
-		
+
 		$(document).on('change', '#slarea', function (e) {
             __setItem('slarea', $(this).val());
         });
 		if (slarea = __getItem('slarea')) {
             $('#slarea').val(slarea);
         }
-		
+
         if (!__getItem('slref')) {
             __setItem('slref', '<?=$slnumber?>');
         }
@@ -258,7 +258,7 @@
 		if (!__getItem('slrefnote')) {
             __setItem('slrefnote', '<?=$slnumber?>');
         }
-		
+
         if (!__getItem('sltax2')) {
             __setItem('sltax2', <?=$Settings->default_tax_rate2;?>);
         }
@@ -286,7 +286,7 @@
 							customer_id: $("#slcustomer").val()
 						},
 						success: function (data) {
-							
+
 							response(data);
 						}
 					});
@@ -302,7 +302,7 @@
 						},
 						success: function (data) {
 							response(data);
-							
+
 						}
 					});
 				}
@@ -337,10 +337,10 @@
             },
             select: function (event, ui) {
                 event.preventDefault();
-				
+
                 if (ui.item.id !== 0) {
                     var product_type = ui.item.row.type;
-					
+
 					if (product_type == 'digital') {
 						$.ajax({
 							type: 'get',
@@ -398,7 +398,7 @@
                 $(this).autocomplete("search");
             }
         });
-		
+
 		$("#slref").attr('readonly','readonly');
 		$('#ref_st').on('ifChanged', function() {
 		  if ($(this).is(':checked')) {
@@ -408,10 +408,10 @@
 			$("#slref").prop('readonly', true);
 			var temp = $("#temp_reference_no").val();
 			$("#slref").val(temp);
-			
+
 		  }
 		});
-		
+
 		$( "#slref" ).blur(function(){
 			var ref_no = $("#slref").val();
 			if(ref_no){
@@ -419,7 +419,7 @@
                     type: "get",
                     url: site.base_url + "sales/verifyReference/"+ref_no,
                     dataType: "json",
-					
+
                     success: function (data) {
 						if(data){
 							alert("Duplicated reference number");
@@ -427,9 +427,9 @@
                     }
                 });
 			}
-			
+
 		});
-		
+
 
     });
 </script>
@@ -458,7 +458,7 @@
                 <p class="introtext"><?php echo lang('enter_info'); ?></p>
                 <?php
 					$attrib = array('data-toggle' => 'validator', 'role' => 'form');
-					
+
 					if (isset($quote_id)) {
 						//echo form_hidden('quote_id', $quote_id);
 						echo form_open_multipart("sale_order/add_sale_order/".$quote_id, $attrib);
@@ -488,7 +488,7 @@
                                 </div>
                             </div>
                         </div>
-						
+
 						<?php if(isset($quotes) && $quotes->reference_no) { ?>
 						<div class="col-md-4">
 							<div class="form-group">
@@ -521,7 +521,7 @@
 									<input type="hidden" id="credit_limit"/>
 									<input type="hidden" id="cust_balance"/>
 									<input type="hidden" id="hide_grand"/>
-									
+
                                     <?php if ($Owner || $Admin || !$this->session->userdata('warehouse_id')) { ?>
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -549,7 +549,7 @@
                                             </div>
                                         </div>
                                     <?php } ?>
-									
+
 									<?php if($setting->bill_to == 1) { ?>
 									<div class="col-md-4">
 										<div class="form-group">
@@ -558,7 +558,7 @@
 										</div>
 									</div>
 									<?php } ?>
-									
+
 									<?php if($setting->show_po) { ?>
 									<div class="col-md-4">
 										<div class="form-group">
@@ -603,7 +603,7 @@
 											?>
 										</div>
                                     </div>
-									
+
 									<div class="col-md-4">
                                         <div class="form-group">
                                             <?= lang("customer", "slcustomer"); ?>
@@ -627,7 +627,7 @@
                                             <?php } ?>
                                         </div>
                                     </div>
-									
+
 									<!--
 									<div class="col-md-4">
                                         <div class="form-group">
@@ -636,13 +636,13 @@
                                             <div class="input-group">
                                                 <?php
 												$cust['']= '';
-												
+
 												foreach($customers as $customer){
 													$cust[$customer->id] = $customer->text;
 												}
                                                 echo form_dropdown('customer',$cust ,(isset($_POST['customer']) ? $_POST['customer'] : ""), 'id="slcustomer2" data-placeholder="' . lang("select") . ' ' . lang("customer") . '" required="required" class="form-control input-tip" style="min-width:100%;"');
                                                 ?>
-                                                
+
 
 												<div class="input-group-addon no-print" style="padding: 2px 5px; border-left: 0;">
 													<a href="#" id="view-customer" class="external" data-toggle="modal" data-target="#myModal">
@@ -659,7 +659,7 @@
                                         </div>
                                     </div>
 									-->
-										
+
                                 </div>
                             </div>
                         </div>
@@ -673,10 +673,10 @@
                                         <?php
 										$pcode = array();
 										if($this->input->get('addsaleorder')){
-											
+
 											$q = $this->db->get_where('erp_products',array('id'=>$this->input->get('addsaleorder')),1);
 											$pcode = $q->row()->code;
-											
+
 										}
 										echo form_input('add_item', ($pcode ? $pcode : ''), 'class="form-control input-lg" id="add_item" placeholder="' . lang("add_product_to_order") . '"'); ?>
                                         <?php if ($Owner || $Admin || $GP['products-add']) { ?>
@@ -764,7 +764,7 @@
                             </div>
                         </div>
 
-						<div class="col-sm-12">						
+						<div class="col-sm-12">
 							<?php if ($Owner || $Admin || $this->session->userdata('allow_discount')) { ?>
 								<div class="col-sm-4">
 									<div class="form-group">
@@ -821,58 +821,57 @@
 										$taxtype["3"] = lang('larg_taxpayers');
 										$taxtype["2"] = lang('medium_taxpayers');
 										$taxtype["1"] = lang('small_taxpayers');
-										
+
 										echo form_dropdown('tax_type',$taxtype,'', 'id="tax_type" data-placeholder="' . lang("select") . ' ' . lang("tax_type") . '" class="form-control input-tip select" style="width:100%;"');
 										?>
 									</div>
 							</div>
-							
+
 							<div class="col-sm-4">
 									<div class="form-group">
 										<?= lang("sale_type", "sale_type"); ?>
 										<?php
 										$ptype["2"] = lang('non_taxable_sales');
 										$ptype["1"] = lang('taxable_sales');
-										$ptype["3"] = lang('export');                 
+										$ptype["3"] = lang('export');
 										echo form_dropdown('purchase_type', $ptype, '', 'id="sale_type" data-placeholder="' . lang("select") . ' ' . lang("sale_type") . '" class="form-control input-tip select" style="width:100%;"');
 										?>
 									</div>
 							</div>
-							--> 
-						<!--
+							-->
+
 						<div class="col-sm-4">
-                            <div class="form-group">
-                                <?= lang("payment_term", "slpayment_term"); ?>
-								<?php
-                                    $ptr[""] = "";
-                                    foreach ($payment_term as $term) {
-                                        $ptr[$term->id] = $term->description;
-                                    }
-									echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"');
-									//echo form_input('payment_term',$ptr,'11', 'class="form-control tip" data-trigger="focus" data-placement="top" title="' . lang('payment_term_tip') . '" id="slpayment_term"'); ?>
-                            </div>
-                        </div>
+                <div class="form-group">
+                    <?= lang("payment_term", "slpayment_term"); ?>
+  	                  <?php
+                        $ptr[""] = "";
+                        foreach ($payment_term as $term) {
+                            $ptr[$term->id] = $term->description;
+                        }
+                  		echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"');
+                  		//echo form_input('payment_term',$ptr,'11', 'class="form-control tip" data-trigger="focus" data-placement="top" title="' . lang('payment_term_tip') . '" id="slpayment_term"'); ?>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <?= lang("document", "document") ?>
+                    <input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
+                </div>
+            </div>
+            <!--
 						<div class="col-sm-4">
-                            <div class="form-group">
-                                <?= lang("payment_status", "slpayment_status"); ?>
-                                <?php $pst = array('due' => lang('due'), 'partial' => lang('partial'), 'paid' => lang('paid'));
-                                echo form_dropdown('payment_status', $pst, $pst['due'], 'class="form-control input-tip" required="required" id="slpayment_status"'); ?>
-								 
-                            </div>
-                        </div>
+                <div class="form-group">
+                    <?= lang("payment_status", "slpayment_status"); ?>
+                    <?php $pst = array('due' => lang('due'), 'partial' => lang('partial'), 'paid' => lang('paid'));
+                    echo form_dropdown('payment_status', $pst, $pst['due'], 'class="form-control input-tip" required="required" id="slpayment_status"'); ?>
+
+                </div>
+            </div>
 						-->
 					</div>
 					<div class="col-sm-12">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <?= lang("document", "document") ?>
-                                <input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
-                            </div>
-                        </div>
+
 					</div>
-					<div class="col-sm-12">
-                    	
-					</div>    						
                         <div class="clearfix"></div>
 						<!--
                         <div id="payments" style="display: none;">
@@ -880,14 +879,14 @@
                                 <div class="well well-sm well_1">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            
+
                                             <div class="col-sm-4">
                                                 <div class="payment">
                                                     <div class="form-group ngc">
                                                         <?= lang("amount", "amount_1"); ?>
                                                         <input name="amount-paid" type="text" id="amount_1" old_amount="0" old_balance="0" amount="0"
                                                                class="pa form-control kb-pad amount"/>
-														
+
                                                     </div>
                                                     <div class="form-group gc" style="display: none;">
                                                         <?= lang("gift_card_no", "gift_card_no"); ?>
@@ -961,7 +960,7 @@
                                                 </div>
                                             </div>
                                         </div>
-										
+
 										<div class="form-group dp" style="display: none;">
 											<!--
 											<?= lang("customer", "customer1"); ?>
@@ -975,10 +974,10 @@
 											-->
 						<!--
 											<?= lang("deposit_amount", "deposit_amount"); ?>
-											
+
 											<div id="dp_details"></div>
 										</div>
-										
+
 										<!-- loan add by chin -->
 						<!--
 										<div class="depreciation_1" style="display:none;">
@@ -1030,15 +1029,15 @@
 												 </div>
 											</div>
 											<div class="form-group">
-												
+
 												<div class="dep_tbl" style="display:none;">
 													<table border="1" width="100%" class="table table-bordered table-condensed tbl_dep" id="tbl_dep">
 														<tbody>
-													
+
 														</tbody>
 													</table>
 													<table id="export_tbl" width="70%" style="display:none;">
-														
+
 													</table>
 												</div>
 											</div>
@@ -1170,7 +1169,7 @@
                             <input type="text" class="form-control" id="pquantity">
                         </div>
                     </div>
-					
+
                     <div class="form-group">
                         <label for="poption" class="col-sm-4 control-label"><?= lang('product_option') ?></label>
 
@@ -1178,7 +1177,7 @@
                             <div id="poptions-div"></div>
                         </div>
                     </div>
-					
+
 					<!--
 					<div class="form-group">
                         <label for="pg" class="col-sm-4 control-label"><?= lang('price_groups') ?></label>
@@ -1308,12 +1307,12 @@
 </div>
 
 <script type="text/javascript">
-	
+
 	var $biller = $("#slbiller");
     $(window).load(function(){
         billerChange();
     });
-		
+
 	function billerChange(){
         var id = $biller.val();
         var admin = '<?= $Admin?>';
@@ -1353,7 +1352,7 @@
                 }
             }
         });
-		
+
 		$.ajax({
             url: '<?= base_url() ?>sales/getReferenceByProject/sao/'+id,
             dataType: 'json',
@@ -1362,15 +1361,15 @@
 				$("#temp_reference_no").val(data);
             }
         });
-		
+
     }
-	
-	
+
+
     $(document).ready(function () {
 		if(settax_type = __getItem('settax_type')){
 			$('#tax_type').val(settax_type);
 		}
-		
+
 		if(setpurchase_type = __getItem('setpurchase_type')){
 			$('#purchase_type').val(setpurchase_type);
 			$('#purchase_type').trigger('change');
@@ -1382,7 +1381,7 @@
 				$('#sale_type').val(2);
 				$('#sale_type').trigger('change');
 				$('#sale_type').attr('readonly', 'readonly');
-				$('#ttax2').text('0');		
+				$('#ttax2').text('0');
 			}else{
 				$('#sale_type').val(2);
 				$('#sale_type').trigger('change');
@@ -1390,7 +1389,7 @@
 			}
 		});
 		$('#sale_type').change(function(){
-			
+
 			__setItem('setpurchase_type', $(this).val());
 			if(($(this).val())!=1){
 			$('#sltax2').attr("disabled", true);
@@ -1398,7 +1397,7 @@
 			$("#sltax2").select2("val", "1");
 			$("#sltax2").trigger("change");
 				$("#ptax").select2("val", "1");
-				
+
 			}
 			if(($(this).val())==1){
 			$('#sltax2').attr("disabled", false);
@@ -1406,9 +1405,9 @@
 			$("#sltax2").trigger("change");
 			}
 		}).trigger('change');
-			
-		
-		
+
+
+
         $('#gccustomer').select2({
             minimumInputLength: 1,
             ajax: {
@@ -1435,18 +1434,18 @@
             $(this).parent().parent('.input-group').children('input').val(no);
             return false;
         });
-		
+
 		$biller.change(function(){
 			billerChange();
 		});
-		
+
 		$('#view-customer').click(function(){
             $('#myModal').modal({remote: site.base_url + 'customers/view/' + $("input[name=customer_1]").val()});
             $('#myModal').modal('show');
         });
-		
+
 		$('#before_sub').click(function (e) {
-			
+
 			e.preventDefault();
 			/*var message = '';
 			var help = false;
@@ -1477,14 +1476,14 @@
 						return false;
 					}
 			}*/
-			
+
 			//============credit limit===============//
 			var customer_id = $('#slcustomer2').val();
 			var grand_total = $('#hide_grand').val()-0;
 			var credit_limit = $('#credit_limit').val()-0;
 			var cust_balance = $('#cust_balance').val()-0;
 			if(credit_limit > 0 && credit_limit < (cust_balance+grand_total)){
-				alert('This customer has over credit limit');	
+				alert('This customer has over credit limit');
 				return false;
 			}
 
@@ -1507,7 +1506,7 @@
                 if(val == ''){
                     $('#add_sale').trigger('click');
                 }else{
-                    bootbox.prompt("Please insert password", function(result){                
+                    bootbox.prompt("Please insert password", function(result){
                         $.ajax({
                             type: 'get',
                             url: '<?= site_url('auth/checkPassDiscount'); ?>',
@@ -1520,7 +1519,7 @@
                                     $('#add_sale').trigger('click');
                                 }else{
                                     alert('Incorrect passord');
-                                }       
+                                }
                             }
                         });
                     });
@@ -1528,27 +1527,27 @@
             }
 
         });
-		
+
     });
-	
-	
-    
+
+
+
     var $warehouse = $('#slwarehouse');
 		$warehouse.change(function (e) {
 			__setItem('slwarehouse', $(this).val());
     });
 
-		$('#print_depre').click(function () {	
+		$('#print_depre').click(function () {
 			PopupPayments();
 		});
-		
-		$('#export_depre').click(function () {	
+
+		$('#export_depre').click(function () {
 			var customer_id = $('#slcustomer2').val();
 			var customer_name = '';
 			var customer_address = '';
 			var customer_tel ='';
 			var customer_mail = '';
-			
+
 			$.ajax({
 				type: "get",
 				url: "<?= site_url('sales/getCustomerInfo'); ?>",
@@ -1599,7 +1598,7 @@
 			var down_pay = us_down;
 			var interest_rate = Number($('#depreciation_rate_1').val()-0);
 			var term_ = Number($('#depreciation_term_1').val()-0);
-			$('.rcode').each(function(){	
+			$('.rcode').each(function(){
 				no += 1;
 				var parent = $(this).parent().parent();
 				var unit_price = parent.find('.realuprice').val();
@@ -1613,7 +1612,7 @@
 									'<td class="td_color_light td_align_right" align="right">$ &nbsp;'+ formatMoney(unit_price) +'</td>'+
 									'<td class="td_color_light" align="right">'+ qtt +'</td>'+
 									'<td class="td_color_bottom_light td_align_right" align="right">$ &nbsp;'+ formatMoney(amt) +'</td>'+
-								'</tr>';  
+								'</tr>';
 			});
 			var loan_amount = total_amt;
 			//if(type != 4){
@@ -1645,7 +1644,7 @@
 			myexport+=				'<th width="10%" class="td_bor_style"><?= lang('rate') ?></th>';
 			myexport+=				'<th width="10%" class="td_bor_style"><?= lang('percentage') ?></th>';
 			myexport+=				'<th width="10%" class="td_bor_style"><?= lang('payment') ?></th>'+
-									'<th width="15%" class="td_bor_style"><?= lang('total_payment') ?></th>';			
+									'<th width="15%" class="td_bor_style"><?= lang('total_payment') ?></th>';
 									}else{
 			myexport+=				'<th width="10%" class="td_bor_style"><?= lang('interest') ?></th>'+
 									'<th width="10%" class="td_bor_style"><?= lang('principle') ?></th>'+
@@ -1683,12 +1682,12 @@
 				}else{
 			myexport+=				'<td class="td_color_light td_align_center" align="right">$ &nbsp;'+ formatMoney(tr.find('.interest').val()-0) +'</td>';
 			myexport+=				'<td class="td_color_light td_align_center" align="right">$ &nbsp;'+ formatMoney(tr.find('.principle').val()-0) +'</td>';
-			myexport+=				'<td class="td_color_light td_align_center" align="right">$ &nbsp;'+ formatMoney(tr.find('.payment_amt').val()-0) +'</td>';									
+			myexport+=				'<td class="td_color_light td_align_center" align="right">$ &nbsp;'+ formatMoney(tr.find('.payment_amt').val()-0) +'</td>';
 				}
 			myexport+=				'<td class="td_color_light td_align_right" align="right">$ &nbsp;'+ balance +'</td>'+
 									'<td class="td_color_bottom_light" style="padding-left:20px;">'+ tr.find('.note_1').val() +'</td>'+
-								'</tr>';	
-			});		
+								'</tr>';
+			});
 			if(type == 2){
 			myexport+=			'<tr>'+
 									'<td style="text-align:right; padding:5px;"><b> Total </b></td>'+
@@ -1698,7 +1697,7 @@
 									'<td style="text-align:right; padding:5px;"><b>$ &nbsp;'+ formatMoney(amount_total_pay) +'</b></td>'+
 									'<td style="text-align:right; padding:5px;"> &nbsp; </td>'+
 									'<td style="text-align:right; padding:5px;"> &nbsp; </td>'+
-								'</tr>';								
+								'</tr>';
 			}else{
 			myexport+=			'<tr>'+
 									'<td style="text-align:right; padding:5px; border-top:1px solid black;"><b> Total </b></td>'+
@@ -1724,7 +1723,7 @@
 			var customer_address = '';
 			var customer_tel ='';
 			var customer_mail = '';
-			
+
 			$.ajax({
 				type: "get",
 				url: "<?= site_url('sales/getCustomerInfo'); ?>",
@@ -1741,8 +1740,8 @@
 					//alert(customer_name +"|"+customer_address+"|"+customer_tel+"|"+customer_mail);
 				}
 			});
-				
-				
+
+
 			var mywindow = window.open('', 'erp_pos_print', 'height=auto,max-width=480,min-width=250px');
 			mywindow.document.write('<html><head><title>Print</title>');
 			mywindow.document.write('<link rel="stylesheet" href="<?= $assets ?>styles/helpers/bootstrap.min.css" type="text/css" />');
@@ -1773,7 +1772,7 @@
 												'<th width="45%" class="td_bor_style"><?= lang('Decription') ?></th>'+
 												'<th width="10%" class="td_bor_style"><?= lang('Unit Price') ?></th>'+
 												'<th width="10%" class="td_bor_style"><?= lang('Qty') ?></th>'+
-												'<th width="15%" class="td_bor_botton"><?= lang('Amount') ?></th>'+                
+												'<th width="15%" class="td_bor_botton"><?= lang('Amount') ?></th>'+
 											  '</tr>'+
 										'</thead>'+
 											'<tbody>');
@@ -1785,7 +1784,7 @@
 											var down_pay = us_down;
 											var interest_rate = Number($('#depreciation_rate_1').val()-0);
 											var term_ = Number($('#depreciation_term_1').val()-0);
-											$('.rcode').each(function(){	
+											$('.rcode').each(function(){
 												no += 1;
 												var parent = $(this).parent().parent();
 												var unit_price = parent.find('.realuprice').val();
@@ -1799,7 +1798,7 @@
 													'<td class="td_color_light td_align_right">$ '+ formatMoney(unit_price) +'</td>'+
 													'<td class="td_color_light td_align_center">'+ qtt +'</td>'+
 													'<td class="td_color_bottom_light td_align_right">$ '+ formatMoney(amt) +'</td>'+
-												'</tr>');  
+												'</tr>');
 											});
 											var loan_amount = total_amt;
 											//if(type != 4){
@@ -1824,7 +1823,7 @@
 												'</tr>');
 			mywindow.document.write(		'</tbody>'+
 									'</table><br/>'
-									);	
+									);
 			mywindow.document.write('<div class="payment_term"><b><?= lang('Payment Term')?></b></div>');
 			mywindow.document.write('<table border="2px" class="table table-bordered table-condensed table_shape" style="width:95%; font-family:Verdana,Geneva,sans-serif; font-size:12px; border-collapse:collapse;">'+
 										 '<thead>'+
@@ -1837,7 +1836,7 @@
 			mywindow.document.write(			'<th width="10%" class="td_bor_style"><?= lang('Percentage') ?></th>');
 			mywindow.document.write(			'<th width="10%" class="td_bor_style"><?= lang('Payment') ?></th>'+
 												'<th width="15%" class="td_bor_style"><?= lang('Total Payment') ?></th>'
-									);			
+									);
 											}else{
 			mywindow.document.write(			'<th width="10%" class="td_bor_style"><?= lang('Interest') ?></th>'+
 												'<th width="10%" class="td_bor_style"><?= lang('Principle') ?></th>'+
@@ -1845,10 +1844,10 @@
 									);
 											}
 			mywindow.document.write(			'<th width="10%" class="td_bor_style"><?= lang('Balance') ?></th>'+
-												'<th width="25%" class="td_bor_botton"><?= lang('Note') ?></th>'+                
+												'<th width="25%" class="td_bor_botton"><?= lang('Note') ?></th>'+
 											  '</tr>'+
 										'</thead>'+
-										'<tbody>');	
+										'<tbody>');
 										var k = 0;
 										var total_interest = 0;
 										var total_princ = 0;
@@ -1879,12 +1878,12 @@
 											}else{
 			mywindow.document.write(				'<td class="td_color_light td_align_center">$ '+ formatMoney(tr.find('.interest').val()-0) +'</td>');
 			mywindow.document.write(				'<td class="td_color_light td_align_center">$ '+ formatMoney(tr.find('.principle').val()-0) +'</td>');
-			mywindow.document.write(				'<td class="td_color_light td_align_center">$ '+ formatMoney(tr.find('.payment_amt').val()-0) +'</td>');									
+			mywindow.document.write(				'<td class="td_color_light td_align_center">$ '+ formatMoney(tr.find('.payment_amt').val()-0) +'</td>');
 											}
 			mywindow.document.write(				'<td class="td_color_light td_align_right">$ '+ balance +'</td>'+
 													'<td class="td_color_bottom_light">'+ tr.find('.note_1').val() +'</td>'+
-												'</tr>');	
-										});		
+												'</tr>');
+										});
 										if(type == 2){
 			mywindow.document.write(			'<tr>'+
 													'<td style="text-align:right; padding:5px;" colspan="2"><b> Total </b></td>'+
@@ -1894,7 +1893,7 @@
 													'<td style="text-align:left; padding:5px;"><b>$ '+ formatMoney(amount_total_pay) +'</b></td>'+
 													'<td style="text-align:left; padding:5px;"> &nbsp; </td>'+
 													'<td style="text-align:left; padding:5px;"> &nbsp; </td>'+
-												'</tr>');								
+												'</tr>');
 										}else{
 			mywindow.document.write(			'<tr>'+
 													'<td style="text-align:right; padding:5px;"><b> Total </b></td>'+
@@ -1916,9 +1915,9 @@
 			//mywindow.close();
 			return true;
 		}
-			
-			
-			
+
+
+
 </script>
 <script type="text/javascript">
    $(document).ready(function () {
@@ -1935,7 +1934,7 @@
 			}
 			$(".request_").text("Please input required fields (*)");
 		});
-		
+
 	   $("#subcategory").select2("destroy").empty().attr("placeholder", "<?= lang('select_category_to_load') ?>").select2({
             placeholder: "<?= lang('select_category_to_load') ?>", data: [
                 {id: '', text: '<?= lang('select_category_to_load') ?>'}
@@ -1976,9 +1975,9 @@
             }
             $('#modal-loading').hide();
         });
-		
-	   
-	   
+
+
+
         $("#slcustomer").select2("destroy").empty().attr("placeholder", "<?= lang('select_customer_to_load') ?>").select2({
             placeholder: "<?= lang('select_area_to_load') ?>", data: [
                 {id: '', text: '<?= lang('select_area_to_load') ?>'}
@@ -1986,11 +1985,11 @@
         });
 		if(area = __getItem('area')){
 			$('#slarea').val(area);
-		}	
-        
+		}
+
 	$('#slarea').change(function () {
 	   var v = $(this).val();
-		$('#modal-loading').show();			
+		$('#modal-loading').show();
 		if (v) {
 			$.ajax({
 				type: "get",
@@ -2004,7 +2003,7 @@
 							data: scdata
 						});
 					}else{
-						
+
 						$("#slcustomer").select2("destroy").empty().attr("placeholder", "<?= lang('select_customer') ?>").select2({
 							placeholder: "<?= lang('select_category_to_load') ?>",
 							data: 'not found'
@@ -2042,16 +2041,16 @@
 			});
 		}
 		$('#modal-loading').hide();
-	}); 
-		
-		 
+	});
+
+
     });
-	
+
 	$(window).load(function(){
 		var al = '<?php echo $this->input->get('addsaleorder');?>';
 		if(al){
 			var test = $("#add_item").val();
-		
+
 				$.ajax({
 					type: 'get',
 					url: '<?= site_url('sales/suggestionsSale'); ?>',
@@ -2066,14 +2065,14 @@
 							comment = data[i];
 							add_invoice_item(comment)
 						  }
-						 $("#add_item").val('');	
+						 $("#add_item").val('');
 						var url = $(".gos").attr('href');
 						window.location.href = url;
 					}
-				});   
-				
-	
+				});
+
+
 		}
     });
-	
+
 </script>

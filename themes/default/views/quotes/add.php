@@ -509,7 +509,7 @@
                                         <!--
                                         <div class="form-group">
                                             <?= lang("deposit", "qudeposit"); ?>
-											
+
                                             <?php if ($Owner || $Admin || $GP['customers-add']) { ?>
 											<div class="input-group"><?php } ?>
                                                 <select name="paid_by" id="paid_by" class="form-control paid_by">
@@ -663,7 +663,18 @@
 
                                 </div>
                             </div>
-
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <?= lang("payment_term", "slpayment_term"); ?>
+                  	                  <?php
+                                        $ptr[""] = "";
+                                        foreach ($payment_term as $term) {
+                                            $ptr[$term->id] = $term->description;
+                                        }
+                                  		echo form_dropdown('payment_term', $ptr,$quote->payment_term?$quote->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"');
+                                  		//echo form_input('payment_term',$ptr,'11', 'class="form-control tip" data-trigger="focus" data-placement="top" title="' . lang('payment_term_tip') . '" id="slpayment_term"'); ?>
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <?= lang("document", "document") ?>
@@ -812,7 +823,7 @@
                             <input type="hidden" class="form-control" id="curr_rate">
                         </div>
                     </div>
-					
+
 					<div class="form-group">
                         <label for="pnote" class="col-sm-4 control-label"><?= lang('product_note') ?></label>
 
