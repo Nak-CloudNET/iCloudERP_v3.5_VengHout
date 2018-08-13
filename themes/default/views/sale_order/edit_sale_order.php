@@ -511,112 +511,26 @@
 
                             </div>
                         </div>-->
-					<!--
-						<div class="col-sm-4">
+                    
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <?= lang("payment_term", "slpayment_term"); ?>
-								<?php
+                                <?php
                                     $ptr[""] = "";
                                     foreach ($payment_term as $term) {
                                         $ptr[$term->id] = $term->description;
                                     }
-									echo form_dropdown('payment_term', $ptr,$inv->payment_term?$inv->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"');
-									//echo form_input('payment_term',$ptr,'11', 'class="form-control tip" data-trigger="focus" data-placement="top" title="' . lang('payment_term_tip') . '" id="slpayment_term"'); ?>
+                                    echo form_dropdown('payment_term', $ptr,$inv->payment_term?$inv->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"'); ?>
                             </div>
                         </div>
-						<div class="col-sm-4">
-                            <div class="form-group">
-                                <?= lang("payment_status", "slpayment_status"); ?>
-                                <?php $pst = array('due' => lang('due'), 'partial' => lang('partial'), 'paid' => lang('paid'));
-                                echo form_dropdown('payment_status', $pst, '', 'class="form-control input-tip" required="required" id="slpayment_status"');
-                                ?>
-                            </div>
-                        </div>
-					-->
-						<div class="row">
-							<div class="col-md-12">
-								<div class="col-md-4">
-									<div class="form-group">
-										<?= lang("document", "document") ?>
-										<input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
-									</div>
-								</div>
-								
-								<div class="col-md-4">
-									<div class="form-group">
-										<?= lang("document", "document") ?>
-										<input id="document1" type="file" name="document1" data-show-upload="false" data-show-preview="false" class="form-control file">
-									</div>
-								</div>
-								
-								<div class="col-md-4">
-									<div class="form-group">
-										<?= lang("document", "document") ?>
-										<input id="document2" type="file" name="document2" data-show-upload="false" data-show-preview="false" class="form-control file">
-									</div>
-								</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<?= lang("document", "document") ?>
+								<input id="document" type="file" name="document" data-show-upload="false" data-show-preview="false" class="form-control file">
 							</div>
 						</div>
-                        <div class="clearfix"></div>
-						<!--
-						<div id="payments" style="display: none;">
-                            <div class="col-md-12">
-                                <div class="well well-sm well_1">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            
-                                            <div class="col-sm-4">
-                                                <div class="payment">
-                                                    <div class="form-group ngc">
-                                                        <?= lang("amount", "amount_1"); ?>
-                                                        <input name="amount-paid" type="text" id="amount_1"
-                                                               class="pa form-control kb-pad amount" amount = "<?= $inv->paid ?>" value="<?php echo isset($inv->paid)?$inv->paid:'' ?>"/>
-                                                    </div>
-													
-                                                </div>
-                                            </div>
-											
-											<div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <?= lang("paying_by", "paid_by_1"); ?>
-                                                    <select name="paid_by" id="paid_by_1" class="form-control paid_by">
-														<option value="deposit"><?= lang("deposit"); ?></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-											
-                                        </div>
-                                        <div class="clearfix"></div>
-										
-										<div class="form-group dp" style="display: block;">
-											<!--
-											<?= lang("customer", "customer1"); ?>
-													<?php
-													$customers1[] = array();
-													foreach($customers as $customer){
-														$customers1[$customer->id] = $customer->name;
-													}
-												echo form_dropdown('customer', $customers1, '' , 'class="form-control" id="customer1"');
-											?>
-											-->
-						<!--
-											<?= lang("deposit_amount", "deposit_amount"); ?>
-											
-											<div id="dp_details"></div>
-										</div>
-										
-                                        <div class="form-group">
-                                            <?= lang('payment_note', 'payment_note_1'); ?>
-                                            <textarea name="payment_note" id="payment_note_1"
-                                                      class="pa form-control kb-text payment_note"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-						-->
 
+                        <div class="clearfix"></div>
                         <input type="hidden" name="total_items" value="" id="total_items" required="required"/>
 						<input type="hidden" id="exchange_rate" value="<?= $exchange_rate->rate ?>">
 						<input type="hidden" id="is_edit" value="1">

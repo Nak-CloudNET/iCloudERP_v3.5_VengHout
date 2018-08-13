@@ -459,7 +459,19 @@
                                 </div>
                             </div>
                         <?php } ?>
-						
+                        
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <?= lang("payment_term", "slpayment_term"); ?>
+                                <?php
+                                    $ptr[""] = "";
+                                    foreach ($payment_term as $term) {
+                                        $ptr[$term->id] = $term->description;
+                                    }
+                                    echo form_dropdown('payment_term', $ptr,$inv->payment_term?$inv->payment_term:"", 'id="slpayment_term" data-placeholder="' . lang("payment_term_tip") .  '" class="form-control input-tip select" style="width:100%;"'); ?>
+                            </div>
+                        </div>
+
 						<div class="col-md-4">
                             <div class="form-group">
                                 <?= lang("document", "document") ?>

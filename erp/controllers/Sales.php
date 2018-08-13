@@ -3856,11 +3856,6 @@ class Sales extends MY_Controller
 				$this->session->set_flashdata('error', lang("sale_order_has_been_rejected"));
 				redirect($_SERVER["HTTP_REFERER"]);
 			}
-
-           /* if(($this->sale_order_model->getSaleOrder($sale_order_id)->sale_status) == 'sale'){
-                    $this->session->set_flashdata('error', lang("sale_order_has_been_created"));
-                    redirect($_SERVER["HTTP_REFERER"]);
-            }*/
 		}
 		
 		if($quote_ID){
@@ -4423,11 +4418,13 @@ class Sales extends MY_Controller
             if ($sale_order_id){
                 $sale_order = $this->sales_model->getSaleOrder($sale_order_id);
                 $this->data['sale_order'] = $sale_order;
+                $this->data['sale_orders'] = $sale_order;
+
                 $items = $this->sales_model->getSaleOrdItems($sale_order_id);
                 $this->data['sale_order_id'] = $sale_order_id;
 				$this->data['type'] = "sale_order";
 				$this->data['type_id'] = $sale_order_id;
-				
+
 				$customer = $this->site->getCompanyByID($sale_order->customer_id);
 				$this->data['so_deposit'] = $this->sales_model->getDepositBySo($sale_order_id,$sale_order->customer_id);
 				
@@ -4676,7 +4673,9 @@ class Sales extends MY_Controller
 			if($quote_ID){
 				
                 $quote = $this->sales_model->getQuoteByID($quote_ID);
+                $this->data['sale_orders'] = $quote;
 				$this->data['quotes'] = $quote;
+
 				$items = $this->sales_model->getAllQuoteItems($quote_ID);
 				$this->data['quote_ID'] = $quote_ID;
 				$this->data['type'] = "quote";
