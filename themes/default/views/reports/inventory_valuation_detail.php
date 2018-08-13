@@ -240,9 +240,9 @@
 								}
 								$unit_name = $this->erp->convert_unit_2_string($pr->product_id,$p_qty);
                                 $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
-								$qty_on_hand = $cur_qoh[0]->qoh ;
+								$qty_on_hand = $cur_qoh[0]->qoh;
 
-                                $p_cost = $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->manufacture_cost):$this->erp->formatDecimal($pr->total_cost);
+                                $p_cost = $this->erp->formatDecimal($pr->total_cost);
 								$avg_cost = $pr->avg_cost;
                                 $avg_cost=(($asset_value+($p_qty*$p_cost))/$qty_on_hand);
 
@@ -275,7 +275,7 @@
 								<td class="text-right"><?= $this->erp->formatQuantity($p_qty) ?> <br><?php  echo $unit_name;?></td>
 								<td class="text-right"><?= $pr->tran_type!='PURCHASE'?'':$p_cost ?></td>
 								<td class="text-right"><?= $this->erp->formatQuantity($qty_on_hand) ?></td>
-								<td class="text-right"><?= $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->avg_cost):$this->erp->formatDecimal($pr->total_cost) ?></td>
+								<td class="text-right"><?= $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->avg_cost,4):$this->erp->formatDecimal($pr->total_cost,4) ?></td>
 								<td class="text-right"><?= $this->erp->formatMoney($asset_value) ?></td>
 							</tr>
                                 <?php
