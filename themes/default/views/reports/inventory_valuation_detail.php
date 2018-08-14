@@ -215,7 +215,7 @@
 
                                     <?php
 							}
-							//$qty_on_hand = 0;
+							$qty_on_hand = $begin_qoh;
 							$total_on_hand = 0;
 							$total_asset_val = 0;
 							$unit_name = "";
@@ -257,8 +257,9 @@
                                     $p_qty = $pr->quantity_balance_unit;
 								}
 								$unit_name = $this->erp->convert_unit_2_string($pr->product_id,$p_qty);
-                                $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
-								$qty_on_hand = $cur_qoh[0]->qoh;
+                            /*    $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
+								$qty_on_hand = $cur_qoh[0]->qoh;*/
+                                $qty_on_hand +=$pr->quantity_balance_unit;
 
                                 $p_cost = $this->erp->formatDecimal($pr->total_cost);
 
