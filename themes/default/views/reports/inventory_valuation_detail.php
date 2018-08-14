@@ -198,10 +198,10 @@
                                         $begin_qoh  += $begin_asset->quantity_balance_unit;
                                         if($begin_asset->tran_type!='PURCHASE')
                                         {
-                                            $begin_asset_value      =  $this->erp->formatDecimal($begin_avg_cost)*$begin_qoh;
+                                            $begin_asset_value      =  $begin_avg_cost*$begin_qoh;
                                         }else{
-                                            $begin_asset_value     += $this->erp->formatDecimal($begin_asset->total_cost*$begin_asset->quantity);
-                                            $begin_avg_cost         =  $this->erp->formatDecimal($begin_asset_value/$begin_qoh);
+                                            $begin_asset_value     += $begin_asset->total_cost*$begin_asset->quantity;
+                                            $begin_avg_cost         =  $begin_asset_value/$begin_qoh;
                                         }
                                         
                                         
