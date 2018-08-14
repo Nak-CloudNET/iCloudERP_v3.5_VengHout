@@ -4922,7 +4922,84 @@ ORDER BY
 		}
 		return false;
 	}
-	
+	public function getProductsBeginAssetValue($warehouse_id,$category_id,$product_id,$stockType,$from_date,$to_date,$reference_no, $biller){
+        $this->db->select('
+                            stock_trans.*,
+                            products.name as product_name,
+                            companies.company AS biller_company,
+                            companies.name AS biller_name,
+                            products.image,
+                            CASE
+                                WHEN erp_stock_trans.tran_type = \'PURCHASE\' THEN
+                                    erp_purchases.reference_no
+                                WHEN erp_stock_trans.tran_type = \'SALE\' THEN
+                                    erp_sales.reference_no
+                                WHEN erp_stock_trans.tran_type = \'ADJUSTMENT\' THEN
+                                    erp_adjustments.reference_no
+                                WHEN erp_stock_trans.tran_type = \'USING STOCK\' THEN
+                                    erp_enter_using_stock.reference_no
+                                WHEN erp_stock_trans.tran_type = \'CONVERT\' THEN
+                                    erp_convert.reference_no
+                                WHEN erp_stock_trans.tran_type = \'TRANSFER\' THEN
+                                    erp_transfers.transfer_no
+                                WHEN erp_stock_trans.tran_type = \'SALE RETURN\' THEN
+                                    erp_return_sales.reference_no
+                                WHEN erp_stock_trans.tran_type = \'DELIVERY\' THEN
+                                    erp_deliveries.do_reference_no
+                                
+                            END as reference_no     
+                            ');
+        $this->db->join('companies', 'companies.id = stock_trans.biller_id', 'left');
+        $this->db->join('products', 'products.id = stock_trans.product_id', 'left');
+        $this->db->join('purchases', 'stock_trans.tran_id = purchases.id', 'left');
+        $this->db->join('sales', 'stock_trans.tran_id = sales.id', 'left');
+        $this->db->join('adjustments', 'stock_trans.tran_id = adjustments.id', 'left');
+        $this->db->join('enter_using_stock', 'stock_trans.tran_id = enter_using_stock.id', 'left');
+        $this->db->join('convert', 'stock_trans.tran_id = convert.id', 'left');
+        $this->db->join('transfers', 'stock_trans.tran_id = transfers.id', 'left');
+        $this->db->join('return_sales', 'stock_trans.tran_id = return_sales.id', 'left');
+        $this->db->join('deliveries', 'stock_trans.tran_id = deliveries.id', 'left');
+
+		/*if ($this->Settings->product_expiry == 1) {
+            $this->db->select('SUM(COALESCE(erp_stock_trans.quantity,0)) as quantity');
+            $this->db->group_by('stock_trans.expired_date');
+            $this->db->group_by('stock_trans.tran_type');
+		}*/
+
+		if($category_id){
+            $this->db->where('products.category_id', $category_id);
+		}
+		if($product_id){
+            $this->db->where('stock_trans.product_id', $product_id);
+		}
+		
+		if($warehouse_id){
+            $this->db->where('stock_trans.warehouse_id', $warehouse_id);
+		}
+		
+		if($stockType){
+            $this->db->where('stock_trans.tran_type', $stockType);
+		}
+		if($biller){
+            $this->db->where('stock_trans.biller_id', $biller);
+		}
+		if($reference_no){
+            $this->db->where('purchases.reference_no', $reference_no);
+		}
+		if($from_date && $to_date){
+            $this->db->where('date_format(erp_stock_trans.tran_date,"%Y-%m-%d") <"' . $from_date .'"');
+        }
+        
+        $this->db->order_by('stock_trans.tran_date','ASC');
+        $q = $this->db->get('stock_trans');
+		if($q->num_rows() > 0 ) {
+			foreach($q->result() as $row){
+				$data[] = $row;
+			}
+			return $data;
+		}
+		return false;
+	}
 	public function getProductsProfitByProduct($warehouse_id,$category_id,$product_id,$from_date,$to_date,$reference_no, $biller){
         $this->db->select('erp_sales.date,erp_sales.customer,erp_sales.reference_no,erp_sale_items.*, companies.name AS biller_name, product_variants.qty_unit as qty_variant, products.image');
 		$this->db->join('erp_sales','erp_sales.id = erp_sale_items.sale_id');

@@ -257,7 +257,7 @@ if (!function_exists('optimizePurchases')) {
                                 'total_cost'            => $product_unit_cost,
                                 'expired_date'          => $item->expiry,
                                 'serial'                => $item->serial_no,
-                                'avg_cost'              => $avg_cost
+                                'avg_cost'              => $item->real_unit_cost
                             ]);
 
                         //Will use this function in the future
