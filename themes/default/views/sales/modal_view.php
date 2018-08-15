@@ -565,6 +565,7 @@
                                 <span class="hidden-sm hidden-xs"><?= lang('VengHout Invoice') ?></span>
                             </a>
                         </div>
+
                         <?php if ($Owner || $Admin || $GP['sales-email']) { ?>
                             <div class="btn-group">
                                 <a href="<?= site_url('sales/email/' . $inv->id) ?>" data-toggle="modal" data-target="#myModal2" class="tip btn btn-primary" title="<?= lang('email') ?>">
