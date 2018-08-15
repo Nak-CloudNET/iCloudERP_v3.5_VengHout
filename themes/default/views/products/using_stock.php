@@ -110,11 +110,15 @@
         });
 		
 		$("#date").datetimepicker({
-				format: site.dateFormats.js_sdate, 
-				fontAwesome: true, 
-				todayBtn: 1, 
-				autoclose: 1, 
-				minView: 2 
+				format: site.dateFormats.js_ldate,
+                fontAwesome: true,
+                language: 'erp',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                forceParse: 0
 			}).datetimepicker('update', new Date());
 		
 		$('.datetime').datetimepicker({format: 'yyyy-mm-dd H:i:s'});
