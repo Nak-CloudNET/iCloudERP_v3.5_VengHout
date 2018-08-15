@@ -72,6 +72,6 @@ $lang['product_code']					    = "Product Code";
 $lang['subtotal']					        = "SUBTOTAL";
 $lang['quote_vat_logo']					    = "Quote Vat Logo";
 $lang['approve'] 							= "Approved";
-$lang['quote_discount'] 					= "Discount (%)";
+$lang['quote_discount'] 					= "Discount";
 $lang['contact'] 							= "Contact";
 $lang['camera_city'] 						= "Camera City";
