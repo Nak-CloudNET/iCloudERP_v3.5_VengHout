@@ -24,6 +24,12 @@
             .b1{
                 height: 150px!important;
             }
+            .tb_cus tr:nth-child(even){
+                background:rgba(4, 1, 2, 0.03)!important;
+            }
+            .prak_kok{
+                background: white!important;
+            }
         }
         body{
 
@@ -52,6 +58,9 @@
         .tb_cus td{
             border-right: 1px solid black;
         }
+        .tb_cus tr:nth-child(even){
+            background:rgba(4, 1, 2, 0.05);
+        }
     </style>
 </head>
 <body>
@@ -77,11 +86,11 @@
                           <h3 class="text-center header1"><b>Invoice</b></h3><br>
                           <div class="box" >
                               <?php
-//                                $this->erp->print_arrays($rows);
+                              //  $this->erp->print_arrays($invs);
                               ?>
                               <p>កាលបរិច្ឆេត / Date : <?=  date("d/m/Y", strtotime($invs->date)); ?></p>
                               <p>ល.ខ​ វិក័យប័ត្រ / Inv No : <?= $invs->reference_no ?></p>
-                              <p>ល.ខ ទូទាត់ / Terms: </p>
+                              <p>ល.ខ ទូទាត់ / Terms: <?= $invs->pt_dc ?></p>
                           </div>
                       </td>
                   </tr>
@@ -89,7 +98,7 @@
           </div>
           <br>
           <div class="body">
-              <table border="1" width="100%" class="tb_cus">
+              <table border="1" width="100%" class="tb_cus table-stripeds">
                   <thead class="text-center"​ style="">
                     <td>ល.រ <br>No.</td>
                     <td>បរិយាយមុខទំនិញ<br>​Items Description</td>
@@ -175,9 +184,9 @@
                                         <td style="border-right: 1px solid black">សរុប<br>Subtotal</td>
                                         <td style="border-right: none"><?= $this->erp->formatMoney($total); ?></td>
                                     </tr>
-                                    <tr style="border-bottom: 1px solid black">
-                                        <td width="50%" style="border-right: 1px solid black">ប្រាក់កក់<br>Deposite</td>
-                                        <td width="50%" style="border-right: none"></td>
+                                    <tr style="border-bottom: 1px solid black; background: white">
+                                        <td width="50%" style="border-right: 1px solid black" class="prak_kok">ប្រាក់កក់<br>Deposite</td>
+                                        <td width="50%" style="border-right: none " class="prak_kok"></td>
                                     </tr>
                                     <tr>
                                         <td style="border-right: 1px solid black">ប្រាក់នៅសល់<br>Balance</td>
