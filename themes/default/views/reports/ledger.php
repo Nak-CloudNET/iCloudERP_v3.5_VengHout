@@ -240,7 +240,7 @@
 								}
 
                                 $glTranLists = $glTrans->get()->result();
-                                if($startAmount->startAmount!=0)
+                                if($startAmount->startAmount!=0 || $glTranLists)
                                 {
                                     ?>
                                     <tr>
