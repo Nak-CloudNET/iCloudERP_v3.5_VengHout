@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d9ff5f3-1ded-4ab1-b136-50c24ac104a4" name="Default" comment="remove %">
+    <list default="true" id="1d9ff5f3-1ded-4ab1-b136-50c24ac104a4" name="Default" comment="add invoice form1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/uploads/barcode1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/barcode1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/uploads/qrcode1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/uploads/qrcode1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/views/sales/venghout_invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/views/sales/venghout_invoice.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,24 +23,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="783" />
-          <entry key="txt" value="24" />
+          <entry key="php" value="792" />
+          <entry key="txt" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="783" />
-          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="PHP" value="792" />
+          <entry key="PLAIN_TEXT" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="11" />
+          <entry key="php" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="11" />
+          <entry key="PHP" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -62,88 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/default/views/sales/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1095">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="660">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/default/views/sales/modal_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="562" column="56" selection-start-line="562" selection-start-column="56" selection-end-line="562" selection-end-column="56" />
-              <folding>
-                <element signature="e#543#550#1#HTML" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#4747#4753#0#HTML" expanded="true" />
-                <element signature="e#4753#4759#0#HTML" expanded="true" />
-                <element signature="e#4760#4766#0#HTML" expanded="true" />
-                <element signature="e#4766#4772#0#HTML" expanded="true" />
-                <element signature="e#5100#5106#0#HTML" expanded="true" />
-                <element signature="e#5106#5112#0#HTML" expanded="true" />
-                <element signature="e#5113#5119#0#HTML" expanded="true" />
-                <element signature="e#5119#5125#0#HTML" expanded="true" />
-                <element signature="e#5565#5571#0#HTML" expanded="true" />
-                <element signature="e#5571#5577#0#HTML" expanded="true" />
-                <element signature="e#5578#5584#0#HTML" expanded="true" />
-                <element signature="e#5584#5590#0#HTML" expanded="true" />
-                <element signature="e#5938#5944#0#HTML" expanded="true" />
-                <element signature="e#5944#5950#0#HTML" expanded="true" />
-                <element signature="e#5951#5957#0#HTML" expanded="true" />
-                <element signature="e#5957#5963#0#HTML" expanded="true" />
-                <element signature="e#6413#6419#0#HTML" expanded="true" />
-                <element signature="e#6419#6425#0#HTML" expanded="true" />
-                <element signature="e#6426#6432#0#HTML" expanded="true" />
-                <element signature="e#6432#6438#0#HTML" expanded="true" />
-                <element signature="e#6766#6772#0#HTML" expanded="true" />
-                <element signature="e#6772#6778#0#HTML" expanded="true" />
-                <element signature="e#6779#6785#0#HTML" expanded="true" />
-                <element signature="e#6785#6791#0#HTML" expanded="true" />
-                <element signature="e#6993#6999#0#HTML" expanded="true" />
-                <element signature="e#6999#7005#0#HTML" expanded="true" />
-                <element signature="e#7006#7012#0#HTML" expanded="true" />
-                <element signature="e#7012#7018#0#HTML" expanded="true" />
-                <element signature="e#7337#7343#0#HTML" expanded="true" />
-                <element signature="e#7343#7349#0#HTML" expanded="true" />
-                <element signature="e#7350#7356#0#HTML" expanded="true" />
-                <element signature="e#7356#7362#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/default/views/sales/venghout_invoice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+            <state relative-caret-position="721">
+              <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -164,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp/controllers/Sales.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="17985" column="31" selection-start-line="17985" selection-start-column="13" selection-end-line="17985" selection-end-column="31" />
+            <state relative-caret-position="599">
+              <caret line="19724" column="5" selection-start-line="19684" selection-start-column="4" selection-end-line="19724" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -248,17 +174,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp/controllers/Sale_order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62100">
-              <caret line="4140" column="47" selection-start-line="4140" selection-start-column="35" selection-end-line="4140" selection-end-column="47" />
+            <state relative-caret-position="720">
+              <caret line="4154" lean-forward="true" selection-start-line="4130" selection-start-column="4" selection-end-line="4154" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/default/views/sale_order/modal_order_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="406" column="30" lean-forward="true" selection-start-line="400" selection-start-column="20" selection-end-line="406" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/erp/models/Sales_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="4990" column="114" selection-start-line="4990" selection-start-column="114" selection-end-line="4990" selection-end-column="114" />
+            <state relative-caret-position="364">
+              <caret line="5001" column="101" selection-start-line="5001" selection-start-column="8" selection-end-line="5001" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -287,8 +238,9 @@
         <option value="$PROJECT_DIR$/erp/models/Sales_model.php" />
         <option value="$PROJECT_DIR$/themes/default/views/sale_order/invoice_sale_order.php" />
         <option value="$PROJECT_DIR$/erp/controllers/Sales.php" />
-        <option value="$PROJECT_DIR$/themes/default/views/sales/modal_view.php" />
         <option value="$PROJECT_DIR$/themes/default/views/sales/invoice_st_a4_2.php" />
+        <option value="$PROJECT_DIR$/themes/default/views/sales/modal_view.php" />
+        <option value="$PROJECT_DIR$/themes/default/views/sales/index.php" />
         <option value="$PROJECT_DIR$/themes/default/views/sales/venghout_invoice.php" />
       </list>
     </option>
@@ -364,7 +316,7 @@
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="default" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="sales" type="462c0819:PsiDirectoryNode" />
+              <item name="sale_order" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,7 +361,7 @@
       <workItem from="1534123759561" duration="614000" />
       <workItem from="1534220770298" duration="1191000" />
       <workItem from="1534233839496" duration="4145000" />
-      <workItem from="1534315129448" duration="3652000" />
+      <workItem from="1534315129448" duration="5043000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed invetory valuation detail">
       <created>1534220964296</created>
@@ -439,11 +391,25 @@
       <option name="project" value="LOCAL" />
       <updated>1534316413153</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove %">
+      <created>1534318824007</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534318824007</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add invoice form1">
+      <created>1534318952008</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1534318952008</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9610000" />
+    <option name="totallyTimeSpent" value="11001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
@@ -482,20 +448,15 @@
     <MESSAGE value="Fixed invetory valuation detail" />
     <MESSAGE value="add payment term" />
     <MESSAGE value="remove %" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove %" />
+    <MESSAGE value="add invoice form" />
+    <MESSAGE value="add invoice form1" />
+    <option name="LAST_COMMIT_MESSAGE" value="add invoice form1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/themes/default/views/sale_order/invoice_st_a4_r.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="21" selection-end-line="628" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp/controllers/Sale_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62100">
-          <caret line="4140" column="47" selection-start-line="4140" selection-start-column="35" selection-end-line="4140" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -514,96 +475,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/erp/language/english/sales_lang.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/default/views/sales/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1095">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/default/views/sale_order/invoice_sale_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="92" column="75" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp/models/Sales_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="4990" column="114" selection-start-line="4990" selection-start-column="114" selection-end-line="4990" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/default/views/sales/modal_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="562" column="56" selection-start-line="562" selection-start-column="56" selection-end-line="562" selection-end-column="56" />
-          <folding>
-            <element signature="e#543#550#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#4747#4753#0#HTML" expanded="true" />
-            <element signature="e#4753#4759#0#HTML" expanded="true" />
-            <element signature="e#4760#4766#0#HTML" expanded="true" />
-            <element signature="e#4766#4772#0#HTML" expanded="true" />
-            <element signature="e#5100#5106#0#HTML" expanded="true" />
-            <element signature="e#5106#5112#0#HTML" expanded="true" />
-            <element signature="e#5113#5119#0#HTML" expanded="true" />
-            <element signature="e#5119#5125#0#HTML" expanded="true" />
-            <element signature="e#5565#5571#0#HTML" expanded="true" />
-            <element signature="e#5571#5577#0#HTML" expanded="true" />
-            <element signature="e#5578#5584#0#HTML" expanded="true" />
-            <element signature="e#5584#5590#0#HTML" expanded="true" />
-            <element signature="e#5938#5944#0#HTML" expanded="true" />
-            <element signature="e#5944#5950#0#HTML" expanded="true" />
-            <element signature="e#5951#5957#0#HTML" expanded="true" />
-            <element signature="e#5957#5963#0#HTML" expanded="true" />
-            <element signature="e#6413#6419#0#HTML" expanded="true" />
-            <element signature="e#6419#6425#0#HTML" expanded="true" />
-            <element signature="e#6426#6432#0#HTML" expanded="true" />
-            <element signature="e#6432#6438#0#HTML" expanded="true" />
-            <element signature="e#6766#6772#0#HTML" expanded="true" />
-            <element signature="e#6772#6778#0#HTML" expanded="true" />
-            <element signature="e#6779#6785#0#HTML" expanded="true" />
-            <element signature="e#6785#6791#0#HTML" expanded="true" />
-            <element signature="e#6993#6999#0#HTML" expanded="true" />
-            <element signature="e#6999#7005#0#HTML" expanded="true" />
-            <element signature="e#7006#7012#0#HTML" expanded="true" />
-            <element signature="e#7012#7018#0#HTML" expanded="true" />
-            <element signature="e#7337#7343#0#HTML" expanded="true" />
-            <element signature="e#7343#7349#0#HTML" expanded="true" />
-            <element signature="e#7350#7356#0#HTML" expanded="true" />
-            <element signature="e#7356#7362#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/default/views/sales/invoice_st_a4_2.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -678,17 +549,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default/views/sales/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default/views/sales/modal_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="566" column="30" lean-forward="true" selection-start-line="561" selection-start-column="24" selection-end-line="566" selection-end-column="30" />
+          <folding>
+            <element signature="e#543#550#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#4747#4753#0#HTML" expanded="true" />
+            <element signature="e#4753#4759#0#HTML" expanded="true" />
+            <element signature="e#4760#4766#0#HTML" expanded="true" />
+            <element signature="e#4766#4772#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#5100#5106#0#HTML" expanded="true" />
+            <element signature="e#5106#5112#0#HTML" expanded="true" />
+            <element signature="e#5113#5119#0#HTML" expanded="true" />
+            <element signature="e#5119#5125#0#HTML" expanded="true" />
+            <element signature="e#5565#5571#0#HTML" expanded="true" />
+            <element signature="e#5571#5577#0#HTML" expanded="true" />
+            <element signature="e#5578#5584#0#HTML" expanded="true" />
+            <element signature="e#5584#5590#0#HTML" expanded="true" />
+            <element signature="e#5938#5944#0#HTML" expanded="true" />
+            <element signature="e#5944#5950#0#HTML" expanded="true" />
+            <element signature="e#5951#5957#0#HTML" expanded="true" />
+            <element signature="e#5957#5963#0#HTML" expanded="true" />
+            <element signature="e#6413#6419#0#HTML" expanded="true" />
+            <element signature="e#6419#6425#0#HTML" expanded="true" />
+            <element signature="e#6426#6432#0#HTML" expanded="true" />
+            <element signature="e#6432#6438#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#6766#6772#0#HTML" expanded="true" />
+            <element signature="e#6772#6778#0#HTML" expanded="true" />
+            <element signature="e#6779#6785#0#HTML" expanded="true" />
+            <element signature="e#6785#6791#0#HTML" expanded="true" />
+            <element signature="e#6993#6999#0#HTML" expanded="true" />
+            <element signature="e#6999#7005#0#HTML" expanded="true" />
+            <element signature="e#7006#7012#0#HTML" expanded="true" />
+            <element signature="e#7012#7018#0#HTML" expanded="true" />
+            <element signature="e#7337#7343#0#HTML" expanded="true" />
+            <element signature="e#7343#7349#0#HTML" expanded="true" />
+            <element signature="e#7350#7356#0#HTML" expanded="true" />
+            <element signature="e#7356#7362#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#4;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#div#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/erp/controllers/Sales.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="17985" column="31" selection-start-line="17985" selection-start-column="13" selection-end-line="17985" selection-end-column="31" />
+        <state relative-caret-position="599">
+          <caret line="19724" column="5" selection-start-line="19684" selection-start-column="4" selection-end-line="19724" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/default/views/sales/venghout_invoice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+        <state relative-caret-position="721">
+          <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -702,6 +663,50 @@
             <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#td#1;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default/views/sale_order/modal_order_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="406" column="30" lean-forward="true" selection-start-line="400" selection-start-column="20" selection-end-line="406" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/controllers/Sale_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="4154" lean-forward="true" selection-start-line="4130" selection-start-column="4" selection-end-line="4154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default/views/sale_order/invoice_sale_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="92" column="75" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp/models/Sales_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="5001" column="101" selection-start-line="5001" selection-start-column="8" selection-end-line="5001" selection-end-column="101" />
         </state>
       </provider>
     </entry>
