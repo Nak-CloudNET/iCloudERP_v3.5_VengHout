@@ -699,7 +699,8 @@
                         </div>
                         <div class="col-sm-12">
                             <div
-                                    class="fprom-group"><?php echo form_submit('add_quote', $this->lang->line("submit"), 'id="add_quote" class="btn btn-primary" style="padding: 6px 15px; margin:15px 0;"'); ?>
+                                    class="fprom-group"><?php echo form_submit('add_quote', $this->lang->line("submit"), 'id="add_quote" class="btn btn-primary" style="padding: 6px 15px; margin:15px 0;display:none;"'); ?>
+                                    <button type="submit" class="btn btn-primary" id="before_sub"><?= lang('submit') ?></button>
                                 <button type="button" class="btn btn-danger" id="reset"><?= lang('reset') ?></div>
                         </div>
                     </div>
@@ -939,9 +940,55 @@
         });
 
     }
-
+    
     $(document).ready(function () {
+        var help = false;
+        var message = '';
+        $('#before_sub').click(function (e){
+            e.preventDefault();
+           $('.ruprice').each(function() {
+                var tr = $(this).closest('tr');
+                var price = $(this).val() - 0;
+                var cost = tr.find('.rucost').val() - 0;
+                if(price < cost) {
+                    var product_name = $(this).parent().parent().closest('tr').find('.rname').val();
+                    message += '<ul><li>This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! </li></ul>';
+                    help = true;
+                }
 
+            });
+            if(help == false){
+                $('#add_quote').trigger('click');
+            }else{
+
+                bootbox.prompt({
+                    title: message + "Please enter password",
+                    inputType: 'password',
+                    className: "medium",
+                    callback: function (result) {
+                        $.ajax({
+                            type: 'get',
+                            url: '<?= site_url('auth/checkPassDiscount'); ?>',
+                            dataType: "json",
+                            data: {
+                                password: result
+                            },
+                            success: function (data) {
+                                if(data == 1){
+                                    $('#add_quote').trigger('click');
+                                }else{
+                                    bootbox.alert({
+                                        message: "Incorrect password!",
+                                        size: 'small'
+                                    });
+                                }
+                            }
+                        });
+                    }
+                });
+                return false;
+            }
+        });
         $('body').on('click', '.add_product_auto', function (e) {
             e.preventDefault();
             var pname = $("#name").val();
