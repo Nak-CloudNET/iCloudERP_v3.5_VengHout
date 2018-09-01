@@ -942,10 +942,11 @@
     }
     
     $(document).ready(function () {
-        var help = false;
-        var message = '';
+        
         $('#before_sub').click(function (e){
             e.preventDefault();
+            var help = false;
+            var message = '';
            $('.ruprice').each(function() {
                 var tr = $(this).closest('tr');
                 var price = $(this).val() - 0;
