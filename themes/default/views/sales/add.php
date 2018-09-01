@@ -1411,6 +1411,7 @@
             ]
         });
 		$('#category').change(function () {
+		$('#category').change(function () {
             var v = $(this).val();
             $('#modal-loading').show();
             if (v) {
