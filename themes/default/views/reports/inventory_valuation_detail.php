@@ -16,7 +16,7 @@
 
 <div class="box">
     <div class="box-header">
-        <h2 class="blue"><i class="fa-fw fa fa-barcode"></i><?= lang('inventory_valuation_detail') ; ?>
+        <h2 class="blue"><i class="fa-fw fa fa-barcode"></i><?= lang('Product_Valuation_Detail') ; ?>
         </h2>
 		<div class="box-icon">
             <ul class="btn-tasks">
