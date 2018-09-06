@@ -15036,7 +15036,9 @@ class Reports extends MY_Controller
             $st=$start['2']."-".$start['1']."-".$start['0'];
 
         } else {
-            $start_date = NULL;
+            $start_date = date('d/m/Y');
+            $this->data['start_date'] = $start_date;
+            //echo $this->data['start_date'];exit;
         }
 
 		/*if (!$start_date) {
@@ -24324,16 +24326,16 @@ class Reports extends MY_Controller
 			$str .="&warehouse=".$warehouse;
         }else{
 			$warehouse = null;
-        }
+        }if ($post['start_date']) {
+        $start_date 			  = $post['start_date'];
+        $this->data['start_date'] = $post['start_date'];
+        $str .="&start_date=".$start_date;
+    } else {
+        $start_date = date('d/m/Y');
+        $this->data['start_date'] = $start_date;
+    }
 
-        if ($post['start_date']) {
-            $start_date 			  = $post['start_date'];
-            $this->data['start_date'] = $post['start_date'];
-            $str .="&start_date=".$start_date;
-        } else {
-            $start_date = date('d/m/Y');
-            $this->data['start_date'] = $start_date;
-        }
+
 //        $this->erp->print_arrays($start_date);
 		
 		if ($post['end_date']) {

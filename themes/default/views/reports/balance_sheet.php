@@ -14,6 +14,7 @@
 
     });
 
+
 </script>
 <style>@media print {
         .fa {
@@ -89,6 +90,7 @@
             </ul>
         </div>
     </div>
+    <?php echo $start_date;exit;?>
     <div class="box-content">
         <div class="row">
             <div class="col-lg-12">
@@ -100,7 +102,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <?= lang("As of Date", "start_date"); ?>
-                            <?php echo form_input('start_date', (isset($_POST['start_date']) ? $_POST['start_date'] : ''), 'class="form-control datetime" id="start_date"'); ?>
+                            <?php echo form_input('start_date', (isset($_POST['start_date']) ? $_POST['start_date'] : $start_date), 'class="form-control datetime" id="start_date"'); ?>
                         </div>
                     </div>
                 </div>

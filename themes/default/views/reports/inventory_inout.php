@@ -31,7 +31,7 @@
 </style>
 <div class="box">
     <div class="box-header">
-        <h2 class="blue"><i class="fa-fw fa fa-barcode"></i><?= lang('products_in_out') ; ?>
+        <h2 class="blue"><i class="fa-fw fa fa-barcode"></i><?= lang('Products_Valuation_Summary') ; ?>
         </h2>
 		<div class="box-icon">
             <ul class="btn-tasks">
@@ -265,14 +265,14 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $rp->name ? $rp->name : $rp->product_id; ?><?= " (" . $rp->name_unit . ")" ?></td>
                                             <td style='text-align:right;'>
 											<?php if($btotal_qty){?>
-												<span style="color:blue;"><?=$btotal_qty?$this->erp->formatDecimal($btotal_qty):''?></span>
-												<?php
-												if($begin_qty->bqty){
-													echo  $this->erp->convert_unit_2_string($rp->product_id,$begin_qty->bqty);
-												}
+                                                    <span style="color:blue;"><?=$btotal_qty?$btotal_qty:''?></span>
+                                                    <?php
+                                                    if($begin_qty->bqty){
+                                                        echo  $this->erp->convert_unit_2_string($rp->product_id,$begin_qty->bqty);
+                                                    }
 
-                                            }
-												?>
+                                                }
+                                                ?>
 
                                             </td>
 										<?php
@@ -286,7 +286,7 @@
 
 											<td style='text-align:right;'>
 												<?php if($allqty->bqty){?>
-												<span style="color:blue;"><?=$this->erp->formatDecimal($allqty->bqty)?></span>
+												<span style="color:blue;"><?=round($allqty->bqty,2);?></span>
 													<br>
 													<?php
 													if($qty_unit->bqty){
@@ -302,7 +302,7 @@
 											}?>
 											<td style='text-align:right;'>
 
-                                                <b><?=$this->erp->formatDecimal($total_in?$total_in:'')?></b>
+                                                <b><?=$total_in?$total_in:''?></b>
 
                                             </td>
 											<?php
@@ -316,7 +316,7 @@
 
                                                         <td style='text-align:right;'>
 													 <?php if($allqty2->bqty){?>
-													 <span style="color:blue;"><?=$this->erp->formatDecimal($allqty2->bqty)?></span><br>
+													 <span style="color:blue;"><?=round($allqty2->bqty);?></span><br>
 													 <?php
 														 if($qty_unit2->bqty){
 															echo   $this->erp->convert_unit_2_string($rp->product_id,$qty_unit2->bqty);
@@ -335,7 +335,7 @@
 											//$qty_unit3 = $this->reports_model->getQtyUnitALL($rp->product_id,$rw->id,$from_date2,$to_date2);
 											$am = ($total_in-$total_out);
 											?>
-											<td style='text-align:right;'><b><?=$this->erp->formatDecimal($total_out?$total_out:'')?></b> </td>
+											<td style='text-align:right;'><b><?=$total_out?$total_out:''?></b> </td>
 											<td style='text-align:right;'><span><b><?=$this->erp->formatDecimal($am?$am:'')?></b></span><br>
 											<?php
 
@@ -362,7 +362,7 @@
                                                         aria-hidden="true"></i></span> <?= $rc->name; ?></b></td>
                                     <td style="background:#F0F8FF;"></td>
 									<td style='text-align:right;background:#F0F8FF;'>
-												<b><?=$this->erp->formatDecimal($begin_balance?$begin_balance:'')?></b>
+												<b><?=$begin_balance?$begin_balance:''?></b>
 									</td>
 									<?php
 										if(is_array($num)){
@@ -370,13 +370,13 @@
 												if($tr->tran_type){
 													$amount_qty = $this->reports_model->getAmountQtyINALL($product2,$rw->id,$tr->tran_type,$rc->id,$from_date2,$to_date2,$biller2);
 
-                                                    echo "<td style='text-align:right;background:#F0F8FF;'><b>".$this->erp->formatDecimal($amount_qty->bqty?$amount_qty->bqty:'')."</b></td>";
+                                                    echo "<td style='text-align:right;background:#F0F8FF;'><b>".round($amount_qty->bqty?$amount_qty->bqty:'',2)."</b></td>";
 
                                                 }
 											}
 										}
 									?>
-										<td style='text-align:right;background:#F0F8FF;'><b><?=$this->erp->formatDecimal($total_inn?$total_inn:'')?></b></td>
+										<td style='text-align:right;background:#F0F8FF;'><b><?=$total_inn?$total_inn:''?></b></td>
 										<?php
 										if(is_array($num2)){
 
@@ -385,13 +385,13 @@
                                                 if($tr2->tran_type){
 													 $amount_qty2 = $this->reports_model->getAmountQtyOUTALL($product2,$rw->id,$tr2->tran_type,$rc->id,$from_date2,$to_date2,$biller2);
 
-                                                    echo "<td style='text-align:right;background:#F0F8FF;'><b>".$this->erp->formatDecimal($amount_qty2->bqty?$amount_qty2->bqty:'')."</b></td>";
+                                                    echo "<td style='text-align:right;background:#F0F8FF;'><b>".round($amount_qty2->bqty?$amount_qty2->bqty:'',2)."</b></td>";
                                                 }
 
                                             }
 										}
 										?>
-									<td style='text-align:right;background:#F0F8FF;'><b><?=$this->erp->formatDecimal($total_outt?$total_outt:'')?></b></td>
+									<td style='text-align:right;background:#F0F8FF;'><b><?=$total_outt?$total_outt:''?></b></td>
 									<td style='text-align:right;background:#F0F8FF;'><b><?=$this->erp->formatDecimal($balance?$balance:'')?></b></td>
 								</tr>
 							<?php
@@ -406,7 +406,7 @@
                                         <b>Grand Total <i
                                                     class="fa fa-angle-double-right"
                                                     aria-hidden="true"></i> <?= $rw->name; ?></b></td>
-									<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$this->erp->formatDecimal($total_begin_balance?$total_begin_balance:'')?></b></td>
+									<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$total_begin_balance?$total_begin_balance:''?></b></td>
                                     <td style="background:#428BCA;"></td>
 									<?php
 										if(is_array($num)){
@@ -414,12 +414,12 @@
 												if($tr->tran_type){
 													$amount_qty_cat = $this->reports_model->getAmountQtyINALLCAT($product2,$rw->id,$tr->tran_type,$category2,$from_date2,$to_date2,$biller2);
 													
-													 echo "<td style='text-align:right; background:#428BCA;color:white;border-color: #357EBD;'><b>".$this->erp->formatDecimal($amount_qty_cat->bqty?$amount_qty_cat->bqty:'')."</b></td>";
+													 echo "<td style='text-align:right; background:#428BCA;color:white;border-color: #357EBD;'><b>".round($amount_qty_cat->bqty?$amount_qty_cat->bqty:'',2)."</b></td>";
 												
 												}
 											}
 										}?>
-										<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$this->erp->formatDecimal($total2_inn?$total2_inn:'')?></b></td>
+										<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$total2_inn?$total2_inn:''?></b></td>
 										
 										<?php
 										if(is_array($num2)){
@@ -428,14 +428,14 @@
 												if($tr2->tran_type){
 													 $amount_qty_cat2 = $this->reports_model->getAmountQtyOUTALLCAT($product2,$rw->id,$tr2->tran_type,$category2,$from_date2,$to_date2,$biller2);
 													
-													 echo "<td style='text-align:right; background:#428BCA;color:white;border-color: #357EBD;'><b>".$this->erp->formatDecimal($amount_qty_cat2->bqty?$amount_qty_cat2->bqty:'')."</b></td>";
+													 echo "<td style='text-align:right; background:#428BCA;color:white;border-color: #357EBD;'><b>".round($amount_qty_cat2->bqty?$amount_qty_cat2->bqty:'',2)."</b></td>";
 													
 												}
 												 
 											}
 										}
 										?>
-									<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$this->erp->formatDecimal($total2_outt?$total2_outt:'')?></b></td>
+									<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$total2_outt?$total2_outt:''?></b></td>
 									<td style="text-align:right; background:#428BCA;color:white;border-color: #357EBD;"><b><?=$this->erp->formatDecimal($total_balance?$total_balance:'')?></b></td>
 									</tr>
 							<?php
