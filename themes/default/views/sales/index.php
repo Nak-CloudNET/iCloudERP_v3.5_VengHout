@@ -143,7 +143,8 @@
             {column_number: 9, filter_default_label: "[<?=lang('sale_status');?>]", filter_type: "text", data: []},
             {column_number: 16, filter_default_label: "[<?=lang('payment_status');?>]", filter_type: "text", data: []},
         ], "footer");
-		
+
+
         if (__getItem('remove_slls')) {
             if (__getItem('slitems')) {
                 __removeItem('slitems');

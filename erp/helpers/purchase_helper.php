@@ -233,7 +233,12 @@ if (!function_exists('optimizePurchases')) {
                         }
 
                         $ci->db->update('purchase_items', ['real_unit_cost' => $product_unit_cost], ['id' => $item->id]);
-
+                        if($item->real_unit_cost>$item->net_unit_cost)
+                        {
+                            $avg_cost   = (($item->cb_avg*$item->cb_qty)+($item->real_unit_cost*$item->quantity))/($item->cb_qty+$item->quantity);
+                        }else{
+                            $avg_cost   = (($item->cb_avg*$item->cb_qty)+($item->net_unit_cost*$item->quantity)+$product_cost_ship)/($item->cb_qty+$item->quantity);
+                        }
                         $ci->db->insert('stock_trans',
                             [
                                 'biller_id'             => $row_purchase->biller_id,
@@ -249,10 +254,10 @@ if (!function_exists('optimizePurchases')) {
                                 'tran_id'               => $row_purchase->id,
                                 'manufacture_cost'      => $item->net_unit_cost,
                                 'freight_cost'          => $item->net_shipping,
-                                'total_cost'            => $item->real_unit_cost,
+                                'total_cost'            => $product_unit_cost,
                                 'expired_date'          => $item->expiry,
                                 'serial'                => $item->serial_no,
-                                'avg_cost'              => (($item->cb_qty*$item->cb_avg)+($item->net_unit_cost*$item->quantity))/($item->cb_qty+$item->quantity)
+                                'avg_cost'              => $item->real_unit_cost
                             ]);
 
                         //Will use this function in the future

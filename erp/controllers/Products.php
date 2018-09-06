@@ -4752,7 +4752,7 @@ class Products extends MY_Controller
     
     public function add_enter_using_stock()
     {
-        $date            = $this->erp->fld(trim($this->input->post('date')));
+        $date            = $this->erp->hrld(trim($this->input->post('date'))).':'.date('s');
         $reference_no    = $this->input->post('reference_no');
         $warehouse_id    = $this->input->post('from_location');
         $authorize_id    = $this->input->post('authorize_id');
@@ -5387,7 +5387,7 @@ class Products extends MY_Controller
     public function update_enter_using_stock()
     {
             if ($this->Owner || $this->Admin || $this->Settings->allow_change_date == 1) {
-                $date = $this->erp->fld(trim($this->input->post('date')));
+                $date = $this->erp->fld(trim($this->input->post('date'))).':'.date('s');
             } else {
                 $date = date('Y-m-d H:i:s');
             }

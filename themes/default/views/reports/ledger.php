@@ -240,22 +240,29 @@
 								}
 
                                 $glTranLists = $glTrans->get()->result();
-								
-								if($glTranLists) {?>
-                                <tr>
-                                    <td colspan="4" style="font-weight: bold;"><?= lang("Account"); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?=$account->accountcode . ' ' .$account->accountname?></td>
-									<td colspan="4" style="font-weight: bold;">Begining Account Balance <i class="fa fa-caret-right" aria-hidden="true"></i></td>
-									<?php if($startAmount->startAmount >= 0) { ?>
-										<td class="right"><?= $this->erp->formatMoney($startAmount->startAmount)?></td>
-										<td class="right"></td>
-										<td class="right"><?= $startAmount->startAmount!=0?$this->erp->formatMoney($startAmount->startAmount):''?></td>
-									<?php }else { ?>
-										<td class="right"></td>
-										<td class="right"><?= $this->erp->formatMoney(abs($startAmount->startAmount))?></td>
-										<td class="right"><?=$startAmount->startAmount!=0?'('.$this->erp->formatMoney($startAmount->startAmount).')':''?></td>
-									<?php } ?>
+                                if($startAmount->startAmount!=0 || $glTranLists)
+                                {
+                                    ?>
+                                    <tr>
+                                    <td colspan="4" style="font-weight: bold;"><?= lang("Account"); ?> <i
+                                                class="fa fa-angle-double-right"
+                                                aria-hidden="true"></i> <?= $account->accountcode . ' ' . $account->accountname ?>
+                                    </td>
+                                    <td colspan="4" style="font-weight: bold;">Begining Account Balance <i
+                                                class="fa fa-caret-right" aria-hidden="true"></i></td>
+                                    <?php if ($startAmount->startAmount >= 0) { ?>
+                                        <td class="right"><?= $this->erp->formatMoney($startAmount->startAmount) ?></td>
+                                        <td class="right"></td>
+                                        <td class="right"><?= $startAmount->startAmount != 0 ? $this->erp->formatMoney($startAmount->startAmount) : '' ?></td>
+                                    <?php } else { ?>
+                                        <td class="right"></td>
+                                        <td class="right"><?= $this->erp->formatMoney(abs($startAmount->startAmount)) ?></td>
+                                        <td class="right"><?= $startAmount->startAmount != 0 ? '(' . $this->erp->formatMoney(abs($startAmount->startAmount)) . ')' : '' ?></td>
+                                    <?php }
+                                }?>
                                 </tr>
                                 <?php
+                                if($glTranLists) {
 								$endAmount = $startAmount->startAmount;
                                 if($endAmount>0){
                                     $endDebitAmount = $endAmount;

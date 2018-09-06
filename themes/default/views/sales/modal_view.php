@@ -437,6 +437,7 @@
                             </a>
                         </div>
 						-->
+
                         <div class="btn-group">
                             <a href="<?= site_url('sale_order/delivery_noted/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('st_invoice') ?>">
                                 <i class="fa fa-print"></i>
@@ -521,22 +522,7 @@
                                 </a>
                             </div>
                         <?php } ?>
-                        <?php if ($Owner || $Admin || $GP['sales-email']) { ?>
-                            <div class="btn-group">
-                                <a href="<?= site_url('sales/email/' . $inv->id) ?>" data-toggle="modal" data-target="#myModal2" class="tip btn btn-primary" title="<?= lang('email') ?>">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="hidden-sm hidden-xs"><?= lang('email') ?></span>
-                                </a>
-                            </div>
-                        <?php } ?>
-                        <?php if ($Owner || $Admin || $GP['sales-export']) { ?>
-                            <div class="btn-group">
-                                <a href="<?= site_url('sales/pdf/' . $inv->id) ?>" class="tip btn btn-primary" title="<?= lang('download_pdf') ?>">
-                                    <i class="fa fa-download"></i>
-                                    <span class="hidden-sm hidden-xs"><?= lang('pdf') ?></span>
-                                </a>
-                            </div>
-                        <?php } ?>
+
 						<!--
 						<div class="btn-group">
                             <a href="<?= site_url('sales/invoice_deveryStatement/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_delivery_statement') ?>">
@@ -571,6 +557,31 @@
                         </div>
 						<?php } ?>
 						<?php } ?>-->
+                    </div>
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn-group">
+                            <a href="<?= site_url('sales/venghout_invoice/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="VengHout Invoice">
+                                <i class="fa fa-print"></i>
+                                <span class="hidden-sm hidden-xs"><?= lang('VengHout Invoice') ?></span>
+                            </a>
+                        </div>
+
+                        <?php if ($Owner || $Admin || $GP['sales-email']) { ?>
+                            <div class="btn-group">
+                                <a href="<?= site_url('sales/email/' . $inv->id) ?>" data-toggle="modal" data-target="#myModal2" class="tip btn btn-primary" title="<?= lang('email') ?>">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="hidden-sm hidden-xs"><?= lang('email') ?></span>
+                                </a>
+                            </div>
+                        <?php } ?>
+                        <?php if ($Owner || $Admin || $GP['sales-export']) { ?>
+                            <div class="btn-group">
+                                <a href="<?= site_url('sales/pdf/' . $inv->id) ?>" class="tip btn btn-primary" title="<?= lang('download_pdf') ?>">
+                                    <i class="fa fa-download"></i>
+                                    <span class="hidden-sm hidden-xs"><?= lang('pdf') ?></span>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 

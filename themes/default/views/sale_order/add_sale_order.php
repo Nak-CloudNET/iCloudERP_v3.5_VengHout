@@ -1410,7 +1410,7 @@
 		$('#before_sub').click(function (e) {
 
 			e.preventDefault();
-			/*var message = '';
+			var message = '';
 			var help = false;
 			$('.qty_rec').each(function() {
 				var tr = $(this).closest('tr');
@@ -1438,7 +1438,49 @@
 					}else {
 						return false;
 					}
-			}*/
+			}
+            $('.ruprice').each(function() {
+                var tr = $(this).closest('tr');
+                var price = $(this).val() - 0;
+                var cost = tr.find('.rucost').val() - 0;
+                if(price < cost) {
+                    var product_name = $(this).parent().parent().closest('tr').find('.rname').val();
+
+                    message += '<ul><li>This product '+ product_name +' its price('+ formatDecimal(price) +') is less than cost('+formatDecimal(cost) +')! </li></ul>';
+                    help = true;
+                }
+            });
+            if(help == false){
+                $('#add_sale').trigger('click');
+            }else{
+
+                bootbox.prompt({
+                    title: message + "Please enter password",
+                    inputType: 'password',
+                    className: "medium",
+                    callback: function (result) {
+                        $.ajax({
+                            type: 'get',
+                            url: '<?= site_url('auth/checkPassDiscount'); ?>',
+                            dataType: "json",
+                            data: {
+                                password: result
+                            },
+                            success: function (data) {
+                                if(data == 1){
+                                    $('#add_sale').trigger('click');
+                                }else{
+                                    bootbox.alert({
+                                        message: "Incorrect password!",
+                                        size: 'small'
+                                    });
+                                }
+                            }
+                        });
+                    }
+                });
+                return false;
+            }
 
 			//============credit limit===============//
 			var customer_id = $('#slcustomer2').val();

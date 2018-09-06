@@ -190,20 +190,38 @@
                                 $products = $this->reports_model->getProductsInventoryValuationByWhCat($warehouse->warehouse_id, ($cate_id1 ? $cate_id1 : $category->category_id), $product_id1, $stockType1, $from_date1, $to_date1, $reference1, $biller1);
                                 foreach ($products as $product) {
 								if(!empty($product->product_id)){
+                                    $begin_asset_value = 0;
+                                    $begin_qoh         = 0;
+                                    $begin_assets = $this->reports_model->getProductsBeginAssetValue($warehouse->warehouse_id,($cate_id1?$cate_id1:$category->category_id),($product_id1?$product_id1:$product->product_id),$stockType1,$from_date1,$to_date1,$reference1,$biller1);
+                                    foreach ($begin_assets as $begin_asset) 
+                                    {
+                                        $begin_qoh  += $begin_asset->quantity_balance_unit;
+                                        if($begin_asset->tran_type!='PURCHASE')
+                                        {
+                                            $begin_asset_value      =  $begin_avg_cost*$begin_qoh;
+                                        }else{
+                                            $begin_asset_value     += $begin_asset->total_cost*$begin_asset->quantity;
+                                            $begin_avg_cost         =  $begin_asset_value/$begin_qoh;
+                                        }
+                                        
+                                        
+                                    }
 							?>
 							<tr>
-								<td colspan="11" class="left" style="font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$product->product_code?$product->product_code:$product->product_id?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?=$product->product_name?> (<?=$product->un;?>)</td>
+								<td colspan="10" class="left" style="font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$product->product_code?$product->product_code:$product->product_id?> <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?=$product->product_name?> (<?=$product->un;?>)</td>
+                                <td class="right"><?= $this->erp->formatMoney($begin_asset_value) ?></td>
 
 							</tr>
 
                                     <?php
 							}
-							//$qty_on_hand = 0;
+							$qty_on_hand = $begin_qoh;
 							$total_on_hand = 0;
 							$total_asset_val = 0;
 							$unit_name = "";
+                          
 							$prDetails = $this->reports_model->getProductsInventoryValuationByProduct($warehouse->warehouse_id,($cate_id1?$cate_id1:$category->category_id),($product_id1?$product_id1:$product->product_id),$stockType1,$from_date1,$to_date1,$reference1,$biller1);
-                            $asset_value=0;
+                            $asset_value=$begin_asset_value;
 							foreach($prDetails as $pr)
 							{
 								$p_cost = 0;
@@ -239,16 +257,22 @@
                                     $p_qty = $pr->quantity_balance_unit;
 								}
 								$unit_name = $this->erp->convert_unit_2_string($pr->product_id,$p_qty);
-                                $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
-								$qty_on_hand = $cur_qoh[0]->qoh ;
+                            /*    $cur_qoh=$this->db->query("select sum(quantity_balance_unit) as qoh from erp_stock_trans where product_id='{$pr->product_id}' and tran_date <='{$pr->tran_date}'")->result();
+								$qty_on_hand = $cur_qoh[0]->qoh;*/
+                                $qty_on_hand +=$pr->quantity_balance_unit;
 
-                                $p_cost = $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->manufacture_cost):$this->erp->formatDecimal($pr->total_cost);
-								$avg_cost = $pr->avg_cost;
-                                $avg_cost=(($asset_value+($p_qty*$p_cost))/$qty_on_hand);
+                                $p_cost = $this->erp->formatDecimal($pr->total_cost);
 
 								$this->db->select("cost")->where("erp_products.id",$pr->product_id);
 								$cost = $this->erp->formatDecimal($this->db->get_where("erp_products", array("id"=>$product->product_id),1)->row()->cost, 4);
-								$asset_value =$pr->tran_type=='PURCHASE'?$pr->avg_cost*$qty_on_hand:$pr->total_cost*$qty_on_hand;
+                                if($pr->tran_type!='PURCHASE')
+                                {
+                                    $asset_value = $avg_cost*$qty_on_hand;
+                                }else{
+                                    $asset_value += $pr->total_cost*$pr->quantity;
+                                    $avg_cost     = $asset_value /$qty_on_hand;
+                                }
+								
 							?>
 							<tr>
                                 <td style="text-align:center !important;">
@@ -275,8 +299,8 @@
 								<td class="text-right"><?= $this->erp->formatQuantity($p_qty) ?> <br><?php  echo $unit_name;?></td>
 								<td class="text-right"><?= $pr->tran_type!='PURCHASE'?'':$p_cost ?></td>
 								<td class="text-right"><?= $this->erp->formatQuantity($qty_on_hand) ?></td>
-								<td class="text-right"><?= $pr->tran_type=='PURCHASE'?$this->erp->formatDecimal($pr->avg_cost):$this->erp->formatDecimal($pr->total_cost) ?></td>
-								<td class="text-right"><?= $this->erp->formatMoney($asset_value) ?></td>
+								<td class="text-right"><?= $this->erp->formatDecimal($avg_cost,4) ?></td>
+								<td class="text-right"><?= $this->erp->formatMoney($avg_cost*$qty_on_hand) ?></td>
 							</tr>
                                 <?php
                                 $total_on_hand = $qty_on_hand;

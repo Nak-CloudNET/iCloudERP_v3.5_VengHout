@@ -86,17 +86,19 @@
                           <h3 class="text-center header1"><b>Invoice</b></h3><br>
                           <div class="box" >
                               <?php
-                              //  $this->erp->print_arrays($invs);
+//                                $this->erp->print_arrays($invs);
                               ?>
                               <p>កាលបរិច្ឆេត / Date : <?=  date("d/m/Y", strtotime($invs->date)); ?></p>
                               <p>ល.ខ​ វិក័យប័ត្រ / Inv No : <?= $invs->reference_no ?></p>
-                              <p>ល.ខ ទូទាត់ / Terms: <?= $invs->pt_dc ?></p>
+                              <p>ល.ខ ទូទាត់ / Terms: <?= $invs->payment_term_text ?></p>
                           </div>
                       </td>
                   </tr>
               </table>
           </div>
           <br>
+
+
           <div class="body">
               <table border="1" width="100%" class="tb_cus table-stripeds">
                   <thead class="text-center"​ style="">
@@ -184,14 +186,36 @@
                                         <td style="border-right: 1px solid black">សរុប<br>Subtotal</td>
                                         <td style="border-right: none"><?= $this->erp->formatMoney($total); ?></td>
                                     </tr>
-                                    <tr style="border-bottom: 1px solid black; background: white">
-                                        <td width="50%" style="border-right: 1px solid black" class="prak_kok">ប្រាក់កក់<br>Deposite</td>
-                                        <td width="50%" style="border-right: none " class="prak_kok"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="border-right: 1px solid black">ប្រាក់នៅសល់<br>Balance</td>
-                                        <td style="border-right: none"></td>
-                                    </tr>
+                                    <?php
+                                    if($invs->deposit>0){
+                                        ?>
+                                        <tr style="border-bottom: 1px solid black; background: white">
+                                            <td width="50%" style="border-right: 1px solid black;background: white" class="prak_kok">ប្រាក់កក់<br>Deposite</td>
+                                            <td width="50%" style="border-right: none;background: white " class="prak_kok"><?= $this->erp->formatMoney($invs->deposit); ?><td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    if($invs->paid>0){
+                                        ?>
+                                        <tr style="border-bottom: 1px solid black;">
+                                            <td style="border-right: 1px solid black;background: white">ប្រាក់បានបង់<br>Paid</td>
+                                            <td style="border-right: none;background: white"><?php echo $this->erp->formatMoney($invs->paid-$invs->deposit); ?></td>
+                                        </tr>
+                                    <?php
+
+                                    }
+                                    if($invs->paid>0 || $invs->deposit>>0){
+                                        ?>
+                                        <tr>
+                                            <td style="border-right: 1px solid black;background: white"  class="prak_kok">ប្រាក់នៅសល់<br>Balance</td>
+                                            <td style="border-right: none;background: white"  class="prak_kok"><?= $this->erp->formatMoney($invs->grand_total - (($invs->paid-$invs->deposit) + $invs->deposit)); ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+
+
+
                                 </table>
                             </td>
 
@@ -212,11 +236,11 @@
                               </tr>
                               <tr>
                                   <td>ឈ្មោះ ៖​ </td>
-                                  <td> </td>
+                                  <td><?= $customer->name ?></td>
                               </tr>
                               <tr><td>Name </td><td></td></tr>
                               <tr>
-                                  <td>ទូរស័ព្ទ​ ៖ </td><td></td>
+                                  <td>ទូរស័ព្ទ​ ៖ </td><td><?= $customer->phone ?></td>
                               </tr>
                               <tr><td>Phone</td><td></td></tr>
                               <tr>
