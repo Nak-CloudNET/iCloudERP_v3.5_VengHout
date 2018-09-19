@@ -30,7 +30,9 @@
             .prak_kok{
                 background: white!important;
             }
+
         }
+
         body{
 
             font-family: "Khmer OS System","Times New Roman";
@@ -41,284 +43,374 @@
             -moz-font-family: "Khmer OS System";
 
         }
+        .header2{
+            font-family:"Times New Roman";
+            -moz-font-family: "Times New Roman";
+            font-weight: bolder;
+
+        }
         .tb_cus thead td{
             padding: 3px 0px;
         }
         .tfoot_ch td{
             padding: 3px 5px;
             text-align: right;
+
         }
         .tfoot td{
             width: calc(100%/4);
-          padding-left:5px;
+            padding-left:5px;
         }
         .tfoot td table{
             border: 1px solid black;
+            font-size: 13px;
         }
         .tb_cus td{
             border-right: 1px solid black;
         }
-        .tb_cus tr:nth-child(even){
+        tr.tb_strip:nth-child(even){
             background:rgba(4, 1, 2, 0.05);
+        }
+        .tfoot_ch tr:nth-child(even){
+            background: white!important;
         }
     </style>
 </head>
 <body>
-      <div class="container">
-          <div class="header" >
-              <table width="100%">
-                  <tr>
-                      <td style="vertical-align: bottom; ">
-                          <h1><?= $biller->company ?></h1>
-                          <div class="line" style="border: 1px solid black"></div>
-                          <br>
-                          <div class="box b1" style="height: 160px" >
-                              <p>ឈ្មោះអតិថិជន / Customer Name : <?= $customer->name ?></p>
-                              <p>តំណាង / Rep : </p>
-                              <p>បញ្ជូនទៅ / Ship To : <?= $customer->address ?></p>
+<div class="container">
+    <div class="header" >
+        <table width="100%">
+            <tr>
+                <td style="vertical-align: bottom; ">
+                    <h1><?= $biller->company ?></h1>
+                    <div class="line" style="border: 1px solid black"></div>
+                    <br>
+                    <div class="box b1" style="height: 160px" >
+                        <p>ឈ្មោះអតិថិជន / Customer Name : <?= $customer->company ?></p>
+                        <p>តំណាង / Rep :<?= $customer->name ?> </p>
+                        <p>បញ្ជូនទៅ / Ship To : <?= $customer->address ?></p>
 
-                          </div>
-                      </td>
-                      <td width="3%"></td>
-                      <td width="40%" style="vertical-align: bottom; ">
+                    </div>
+                </td>
+                <td width="3%"></td>
+                <?php
+                $sqlPayment=$this->db->query('Select erp_payment_term.description from erp_payment_term where id="'.$invs->payment_term.'"')->result();
+                foreach ($sqlPayment as $getPMT){
+                    $payment_term_r=$getPMT->description;
+                }
+                ?>
+                <td width="40%" style="vertical-align: bottom; ">
 
-                          <h3 class="text-center header1">វិក័យប័ត្រ</h3>
-                          <h3 class="text-center header1"><b>Invoice</b></h3><br>
-                          <div class="box" >
-                              <?php
-//                                $this->erp->print_arrays($invs);
-                              ?>
-                              <p>កាលបរិច្ឆេត / Date : <?=  date("d/m/Y", strtotime($invs->date)); ?></p>
-                              <p>ល.ខ​ វិក័យប័ត្រ / Inv No : <?= $invs->reference_no ?></p>
-                              <p>ល.ខ ទូទាត់ / Terms: <?= $invs->payment_term_text ?></p>
-                          </div>
-                      </td>
-                  </tr>
-              </table>
-          </div>
-          <br>
-
-
-          <div class="body">
-              <table border="1" width="100%" class="tb_cus table-stripeds">
-                  <thead class="text-center"​ style="">
-                    <td>ល.រ <br>No.</td>
-                    <td>បរិយាយមុខទំនិញ<br>​Items Description</td>
-                    <td>សម្គាល់<br>Remarks</td>
-                    <td>បរិមាណ<br>QTY</td>
-                    <td>ឯកតា<br>U/M</td>
-                    <td>ថ្លៃឯកតា<br>Price</td>
-                    <td>ថ្លៃទំនិញ<br>Amount</td>
-                  </thead>
-                  <tbody class="text-center">
-                  <?php $r = 1;
-                  $tax_summary = array();
-                  foreach ($rows as $row):
-                  $free = lang('free');
-                  $product_unit = '';
-
-
-                  if($row->variant){
-                      $product_unit = $row->variant;
-                  }else{
-                      $product_unit = $row->uname;
-                  }
-
-                  $product_name_setting;
-                  if($setting->show_code == 0) {
-                      $product_name_setting = $row->product_name;
-                  }else {
-                      if($setting->separate_code == 0) {
-                          $product_name_setting = $row->product_name;
-                      }else {
-                          $product_name_setting = $row->product_name;
-                      }
-                  }
-
-
-                  ?>
-                  <tr  style="border-bottom: transparent">
-                      <td style="width:40px; "><?= $r; ?></td>
-
-                      <td class="text-left" style="padding-left: 5px">
-                          <?= $product_name_setting ?>
-                          <?= $row->details ? '<br>' . $row->details : ''; ?>
-                          <?= $row->serial_no ? '<br>' . $row->serial_no : ''; ?>
-                      </td>
-                      <td></td>
-                      <td ><?php echo $product_unit ?></td>
-                      <td><?= $this->erp->formatQuantity($row->quantity); ?></td>
-                      <!-- <td style="text-align:right; width:100px;"><?= $this->erp->formatMoney($row->net_unit_price); ?></td> -->
-                      <td ><?= $row->subtotal!=0?$this->erp->formatMoney($row->unit_price):$free; ?></td>
-                      <td><?= $row->subtotal!=0?$this->erp->formatMoney($row->subtotal):$free; ?></td>
-                  </tr>
-                  <?php
-                  $total += $row->subtotal;
-                  $r++;
-                  endforeach;
-
-
-                    for($i=1;$i<(20-$r);$i++){
+                    <h3 class="text-center header1" style="font-size: 15px">វិក័យប័ត្រ</h3>
+                    <h3 class="text-center header2"><b>Invoice</b></h3><br>
+                    <div class="box" >
+                        <?php
+                        // $this->erp->print_arrays($sqlPayment);
                         ?>
-                        <tr style="border-bottom: transparent">
-                            <td></td>
-                            <td class="text-left" style="padding-left: 5px">&nbsp;</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <p>កាលបរិច្ឆេទ / Date : <?=  date("d/m/Y", strtotime($invs->date)); ?></p>
+                        <p>ល.រ​ វិក័យប័ត្រ / Inv No : <?= $invs->reference_no ?></p>
+                        <p>ល.ខ ទូទាត់ / Terms: <?= $payment_term_r ?></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="body">
+        <table border="1" width="100%" class="tb_cus" style="overflow: hidden">
+            <thead class="text-center"​ style="">
+            <td>ល.រ <br>No.</td>
+            <td>បរិយាយមុខទំនិញ<br>​Items Description</td>
+            <td>សម្គាល់<br>Remarks</td>
+            <td>បរិមាណ<br>QTY</td>
+            <td>ឯកតា<br>U/M</td>
+            <td>ថ្លៃឯកតា<br>Price</td>
+            <td>ថ្លៃទំនិញ<br>Amount</td>
+            </thead>
+            <tbody class="text-center">
+            <?php $r = 1;
+            $tax_summary = array();
+            foreach ($rows as $row):
+                $free = lang('free');
+                $product_unit = '';
+
+
+                if($row->variant){
+                    $product_unit = $row->variant;
+                }else{
+                    $product_unit = $row->uname;
+                }
+
+                $product_name_setting;
+                if($setting->show_code == 0) {
+                    $product_name_setting = $row->product_name;
+                }else {
+                    if($setting->separate_code == 0) {
+                        $product_name_setting = $row->product_name;
+                    }else {
+                        $product_name_setting = $row->product_name;
+                    }
+                }
+
+
+                ?>
+                <tr  style="border-bottom: transparent" class="tb_strip">
+                    <td style="width:40px; "><?= $r; ?></td>
+
+                    <td class="text-left" style="padding-left: 5px">
+                        <?= $product_name_setting ?>
+                        <?= $row->details ? '<br>' . $row->details : ''; ?>
+                        <?= $row->serial_no ? '<br>' . $row->serial_no : ''; ?>
+                    </td>
+                    <td></td>
+                    <td><?= $this->erp->formatQuantity($row->quantity); ?></td>
+                    <td ><?php echo $product_unit ?></td>
+
+                    <!-- <td style="text-align:right; width:100px;"><?= $this->erp->formatNumber($row->net_unit_price); ?></td> -->
+                    <td ><?= $row->subtotal!=0?$this->erp->formatNumber($row->unit_price):$free; ?></td>
+                    <td><?= $row->subtotal!=0?$this->erp->formatNumber($row->subtotal):$free; ?></td>
+                </tr>
+                <?php
+                $total += $row->subtotal;
+                $r++;
+            endforeach;
+
+
+            for($i=1;$i<(20-$r);$i++){
+                ?>
+                <tr style="border-bottom: transparent;background: transparent!important">
+                    <td></td>
+                    <td class="text-left" style="padding-left: 5px">&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+            <?php //$this->erp->print_arrays($invs); ?>
+            <tfoot >
+            <tr style="border-top: 1px solid black">
+                <td rowspan="1" colspan="4"​ style="vertical-align: top; padding: 1px 18px">
+                    <p>សម្គាល់ / Message : </p>
+                    <div><?= $this->erp->decode_html($customer->invoice_footer); ?></div>
+                </td>
+                <td colspan="3" style="padding: 0px;overflow: hidden">
+                    <table width="100%" style="" class="tfoot_ch">
+                        <?php
+                        $txt_gr='';
+                        $showgr='';
+                        if($invs->order_discount>0 || $invs->total_tax>0 || $invs->shipping>0){
+                            ?>
+                            <tr style="border-bottom: 1px solid black">
+                                <td style="border-right: 1px solid black">សរុប<br>Subtotal</td>
+                                <td style="border-right: none"><?= $this->erp->formatNumber($total); ?></td>
+                            </tr>
+                            <?php
+                        }
+                        else{
+                            $txt_gr='Total';
+                            $showgr=false;
+                        }
+                        ?>
+
+                        <?php
+                        if($invs->order_discount>0){
+                            ?>
+                            <tr style="border-bottom: 1px solid black">
+                                <td style="border-right: 1px solid black">បញ្ចុះតម្លៃ<br> Discount</td>
+                                <td style="border-right: none"><small>(<?= $invs->order_discount_id ?>%)</small><?= $this->erp->formatNumber($invs->order_discount); ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                        if($invs->total_tax>0){
+                            ?>
+                            <tr style="border-bottom: 1px solid black">
+                                <td style="border-right: 1px solid black">ពន្ធអាករ<br><?= $invs->vat?></td>
+                                <td style="border-right: none"><?= $this->erp->formatNumber($invs->total_tax); ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                        if($invs->shipping>0){
+                            ?>
+                            <tr style="border-bottom: 1px solid black">
+                                <td style="border-right: 1px solid black">ដឹកជញ្ជូន<br>Shipping</td>
+                                <td style="border-right: none"><?= $this->erp->formatNumber($invs->shipping); ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        <tr style="">
+                            <style>
+                                .t_cus_line{
+                                    border-right: 1px solid black;
+                                    position: relative;
+                                }
+                                .t_cus_line:after{
+                                    border-left: 1px solid black;
+                                    position: absolute;
+                                    content: '';
+                                    height: 113%;
+                                    top:-3px;
+                                    left:100%;
+                                    background:black;
+                                }
+                            </style>
+                            <td class="t_cus_line">សរុប<br>Total</td>
+                            <td style="border-right: none"><?= $this->erp->formatNumber($invs->grand_total); ?></td>
                         </tr>
                         <?php
-                    }
-                  ?>
-                  </tbody>
-
-                  <tfoot >
-                        <tr style="border-top: 1px solid black">
-                            <td rowspan="1" colspan="4"​ style="vertical-align: top; padding: 5px 18px">
-                                <p>សម្គាល់ / Message : </p>
-                                <div><?= $this->erp->decode_html($invs->note); ?></div>
-                            </td>
-                            <td colspan="3">
-                                <table width="100%" class="tfoot_ch">
-                                    <tr style="border-bottom: 1px solid black">
-                                        <td style="border-right: 1px solid black">សរុប<br>Subtotal</td>
-                                        <td style="border-right: none"><?= $this->erp->formatMoney($total); ?></td>
-                                    </tr>
-                                    <?php
-                                    if($invs->deposit>0){
-                                        ?>
-                                        <tr style="border-bottom: 1px solid black; background: white">
-                                            <td width="50%" style="border-right: 1px solid black;background: white" class="prak_kok">ប្រាក់កក់<br>Deposite</td>
-                                            <td width="50%" style="border-right: none;background: white " class="prak_kok"><?= $this->erp->formatMoney($invs->deposit); ?><td>
-                                        </tr>
-                                        <?php
-                                    }
-                                    if($invs->paid>0){
-                                        ?>
-                                        <tr style="border-bottom: 1px solid black;">
-                                            <td style="border-right: 1px solid black;background: white">ប្រាក់បានបង់<br>Paid</td>
-                                            <td style="border-right: none;background: white"><?php echo $this->erp->formatMoney($invs->paid-$invs->deposit); ?></td>
-                                        </tr>
-                                    <?php
-
-                                    }
-                                    if($invs->paid>0 || $invs->deposit>>0){
-                                        ?>
-                                        <tr>
-                                            <td style="border-right: 1px solid black;background: white"  class="prak_kok">ប្រាក់នៅសល់<br>Balance</td>
-                                            <td style="border-right: none;background: white"  class="prak_kok"><?= $this->erp->formatMoney($invs->grand_total - (($invs->paid-$invs->deposit) + $invs->deposit)); ?></td>
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
+                        if($invs->paid>0){
+                            ?>
+                            <tr style="border-top: 1px solid black; background: white">
+                                <td width="50%" style="border-right: 1px solid black" class="prak_kok">ប្រាក់កក់<br>Deposite</td>
+                                <td width="50%" style="border-right: none " class="prak_kok"><?= $this->erp->formatNumber($invs->paid) ?></td>
+                            </tr>
+                            <tr style="border-top: 1px solid black;">
+                                <td style="border-right: 1px solid black">ប្រាក់នៅសល់<br>Balance</td>
+                                <td style="border-right: none"><?= $this->erp->formatNumber($invs->grand_total-$invs->paid) ?></td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
 
 
+                    </table>
+                </td>
 
-                                </table>
-                            </td>
+            </tr>
+
+            </tfoot>
+        </table>
+    </div>
+    <br>
+    <?php
+    //                $this->erp->print_arrays($invs);
+    ?>
+    <?php
+    $sql=$this->db->query('select erp_users.first_name,erp_users.last_name from erp_users where id="'.$invs->created_by.'"')->result();
+    foreach ($sql as $cname){
+        $fn=$cname->first_name;
+        $ln=$cname->last_name;
+    }
+    //          $this->erp->print_arrays($sql);
+    ?>
+    <style>
+        .tfoot tr td table tr td{
+            word-break: break-all;
+        }
+        td.tb_height{
+
+            height: 180px;
+
+        }
+        .tfoot tr td table{
+            height:100%;
+
+        }
+        @media print {
+
+        }
+    </style>
+    <div class="footer">
+        <table class="tfoot" width="100%">
+            <tr>
+                <td class="tb_height">
+                    <table>
+                        <tr  class="text-center">
+                            <td style="padding-top: 2px">អតិថិជន <br>Customer</td>
+                        </tr>
+                        <tr>
+                            <td>ឈ្មោះ ៖​ </td>
 
                         </tr>
+                        <tr><td>Name </td></tr>
+                        <tr>
+                            <td>ទូរស័ព្ទ​ ៖ </td>
+                        </tr>
+                        <tr><td>Phone</td></tr>
+                        <tr>
+                            <td>ហត្ថលេខា​ ៖ </td>
 
-                  </tfoot>
-              </table>
-          </div>
-          <br>
-          <div class="footer">
-              <table class="tfoot" width="100%" >
-                  <tr>
-                      <td>
+                        </tr>
+                        <tr><td>Sign</td></tr>
+                    </table>
+                </td>
+                <td  class="tb_height">
+                    <table>
+                        <tr  class="text-center">
+                            <td  style="padding-top: 2px">គណនេយ្យករ <br>Accountant Approved</td>
+                        </tr>
+                        <tr>
+                            <td>ឈ្មោះ ៖​ </td>
 
-                          <table>
-                              <tr  class="text-center">
-                                  <td colspan="2"​ style="padding-top: 2px">អតិថិជន <br>Customer</td>
-                              </tr>
-                              <tr>
-                                  <td>ឈ្មោះ ៖​ </td>
-                                  <td><?= $customer->name ?></td>
-                              </tr>
-                              <tr><td>Name </td><td></td></tr>
-                              <tr>
-                                  <td>ទូរស័ព្ទ​ ៖ </td><td><?= $customer->phone ?></td>
-                              </tr>
-                              <tr><td>Phone</td><td></td></tr>
-                              <tr>
-                                  <td>ហត្ថលេខា​ ៖ </td>
-                                  <td></td>
-                              </tr>
-                              <tr><td>Sign</td><td></td></tr>
-                          </table>
-                      </td>
-                      <td>
-                          <table>
-                              <tr  class="text-center">
-                                  <td colspan="2" style="padding-top: 2px">គណនេយ្យករ <br>Accountant Approved</td>
-                              </tr>
-                              <tr>
-                                  <td>ឈ្មោះ ៖​ </td>
-                                  <td> </td>
-                              </tr>
-                              <tr><td>Name </td><td></td></tr>
-                              <tr>
-                                  <td>ទូរស័ព្ទ​ ៖ </td><td></td>
-                              </tr>
-                              <tr><td>Phone</td><td></td></tr>
-                              <tr>
-                                  <td>ហត្ថលេខា​ ៖ </td>
-                                  <td></td>
-                              </tr>
-                              <tr><td>Sign</td><td></td></tr>
-                          </table>
-                      </td>
-                      <td>
-                          <table>
-                              <tr  class="text-center">
-                                  <td colspan="2" style="padding-top: 2px">អ្នករៀបចំ<br>Prepare by</td>
-                              </tr>
-                              <tr>
-                                  <td>ឈ្មោះ ៖​ </td>
-                                  <td> </td>
-                              </tr>
-                              <tr><td>Name </td><td></td></tr>
-                              <tr>
-                                  <td>ទូរស័ព្ទ​ ៖ </td><td></td>
-                              </tr>
-                              <tr><td>Phone</td><td></td></tr>
-                              <tr>
-                                  <td>ហត្ថលេខា​ ៖ </td>
-                                  <td></td>
-                              </tr>
-                              <tr><td>Sign</td><td></td></tr>
-                          </table>
-                      </td>
-                      <td>
-                          <table>
-                              <tr  class="text-center">
-                                  <td colspan="2" style="padding-top: 2px">តំណាងផ្នែកលក់ <br>Sale Rep</td>
-                              </tr>
-                              <tr>
-                                  <td>ឈ្មោះ ៖​ </td>
-                                  <td> </td>
-                              </tr>
-                              <tr><td>Name </td><td></td></tr>
-                              <tr>
-                                  <td>ទូរស័ព្ទ​ ៖ </td><td></td>
-                              </tr>
-                              <tr><td>Phone</td><td></td></tr>
-                              <tr>
-                                  <td>ហត្ថលេខា​ ៖ </td>
-                                  <td></td>
-                              </tr>
-                              <tr><td>Sign</td><td></td></tr>
-                          </table>
-                      </td>
-                  </tr>
-              </table>
-          </div>
+                        </tr>
+                        <tr><td>Name </td></tr>
+                        <tr>
+                            <td>ទូរស័ព្ទ​ ៖ </td>
+                        </tr>
+                        <tr><td>Phone</td></tr>
+                        <tr>
+                            <td>ហត្ថលេខា​ ៖ </td>
+
+                        </tr>
+                        <tr><td>Sign</td></tr>
+                    </table>
+                </td>
+                <td  class="tb_height">
+
+                    <table>
+                        <tr  class="text-center">
+                            <td colspan="1" style="padding-top: 2px">អ្នករៀបចំ<br>Prepare by</td>
+                        </tr>
+                        <tr>
+                            <td>ឈ្មោះ ៖​ <?= $fn.' '.$ln ?></td>
+                        </tr>
+                        <tr><td>Name </td></tr>
+                        <tr>
+                            <td>ទូរស័ព្ទ​ ៖ </td>
+                        </tr>
+                        <tr><td>Phone</td></tr>
+                        <tr>
+                            <td>ហត្ថលេខា​ ៖ </td>
+                        </tr>
+                        <tr><td>Sign</td></tr>
+                    </table>
+                </td>
+                <td  class="tb_height">
+                    <table>
+                        <tr  class="text-center">
+                            <td  style="padding-top: 2px">តំណាងផ្នែកលក់ <br>Sale Rep</td>
+                        </tr>
+                        <tr>
+                            <td>ឈ្មោះ ៖​ <?= $invs->saleman_first.' '.$invs->saleman_last ?></td>
+
+                        </tr>
+                        <tr><td>Name </td></tr>
+                        <tr>
+                            <td>ទូរស័ព្ទ​ ៖ </td>
+                        </tr>
+                        <tr><td>Phone</td></tr>
+                        <tr>
+                            <td>ហត្ថលេខា​ ៖ </td>
+
+                        </tr>
+                        <tr><td>Sign</td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 
-      </div>
+</div>
 
 </body>
 </html>

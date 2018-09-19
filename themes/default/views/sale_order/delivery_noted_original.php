@@ -17,7 +17,6 @@
         padding: 10px;
         font-size: 14px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-       /* border: 1px solid black;*/
         position:relative;
     }
     .title-header tr{
@@ -29,9 +28,6 @@
     }
 
     @media print {
-        .container{
-            /*padding: 10px!important;*/
-        }
         .pageBreak {
             page-break-after: always;
             -webkit-page-break-after: always;
@@ -103,7 +99,7 @@
     .title{
         font-family:"Khmer OS Muol Light";
         -mox-font-family:"Khmer OS Muol Light";
-        font-size: 17px;
+        font-size: 15px;
     }
     h4{
         margin-top: 0px;
@@ -131,17 +127,7 @@
         font-weight: normal;
         text-align: center;
     }
-span.com_name{
-    font-size: 30px;
-    font-weight: 700;
-}
-    span.inv_name{
-        font-size: 25px;
-        font-weight: 700;
-    }
-    .my_tb {
-        height: 180px;
-    }
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -164,99 +150,84 @@ span.com_name{
     //$this->erp->print_arrays($invs);
     ?>
     <div class="row">
-        <table width="100%" style="vertical-align: top;" class="my_tb">
-            <tr>
-                <td width="57%"  style="padding: 3px;">
-                    <table width="100%" style="height: 100%">
-                        <tr>
-                            <td>
-                                <span class="com_name"><?= $invs->company ?></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="width: 100%;border-top: 1px solid black;padding-bottom: 10px" ></div>
-                            </td>
-                        </tr>
-                       <tr>
-                           <td>
-                               <div class=" " style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; padding: 6px;width: 100%;height: 110px; margin-bottom: -2px">
-                                   <table >
-                                       <tr>
-                                           <td style="width: 15%;"><?= lang('ប្រគល់ជូន / Deliver to') ?></td>
-                                           <td style="width: 2%;">:</td>
-                                           <td style="width: 25%;"><?=  $customer->company ?></td>
-                                       </tr>
-                                       <tr>
-                                           <td><?= lang('តំណាង​/ Rep') ?> </td>
-                                           <td>:</td>
-                                           <td><?= $customer->name ?></td>
-                                       </tr>
+        <table class="table">
+            <thead>
+            <tr class="thead" style="border-left:none;border-right: none;border-top:none;">
+                <th colspan="9" style="border-left:none;border-right: none;border-top:none;border-bottom: 1px solid #000 !important;">
+                    <div class="row" style="margin-top: 0px !important;">
+                        <div class="col-sm-8 col-xs-8 " style="margin-top: 0px !important; text-align: left">
+                            <h2><?= $invs->company ?></h2>
+                            <div style="width: 80%;border-top: 1px solid black;margin-left: -10px" ></div>
+                        </div>
+                        <div  class="col-sm-4 col-xs-4 company_addr "  style="margin-top: -20px !important;">
 
-                                       <tr>
-                                           <td><?= lang('ទូរស័ព្ទ/ Phone') ?> </td>
-                                           <td>:</td>
-                                           <td><?= $customer->phone ?></td>
-                                       </tr>
+                            <div class="invoice" style="margin-top:0px;">
+                                <center>
+                                    <h3 class="title">ប័ណ្ណប្រគល់ទំនិញ</h3>
+                                    <h3 >Delivery note</h3>
+                                </center>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: left;width: 100%; margin: 0 auto; ">
+                        <div class="col-sm-6 col-xs-6 pull-left " style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; padding: 6px">
+                                <table >
+                                    <tr>
+                                        <td style="width: 15%;"><?= lang('ប្រគល់ជូន / Deliver to') ?></td>
+                                        <td style="width: 2%;">:</td>
+                                        <td style="width: 25%;"><?=  $customer->company ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><?= lang('តំណាង​/ Rep') ?> </td>
+                                        <td>:</td>
+                                        <td><?= $customer->name ?></td>
+                                    </tr>
 
-
-                                       <tr>
-                                           <td><?= lang('បញ្ជូនទៅ / Ship To') ?></td>
-                                           <td>:</td>
-                                           <td><?= $customer->address ?></td>
-                                       </tr>
-
-                                   </table>
-                               </div>
-                           </td>
-
-                        </tr>
-                    </table>
-                </td>
-                <td class="" style="padding: 3px;">
-                    <table  style="height: 100%" width="100%" >
-                        <tr>
-                            <td class="text-center"><span class="title">ប័ណ្ណប្រគល់ទំនិញ</span></td>
-                        </tr>
-                        <tr>
-                            <td  class="text-center"><span class="inv_name"><b>Delivery Note</b></span></td>
-                        </tr>
-                        <tr>
-                            <td style="">
-                                <div class="" style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; width:100%;padding: 6px;height: 100%">
-                                    <table class="">
                                         <tr>
-                                            <td style=""><?= lang('កាលបរិឆ្ឆេទ​/Date') ?></td>
-                                            <td style="width: 4%;">:</td>
-                                            <td style=""><?= $this->erp->hrsd($invs->date) ?></td>
+                                            <td><?= lang('ទូរស័ព្ទ/ Phone') ?> </td>
+                                            <td>:</td>
+                                            <td><?= $customer->phone ?></td>
                                         </tr>
-                                        <?php
-                                        if($invs->so_no){
-                                            echo "<tr>
+
+
+
+                                    <tr>
+                                        <td><?= lang('បញ្ជូនទៅ / Ship To') ?></td>
+                                        <td>:</td>
+                                        <td><?= $customer->address ?></td>
+                                    </tr>
+
+                            </table>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-3 pull-right " style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; width: 340px;padding: 6px">
+                            <table class="">
+                                <tr>
+                                    <td style="width: 45%"><?= lang('កាលបរិឆ្ឆេទ​/Date') ?></td>
+                                    <td style="width: 4%;">:</td>
+                                    <td style=""><?= $this->erp->hrsd($invs->date) ?></td>
+                                </tr>
+                                <?php
+                                    if($invs->so_no){
+                                        echo "<tr>
                                                         <td>".lang('ល.រ​វិក័យប័ត្រ / Inv No')."</td>
                                                         <td>:</td>
                                                         <td> $invs->so_no</td>
                                                     </tr>";
-                                        }
-                                        ?>
-                                        <tr>
-                                            <td><?= lang('លេខប័ណ្ណប្រគល់ទំនិញ​ / DN No') ?> </td>
-                                            <td>:</td>
-                                            <td><?= $invs->reference_no ?></td>
-                                        </tr>
+                                    }
+                                ?>
+                                <tr>
+                                    <td><?= lang('លេខប័ណ្ណប្រគល់ទំនិញ​ / DN No') ?> </td>
+                                    <td>:</td>
+                                    <td><?= $invs->reference_no ?></td>
+                                </tr>
 
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
+                            </table>
+                        </div>
+                    </div>
+                </th>
             </tr>
-        </table>
-        <br>
-        <table class="table">
-            <thead>
             <tr class="border thead print" style=" font-size: 12px;  background-color: #444 !important; color: #FFF !important;">
 <!--                <th>ល.រ<br/>--><?//= strtoupper(lang('no')) ?><!--</th>-->
 <!--                <th>បរិយាយមុខទំនិញ<br/>--><?//= strtoupper(lang('description')) ?><!--</th>-->

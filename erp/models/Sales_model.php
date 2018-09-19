@@ -1314,7 +1314,7 @@ class Sales_model extends CI_Model
 	public function getInvoiceByID($id=null,$wh=null)
     {
 		$this->db
-			 ->select("sales.*, companies.name,companies.company,companies.logo,companies.cf4,companies.phone, companies.email,
+			 ->select("erp_users.last_name as saleman_last,erp_users.first_name as saleman_first,sales.*, companies.name,companies.company,companies.logo,companies.cf4,companies.phone, companies.email,
 			  quotes.reference_no as quote_no, users.username as saleman,
 			  (SELECT SUM(IF(erp_payments.paid_by = 'deposit', erp_payments.amount, 0)) 
 			  FROM erp_payments WHERE erp_payments.sale_id = erp_sales.id  ) as deposit,
@@ -1323,6 +1323,7 @@ class Sales_model extends CI_Model
 			   sale_order.reference_no as so_no, erp_companies.address, erp_sales.sale_status, 
 			   companies.invoice_footer as invoice_footer, group_areas.areas_group, 
 			   tax_rates.name as vat, payment_term.description as payment_term_text, sales.due_date")
+
 			 ->join('companies', 'sales.biller_id = companies.id', 'left')
 			 ->join('quotes', 'sales.quote_id = quotes.id', 'left')
 			 ->join('payments', 'payments.sale_id = sales.id', 'left')
@@ -4988,7 +4989,7 @@ class Sales_model extends CI_Model
 	}
 	
 	public function getSaleOrder($sale_order_id){
-		$this->db->select("sale_order.*, companies.name, companies.company,erp_payment_term.description as pt_dc, 
+		$this->db->select("erp_users.last_name as saleman_last,erp_users.first_name as saleman_first, sale_order.*, companies.name, companies.company,erp_payment_term.description as pt_dc, 
 			CASE erp_sale_order.order_status
 			WHEN 'completed' THEN
 				'Approved'
@@ -4997,6 +4998,7 @@ class Sales_model extends CI_Model
 			WHEN 'pending' THEN
 				'Order'
 			END AS status, tax_rates.rate AS tax,tax_rates.name as tax_name");
+		$this->db->join('erp_users','erp_users.id=erp_sale_order.saleman_by');
 		$this->db->join('companies', 'sale_order.customer_id = companies.id', 'inner');
 		$this->db->join('tax_rates', 'sale_order.order_tax_id = tax_rates.id', 'left');
         $this->db->join('erp_payment_term', 'sale_order.payment_term = erp_payment_term.id', 'left');

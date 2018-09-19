@@ -4133,7 +4133,6 @@ class Sale_order extends MY_Controller
         if ($this->input->get('id')) {
             $id = $this->input->get('id');
         }
-
         $this->load->model('pos_model');
         $this->data['pos'] = $this->pos_model->getSetting();
         $this->data['setting'] = $this->site->get_setting();

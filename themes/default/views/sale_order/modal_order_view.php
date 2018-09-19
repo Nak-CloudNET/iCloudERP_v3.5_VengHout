@@ -400,9 +400,9 @@
                     </div>
                     <div class="btn-group btn-group-justified">
                         <div class="btn-group">
-                            <a href="<?= site_url('sale_order/invoice_sale_order/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('invoice_sale order') ?>">
+                            <a href="<?= site_url('sale_order/invoice_sale_order/' . $inv->id) ?>" target="_blank" class="tip btn btn-primary" title="<?= lang('Veng_Hout_Invoice') ?>">
                                 <i class="fa fa-print"></i>
-                                <span class="hidden-sm hidden-xs"><?= lang('invoice_sale_order') ?></span>
+                                <span class="hidden-sm hidden-xs"><?= lang('VengHout Invoice') ?></span>
                             </a>
                         </div>
                         <!--
