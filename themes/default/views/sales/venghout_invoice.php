@@ -58,12 +58,20 @@
 
         }
         .tfoot td{
-            width: calc(100%/4);
+            width: 283px;
+            font-size: 12px;
+
+        }
+        .tb_height td{
             padding-left:5px;
         }
         .tfoot td table{
             border: 1px solid black;
             font-size: 13px;
+        }
+        .tfoot td p{
+            line-height: 0px!important;
+
         }
         .tb_cus td{
             border-right: 1px solid black;
@@ -73,6 +81,9 @@
         }
         .tfoot_ch tr:nth-child(even){
             background: white!important;
+        }
+        tr.tb_strip:nth-child(even){
+            background:rgba(4, 1, 2, 0.05);
         }
     </style>
 </head>
@@ -117,8 +128,8 @@
     </div>
     <br>
     <div class="body">
-        <table border="1" width="100%" class="tb_cus" style="overflow: hidden">
-            <thead class="text-center"​ style="">
+        <table  width="100%" class="tb_cus" style="overflow: hidden;border: 1px solid black">
+            <thead class="text-center"​ style="border-bottom: 1px solid black">
             <td>ល.រ <br>No.</td>
             <td>បរិយាយមុខទំនិញ<br>​Items Description</td>
             <td>សម្គាល់<br>Remarks</td>
@@ -154,7 +165,7 @@
 
 
                 ?>
-                <tr  style="border-bottom: transparent" class="tb_strip">
+                <tr  style="" class="tb_strip">
                     <td style="width:40px; "><?= $r; ?></td>
 
                     <td class="text-left" style="padding-left: 5px">
@@ -176,7 +187,7 @@
             endforeach;
 
 
-            for($i=1;$i<(20-$r);$i++){
+            for($i=1;$i<(18-$r);$i++){
                 ?>
                 <tr style="border-bottom: transparent;background: transparent!important">
                     <td></td>
@@ -322,66 +333,65 @@
     <div class="footer">
         <table class="tfoot" width="100%">
             <tr>
-                <td class="tb_height">
+                <td class="tb_height" style="padding-right: 2px">
                     <table>
                         <tr  class="text-center">
                             <td style="padding-top: 2px">អតិថិជន <br>Customer</td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះ ៖​ </td>
+                            <td><p>ឈ្មោះ ៖​</p> </td>
 
                         </tr>
-                        <tr><td>Name </td></tr>
+                        <tr><td><p>Name </p></td></tr>
                         <tr>
-                            <td>ទូរស័ព្ទ​ ៖ </td>
+                            <td><p>ទូរស័ព្ទ​ ៖ </p></td>
                         </tr>
-                        <tr><td>Phone</td></tr>
+                        <tr><td><p>Phone</p></td></tr>
                         <tr>
-                            <td>ហត្ថលេខា​ ៖ </td>
+                            <td><p>ហត្ថលេខា​ ៖ </p></td>
 
                         </tr>
-                        <tr><td>Sign</td></tr>
+                        <tr><td><p>Sign</p></td></tr>
                     </table>
                 </td>
-                <td  class="tb_height">
+                <td  class="tb_height" style="padding-right: 2px">
                     <table>
                         <tr  class="text-center">
                             <td  style="padding-top: 2px">គណនេយ្យករ <br>Accountant Approved</td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះ ៖​ </td>
+                            <td><p>ឈ្មោះ ៖​ </p></td>
 
                         </tr>
-                        <tr><td>Name </td></tr>
+                        <tr><td><p>Name </p></td></tr>
                         <tr>
-                            <td>ទូរស័ព្ទ​ ៖ </td>
+                            <td><p>ទូរស័ព្ទ​ ៖ </p></td>
                         </tr>
-                        <tr><td>Phone</td></tr>
+                        <tr><td><p>Phone</p></td></tr>
                         <tr>
-                            <td>ហត្ថលេខា​ ៖ </td>
+                            <td><p>ហត្ថលេខា​ ៖ </p></td>
 
                         </tr>
-                        <tr><td>Sign</td></tr>
+                        <tr><td><p>Sign</p></td></tr>
                     </table>
                 </td>
-                <td  class="tb_height">
-
+                <td  class="tb_height" style="padding-right: 2px">
                     <table>
                         <tr  class="text-center">
                             <td colspan="1" style="padding-top: 2px">អ្នករៀបចំ<br>Prepare by</td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះ ៖​ <?= $fn.' '.$ln ?></td>
+                            <td><p>ឈ្មោះ ៖​ <?= $fn.' '.$ln ?><span></td>
                         </tr>
-                        <tr><td>Name </td></tr>
+                        <tr><td><p>Name </p></td></tr>
                         <tr>
-                            <td>ទូរស័ព្ទ​ ៖ </td>
+                            <td><p>ទូរស័ព្ទ​ ៖ </p></td>
                         </tr>
-                        <tr><td>Phone</td></tr>
+                        <tr><td><p>Phone</p></td></tr>
                         <tr>
-                            <td>ហត្ថលេខា​ ៖ </td>
+                            <td><p>ហត្ថលេខា​ ៖ </p></td>
                         </tr>
-                        <tr><td>Sign</td></tr>
+                        <tr><td><p>Sign</p></td></tr>
                     </table>
                 </td>
                 <td  class="tb_height">
@@ -390,19 +400,19 @@
                             <td  style="padding-top: 2px">តំណាងផ្នែកលក់ <br>Sale Rep</td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះ ៖​ <?= $invs->saleman_first.' '.$invs->saleman_last ?></td>
+                            <td><p>ឈ្មោះ ៖​ <?= $invs->saleman_first.' '.$invs->saleman_last ?><span></td>
 
                         </tr>
-                        <tr><td>Name </td></tr>
+                        <tr><td><p>Name </p></td></tr>
                         <tr>
-                            <td>ទូរស័ព្ទ​ ៖ </td>
+                            <td><p>ទូរស័ព្ទ​ ៖ </p></td>
                         </tr>
-                        <tr><td>Phone</td></tr>
+                        <tr><td><p>Phone</p></td></tr>
                         <tr>
-                            <td>ហត្ថលេខា​ ៖ </td>
+                            <td><p>ហត្ថលេខា​ ៖ </p></td>
 
                         </tr>
-                        <tr><td>Sign</td></tr>
+                        <tr><td><p>Sign</p></td></tr>
                     </table>
                 </td>
             </tr>

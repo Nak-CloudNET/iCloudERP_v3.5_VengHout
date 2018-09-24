@@ -164,10 +164,10 @@ span.com_name{
     //$this->erp->print_arrays($invs);
     ?>
     <div class="row">
-        <table width="100%" style="vertical-align: top;" class="my_tb">
+        <table width="100%" style="vertical-align: top;" class="my_tb"  >
             <tr>
                 <td width="57%"  style="padding: 3px;">
-                    <table width="100%" style="height: 100%">
+                    <table width="100%" style="height: 100%" >
                         <tr>
                             <td>
                                 <span class="com_name"><?= $invs->company ?></span>
@@ -179,8 +179,8 @@ span.com_name{
                             </td>
                         </tr>
                        <tr>
-                           <td>
-                               <div class=" " style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; padding: 6px;width: 100%;height: 110px; margin-bottom: -2px">
+                           <td style="vertical-align: bottom">
+                               <div class=" " style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; padding: 6px;width: 100%;height: 110px; ">
                                    <table >
                                        <tr>
                                            <td style="width: 15%;"><?= lang('ប្រគល់ជូន / Deliver to') ?></td>
@@ -215,15 +215,15 @@ span.com_name{
                     </table>
                 </td>
                 <td class="" style="padding: 3px;">
-                    <table  style="height: 100%" width="100%" >
+                    <table  style="height: 100%" width="100%">
                         <tr>
                             <td class="text-center"><span class="title">ប័ណ្ណប្រគល់ទំនិញ</span></td>
                         </tr>
                         <tr>
-                            <td  class="text-center"><span class="inv_name"><b>Delivery Note</b></span></td>
+                            <td  class="text-center" style=""><span class="inv_name " ><b>Delivery Note</b></span></td>
                         </tr>
                         <tr>
-                            <td style="">
+                            <td style="vertical-align: bottom">
                                 <div class="" style="font-size: 12px; border: 1px solid black;border-radius: 5px !important; width:100%;padding: 6px;height: 100%">
                                     <table class="">
                                         <tr>
@@ -232,18 +232,18 @@ span.com_name{
                                             <td style=""><?= $this->erp->hrsd($invs->date) ?></td>
                                         </tr>
                                         <?php
-                                        if($invs->so_no){
+
                                             echo "<tr>
                                                         <td>".lang('ល.រ​វិក័យប័ត្រ / Inv No')."</td>
                                                         <td>:</td>
                                                         <td> $invs->so_no</td>
                                                     </tr>";
-                                        }
+
                                         ?>
-                                        <tr>
+                                        <tr >
                                             <td><?= lang('លេខប័ណ្ណប្រគល់ទំនិញ​ / DN No') ?> </td>
                                             <td>:</td>
-                                            <td><?= $invs->reference_no ?></td>
+                                            <td ><?= $invs->reference_no ?></td>
                                         </tr>
 
                                     </table>
@@ -357,31 +357,38 @@ span.com_name{
                 }
             }
             ?>
+            <?php
+            $sql=$this->db->query('select erp_users.first_name,erp_users.last_name from erp_users where id="'.$invs->created_by.'"')->result();
+            foreach ($sql as $cname){
+                $fn=$cname->first_name;
+                $ln=$cname->last_name;
+            }
+            //          $this->erp->print_arrays($sql);
+            ?>
             <tr class="border">
                 <td colspan="8" style="font-size: 12px"><p>សម្គាល់ / Message :</p><p><?php echo $invs->invoice_footer ?></p></td>
             </tr>
             </tbody>
         </table>
-        <div class="row" style="display: none">
+        <div class="row" style="">
             <div class="col-sm-12">
-                <div style="float: left; width: 140px; margin-right: 10px; font-size: 12px;border: 1px solid black;​​" >
-                   <p style="text-align: center"> អ្នកទទួល​<br>Received by</p>ឈ្មោះ​៖<span></span>​<br>Name<br>ទូរស័ព្ទ៖<span></span><br>Phone<br>ហត្ថលេខា៖<br>Sign
+                <div style="float: left; width: 146px; margin-right: 10px; font-size: 11px;border: 1px solid black;​​" >
+                   <p style="text-align: center"> អ្នកទទួល​<br>Received by</p>&nbsp;ឈ្មោះ​៖<span></span>​<br>&nbsp;Name<br>&nbsp;ទូរស័ព្ទ៖<span></span><br>&nbsp;Phone<br>&nbsp;ហត្ថលេខា៖<br>&nbsp;Sign
                 </div>
-                <div  style=" float: left;width: 140px; margin-right: 10px; font-size: 12px;border: 1px solid black;​​" >
+                <div  style=" float: left;width: 146px; margin-right: 10px; font-size: 11px;border: 1px solid black;​​" >
                     <p style="text-align: center"> ដឹកជញ្ជូនដោយ<br>Delivered by</p>
-                    ឈ្មោះ​៖<span></span>​<br>Name<br>លេខឡាន៖<span></span><br>Truck No<br>ហត្ថលេខា៖<br>Sign
+                    &nbsp;ឈ្មោះ​៖<span></span>​<br>&nbsp;Name<br>&nbsp;លេខឡាន៖<span></span><br>&nbsp;Truck No<br>&nbsp;ហត្ថលេខា៖<br>&nbsp;Sign
                 </div>
-                <div  style="float: left; width: 140px;margin-right: 10px;  font-size: 12px;border: 1px solid black;​​" >
-                    <p style="text-align: center"> នាយឃ្លាំង<br>WH Controller</p>
-                    ឈ្មោះ​៖<span></span>​<br>Name<br><br>ហត្ថលេខា៖<br>Sign<br><br>
+                <div  style="float: left; width: 146px;margin-right: 10px;  font-size: 11px;border: 1px solid black;​​" >
+                    <p style="text-align: center"> នាយឃ្លាំង<br>WH Controller</p>&nbsp;ឈ្មោះ​៖<span></span>​<br>&nbsp;Name<br><br>&nbsp;ហត្ថលេខា៖<br>&nbsp;Sign<br><br>
                 </div>
-                <div  style="float: left;width: 150px; margin-right: 10px; font-size: 12px;border: 1px solid black;​​" >
+                <div  style="float: left;width: 146px; margin-right: 10px; font-size: 11px;border: 1px solid black;​​" >
                     <p style="text-align: center"> គណនេយ្យករ<br>Accountant</p>
-                    ឈ្មោះ​៖​<span></span><br>Name<br>ទូរស័ព្ទ៖<span></span><br>Phone<br>ហត្ថលេខា៖<br>Sign
+                    &nbsp;ឈ្មោះ​៖​<span></span><br>&nbsp;Name<br>&nbsp;ទូរស័ព្ទ៖<span></span><br>&nbsp;Phone<br>&nbsp;ហត្ថលេខា៖<br>&nbsp;Sign
                 </div>
-                <div  style="float: left;width: 150px; margin-right: 10px; font-size: 12px;border: 1px solid black;​​" >
+                <div  style="float: left;width: 146px; font-size: 11px;border: 1px solid black;​​" >
                     <p style="text-align: center"> តំណាងផ្នែកលក់<br>Sales Rep</p>
-                   ឈ្មោះ​៖<span></span>​<br>Name<br>ទូរស័ព្ទ៖<span></span><br>Phone<br>ហត្ថលេខា៖<br>Sign
+                    &nbsp;ឈ្មោះ​៖<span> <?= $invs->saleman_first.' '.$invs->saleman_last ?></span>​<br>&nbsp;Name<br>&nbsp;ទូរស័ព្ទ៖<span></span><br>&nbsp;Phone<br>&nbsp;ហត្ថលេខា៖<br>&nbsp;Sign
                 </div>
             </div>
         </div>

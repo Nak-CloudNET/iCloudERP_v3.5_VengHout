@@ -58,7 +58,8 @@
 
         }
         .tfoot td{
-            width: calc(100%/4);
+           width: 279px;
+
           padding-left:5px;
         }
         .tfoot td table{
@@ -121,8 +122,8 @@
                   $dis+=$row1->item_discount;
               endforeach;
               ?>
-              <table border="1" width="100%" class="tb_cus" style="overflow: hidden">
-                  <thead class="text-center"​ style="">
+              <table  width="100%" class="tb_cus" style="overflow: hidden;border: 1px solid black">
+                  <thead class="text-center"​ style="border-bottom: 1px solid black">
                     <td>ល.រ <br>No.</td>
                     <td>បរិយាយមុខទំនិញ<br>​Items Description</td>
                     <td>សម្គាល់<br>Remarks</td>
